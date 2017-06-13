@@ -1,0 +1,2 @@
+export * from './prism.js';
+

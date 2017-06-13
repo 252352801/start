@@ -1,0 +1,13 @@
+<div class="app"
+     [ngClass]="{'app-header-fixed':headerFixed,
+     'app-aside-fixed':asideFixed,
+     'app-aside-folded':asideFolded,
+     'app-aside-dock':asideDock,
+     'container':container,
+     'app-aside-slide':offScreen,
+     'off-screen':offScreen}" >
+  <!--<div class="app  app-header-fixed app-aside-fixed app-aside-folded">-->
+    <ng-content></ng-content>
+</div>
+
+
