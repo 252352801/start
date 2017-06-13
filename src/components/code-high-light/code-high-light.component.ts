@@ -1,5 +1,4 @@
 import { Component,OnInit,ElementRef,Input} from '@angular/core';
-import  * as PrismPlugin from './prism/prism';
 @Component({
   selector: 'code-high-light',
   templateUrl: './code-high-light.component.html',
@@ -12,14 +11,14 @@ export class CodeHighLightComponent implements  OnInit {
   }
 
   ngOnInit() {
-    console.log(PrismPlugin['prism']);
-    console.log(PrismPlugin['prism'].highlight);
+    /*console.log(Prism);
+    console.log(Prism.highlight);
     let codeElem=this.elemRef.nativeElement.querySelector('code');
    // let text=codeElem.innerHTML;
     codeElem.className='language-html';
     codeElem.textContent='&lt;h1 class="test"&gt;1&lt;/h1&gt;';
-    let fn=PrismPlugin['prism'].highlightElement;
-    fn(codeElem);
+    let fn=Prism.highlightElement;
+    fn(codeElem);*/
 
 
     //异步请求代码
