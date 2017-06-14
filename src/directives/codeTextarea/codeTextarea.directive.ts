@@ -1,7 +1,7 @@
 import {Directive,OnInit,ElementRef} from '@angular/core';
 
 @Directive({
-  selector: '[code-textarea]'
+  selector: '[codeTextarea]'
 })
 export class CodeTextareaDirective implements OnInit{
     constructor(private elemRef:ElementRef){

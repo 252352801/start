@@ -50,7 +50,7 @@
       <h4 class="m-t-lg">Button dropdowns</h4>
       <p class="text-muted">Single button dropdowns</p>
       <div class="m-b-sm">
-        <div class="btn-group dropdown" toggle-class="open" out-remove="true">
+        <div class="btn-group dropdown" toggleClass="open" [opt-revokable]="true">
           <button class="btn btn-default" >Action <span class="caret"></span></button>
           <ul class="dropdown-menu">
             <li><a href="">Action</a></li>
@@ -60,7 +60,7 @@
             <li><a href="">Separated link</a></li>
           </ul>
         </div>
-        <div class="btn-group dropdown" toggle-class="open" out-remove="true">
+        <div class="btn-group dropdown" toggleClass="open" [opt-revokable]="true">
           <button class="btn btn-success" >Action <span class="caret"></span></button>
           <ul class="dropdown-menu">
             <li><a href="">Action</a></li>
@@ -72,7 +72,7 @@
         </div>
       </div>
       <div class="m-b-sm">
-        <div class="btn-group dropdown" toggle-class="open" out-remove="true">
+        <div class="btn-group dropdown" toggleClass="open" [opt-revokable]="true">
           <button class="btn btn-default btn-sm">Action <span class="caret"></span></button>
           <ul class="dropdown-menu">
             <li><a href="">Action</a></li>
@@ -84,7 +84,7 @@
         </div>
       </div>
       <div class="m-b-sm">
-        <div class="btn-group dropdown" toggle-class="open" out-remove="true">
+        <div class="btn-group dropdown" toggleClass="open" [opt-revokable]="true">
           <button class="btn btn-default btn-xs" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
           <ul class="dropdown-menu">
             <li><a href="">Action</a></li>
@@ -97,7 +97,7 @@
       </div>
       <p class="text-muted">Split button dropdowns &amp; variation </p>
       <div class="m-b-sm">
-        <div class="btn-group dropdown" toggle-class="open" out-remove="true">
+        <div class="btn-group dropdown" toggleClass="open" [opt-revokable]="true">
           <button class="btn btn-default">Action</button>
           <button class="btn btn-default" ><span class="caret"></span></button>
           <ul class="dropdown-menu">
@@ -108,7 +108,7 @@
             <li><a href="">Separated link</a></li>
           </ul>
         </div>
-        <div class="btn-group dropdown dropup" toggle-class="open" out-remove="true">
+        <div class="btn-group dropdown dropup" toggleClass="open" [opt-revokable]="true">
           <button class="btn btn-default">Action</button>
           <button class="btn btn-default" ><span class="caret"></span></button>
           <ul class="dropdown-menu">
@@ -180,7 +180,7 @@
         <button type="button" class="btn btn-default">1</button>
         <button type="button" class="btn btn-success">2</button>
         <button type="button" class="btn btn-default">3</button>
-        <div class="btn-group dropdown" toggle-class="open" out-remove="true">
+        <div class="btn-group dropdown" toggleClass="open" [opt-revokable]="true">
           <button type="button" class="btn btn-default">
             Dropdown
             <span class="caret"></span>
@@ -223,7 +223,7 @@
         <span>There are a few easy ways to quickly get started with Bootstrap, each one ...</span>
       </p>
       <p>
-        <button class="btn btn-sm btn-default" toggle-class="active" >
+        <button class="btn btn-sm btn-default" toggleClass="open"  >
           <i class="fa fa-plus text"></i>
           <span class="text">More</span>
           <i class="fa fa-minus text-active"></i>
@@ -231,17 +231,17 @@
         </button>
       </p>
       <p>
-        <button class="btn btn-default" toggle-class="btn-success">
+        <button class="btn btn-default" toggleClass="open" >
           <i class="fa fa-cloud-upload text"></i>
           <span class="text">Upload</span>
           <i class="fa fa-check text-active"></i>
           <span class="text-active">Success</span>
         </button>
-        <a class="btn btn-default" toggle-class="button active">
+        <a class="btn btn-default" toggleClass="open">
           <i class="fa fa-heart-o text"></i>
           <i class="fa fa-heart text-active text-danger"></i>
         </a>
-        <a class="btn btn-default" toggle-class="button active">
+        <a class="btn btn-default" toggleClass="open">
           <span class="text">
             <i class="fa fa-thumbs-up text-success"></i> 25
           </span>
@@ -249,7 +249,7 @@
             <i class="fa fa-thumbs-down text-danger"></i> 10
           </span>
         </a>
-        <button class="btn btn-success" toggle-class="active" >
+        <button class="btn btn-success" toggleClass="open" >
           <span class="text">Save</span>
           <span class="text-active">Saving...</span>
         </button>
@@ -271,7 +271,7 @@
       </div>
 
       <h4 class="m-t-lg">
-        <button class="pull-right text-sm btn btn-xs btn-default" ui-toggle-class="btn-rounded" target="#social-buttons button">Toggle</button>
+        <button class="pull-right text-sm btn btn-xs btn-default">Toggle</button>
         Social buttons
       </h4>
       <p id="social-buttons">

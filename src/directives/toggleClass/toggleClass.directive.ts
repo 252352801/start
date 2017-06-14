@@ -1,12 +1,11 @@
 import {Directive,OnInit,ElementRef,Input,OnDestroy} from '@angular/core';
 
 @Directive({
-  selector: '[toggle-class]'
+  selector: '[toggleClass]'
 })
 export class ToggleClassDirective implements OnInit{
-    @Input('toggle-class') toggleClass:string;
-    @Input('out-remove') outRemove:string;
-    private count:number=0;
+    @Input() toggleClass:string;
+    @Input('opt-revokable') revokable:string;
     private triggerEvent:string;//触发的事件名；
     private toggleClassList:Array<string>;//变换的类名列表
 
@@ -29,7 +28,7 @@ export class ToggleClassDirective implements OnInit{
           let newClassList=curOnlyClass.concat(toggleOnlyClass);
           this.elemRef.nativeElement.className=newClassList.join(' ');
 
-          if(!(this.outRemove===undefined||this.outRemove==='false')) {
+          if(!(this.revokable===undefined||this.revokable==='false')) {
             let finalClassList = this.getClassList(this.elemRef.nativeElement);
             let commonClassList = this.getCommonClass(finalClassList, this.toggleClassList);
             if (commonClassList.length) {
