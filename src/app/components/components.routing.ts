@@ -7,7 +7,7 @@ const routes: Routes = <Routes>[
         path: '',
         component: ComponentsComponent
     },
-  { path: 'modal-demo', component:ModalDemoComponent,data:{title:'模态框'} },
+  { path: 'modalDemo', component:ModalDemoComponent,data:{title:'模态框'} },
 
 
 ];

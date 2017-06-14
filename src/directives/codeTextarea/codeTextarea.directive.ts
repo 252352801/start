@@ -1,9 +1,10 @@
-import {Directive,OnInit,ElementRef} from '@angular/core';
+import {Directive,OnInit,ElementRef,Input} from '@angular/core';
 
 @Directive({
   selector: '[codeTextarea]'
 })
 export class CodeTextareaDirective implements OnInit{
+    @Input() codeTextarea:any;
     constructor(private elemRef:ElementRef){
 
     }

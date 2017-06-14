@@ -4,6 +4,7 @@ import { PopService} from '../../../services/pop/pop.service';
     selector: 'pop-demo',
     templateUrl: './pop-demo.component.html',
     styleUrls: ['./pop-demo.component.less'],
+    providers:[PopService]
 })
 export class PopDemoComponent {
 
