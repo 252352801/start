@@ -14,7 +14,7 @@ import {SharedModule} from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { SigninComponent } from './signin/signin.component';
 import { IndexComponent } from './index/index.component';
-//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +34,8 @@ import { IndexComponent } from './index/index.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

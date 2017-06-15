@@ -1,0 +1,36 @@
+<div class="padding-default bg-default border-bottom">
+  <h2 class="no-margin">行分组</h2>
+</div>
+
+<div class="wrapper-md">
+
+  <p-dataTable [value]="cars1" sortField="brand" rowGroupMode="subheader" groupField="brand" expandableRowGroups="true"
+               [sortableRowGroup]="false">
+    <p-header>Toggleable Row Groups with Footers</p-header>
+    <ng-template pTemplate="rowgroupheader" let-rowData>{{rowData['brand']}}</ng-template>
+    <p-column field="color" header="Color"></p-column>
+    <p-column field="year" header="Year"></p-column>
+    <p-column field="vin" header="Vin"></p-column>
+    <p-column field="price" header="Price">
+      <ng-template let-col let-car="rowData" pTemplate="body">
+        <span>{{car[col.field] | currency:'USD':true:'.0-0'}}</span>
+      </ng-template>
+    </p-column>
+  </p-dataTable>
+
+  <p-dataTable [value]="cars2" sortField="brand" rowGroupMode="subheader" groupField="brand" [style]="{'margin-top':'50px'}">
+    <p-header>Subheader</p-header>
+    <ng-template pTemplate="rowgroupheader" let-rowData>{{rowData['brand']}}</ng-template>
+    <p-column field="color" header="Color" sortable="true"></p-column>
+    <p-column field="year" header="Year" sortable="true"></p-column>
+    <p-column field="vin" header="Vin" sortable="true"></p-column>
+  </p-dataTable>
+
+  <p-dataTable [value]="cars3" sortField="brand" rowGroupMode="rowspan" [style]="{'margin-top':'50px'}">
+    <p-header>RowSpan</p-header>
+    <p-column field="brand" header="Brand" sortable="true"></p-column>
+    <p-column field="color" header="Color" sortable="true"></p-column>
+    <p-column field="year" header="Year" sortable="true"></p-column>
+    <p-column field="vin" header="Vin" sortable="true"></p-column>
+  </p-dataTable>
+</div>

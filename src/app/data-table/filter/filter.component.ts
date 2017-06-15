@@ -16,7 +16,7 @@ export class FilterComponent implements OnInit {
 
   colors: SelectItem[];
   constructor(private carService: CarService) { }
-
+  yearFilter:string;
   ngOnInit() {
     this.cars=this.carService.getCarsSmall().slice(0,10);
 

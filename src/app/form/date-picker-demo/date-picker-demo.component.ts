@@ -5,7 +5,7 @@ import { Component} from '@angular/core';
     styleUrls: ['./date-picker-demo.component.less'],
 })
 export class DatePickerDemoComponent {
-  time='';
+  startTime='';
   constructor(){
   }
 }

@@ -1,0 +1,15 @@
+<div class="padding-default bg-default border-bottom">
+  <h2 class="no-margin">Basic</h2>
+</div>
+
+<div class="wrapper-md">
+  <p-dataTable [value]="cars" selectionMode="single" [(selection)]="selectedCar" [contextMenu]="cm">
+    <p-header>Right Click on Rows for ContextMenu</p-header>
+    <p-column field="vin" header="Vin"></p-column>
+    <p-column field="year" header="Year"></p-column>
+    <p-column field="brand" header="Brand"></p-column>
+    <p-column field="color" header="Color"></p-column>
+  </p-dataTable>
+
+  <p-contextMenu #cm [model]="items"></p-contextMenu>
+</div>
