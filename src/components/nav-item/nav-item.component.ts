@@ -90,7 +90,11 @@ export class NavItemComponent implements OnInit{
         let top = pos.top;
         subNavWrap.style.left = pos.left + w + 'px';
         if (win_h - pos.top < subWrapHeight) {
-          top = pos.top - subWrapHeight + h;
+          if(win_h - pos.top+h<subWrapHeight){
+            top = 50;//50是头部高度
+          }else{
+            top = pos.top - subWrapHeight + h;
+          }
         }
         subNavWrap.style.top = top + 'px';
       }

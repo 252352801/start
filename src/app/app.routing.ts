@@ -12,7 +12,8 @@ const routes: Routes = [
         { path: 'components', loadChildren: './components/components.module#ComponentsModule',data:{title:'组件'} },
         { path: 'directives', loadChildren: './directives/directives.module#DirectivesModule',data:{title:'指令'} },
         { path: 'UIKits', loadChildren: './UIKits/UIKits.module#UIKitsModule',data:{title:'UIKits'}},
-        { path: 'form', loadChildren: './form/form.module#FormModule',data:{title:'表单'}}
+        { path: 'form', loadChildren: './form/form.module#FormModule',data:{title:'表单'}},
+        { path: 'dataTable', loadChildren: './data-table/data-table.module#DataTableModule',data:{title:'dataTable'}}
       ]
     }
 ];

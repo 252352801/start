@@ -26,11 +26,14 @@
         "assets/css/font-awesome.min.css",
         "assets/css/simple-line-icons.css",
         "assets/css/toaster.css",
-        "assets/css/toaster.css",
+        "assets/libs/laydate/css/laydate.css",
+        "../node_modules/primeng/resources/themes/omega/theme.css",
+        "../node_modules/primeng/resources/primeng.min.css",
         "styles.css"
       ],
       "scripts": [
-        "assets/js/jQuery/jquery-3.2.1.min.js"
+        "assets/js/jQuery/jquery-3.2.1.min.js",
+        "assets/libs/laydate/js/laydate.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

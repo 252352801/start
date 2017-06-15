@@ -1,0 +1,14 @@
+<div class="padding-default bg-default border-bottom">
+  <h2 class="no-margin">Facets</h2>
+</div>
+
+<div class="wrapper-md">
+  <p-dataTable [value]="cars"  scrollHeight="200px">
+    <p-header>List of Cars</p-header>
+    <p-footer>There are 10 cars</p-footer>
+    <p-column field="vin" header="Vin"></p-column>
+    <p-column field="year" header="Year"></p-column>
+    <p-column field="brand" header="Brand"></p-column>
+    <p-column field="color" header="Color"></p-column>
+  </p-dataTable>
+</div>
