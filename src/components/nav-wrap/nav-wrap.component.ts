@@ -6,6 +6,7 @@ declare var $:any;  //定义jquery
   styleUrls: ['./nav-wrap.component.less']
 })
 export class NavWrapComponent implements OnInit{
+  test:string='hellow';
   constructor(private elemRef:ElementRef){
       console.log($('active'));
 

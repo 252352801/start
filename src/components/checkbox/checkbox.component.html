@@ -1,0 +1,8 @@
+<div class=" {{display==='block'?'checkbox':'checkbox-inline'}}">
+  <label class="i-checks" (click)="toggleCheck()">
+    <input type="checkbox"  [checked]="value" [name]="name" [disabled]="disabled" [(ngModel)]="value"]><i></i>
+    <ng-content></ng-content>
+  </label>
+</div>
+
+

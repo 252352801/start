@@ -80,7 +80,11 @@ export class NavItemComponent implements OnInit{
       } else {
         return;
       }
-      let pos = this.getPosition(target);
+      let pos = this.getPosition(target),wrapPos;
+      let navWrap=document.querySelector('.navi-wrap');
+      if(navWrap) {
+        wrapPos = this.getPosition(navWrap);
+      }
       let subNavWrap:any = target.querySelector('.nav.nav-sub');
       let w = target.offsetWidth;
       let h = target.offsetHeight;
@@ -91,12 +95,14 @@ export class NavItemComponent implements OnInit{
         subNavWrap.style.left = pos.left + w + 'px';
         if (win_h - pos.top < subWrapHeight) {
           if(win_h - pos.top+h<subWrapHeight){
-            top = 50;//50是头部高度
+            top = wrapPos.top||0;//50是头部高度
           }else{
             top = pos.top - subWrapHeight + h;
           }
         }
         subNavWrap.style.top = top + 'px';
+        subNavWrap.style.maxHeight=win_h-wrapPos.top+'px';
+        subNavWrap.style.overflowY='auto';
       }
       target = null;
     });
@@ -107,6 +113,10 @@ export class NavItemComponent implements OnInit{
       let classList = this.rootElem.className.split(/\s+/);
       if (classList.indexOf('nav-item-hover') >= 0) {
         this.removeClass(this.rootElem, 'nav-item-hover');
+      }
+      let subNavWrap:any = this.rootElem.querySelector('.nav.nav-sub');
+      if(subNavWrap) {
+        subNavWrap.style.maxHeight = 'inherit';
       }
     });
   }

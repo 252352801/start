@@ -1,0 +1,7 @@
+<div class=" {{display==='block'?'radio':'radio-inline'}}">
+  <label class="i-checks" (click)="check()">
+    <input type="radio" [name]="name" [disabled]="disabled" [checked]="key===value" [(ngModel)]="key" >
+    <i></i>
+    <ng-content></ng-content>
+  </label>
+</div>

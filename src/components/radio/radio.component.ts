@@ -1,0 +1,29 @@
+import { Component,Input,Output,OnInit,ElementRef,EventEmitter} from '@angular/core';
+@Component({
+  selector: 'radio',
+  templateUrl: './radio.component.html',
+  styleUrls: ['./radio.component.less']
+})
+export class RadioComponent implements OnInit{
+  @Input() name:string;
+  @Input() display:string;
+  @Input() disabled:string;
+  @Input() value:any;
+  @Input() key:any;
+  @Output() keyChange:EventEmitter<any>=new EventEmitter();
+  constructor(private elemRef:ElementRef){
+
+  }
+  ngOnInit(){
+    console.info('value',this.value);
+    console.info('name',this.name);
+    console.info('display',this.display);
+    console.info('disabled',this.disabled);
+  }
+  check(){
+    if(!this.disabled) {
+      //this.key =this.value;
+      this.keyChange.emit(this.value);
+    }
+  }
+}

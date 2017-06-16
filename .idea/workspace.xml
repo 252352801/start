@@ -2,87 +2,63 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f8c350c-520e-4782-9e15-e0ffe7f80bba" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/form/checkbox-demo/checkbox-demo.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/form/checkbox-demo/checkbox-demo.component.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/form/checkbox-demo/checkbox-demo.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/less/app.indent.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/checkbox/checkbox.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/checkbox/checkbox.component.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/checkbox/checkbox.component.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/radio/radio.component.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/radio/radio.component.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/radio/radio.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations.es5.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations.es5.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations.es5.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser.es5.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser.es5.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser.es5.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser/testing.es5.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser/testing.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser/testing.es5.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser/testing.es5.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser/testing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser/testing.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser/testing.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/README.md" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/animations.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/animations.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/index.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/index.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/index.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/public_api.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/public_api.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/animation_engine.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/animation_engine.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/browser.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/browser.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_dsl_visitor.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_dsl_visitor.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_timeline_instruction.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_timeline_instruction.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_timeline_visitor.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_timeline_visitor.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_transition_expr.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_transition_expr.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_transition_factory.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_transition_factory.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_transition_instruction.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_transition_instruction.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_trigger.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_trigger.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_validator_visitor.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_validator_visitor.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/style_normalization/animation_style_normalizer.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/style_normalization/animation_style_normalizer.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/style_normalization/web_animations_style_normalizer.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/style_normalization/web_animations_style_normalizer.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/private_export.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/private_export.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/animation_driver.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/animation_driver.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/animation_engine_instruction.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/animation_engine_instruction.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/dom_animation_engine.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/dom_animation_engine.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/noop_animation_engine.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/noop_animation_engine.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/web_animations/dom_animation.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/web_animations/dom_animation.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/web_animations/web_animations_driver.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/web_animations/web_animations_driver.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/web_animations/web_animations_player.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/web_animations/web_animations_player.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/util.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/util.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/index.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/src/mock_animation_driver.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/src/mock_animation_driver.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/src/mock_animation_driver.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/src/mock_animation_driver.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/src/testing.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/src/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/public_api.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/public_api.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/animation_event.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/animation_event.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/animation_metadata.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/animation_metadata.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/animations.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/animations.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/players/animation_group_player.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/players/animation_group_player.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/players/animation_player.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/players/animation_player.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/private_export.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/private_export.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/util.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/util.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/data-table.module.ts" afterPath="$PROJECT_DIR$/src/app/data-table/data-table.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/data-table.routing.ts" afterPath="$PROJECT_DIR$/src/app/data-table/data-table.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/domain/car.service.ts" afterPath="$PROJECT_DIR$/src/app/data-table/domain/car.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/filter/filter.component.ts" afterPath="$PROJECT_DIR$/src/app/data-table/filter/filter.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/UIKits/UIKits.component.html" afterPath="$PROJECT_DIR$/src/app/UIKits/UIKits.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/UIKits/buttons/buttons.component.html" afterPath="$PROJECT_DIR$/src/app/UIKits/buttons/buttons.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/UIKits/iconfonts/iconfonts.component.html" afterPath="$PROJECT_DIR$/src/app/UIKits/iconfonts/iconfonts.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/about/about.component.html" afterPath="$PROJECT_DIR$/src/app/about/about.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/about/convention/convention.component.html" afterPath="$PROJECT_DIR$/src/app/about/convention/convention.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/about/explanation/explanation.component.html" afterPath="$PROJECT_DIR$/src/app/about/explanation/explanation.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/components.component.html" afterPath="$PROJECT_DIR$/src/app/components/components.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/modal-demo/modal-demo.component.html" afterPath="$PROJECT_DIR$/src/app/components/modal-demo/modal-demo.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/basic/basic.component.html" afterPath="$PROJECT_DIR$/src/app/data-table/basic/basic.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/col-group/col-group.component.html" afterPath="$PROJECT_DIR$/src/app/data-table/col-group/col-group.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/col-toggler/col-toggler.component.html" afterPath="$PROJECT_DIR$/src/app/data-table/col-toggler/col-toggler.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/context-menu/context-menu.component.html" afterPath="$PROJECT_DIR$/src/app/data-table/context-menu/context-menu.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/data-table.component.html" afterPath="$PROJECT_DIR$/src/app/data-table/data-table.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/editable/editable.component.html" afterPath="$PROJECT_DIR$/src/app/data-table/editable/editable.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/expand/expand.component.html" afterPath="$PROJECT_DIR$/src/app/data-table/expand/expand.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/export/export.component.html" afterPath="$PROJECT_DIR$/src/app/data-table/export/export.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/facets/facets.component.html" afterPath="$PROJECT_DIR$/src/app/data-table/facets/facets.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/filter/filter.component.html" afterPath="$PROJECT_DIR$/src/app/data-table/filter/filter.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/paginator/paginator.component.html" afterPath="$PROJECT_DIR$/src/app/data-table/paginator/paginator.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/row-group/row-group.component.html" afterPath="$PROJECT_DIR$/src/app/data-table/row-group/row-group.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/scroll/scroll.component.html" afterPath="$PROJECT_DIR$/src/app/data-table/scroll/scroll.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/selection/selection.component.html" afterPath="$PROJECT_DIR$/src/app/data-table/selection/selection.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/sort/sort.component.html" afterPath="$PROJECT_DIR$/src/app/data-table/sort/sort.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/templating/templating.component.html" afterPath="$PROJECT_DIR$/src/app/data-table/templating/templating.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/directives/directives.component.html" afterPath="$PROJECT_DIR$/src/app/directives/directives.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/feedback/feedback.component.html" afterPath="$PROJECT_DIR$/src/app/feedback/feedback.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/feedback/pop-demo/pop-demo.component.html" afterPath="$PROJECT_DIR$/src/app/feedback/pop-demo/pop-demo.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/feedback/toaster-demo/toaster-demo.component.html" afterPath="$PROJECT_DIR$/src/app/feedback/toaster-demo/toaster-demo.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/form/date-picker-demo/date-picker-demo.component.html" afterPath="$PROJECT_DIR$/src/app/form/date-picker-demo/date-picker-demo.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/form/date-picker-demo/date-picker-demo.component.ts" afterPath="$PROJECT_DIR$/src/app/form/date-picker-demo/date-picker-demo.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/form/form.component.html" afterPath="$PROJECT_DIR$/src/app/form/form.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/form/form.module.ts" afterPath="$PROJECT_DIR$/src/app/form/form.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/form/form.routing.ts" afterPath="$PROJECT_DIR$/src/app/form/form.routing.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/index/index.component.html" afterPath="$PROJECT_DIR$/src/app/index/index.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/pages.component.html" afterPath="$PROJECT_DIR$/src/app/pages/pages.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/pages/personal-info/personal-info.component.html" afterPath="$PROJECT_DIR$/src/app/pages/personal-info/personal-info.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/shared/shared.module.ts" afterPath="$PROJECT_DIR$/src/app/shared/shared.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/less/app.box.less" afterPath="$PROJECT_DIR$/src/assets/less/app.box.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/less/app.less" afterPath="$PROJECT_DIR$/src/assets/less/app.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/less/ng.reset.less" afterPath="$PROJECT_DIR$/src/assets/less/ng.reset.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/libs/laydate/js/laydate.js" afterPath="$PROJECT_DIR$/src/assets/libs/laydate/js/laydate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/nav-item/nav-item.component.html" afterPath="$PROJECT_DIR$/src/components/nav-item/nav-item.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/nav-item/nav-item.component.ts" afterPath="$PROJECT_DIR$/src/components/nav-item/nav-item.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/nav-wrap/nav-wrap.component.ts" afterPath="$PROJECT_DIR$/src/components/nav-wrap/nav-wrap.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/directives/datePicker/datePicker.directive.ts" afterPath="$PROJECT_DIR$/src/directives/datePicker/datePicker.directive.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles.css" afterPath="$PROJECT_DIR$/src/styles.css" />
     </list>
     <ignored path="NgUIBootstrap.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -103,21 +79,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="filter.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/data-table/filter/filter.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="shared.module.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/shared/shared.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="23" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="23" />
+            <state relative-caret-position="513">
+              <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -125,91 +91,92 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="date-picker-demo.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/form/date-picker-demo/date-picker-demo.component.html">
+      <file leaf-file-name="checkbox-demo.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/form/checkbox-demo/checkbox-demo.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="23" column="86" selection-start-line="23" selection-start-column="86" selection-end-line="23" selection-end-column="86" />
+            <state relative-caret-position="266">
+              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="datePicker.directive.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/directives/datePicker/datePicker.directive.ts">
+      <file leaf-file-name="radio.component.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/radio/radio.component.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checkbox-demo.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/form/checkbox-demo/checkbox-demo.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="47" column="53" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
+              <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="laydate.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assets/libs/laydate/js/laydate.js">
+      <file leaf-file-name="radio.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/radio/radio.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="806" column="84" selection-start-line="806" selection-start-column="84" selection-end-line="806" selection-end-column="84" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <marker date="1497545298432" expanded="true" signature="19043:20354" placeholder="..." />
-                <marker date="1497545298432" expanded="true" signature="19720:20328" placeholder="..." />
-                <marker date="1497545298432" expanded="true" signature="20027:20302" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="date-picker-demo.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/form/date-picker-demo/date-picker-demo.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+            <state relative-caret-position="38">
+              <caret line="2" column="95" selection-start-line="2" selection-start-column="95" selection-end-line="2" selection-end-column="95" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="selection.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/data-table/selection/selection.component.html">
+      <file leaf-file-name="radio.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/radio/radio.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+            <state relative-caret-position="209">
+              <caret line="11" column="14" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="selection.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/data-table/selection/selection.component.ts">
+      <file leaf-file-name="checkbox.component.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/checkbox/checkbox.component.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#48#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="car.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/data-table/domain/car.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="729">
-              <caret line="50" column="69" selection-start-line="50" selection-start-column="69" selection-end-line="50" selection-end-column="69" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filter.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/data-table/filter/filter.component.ts">
+      <file leaf-file-name="checkbox.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/checkbox/checkbox.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="12" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#59#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="38">
+              <caret line="2" column="90" selection-start-line="2" selection-start-column="82" selection-end-line="2" selection-end-column="90" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checkbox.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/checkbox/checkbox.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ng.reset.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/less/ng.reset.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="217" column="33" selection-start-line="217" selection-start-column="33" selection-end-line="217" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -229,57 +196,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/app.routing.ts" />
-        <option value="$PROJECT_DIR$/src/app/data-table/domain/car.ts" />
-        <option value="$PROJECT_DIR$/.angular-cli.json" />
-        <option value="$PROJECT_DIR$/src/app/data-table/data-table.component.less" />
-        <option value="$PROJECT_DIR$/src/app/data-table/basic/basic.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/UIKits/iconfonts/iconfonts.component.html" />
+        <option value="$PROJECT_DIR$/src/app/about/about.component.html" />
+        <option value="$PROJECT_DIR$/src/app/about/convention/convention.component.html" />
+        <option value="$PROJECT_DIR$/src/app/about/explanation/explanation.component.html" />
+        <option value="$PROJECT_DIR$/src/app/components/components.component.html" />
+        <option value="$PROJECT_DIR$/src/app/components/modal-demo/modal-demo.component.html" />
         <option value="$PROJECT_DIR$/src/app/data-table/basic/basic.component.html" />
-        <option value="$PROJECT_DIR$/src/app/data-table/facets/facets.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/data-table/facets/facets.component.html" />
-        <option value="$PROJECT_DIR$/src/app/data-table/templating/templating.component.html" />
-        <option value="$PROJECT_DIR$/src/app/data-table/templating/templating.component.ts" />
-        <option value="$PROJECT_DIR$/src/assets/css/toaster.css" />
-        <option value="$PROJECT_DIR$/src/app/data-table/col-group/col-group.component.ts" />
         <option value="$PROJECT_DIR$/src/app/data-table/col-group/col-group.component.html" />
-        <option value="$PROJECT_DIR$/src/app/data-table/export/export.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/data-table/export/export.component.html" />
         <option value="$PROJECT_DIR$/src/app/data-table/col-toggler/col-toggler.component.html" />
-        <option value="$PROJECT_DIR$/src/app/data-table/col-toggler/col-toggler.component.ts" />
-        <option value="$PROJECT_DIR$/src/assets/less/ng.reset.less" />
-        <option value="$PROJECT_DIR$/src/app/data-table/scroll/scroll.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/data-table/scroll/scroll.component.html" />
-        <option value="$PROJECT_DIR$/src/app/data-table/filter/filter.component.html" />
-        <option value="$PROJECT_DIR$/node_modules/@angular/animations/browser/index.d.ts" />
-        <option value="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/browser.d.ts" />
-        <option value="$PROJECT_DIR$/node_modules/@angular/platform-browser/animations/src/providers.d.ts" />
-        <option value="$PROJECT_DIR$/src/components/nav-item/nav-item.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/app/data-table/paginator/paginator.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/data-table/paginator/paginator.component.html" />
-        <option value="$PROJECT_DIR$/src/app/data-table/sort/sort.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/data-table/sort/sort.component.html" />
-        <option value="$PROJECT_DIR$/src/app/data-table/row-group/row-group.component.html" />
-        <option value="$PROJECT_DIR$/src/app/data-table/row-group/row-group.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/data-table/selection/selection.component.html" />
+        <option value="$PROJECT_DIR$/src/app/data-table/context-menu/context-menu.component.html" />
+        <option value="$PROJECT_DIR$/src/app/data-table/data-table.component.html" />
         <option value="$PROJECT_DIR$/src/app/data-table/editable/editable.component.html" />
-        <option value="$PROJECT_DIR$/src/app/data-table/editable/editable.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/data-table/expand/expand.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/data-table/expand/expand.component.html" />
-        <option value="$PROJECT_DIR$/src/app/data-table/context-menu/basic.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/data-table/context-menu/basic.component.html" />
-        <option value="$PROJECT_DIR$/src/app/data-table/data-table.routing.ts" />
-        <option value="$PROJECT_DIR$/src/app/index/index.component.html" />
-        <option value="$PROJECT_DIR$/src/app/data-table/context-menu/context-menu.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/data-table/data-table.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/data-table/filter/filter.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/data-table/selection/selection.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/data-table/domain/car.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/data-table/export/export.component.html" />
+        <option value="$PROJECT_DIR$/src/app/data-table/facets/facets.component.html" />
+        <option value="$PROJECT_DIR$/src/app/data-table/filter/filter.component.html" />
+        <option value="$PROJECT_DIR$/src/app/data-table/paginator/paginator.component.html" />
+        <option value="$PROJECT_DIR$/src/app/data-table/row-group/row-group.component.html" />
+        <option value="$PROJECT_DIR$/src/app/data-table/scroll/scroll.component.html" />
+        <option value="$PROJECT_DIR$/src/app/data-table/selection/selection.component.html" />
+        <option value="$PROJECT_DIR$/src/app/data-table/sort/sort.component.html" />
+        <option value="$PROJECT_DIR$/src/app/directives/directives.component.html" />
+        <option value="$PROJECT_DIR$/src/app/feedback/feedback.component.html" />
+        <option value="$PROJECT_DIR$/src/app/form/form.component.html" />
+        <option value="$PROJECT_DIR$/src/app/pages/pages.component.html" />
+        <option value="$PROJECT_DIR$/src/app/pages/personal-info/personal-info.component.html" />
+        <option value="$PROJECT_DIR$/src/assets/less/screen.variables.less" />
+        <option value="$PROJECT_DIR$/src/assets/less/app.box.less" />
+        <option value="$PROJECT_DIR$/src/assets/less/app.less" />
         <option value="$PROJECT_DIR$/src/app/form/date-picker-demo/date-picker-demo.component.ts" />
+        <option value="$PROJECT_DIR$/src/assets/less/app.indent.less" />
         <option value="$PROJECT_DIR$/src/app/form/date-picker-demo/date-picker-demo.component.html" />
+        <option value="$PROJECT_DIR$/src/app/data-table/templating/templating.component.html" />
+        <option value="$PROJECT_DIR$/src/app/data-table/expand/expand.component.html" />
+        <option value="$PROJECT_DIR$/src/styles.css" />
+        <option value="$PROJECT_DIR$/../插件/laydate-v1.1/laydate/js/laydate.js" />
         <option value="$PROJECT_DIR$/src/assets/libs/laydate/js/laydate.js" />
         <option value="$PROJECT_DIR$/src/directives/datePicker/datePicker.directive.ts" />
+        <option value="$PROJECT_DIR$/src/app/form/form.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/form/form.routing.ts" />
+        <option value="$PROJECT_DIR$/src/app/index/index.component.html" />
+        <option value="$USER_HOME$/Desktop/表格.html" />
+        <option value="$PROJECT_DIR$/src/components/checkbox/checkbox.component.ts" />
+        <option value="$PROJECT_DIR$/src/assets/less/ng.reset.less" />
+        <option value="$PROJECT_DIR$/src/components/checkbox/checkbox.component.less" />
+        <option value="$PROJECT_DIR$/src/components/radio/radio.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/shared/shared.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/form/checkbox-demo/checkbox-demo.component.ts" />
+        <option value="$PROJECT_DIR$/src/components/radio/radio.component.less" />
+        <option value="$PROJECT_DIR$/src/app/form/checkbox-demo/checkbox-demo.component.html" />
+        <option value="$PROJECT_DIR$/src/components/radio/radio.component.html" />
+        <option value="$PROJECT_DIR$/src/components/checkbox/checkbox.component.html" />
       </list>
     </option>
   </component>
@@ -289,10 +256,9 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-2" />
+    <option name="width" value="1378" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -325,27 +291,27 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NgUIBootstrap" />
+              <option name="myItemId" value="MGT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NgUIBootstrap" />
+              <option name="myItemId" value="MGT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NgUIBootstrap" />
+              <option name="myItemId" value="MGT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NgUIBootstrap" />
+              <option name="myItemId" value="MGT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NgUIBootstrap" />
+              <option name="myItemId" value="MGT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -355,11 +321,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NgUIBootstrap" />
+              <option name="myItemId" value="MGT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NgUIBootstrap" />
+              <option name="myItemId" value="MGT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -373,11 +339,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NgUIBootstrap" />
+              <option name="myItemId" value="MGT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NgUIBootstrap" />
+              <option name="myItemId" value="MGT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -395,11 +361,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NgUIBootstrap" />
+              <option name="myItemId" value="MGT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NgUIBootstrap" />
+              <option name="myItemId" value="MGT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -407,17 +373,17 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NgUIBootstrap" />
+              <option name="myItemId" value="MGT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NgUIBootstrap" />
+              <option name="myItemId" value="MGT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -425,21 +391,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
+              <option name="myItemId" value="radio" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NgUIBootstrap" />
+              <option name="myItemId" value="MGT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NgUIBootstrap" />
+              <option name="myItemId" value="MGT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -447,29 +413,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laydate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="checkbox" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NgUIBootstrap" />
+              <option name="myItemId" value="MGT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NgUIBootstrap" />
+              <option name="myItemId" value="MGT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -477,15 +435,77 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MGT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MGT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="laydate" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MGT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MGT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="form" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MGT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MGT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="form" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="checkbox-demo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -501,15 +521,15 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\work\NgUIBootstrap\src\app\data-table\context-menu" />
-      <recent name="F:\work\NgUIBootstrap\src\app\data-table\expand" />
-      <recent name="F:\work\NgUIBootstrap\src\app\data-table\editable" />
-      <recent name="F:\work\NgUIBootstrap\src\app\data-table\selection" />
-      <recent name="F:\work\NgUIBootstrap\src\app\data-table\row-group" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\work\MGT\src\assets\libs" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work\MGT\src\components\radio" />
+      <recent name="D:\work\MGT\src\components\checkbox" />
+      <recent name="D:\work\MGT\src\app\form\checkbox-demo" />
+      <recent name="F:\work\NgUIBootstrap\src\app\data-table\context-menu" />
+      <recent name="F:\work\NgUIBootstrap\src\app\data-table\expand" />
     </key>
   </component>
   <component name="RunManager">
@@ -595,19 +615,21 @@
       <workItem from="1497490323490" duration="23933000" />
       <workItem from="1497519919252" duration="2996000" />
       <workItem from="1497531285360" duration="13837000" />
+      <workItem from="1497575362432" duration="29828000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145564000" />
+    <option name="totallyTimeSpent" value="175392000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-2" y="0" width="1378" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42291668" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35022026" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -620,7 +642,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -659,169 +680,111 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/col-toggler/col-toggler.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/data-table/context-menu/context-menu.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="25" />
+        <state relative-caret-position="0">
+          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/less/ng.reset.less">
+    <entry file="file://$PROJECT_DIR$/src/app/data-table/data-table.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+        <state relative-caret-position="0">
+          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/basic/basic.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/data-table/editable/editable.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="15" column="57" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="57" />
+        <state relative-caret-position="0">
+          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/scroll/scroll.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/data-table/export/export.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-228">
-          <caret line="0" column="36" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="36" />
+        <state relative-caret-position="0">
+          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/data-table/facets/facets.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/data-table/filter/filter.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="56" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/data-table/paginator/paginator.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/data-table/row-group/row-group.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/data-table/scroll/scroll.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        <state relative-caret-position="0">
+          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/filter/filter.component.less">
+    <entry file="file://$PROJECT_DIR$/src/app/data-table/selection/selection.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/col-toggler/col-toggler.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@angular/animations/browser/testing.d.ts" />
-    <entry file="file://$PROJECT_DIR$/node_modules/@angular/platform-browser/animations/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/data-table.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@angular/animations/browser/index.d.ts" />
-    <entry file="file://$PROJECT_DIR$/node_modules/@angular/animations/browser/public_api.d.ts" />
-    <entry file="file://$PROJECT_DIR$/node_modules/@angular/platform-browser/animations/src/providers.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="7" column="119" selection-start-line="7" selection-start-column="119" selection-end-line="7" selection-end-column="119" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.angular-cli.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@angular/animations/browser/src/browser.d.ts" />
-    <entry file="file://$PROJECT_DIR$/node_modules/@angular/animations/browser/src/animation_engine.d.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/app.routing.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <marker date="1497530263200" expanded="false" signature="7:224" placeholder="..." />
-            <marker date="1497530263200" expanded="true" signature="248:1235" placeholder="[...]" />
-            <marker date="1497530263200" expanded="true" signature="401:1233" placeholder="{&quot;path&quot;: ''...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/nav-item/nav-item.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="91" column="15" selection-start-line="91" selection-start-column="15" selection-end-line="91" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/paginator/paginator.component.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/paginator/paginator.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#48#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/sort/sort.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/data-table/sort/sort.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        <state relative-caret-position="0">
+          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/row-group/row-group.component.less">
+    <entry file="file://$PROJECT_DIR$/src/app/directives/directives.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/feedback/feedback.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/less/app.mixins.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -829,7 +792,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/domain/car.ts">
+    <entry file="file://$PROJECT_DIR$/src/assets/less/app.variables.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/less/app.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/pages/personal-info/personal-info.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
@@ -837,231 +816,290 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/row-group/row-group.component.html">
+    <entry file="file://$PROJECT_DIR$/src/app/pages/pages.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+        <state relative-caret-position="0">
+          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/row-group/row-group.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/assets/less/app.box.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+        <state relative-caret-position="247">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/form/form.component.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/form/form.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/form/form.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/data-table/data-table.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/data-table/basic/basic.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="16" selection-end-column="3" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/selection/selection.component.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#58#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/paginator/paginator.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="74" selection-start-line="5" selection-start-column="74" selection-end-line="5" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/editable/editable.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/editable/editable.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/expand/expand.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="710">
-          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#ng-template#0;n#p-dataTable#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#ng-template#0;n#p-dataTable#0;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#div#0;n#ng-template#0;n#p-dataTable#0;n#div#1;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/expand/expand.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/form/date-picker-demo/date-picker-demo.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
-          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+          <caret line="27" column="76" selection-start-line="27" selection-start-column="76" selection-end-line="27" selection-end-column="76" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/data-table.routing.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1424">
-          <caret line="79" column="22" selection-start-line="79" selection-start-column="11" selection-end-line="79" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#55#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/index/index.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="155" column="48" selection-start-line="155" selection-start-column="39" selection-end-line="155" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/index/index.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#42#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/context-menu/context-menu.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="35" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/context-menu/context-menu.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="26" column="49" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/data-table.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/filter/filter.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="12" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/filter/filter.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/selection/selection.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/data-table/selection/selection.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/data-table/domain/car.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="50" column="69" selection-start-line="50" selection-start-column="69" selection-end-line="50" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/shared/shared.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="23" />
+          <caret line="21" column="76" selection-start-line="11" selection-start-column="5" selection-end-line="21" selection-end-column="76" />
           <folding>
-            <element signature="e#0#52#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/form/date-picker-demo/date-picker-demo.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/data-table/basic/basic.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        <state relative-caret-position="95">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="10" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.angular-cli.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-285">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/less/app.indent.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="72" column="17" selection-start-line="72" selection-start-column="3" selection-end-line="72" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/form/date-picker-demo/date-picker-demo.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="86" selection-start-line="23" selection-start-column="86" selection-end-line="23" selection-end-column="86" />
+        <state relative-caret-position="368">
+          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/data-table/templating/templating.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/data-table/expand/expand.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#ng-template#0;n#p-dataTable#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#div#0;n#ng-template#0;n#p-dataTable#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../插件/laydate-v1.1/laydate/js/laydate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="72" column="17" selection-start-line="0" selection-start-column="0" selection-end-line="936" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/libs/laydate/js/laydate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="806" column="84" selection-start-line="806" selection-start-column="84" selection-end-line="806" selection-end-column="84" />
+        <state relative-caret-position="423">
+          <caret line="948" column="2" selection-start-line="948" selection-start-column="2" selection-end-line="948" selection-end-column="2" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <marker date="1497545298432" expanded="true" signature="19043:20354" placeholder="..." />
-            <marker date="1497545298432" expanded="true" signature="19720:20328" placeholder="..." />
-            <marker date="1497545298432" expanded="true" signature="20027:20302" placeholder="..." />
+            <marker date="1497603381345" expanded="true" signature="16883:17998" placeholder="..." />
+            <marker date="1497603381345" expanded="true" signature="17472:17980" placeholder="..." />
+            <marker date="1497603381345" expanded="true" signature="17747:17962" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/directives/datePicker/datePicker.directive.ts">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/form/form.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/form/form.routing.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/index/index.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="148" column="36" selection-start-line="148" selection-start-column="36" selection-end-line="148" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/表格.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/less/screen.variables.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/less/ng.reset.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="217" column="33" selection-start-line="217" selection-start-column="33" selection-end-line="217" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/shared.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/radio/radio.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/checkbox/checkbox.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/form/checkbox-demo/checkbox-demo.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/checkbox/checkbox.component.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/radio/radio.component.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/form/checkbox-demo/checkbox-demo.component.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="47" column="53" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/checkbox/checkbox.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="90" selection-start-line="2" selection-start-column="82" selection-end-line="2" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/radio/radio.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="95" selection-start-line="2" selection-start-column="95" selection-end-line="2" selection-end-column="95" />
           <folding />
         </state>
       </provider>

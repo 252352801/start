@@ -1,4 +1,4 @@
-<div class="padding-default bg-default border-bottom">
+<div class="pad-def bg-default bor-b-def">
   <h2 class="no-margin">Templating</h2>
 </div>
 
@@ -12,11 +12,11 @@
         <span [style.color]="car[col.field]">{{car[col.field]}}</span>
       </ng-template>
     </p-column>
-    <p-column styleClass="col-button">
+    <p-column styleClass="col-button text-center">
       <ng-template pTemplate="header">
         操作
       </ng-template>
-      <ng-template let-car="rowData" pTemplate="body">
+      <ng-template  let-car="rowData" pTemplate="body">
         <button type="button" class="btn btn-xs btn-info" (click)="selectCar(car)"><i class="fa fa-search"></i>查看</button>
       </ng-template>
     </p-column>
