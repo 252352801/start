@@ -1,7 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import { FormComponent } from './form.component';
 import { DatePickerDemoComponent } from './date-picker-demo/date-picker-demo.component';
-
+import { CheckboxDemoComponent } from './checkbox-demo/checkbox-demo.component';
 const routes: Routes = <Routes>[
   {
     path: '',
@@ -10,6 +10,10 @@ const routes: Routes = <Routes>[
   {
     path: 'datePickerDemo',
     component: DatePickerDemoComponent
+  },
+  {
+    path: 'checkboxDemo',
+    component: CheckboxDemoComponent
   }
 ];
 export const routing = RouterModule.forChild(routes);

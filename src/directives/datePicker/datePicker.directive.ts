@@ -1,6 +1,6 @@
 import {Directive,OnInit,ElementRef,Input,Output,OnDestroy,EventEmitter} from '@angular/core';
 //依赖laydate
-declare var laydate:Function;
+declare var laydate:any;
 @Directive({
   selector: '[datePicker]'
 })
@@ -26,11 +26,7 @@ export class DatePickerDirective implements OnInit{
     constructor(private elemRef:ElementRef){
 
     }
-    private fn(){
-
-    }
     ngOnInit(){
-        console.log(this.event);
       //laydate.v   //获取laydate版本号
       //laydate.skin(lib);  //加载皮肤，参数lib为皮肤名
       /*
@@ -39,11 +35,10 @@ export class DatePickerDirective implements OnInit{
        */
       //laydate.now(timestamp, format);   //该方法提供了丰富的功能，推荐灵活使用。
      // laydate.reset();  //重设日历控件坐标，一般用于页面dom结构改变时。无参
-      console.log(laydate);
       let options={
         elem: this.elemRef.nativeElement, //需显示日期的元素
         event: this.event||'click', //触发事件
-        format:this.format|| ('YYYY-MM-DD'+(this.isPickTime?'hh:mm:ss':'')), //日期格式
+        format:this.format|| ('YYYY-MM-DD'+(this.isPickTime?' hh:mm':'')), //日期格式
         istime: this.isPickTime||false, //是否开启时间选择  默认为false
         isclear: this.isShowClearButton!==undefined?this.isShowClearButton:true, //是否显示清空
         istoday: this.isShowTodayButton!==undefined?this.isShowTodayButton:true, //是否显示今天
@@ -56,12 +51,10 @@ export class DatePickerDirective implements OnInit{
         fixed: this.isFixed||false, //是否固定在可视区域
         zIndex: this.zIndex!==undefined?this.zIndex:99999999, //css z-index
         choose: (dates)=>{ //选择好日期的回调
-          console.info('dates',dates);
           this.ngModelChange.emit(dates);
           this.complete.emit(dates);
         }
       };
-      console.info(options);
       laydate(options);
     }
 
