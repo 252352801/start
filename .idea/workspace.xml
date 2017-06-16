@@ -1,89 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f8c350c-520e-4782-9e15-e0ffe7f80bba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations.es5.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations.es5.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations.es5.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser.es5.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser.es5.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser.es5.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser/testing.es5.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser/testing.es5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser/testing.es5.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser/testing.es5.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser/testing.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser/testing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser/testing.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/@angular/animations/browser/testing.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/README.md" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/animations.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/animations.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/index.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/index.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/index.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/public_api.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/public_api.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/animation_engine.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/animation_engine.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/browser.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/browser.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_dsl_visitor.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_dsl_visitor.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_timeline_instruction.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_timeline_instruction.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_timeline_visitor.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_timeline_visitor.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_transition_expr.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_transition_expr.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_transition_factory.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_transition_factory.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_transition_instruction.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_transition_instruction.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_trigger.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_trigger.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_validator_visitor.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/animation_validator_visitor.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/style_normalization/animation_style_normalizer.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/style_normalization/animation_style_normalizer.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/style_normalization/web_animations_style_normalizer.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/dsl/style_normalization/web_animations_style_normalizer.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/private_export.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/private_export.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/animation_driver.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/animation_driver.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/animation_engine_instruction.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/animation_engine_instruction.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/dom_animation_engine.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/dom_animation_engine.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/noop_animation_engine.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/noop_animation_engine.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/web_animations/dom_animation.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/web_animations/dom_animation.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/web_animations/web_animations_driver.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/web_animations/web_animations_driver.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/web_animations/web_animations_player.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/render/web_animations/web_animations_player.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/util.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/src/util.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/index.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/src/mock_animation_driver.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/src/mock_animation_driver.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/src/mock_animation_driver.metadata.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/src/mock_animation_driver.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/src/testing.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/browser/testing/src/testing.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser-testing.umd.min.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations-browser.umd.min.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js.map" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/bundles/animations.umd.min.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/package.json" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/public_api.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/public_api.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/animation_event.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/animation_event.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/animation_metadata.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/animation_metadata.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/animations.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/animations.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/players/animation_group_player.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/players/animation_group_player.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/players/animation_player.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/players/animation_player.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/private_export.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/private_export.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/@angular/animations/src/util.d.ts" afterPath="$PROJECT_DIR$/node_modules/@angular/animations/src/util.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/data-table.module.ts" afterPath="$PROJECT_DIR$/src/app/data-table/data-table.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/data-table.routing.ts" afterPath="$PROJECT_DIR$/src/app/data-table/data-table.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/domain/car.service.ts" afterPath="$PROJECT_DIR$/src/app/data-table/domain/car.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/data-table/filter/filter.component.ts" afterPath="$PROJECT_DIR$/src/app/data-table/filter/filter.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/form/date-picker-demo/date-picker-demo.component.html" afterPath="$PROJECT_DIR$/src/app/form/date-picker-demo/date-picker-demo.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/form/date-picker-demo/date-picker-demo.component.ts" afterPath="$PROJECT_DIR$/src/app/form/date-picker-demo/date-picker-demo.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/index/index.component.html" afterPath="$PROJECT_DIR$/src/app/index/index.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/libs/laydate/js/laydate.js" afterPath="$PROJECT_DIR$/src/assets/libs/laydate/js/laydate.js" />
-    </list>
+    <list default="true" id="8f8c350c-520e-4782-9e15-e0ffe7f80bba" name="Default" comment="" />
     <ignored path="NgUIBootstrap.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -594,16 +512,16 @@
       <workItem from="1497452400449" duration="2119000" />
       <workItem from="1497490323490" duration="23933000" />
       <workItem from="1497519919252" duration="2996000" />
-      <workItem from="1497531285360" duration="13837000" />
+      <workItem from="1497531285360" duration="14208000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145564000" />
+    <option name="totallyTimeSpent" value="145935000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42291668" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
