@@ -21,11 +21,11 @@
     <header-right  #headerRight>
       <div class="nav navbar-nav hidden-xs" (click)="toggleAsideFolded()">
         <a  class="btn no-shadow navbar-btn" >
-          <i class="fa fa-fw" [ngClass]="{'fa-dedent':!setting.asideFolded,'fa-indent':setting.asideFolded}"></i>
+          <i class="fa fa-fw" [ngClass]="{'fa-dedent':!setting.asideFolded,'fa-indent':setting.asideFolded}"  id="test"></i>
         </a>
       </div>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown hidden-sm"  toggleClass="open" [opt-revokable]="true">
+        <li class="dropdown hidden-sm"  toggleClass="open" [opt-revokable]="true" opt-target="test" opt-targetClass="pad-def">
           <a  class="dropdown-toggle ng-binding" >
             English <b class="caret"></b>
           </a>
@@ -147,6 +147,10 @@
       <nav-item icon="glyphicon glyphicon-edit" text="表单" >
         <sub-nav-item text="datePicker" link="/form/datePickerDemo"></sub-nav-item>
         <sub-nav-item text="checkbox" link="/form/checkboxDemo"></sub-nav-item>
+        <sub-nav-item text="radio" link="/form/radioDemo"></sub-nav-item>
+        <sub-nav-item text="toggle" link="/form/toggleDemo"></sub-nav-item>
+        <sub-nav-item text="select" link="/form/selectDemo"></sub-nav-item>
+        <sub-nav-item text="elements" link="/form/elements"></sub-nav-item>
       </nav-item>
       <nav-item icon="glyphicon glyphicon-th-list" text="Grid" >
         <sub-nav-item text="基础" link="/dataTable/basic"></sub-nav-item>

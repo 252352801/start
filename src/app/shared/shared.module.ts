@@ -7,15 +7,17 @@ import {CodeHighLightComponent} from '../../components/code-high-light/code-high
 import {DatePickerDirective} from '../../directives/datePicker/datePicker.directive';
 import {CheckboxComponent} from '../../components/checkbox/checkbox.component';
 import {RadioComponent} from '../../components/radio/radio.component';
+import {ToggleComponent} from '../../components/toggle/toggle.component';
 @NgModule({
-  imports:[CommonModule],
+  imports:[CommonModule,FormsModule],
   declarations: [
     CodeTextareaDirective,
     ToggleClassDirective,
     CodeHighLightComponent,
     DatePickerDirective,
     CheckboxComponent,
-    RadioComponent
+    RadioComponent,
+    ToggleComponent
   ],
   exports:      [
     FormsModule,
@@ -25,7 +27,8 @@ import {RadioComponent} from '../../components/radio/radio.component';
     CodeHighLightComponent,
     DatePickerDirective,
     CheckboxComponent,
-    RadioComponent
+    RadioComponent,
+    ToggleComponent
   ]
 })
 export class SharedModule { }

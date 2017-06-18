@@ -5,14 +5,14 @@ import { Component,OnInit} from '@angular/core';
     styleUrls: ['./checkbox-demo.component.less'],
 })
 export class CheckboxDemoComponent implements OnInit{
-  checkbox1=false;
-  checkbox2=true;
-  checkbox3=true;
-  checkbox4=false;
-  checkbox5=true;
-  checkbox6=true;
-
-  obj:any='1';
+  checkbox1:boolean=false;
+  checkbox2:boolean=true;
+  checkbox3:boolean=true;
+  checkbox4:boolean=false;
+  checkbox5:boolean=true;
+  checkbox6:boolean=true;
+  checkbox7:boolean=false;
+  
   constructor(){
   }
 

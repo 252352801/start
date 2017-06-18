@@ -1,6 +1,7 @@
 <div class=" {{display==='block'?'checkbox':'checkbox-inline'}}">
-  <label class="i-checks" (click)="toggleCheck()">
-    <input type="checkbox"  [checked]="value" [name]="name" [disabled]="disabled" [(ngModel)]="value"]><i></i>
+  <label class="{{styleClass!=='none'?styleClass:''}}" (click)="toggleCheck($event)"
+         [ngClass]="{'i-checks':styleClass!=='none','i-checks-sm':size==='sm','i-checks-lg':size==='lg'}">
+    <input type="checkbox"  [checked]="value" [name]="name" [disabled]="disabled" (click)="changeValue($event)" /><i></i>
     <ng-content></ng-content>
   </label>
 </div>

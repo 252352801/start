@@ -8,18 +8,26 @@ export class CheckboxComponent implements OnInit{
   @Input() name:string;
   @Input() display:string;
   @Input() disabled:string;
-  @Input() value:boolean;
+  @Input() size:string;
+  @Input() styleClass:string;
+  @Input() value:boolean=false;
   @Output() valueChange:EventEmitter<any>=new EventEmitter();
   constructor(private elemRef:ElementRef){
 
   }
   ngOnInit(){
-    console.info('value',this.value);
-    console.info('name',this.name);
-    console.info('display',this.display);
-    console.info('disabled',this.disabled);
   }
-  toggleCheck(){
+  toggleCheck(ev){
+    if(!this.disabled) {
+      let target=ev.target||ev.srcElement;
+      if(target.nodeName!=='INPUT'){
+        this.value = !this.value;
+        this.valueChange.emit(this.value);
+      }
+    }
+  }
+  changeValue(ev){
+    ev.stopPropagation();
     if(!this.disabled) {
       this.value = !this.value;
       this.valueChange.emit(this.value);
