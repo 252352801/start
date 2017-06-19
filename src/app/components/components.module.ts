@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 import { ComponentsComponent }   from './components.component';
 import { ModalDemoComponent, } from './modal-demo/modal-demo.component';
+import { PaginatorDemoComponent, } from './paginator-demo/paginator-demo.component';
 import { ModalComponent,ModalHeaderComponent,ModalBodyComponent,ModalFooterComponent } from '../../components/modal/modal.component';
 import { routing } from './components.routing';
 @NgModule({
@@ -12,7 +13,8 @@ import { routing } from './components.routing';
       ModalComponent,
       ModalHeaderComponent,
       ModalBodyComponent,
-      ModalFooterComponent
+      ModalFooterComponent,
+      PaginatorDemoComponent
     ]
 })
 export class ComponentsModule { }

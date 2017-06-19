@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$" libraries="{NgUIBootstrap node_modules}" />
-    <file url="file://$PROJECT_DIR$/src/components/code-high-light/prism/prism.min.js" libraries="{ECMAScript 6}" />
+    <file url="file://$PROJECT_DIR$" libraries="{MGT node_modules}" />
   </component>
 </project>

@@ -1,18 +1,17 @@
 import { Component,Input,Output,OnInit,ElementRef,EventEmitter} from '@angular/core';
 @Component({
-  selector: 'radio',
-  templateUrl: './radio.component.html',
-  styleUrls: ['./radio.component.less']
+  selector: 'toggle',
+  templateUrl: './toggle.component.html',
+  styleUrls: ['./toggle.component.less']
 })
-export class RadioComponent implements OnInit{
+export class ToggleComponent implements OnInit{
   @Input() name:string;
   @Input() display:string;
   @Input() disabled:string;
   @Input() size:string;
   @Input() value:any;
-  @Input() key:any;
+  @Output() valueChange:EventEmitter<any>=new EventEmitter();
   @Input() styleClass:string;
-  @Output() keyChange:EventEmitter<any>=new EventEmitter();
   constructor(private elemRef:ElementRef){
 
   }
@@ -22,14 +21,18 @@ export class RadioComponent implements OnInit{
     if(!this.disabled) {
       let target=ev.target||ev.srcElement;
       if(target.nodeName!=='INPUT'){
-        this.keyChange.emit(this.value);
+        this.value = !this.value;
+        this.valueChange.emit(this.value);
       }
     }
   }
-  changeValue(ev){
+  toggle(ev){
     ev.stopPropagation();
     if(!this.disabled) {
-      this.keyChange.emit(this.value);
+      let target=ev.target||ev.srcElement;
+        this.value = !this.value;
+        this.valueChange.emit(this.value);
     }
   }
+
 }
