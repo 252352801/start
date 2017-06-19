@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { Toaster} from '../../../services/toaster/toaster.service';
+import { Toaster} from 'dolphinng';
 @Component({
     selector: 'toaster-demo',
     templateUrl: './toaster-demo.component.html',

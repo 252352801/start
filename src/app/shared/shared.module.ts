@@ -1,14 +1,14 @@
 import { NgModule }            from '@angular/core';
 import { CommonModule }        from '@angular/common';
 import { FormsModule }         from '@angular/forms';
-import { CodeTextareaDirective }         from '../../directives/codeTextarea/codeTextarea.directive';
-import {ToggleClassDirective} from '../../directives/toggleClass/toggleClass.directive';
-import {CodeHighLightComponent} from '../../components/code-high-light/code-high-light.component';
-import {DatePickerDirective} from '../../directives/datePicker/datePicker.directive';
-import {CheckboxComponent} from '../../components/checkbox/checkbox.component';
-import {RadioComponent} from '../../components/radio/radio.component';
-import {ToggleComponent} from '../../components/toggle/toggle.component';
-import {PaginatorComponent} from '../../components/paginator/paginator.component';
+import { CodeTextareaDirective }         from 'dolphinng';
+import {ToggleClassDirective} from 'dolphinng';
+import {CodeHighLightComponent} from 'dolphinng';
+import {DatePickerDirective} from 'dolphinng';
+import {CheckboxComponent} from 'dolphinng';
+import {RadioComponent} from 'dolphinng';
+import {ToggleComponent} from 'dolphinng';
+import {PaginatorComponent} from 'dolphinng';
 @NgModule({
   imports:[CommonModule,FormsModule],
   declarations: [

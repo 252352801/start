@@ -3,14 +3,23 @@
 </div>
 <div class="wrapper-md">
   <p class="h4 m-b-sm block">示例</p>
-  <div>
+  <div class="pad-def bg-white">
+    <div class="mar-b-def">
       <paginator [(index)]="page.index" [count]="page.count" [(pageSize)]="page.pageSize"
-      [changePageSizeAble]="true" [showTotal]="true" [pageSizeOptions]="page.pageSizeOptions"
-      (onChangePage)="onChangePage($event)" (onChangePageError)="onChangePageError($event)"
+                 [changePageSizeAble]="true" [showTotal]="true" [pageSizeOptions]="page.pageSizeOptions"
+                 (onChangePage)="onChangePage($event)" (onChangePageError)="onChangePageError($event)"
       ></paginator>
+    </div>
+
+    <div class="mar-b-def">
+    <paginator [(index)]="page1.index" [count]="page1.count" [(pageSize)]="page1.pageSize"
+               [changePageSizeAble]="true" [showTotal]="true" [pageSizeOptions]="page1.pageSizeOptions"
+               (onChangePage)="onChangePage($event)" (onChangePageError)="onChangePageError($event)"
+               size="sm"
+    ></paginator>
+      </div>
   </div>
   <div>
-    index:{{page.index}},pageSize:{{page.pageSize}},count:{{page.count}}
   </div>
   <div >
   </div>

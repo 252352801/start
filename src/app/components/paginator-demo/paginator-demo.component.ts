@@ -12,6 +12,13 @@ export class PaginatorDemoComponent {
     pageSize:6,
     pageSizeOptions:[10,20,30]
   };
+
+  page1:any={
+    index:0,
+    count:1000,
+    pageSize:6,
+    pageSizeOptions:[10,20,30]
+  };
   constructor(){
     setTimeout(()=>{
       this.page.count=500;

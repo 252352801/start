@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { PopService} from '../../../services/pop/pop.service';
+import { PopService} from 'dolphinng';
 @Component({
     selector: 'pop-demo',
     templateUrl: './pop-demo.component.html',
