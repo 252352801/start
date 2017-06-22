@@ -1,7 +1,0 @@
-﻿# ***********版本控制忽略如下***************
-.DS_Store
-Thumbs.db
-db.json
-*.log
-node_modules/
-.idea/
