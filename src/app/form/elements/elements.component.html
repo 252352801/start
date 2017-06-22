@@ -1,0 +1,340 @@
+<div class="pad-def bg-default bor-b-def">
+  <h2 class="no-margin">Radio</h2>
+</div>
+<div class="wrapper-md">
+  <div >
+    <div class="row no-margin">
+      <div class="col-sm-6 pad-r-def no-l-padding no-padding-xs">
+        <div class="panel panel-default">
+          <div class="panel-heading font-bold">Basic form</div>
+          <div class="panel-body">
+            <form role="form" class="ng-pristine ng-valid">
+              <div class="form-group">
+                <label>Email address</label>
+                <input type="email" class="form-control" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" placeholder="Password">
+              </div>
+              <div>
+                <div class="checkbox col-md-6 no-margin no-padding">
+                  <label class="i-checks">
+                    <input type="checkbox" ><i></i> Check me out
+                  </label>
+                </div>
+                <div class="col-md-6 text-right no-padding">
+                  <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 no-padding">
+        <div class="panel panel-default">
+          <div class="panel-heading font-bold">Horizontal form</div>
+          <div class="panel-body">
+            <form class="bs-example form-horizontal ng-pristine ng-valid ng-submitted">
+              <div class="form-group">
+                <label class="col-lg-2 control-label">Email</label>
+                <div class="col-lg-10">
+                  <input type="email" class="form-control" placeholder="Email">
+                  <span class="help-block m-b-none">Example block-level help text here.</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-2 control-label">Password</label>
+                <div class="col-lg-10">
+                  <input type="password" class="form-control" placeholder="Password">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-md-offset-2 col-md-6">
+                  <div class="checkbox no-padding">
+                    <label class="i-checks">
+                      <input type="checkbox" checked=""><i></i> Remember me
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-4 text-right">
+                  <button type="submit" class="btn btn-sm btn-info">Sign in</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading font-bold">
+        Inline form
+      </div>
+      <div class="panel-body">
+        <form class="form-inline ng-pristine ng-valid" role="form">
+          <div class="form-group">
+            <label class="sr-only" for="exampleInputEmail2">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="exampleInputPassword2">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+          </div>
+          <div class="checkbox m-l m-r-xs">
+            <label class="i-checks">
+              <input type="checkbox"><i></i> Remember me
+            </label>
+          </div>
+          <button type="submit" class="btn btn-default">Sign in</button>
+        <span ng-controller="ModalDemoCtrl" class="ng-scope">
+          <script type="text/ng-template" id="myModalContent.html">
+            <div ng-include="'tpl/modal.form.html'"></div>
+          </script>
+          <button class="btn btn-success" ng-click="open('lg')">Form in a modal</button>
+        </span>
+        </form>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading font-bold">
+        Form elements
+      </div>
+      <div class="panel-body">
+        <form class="form-horizontal ng-pristine ng-valid ng-valid-date ng-valid-required ng-valid-parse ng-valid-date-disabled" method="get">
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Rounded</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control rounded">
+            </div>
+          </div>
+          <div class="line line-dashed b-b line-lg pull-in"></div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">With help</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control">
+              <span class="help-block m-b-none">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+            </div>
+          </div>
+          <div class="line line-dashed b-b line-lg pull-in"></div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-id-1">Label focus</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="input-id-1">
+            </div>
+          </div>
+          <div class="line line-dashed b-b line-lg pull-in"></div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" name="password" class="form-control">
+            </div>
+          </div>
+          <div class="line line-dashed b-b line-lg pull-in"></div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Placeholder</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="placeholder">
+            </div>
+          </div>
+          <div class="line line-dashed b-b line-lg pull-in"></div>
+          <div class="form-group">
+            <label class="col-lg-2 control-label">Disabled</label>
+            <div class="col-lg-10">
+              <input class="form-control" type="text" placeholder="Disabled input here..." disabled="">
+            </div>
+          </div>
+          <div class="line line-dashed b-b line-lg pull-in"></div>
+          <div class="form-group has-success">
+            <label class="col-sm-2 control-label">Input with success</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control">
+            </div>
+          </div>
+          <div class="line line-dashed b-b line-lg pull-in"></div>
+          <div class="form-group has-warning">
+            <label class="col-sm-2 control-label">Input with warning</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control">
+            </div>
+          </div>
+          <div class="line line-dashed b-b line-lg pull-in"></div>
+          <div class="form-group has-error">
+            <label class="col-sm-2 control-label">Input with error</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control">
+            </div>
+          </div>
+          <div class="line line-dashed b-b line-lg pull-in"></div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Control sizing</label>
+            <div class="col-sm-10">
+              <input class="form-control input-lg m-b" type="text" placeholder=".input-lg">
+              <input class="form-control m-b" type="text" placeholder="Default input">
+              <input class="form-control input-sm" type="text" placeholder=".input-sm">
+            </div>
+          </div>
+          <div class="line line-dashed b-b line-lg pull-in"></div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Column sizing</label>
+            <div class="col-sm-10">
+              <div class="row">
+                <div class="col-md-2">
+                  <input type="text" class="form-control" placeholder=".col-md-2">
+                </div>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" placeholder=".col-md-3">
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="form-control" placeholder=".col-md-4">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="line line-dashed b-b line-lg pull-in"></div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Input groups</label>
+            <div class="col-sm-10">
+              <div class="input-group m-b">
+                <span class="input-group-addon">@</span>
+                <input type="text" class="form-control" placeholder="Username">
+              </div>
+              <div class="input-group m-b">
+                <input type="text" class="form-control">
+                <span class="input-group-addon">.00</span>
+              </div>
+              <div class="input-group m-b">
+                <span class="input-group-addon">$</span>
+                <input type="text" class="form-control">
+                <span class="input-group-addon">.00</span>
+              </div>
+            </div>
+          </div>
+          <div class="line line-dashed b-b line-lg pull-in"></div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Button addons</label>
+            <div class="col-sm-10">
+              <div class="input-group m-b">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+                <input type="text" class="form-control">
+              </div>
+              <div class="input-group">
+                <input type="text" class="form-control">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+              </div>
+            </div>
+          </div>
+          <div class="line line-dashed b-b line-lg pull-in"></div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">With dropdowns</label>
+            <div class="col-sm-10">
+              <div class="input-group m-b">
+                <div class="input-group-btn dropdown" dropdown="">
+                  <button type="button" class="btn btn-default" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><a href="">Action</a></li>
+                    <li><a href="">Another action</a></li>
+                    <li><a href="">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">Separated link</a></li>
+                  </ul>
+                </div><!-- /btn-group -->
+                <input type="text" class="form-control">
+              </div>
+              <div class="input-group">
+                <input type="text" class="form-control">
+                <div class="input-group-btn dropdown" dropdown="">
+                  <button type="button" class="btn btn-default" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+                  <ul class="dropdown-menu pull-right">
+                    <li><a href="">Action</a></li>
+                    <li><a href="">Another action</a></li>
+                    <li><a href="">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">Separated link</a></li>
+                  </ul>
+                </div><!-- /btn-group -->
+              </div>
+            </div>
+          </div>
+          <div class="line line-dashed b-b line-lg pull-in"></div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Segmented</label>
+            <div class="col-sm-10">
+              <div class="input-group m-b">
+                <div class="input-group-btn dropdown" dropdown="">
+                  <button type="button" class="btn btn-default" tabindex="-1">Action</button>
+                  <button type="button" class="btn btn-default" dropdown-toggle="" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><a href="">Action</a></li>
+                    <li><a href="">Another action</a></li>
+                    <li><a href="">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">Separated link</a></li>
+                  </ul>
+                </div><!-- /btn-group -->
+                <input type="text" class="form-control">
+              </div>
+              <div class="input-group">
+                <input type="text" class="form-control">
+                <div class="input-group-btn dropdown" dropdown="">
+                  <button type="button" class="btn btn-default" tabindex="-1">Action</button>
+                  <button type="button" class="btn btn-default" dropdown-toggle="" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                  <ul class="dropdown-menu pull-right">
+                    <li><a href="">Action</a></li>
+                    <li><a href="">Another action</a></li>
+                    <li><a href="">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">Separated link</a></li>
+                  </ul>
+                </div><!-- /btn-group -->
+              </div>
+            </div>
+          </div>
+
+
+          <div class="line line-dashed b-b line-lg pull-in"></div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Button radio</label>
+            <div class="col-sm-10">
+              <div class="btn-group m-r ng-scope" ng-controller="ButtonsDemoCtrl">
+                <label class="btn btn-default ng-pristine ng-untouched ng-valid" ng-model="radioModel" btn-radio="'Left'" uncheckable="">Left</label>
+                <label class="btn btn-default ng-pristine ng-untouched ng-valid active" ng-model="radioModel" btn-radio="'Middle'" uncheckable="">Middle</label>
+                <label class="btn btn-default ng-pristine ng-untouched ng-valid" ng-model="radioModel" btn-radio="'Right'" uncheckable="">Right</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="line line-dashed b-b line-lg pull-in"></div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Button checkbox</label>
+            <div class="col-sm-10">
+              <div class="btn-group">
+                <label class="btn btn-default ng-pristine ng-untouched ng-valid" ng-model="checkModel.left" btn-checkbox="">Left</label>
+                <label class="btn btn-default ng-pristine ng-untouched ng-valid" ng-model="checkModel.middle" btn-checkbox="">Middle</label>
+                <label class="btn btn-default ng-pristine ng-untouched ng-valid" ng-model="checkModel.right" btn-checkbox="">Right</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="line line-dashed b-b line-lg pull-in"></div>
+
+          <div class="line line-dashed b-b line-lg pull-in"></div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">Spinner</label>
+            <div class="col-sm-10">
+              <div class="m-b">
+                <div class="input-group bootstrap-touchspin"><span class="input-group-btn"><button class="btn btn-default bootstrap-touchspin-down" type="button">-</button></span><span class="input-group-addon bootstrap-touchspin-prefix">$</span><input ui-jq="TouchSpin" type="text" value="0" class="form-control" data-min="0" data-max="10" data-step="0.1" data-decimals="2" data-prefix="$" style="display: block;"><span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span><span class="input-group-btn"><button class="btn btn-default bootstrap-touchspin-up" type="button">+</button></span></div>
+              </div>
+              <div class="m-b">
+                <div class="input-group bootstrap-touchspin"><span class="input-group-btn"><button class="btn btn-default bootstrap-touchspin-down" type="button">-</button></span><span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span><input ui-jq="TouchSpin" type="text" value="5" class="form-control" data-min="0" data-max="10" data-step="0.1" data-decimals="2" data-postfix="%" style="display: block;"><span class="input-group-addon bootstrap-touchspin-postfix">%</span><span class="input-group-btn"><button class="btn btn-default bootstrap-touchspin-up" type="button">+</button></span></div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

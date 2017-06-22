@@ -1,0 +1,24 @@
+<div class="pad-def bg-default bor-b-def">
+  <h2 class="no-margin">Templating</h2>
+</div>
+
+<div class="wrapper-md">
+  <p-dataTable [value]="cars">
+    <p-column field="vin" header="Vin"></p-column>
+    <p-column field="year" header="Year"></p-column>
+    <p-column field="brand" header="Brand"></p-column>
+    <p-column field="color" header="Color">
+      <ng-template let-col let-car="rowData" pTemplate="body">
+        <span [style.color]="car[col.field]">{{car[col.field]}}</span>
+      </ng-template>
+    </p-column>
+    <p-column styleClass="col-button text-center">
+      <ng-template pTemplate="header">
+        操作
+      </ng-template>
+      <ng-template  let-car="rowData" pTemplate="body">
+        <button type="button" class="btn btn-xs btn-info" (click)="selectCar(car)"><i class="fa fa-search"></i>查看</button>
+      </ng-template>
+    </p-column>
+  </p-dataTable>
+</div>

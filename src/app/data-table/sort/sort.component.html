@@ -1,0 +1,21 @@
+<div class="pad-def bg-default bor-b-def">
+  <h2 class="no-margin">分页</h2>
+</div>
+
+<div class="wrapper-md">
+  <h3 class="first">Single Column</h3>
+  <p-dataTable [value]="cars1">
+    <p-column field="vin" header="Vin" [sortable]="true"></p-column>
+    <p-column field="year" header="Year" [sortable]="true"></p-column>
+    <p-column field="brand" header="Brand" [sortable]="true"></p-column>
+    <p-column field="color" header="Color" [sortable]="true"></p-column>
+  </p-dataTable>
+
+  <h3>Multiple Columns</h3>
+  <p-dataTable [value]="cars2" sortMode="multiple">
+    <p-column field="vin" header="Vin" [sortable]="true"></p-column>
+    <p-column field="year" header="Year" [sortable]="true"></p-column>
+    <p-column field="brand" header="Brand" [sortable]="true"></p-column>
+    <p-column field="color" header="Color" [sortable]="true"></p-column>
+  </p-dataTable>
+</div>

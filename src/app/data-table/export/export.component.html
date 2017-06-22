@@ -1,0 +1,18 @@
+<div class="pad-def bg-default bor-b-def">
+  <h2 class="no-margin">导出</h2>
+</div>
+
+<div class="wrapper-md">
+  <p-dataTable #dt [value]="cars" exportFilename="cars">
+    <p-header>
+      <div class="ui-helper-clearfix text-left">
+        <a class="btn btn-sm btn-info" (click)="dt.exportCSV()" ><i class="fa fa-file-o"></i>导出CSV</a>
+
+      </div>
+    </p-header>
+    <p-column field="vin" header="Vin"></p-column>
+    <p-column field="year" header="Year"></p-column>
+    <p-column field="brand" header="Brand"></p-column>
+    <p-column field="color" header="Color"></p-column>
+  </p-dataTable>
+</div>

@@ -1,0 +1,215 @@
+@nav-bg-color:#42485B;
+@aside-bg-color:#333744;
+@nav-font-size:14px;
+@nav-color:#E0E1E3;
+@nav-active-color:#fff;
+@nav-item-active-color:#00C1DE;
+@nav-item-active-hover-color:rgba(0, 193, 222, 0.5);
+@nav-sub-item-hover-color:#4A5064;
+@header-bg-color:#373d41;
+@header-active-color:#2A2F32;
+.navi-wrap a{
+  color:@nav-color;
+  font-size: @nav-font-size;
+  /*transition:background 0.2s;*/
+}
+.navi-wrap li.active >a,
+.navi-wrap li:hover a{
+  color:@nav-active-color;
+}
+.bg-black .navi-wrap  .text-muted{
+  color:@nav-color!important;
+}
+.app-aside .nav li.active > a{
+  background-color: @nav-item-active-color;
+}
+.app-aside-folded .app-aside .nav li a:hover,
+.app-aside .nav li a:hover{
+  background-color: @nav-item-active-hover-color;
+}
+
+.app-aside .nav li.active > a:hover{
+  background-color: @nav-item-active-color;
+}
+.nav li.exist-children.active > a{
+  background-color:@nav-bg-color ;
+}
+.nav li.exist-children.active > a:hover{
+  background-color:@nav-sub-item-hover-color ;
+}
+.app-aside-folded .app-aside .nav li.active > a,
+.app-aside-folded .app-aside .nav li.exist-children.active > a:hover{
+  background-color:@nav-item-active-color ;
+}
+.app-aside .nav li.exitst-children.active > a:hover{
+  background-color:@nav-item-active-hover-color ;
+}
+.app-aside nav .nav-sub li a:hover,
+.app-aside nav.nav-sub li a:hover{
+  background-color: @nav-sub-item-hover-color;
+}
+.app-aside .navi ul.nav li a > i {
+  margin: -13px 5px 0 10px;
+}
+
+.app-aside .navi-wrap .navi{
+  background-color:@nav-bg-color;
+}
+.bg-black .dk{
+  background-color:@aside-bg-color;
+}
+
+.text-active, .active  .text, .active  .auto .text {
+  display: none !important;
+}
+.active  .text-active{
+  display: inline-block !important;
+}
+
+.navbar-header.bg-black,
+.app-header{
+  background-color:@header-bg-color;
+  color:#fff;
+}
+.navbar-header.bg-black{
+  border-right: 1px solid @header-active-color;
+}
+
+.app-header.bg-black .nav > li > a:hover{
+  background-color: @header-active-color;
+}
+.app-aside-folded .app-aside li:hover .nav-sub{
+  opacity: 0;
+  margin-left:-20px;
+  height: 0!important;
+  overflow: auto;
+}
+.app-aside-folded .app-aside li.active:hover .nav-sub{
+  opacity:1;
+  margin-left:0;
+  height:auto !important;
+}
+@media (max-width: 768px){
+  .off-screen .app-aside .nav li.exist-children.active > a{
+    background-color: @nav-bg-color;
+  }
+  .off-screen .app-aside .nav ul.nav-sub li.active > a,.off-screen .app-aside .nav ul li.active > a:hover{
+    background-color: @nav-item-active-color;
+  }
+  .off-screen.app-aside-folded .app-aside .nav ul li > a:hover{
+    background-color: @nav-item-active-hover-color;
+  }
+  .off-screen.app-aside-folded .app-aside .nav li.exist-children.active > a{
+    background-color: @nav-sub-item-hover-color;
+  }
+}
+@media (min-width: 768px) {
+  .app-aside-fixed .app-aside .aside-wrap {
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    width: 200px;
+    overflow: hidden;
+  }
+  .app-aside-fixed.app-aside-folded .app-aside .aside-wrap {
+    width: 60px;
+  }
+  .app-aside-folded .app-aside .navi  ul  li  a span {
+    display: none;
+  }
+  .app-aside-folded .app-aside .navi > ul  li  a span.pull-right {
+    display: none !important;
+  }
+  .app-aside-folded .app-aside .navi  ul  li  a {
+    position: relative;
+    height: 50px;
+    padding: 0;
+    text-align: center;
+    border: none;
+  }
+  .app-aside-folded .app-aside .navi ul li .nav-sub a{
+    text-align: left;
+    line-height: 50px;
+  }
+  .app-aside-folded .app-aside .navi  ul  li  a i {
+    display: block;
+    float: none;
+    width: auto;
+    margin: 0;
+    font-size: 16px;
+    line-height: 50px;
+    border: none !important;
+  }
+  .app-aside-folded .app-aside .navi  ul  li  a .badge,
+  .app-aside-folded .app-aside .navi  ul  li  a .label {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    z-index: 3;
+  }
+  .table > thead > th{
+    padding: 8px 15px;
+  }
+  .app-aside-folded .app-aside .navi > ul li.nav-item-hover ul {
+    height: auto !important;
+    position: fixed;
+    z-index: 1051;
+    width: 200px;
+    margin-left: 0;
+    opacity: 1;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  .app-aside-folded .app-aside .navi > ul li.nav-item-hover >a{
+    background-color:@nav-item-active-hover-color ;
+  }
+  .app-content{
+    overflow-x: hidden;
+  }
+}
+
+
+
+
+
+
+.font-xs{
+  font-size: 12px;
+}
+.no-li-style{
+  list-style: none;
+}
+
+
+.btn > i{
+  padding-right: 8px;
+}
+.btn.btn-sm > i,.btn.btn-xs > i{
+  padding-right: 5px;
+}
+
+.ui-datatable label{
+  margin-bottom: 0;
+}
+
+input{
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .form-control{
+    padding: 0 10px;
+  }
+  .form-inline .form-group{
+/*    margin-bottom: 15px;*/
+    padding:0 10px;
+  }
+  .date-input-group{
+    width:250px;
+  }
+}
+
+.radio-inline, .checkbox-inline {
+  padding-left:0;
+}

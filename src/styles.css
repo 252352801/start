@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+.ui-datatable .ui-datatable-thead>tr>th, .ui-datatable .ui-datatable-tfoot>tr>td, .ui-datatable .ui-datatable-data>tr>td {
+  padding: .5em 1em;
+}
+.ui-datatable .label{
+  color:inherit;
+}

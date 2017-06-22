@@ -1,0 +1,154 @@
+<div class="pad-def bg-default bor-b-def">
+  <h2 class="no-margin">约定</h2>
+</div>
+<div class="wrapper-md">
+
+
+<div class="tab-container ng-isolate-scope">
+  <ul class="nav nav-tabs ">
+    <li [ngClass]="{active: tabIndex===1}" class="ng-isolate-scope">
+      <a  (click)="changTab(1)">CSS相关</a>
+    </li>
+    <li [ngClass]="{active: tabIndex===2}" class="ng-isolate-scope">
+      <a  (click)="changTab(2)">JS/TS相关</a>
+    </li>
+    <li [ngClass]="{active: tabIndex===3}" class="ng-isolate-scope">
+      <a  (click)="changTab(3)">angular相关</a>
+    </li>
+  </ul>
+  <div class="tab-content"><div class="tab-pane" [ngClass]="{active: tabIndex===1}">
+
+
+    <ul class="list-group no-borders pull-in m-b-none">
+      <li class="list-group-item">
+        <a class="h4 text-primary m-b-sm m-t-sm block">CSS命名 </a>
+        <p>1.css类名以中横线连接 如 col-xs-12，id名以下划线连接，如form_login；</p>
+        <p>2.控制特殊区域的样式的类名请加上前缀，如banner-。</p>
+      </li>
+      <li class="list-group-item">
+        <a  class="h4 text-primary m-b-sm m-t-sm block">关于嵌套</a>
+        <p>1.过多的嵌套不仅影响渲染的速度（虽然几乎可以忽略），而且还会使css代码维护的难度增加；</p>
+        <p>2.因此应尽量避免过多的嵌套，如添加一个特殊的css类。</p>
+      </li>
+      <li class="list-group-item">
+        <a  class="h4 text-primary m-b-sm m-t-sm block">关于ID</a>
+        <p>1.在非万不得已的情况下，最好不要在css样式表中使用id选择器；</p>
+        <p>2.id一般提供js使用。</p>
+      </li>
+      <li class="list-group-item">
+        <a  class="h4 text-primary m-b-sm m-t-sm block">命名参考</a>
+        <div>
+
+          <p class="font-bold">（1)页面结构</p>
+          <p>容器: container</p>
+          <p>页头：header</p>
+          <p>内容：content/container</p>
+          <p>页面主体：main</p>
+          <p>页尾：footer</p>
+          <p>导航：nav</p>
+          <p>侧栏：sidebar</p>
+          <p>栏目：column</p>
+          <p>页面外围控制整体佈局宽度：wrapper</p>
+          <p>左右中：left right center</p>
+          <p class="font-bold">(2)导航</p>
+          <p>导航：nav</p>
+          <p>主导航：mainnav</p>
+          <p>子导航：subnav</p>
+          <p>顶导航：topnav</p>
+          <p>边导航：sidebar</p>
+          <p> 左导航：leftsidebar</p>
+          <p>右导航：rightsidebar</p>
+          <p>菜单：menu</p>
+          <p>子菜单：submenu</p>
+          <p>标题: title</p>
+          <p>摘要: summary</p>
+          <p class="font-bold"> (3)功能</p>
+          <p> 标志：logo</p>
+          <p>广告：banner</p>
+          <p>登陆：login</p>
+          <p>登录条：loginbar</p>
+          <p> 注册：register</p>
+          <p> 搜索：search</p>
+          <p>功能区：shop</p>
+          <p> 标题：title</p>
+          <p>加入：joinus</p>
+          <p>状态：status</p>
+          <p>按钮：btn</p>
+          <p>滚动：scroll</p>
+          <p>标籤页：tab</p>
+          <p>文章列表：list</p>
+          <p>提示信息：msg</p>
+          <p>当前的: current</p>
+          <p> 小技巧：tips</p>
+          <p>图标: icon</p>
+          <p>注释：note</p>
+          <p>指南：guild</p>
+          <p>服务：service</p>
+          <p>热点：hot</p>
+          <p>新闻：news</p>
+          <p>下载：download</p>
+          <p>投票：vote</p>
+          <p>合作伙伴：partner</p>
+          <p>友情链接：link</p>
+
+
+
+
+
+
+        </div>
+      </li>
+    </ul>
+  </div>
+    <div class="tab-pane "  [ngClass]="{active: tabIndex===2}" >
+    <ul class="list-group list-group-alt list-group-lg no-borders pull-in m-b-none ng-scope">
+      <li class="list-group-item">
+        <a class="h4 text-primary m-b-sm m-t-sm block">JS/TS命名 </a>
+        <p>1.	常量名/变量名/函数名/类名/接口名应各自使用一种命名规则，如“驼峰式”、Pascal命名法（“大驼峰式”）等，请勿混用；</p>
+        <p>2.类名/接口名首字母大写；</p>
+        <p>3.常量名建议全用大写，单词间以下划线连接。</p>
+      </li>
+      <li class="list-group-item">
+        <a  class="h4 text-primary m-b-sm m-t-sm block">关于全局变量</a>
+        <p>1.js中，除非你能够很好的管理该全局变量，否则请避免声明它；</p>
+        <p>2.ts使用模块加载的方式组织代码，文件里变量的作用域仅限于ts文件中，因此不存在真正的全局变量。</p>
+      </li>
+      <li class="list-group-item">
+        <a  class="h4 text-primary m-b-sm m-t-sm block">其他</a>
+        <p>1.如果你的js文件需要压缩，请不要漏掉代码中的分号；</p>
+        <p>2.如果你的js文件需要合并，在“严格模式”（文件首行或函数首行声明了"use strict";）与“普通模式”混用的情况下应处理好他们之间代码的隔离，或者合并的文件使用同一种模式。否则将可能引起一些难以理解的bug。</p>
+      </li>
+    </ul>
+  </div>
+    <div class="tab-pane "  [ngClass]="{active: tabIndex===3}">
+
+    <ul class="list-group list-group-lg no-borders pull-in m-b-none ng-scope">
+      <li class="list-group-item">
+        <a  class="h4 text-primary m-b-sm block">目录结构（建议）</a>
+        <p>1.源码放在同一个文件夹（如src文件夹），打包发布的文件放在另一文件夹（如dist）；</p>
+        <p>2.以业务划分模块，以模块划分目录；</p>
+        <p>3.子模块放在父模块目录下；</p>
+        <p>4.模块文件夹下包含相关的ts文件、css/less/sass/文件、html。</p>
+        <p>5.外部资源放在同一个文件夹（如assets文件夹）；</p>
+        <p>6.通用组件、指令、服务、工具类/接口以类型划分目录，并置于上层文件夹。</p>
+      </li>
+      <li class="list-group-item">
+        <a  class="h4 text-primary m-b-sm block">文件命名</a>
+        <p>1.文件名应概括文件内容，并包含文件标识（component、directive、service等），如一个header组件文件的名称为header.component.ts；</p>
+      </li>
+      <li class="list-group-item">
+        <a class="h4 text-primary m-b-sm block">通用模块</a>
+        <p>1.angular不允许同一组件在不同模块中声明，因此应将需要在不同模块中使用的组件“包裹”在一个通用模块中，然后将这一通用模块导入到需要的模块之中；</p>
+      </li>
+      <li class="list-group-item">
+        <a  class="h4 text-primary m-b-sm block">其他</a>
+        <p>1.不要在业务组件/服务中操作dom,dom的操作应放在非业务组件/服务中</p>
+        <p>
+          2.更多请参阅<a href="https://angular.cn/" target="_blank">https://angular.cn/</a>
+        </p>
+      </li>
+    </ul>
+  </div>
+  </div>
+</div>
+</div>
