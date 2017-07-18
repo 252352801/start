@@ -17,4 +17,7 @@ export class IndexComponent {
   toggleOffScreen(){
     this.setting.offScreen=!this.setting.offScreen;
   }
+  cancelOffScreen(){
+    this.setting.offScreen=false
+  }
 }
