@@ -9,8 +9,13 @@ import {CheckboxComponent} from 'dolphinng';
 import {RadioComponent} from 'dolphinng';
 import {ToggleComponent} from 'dolphinng';
 import {PaginatorComponent} from 'dolphinng';
+import {GalleryComponent} from 'dolphinng';
+import {DeleteWrapComponent} from 'dolphinng';
+
+import {CodeHighlighterModule} from 'primeng/primeng';
+import {UploaderModule} from 'dolphinng';
 @NgModule({
-  imports:[CommonModule,FormsModule],
+  imports:[CommonModule,FormsModule,CodeHighlighterModule,UploaderModule],
   declarations: [
     CodeTextareaDirective,
     ToggleClassDirective,
@@ -19,7 +24,9 @@ import {PaginatorComponent} from 'dolphinng';
     CheckboxComponent,
     RadioComponent,
     ToggleComponent,
-    PaginatorComponent
+    PaginatorComponent,
+    GalleryComponent,
+    DeleteWrapComponent
   ],
   exports:      [
     FormsModule,
@@ -31,7 +38,11 @@ import {PaginatorComponent} from 'dolphinng';
     CheckboxComponent,
     RadioComponent,
     ToggleComponent,
-    PaginatorComponent
+    PaginatorComponent,
+    GalleryComponent,
+    DeleteWrapComponent,
+    CodeHighlighterModule,
+    UploaderModule
   ]
 })
 export class SharedModule { }

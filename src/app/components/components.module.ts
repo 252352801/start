@@ -7,6 +7,9 @@ import { LayoutComponentsComponent} from './layout-components/layout-components.
 import { SpinnerDemoComponent} from './spinner-demo/spinner-demo.component';
 import { SearchbarComponent} from './searchbar/searchbar.component';
 import { SearchbarDemoComponent} from './searchbar-demo/searchbar-demo.component';
+import { GalleryDemoComponent} from './gallery-demo/gallery-demo.component';
+import { UploaderDemoComponent} from './uploader-demo/uploader-demo.component';
+import { DeleteWrapDemoComponent} from './delete-wrap-demo/delete-wrap-demo.component';
 import { ModalComponent,ModalHeaderComponent,ModalBodyComponent,ModalFooterComponent,SpinnerComponent} from 'dolphinng';
 import { routing } from './components.routing';
 @NgModule({
@@ -23,7 +26,10 @@ import { routing } from './components.routing';
       LayoutComponentsComponent,
       SearchbarDemoComponent,
       SpinnerDemoComponent,
-      SearchbarComponent
+      SearchbarComponent,
+      GalleryDemoComponent,
+      UploaderDemoComponent,
+      DeleteWrapDemoComponent
     ]
 })
 export class ComponentsModule { }

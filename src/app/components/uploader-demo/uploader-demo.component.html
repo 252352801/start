@@ -1,0 +1,14 @@
+<div class="pad-def bg-default bor-b-def">
+  <h2 class="no-margin">文件上传控件<small class="font-xs text-disabled padding-left-default"></small></h2>
+</div>
+<div class="wrapper-md">
+  <a class="btn btn-info uploader-input"><i class="fa-folder fa"></i>选择图片
+    <input type="file"  multiple="multiple" [uploader]="uploader"/>
+  </a>
+  <div class="mar-t-def">
+    <a class="img-wrap" *ngFor="let file of uploader.queue;let i=index" (click)="gallery.open($event,i)">
+      <img [src]="file.dataUrl" />
+    </a>
+  </div>
+</div>
+<gallery #gallery  [data]="uploader.queue" [dataProps]="['dataUrl']"></gallery>
