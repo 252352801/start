@@ -10,18 +10,21 @@ import { SearchbarDemoComponent} from './searchbar-demo/searchbar-demo.component
 import { GalleryDemoComponent} from './gallery-demo/gallery-demo.component';
 import { UploaderDemoComponent} from './uploader-demo/uploader-demo.component';
 import { DeleteWrapDemoComponent} from './delete-wrap-demo/delete-wrap-demo.component';
-import { ModalComponent,ModalHeaderComponent,ModalBodyComponent,ModalFooterComponent,SpinnerComponent} from 'dolphinng';
+import { ModalModule} from 'dolphinng';
+import { LoaderModule} from 'dolphinng';
+import { LayoutModule} from 'dolphinng';
 import { routing } from './components.routing';
 @NgModule({
-    imports: [routing,SharedModule],
+    imports: [
+      routing,
+      SharedModule,
+      ModalModule,
+      LoaderModule,
+      LayoutModule
+    ],
     declarations: [
       ComponentsComponent,
       ModalDemoComponent,
-      ModalComponent,
-      ModalHeaderComponent,
-      ModalBodyComponent,
-      ModalFooterComponent,
-      SpinnerComponent,
       PaginatorDemoComponent,
       LayoutComponentsComponent,
       SearchbarDemoComponent,

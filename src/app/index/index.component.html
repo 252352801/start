@@ -43,7 +43,8 @@
           <!-- / dropdown -->
         </li>
         <li class="hidden-xs">
-          <a  class=""><i class="fa fa-expand fa-fw text"></i><i class="fa fa-compress fa-fw text-active"></i></a>
+          <a  *ngIf="!isFullScreen" (click)=fullScreen()><i class="fa fa-expand fa-fw text" ></i><i class="fa fa-compress fa-fw text-active"></i></a>
+          <a  *ngIf="isFullScreen" (click)=cancelFullScreen()><i class="fa fa-compress fa-fw text" ></i><i class="fa fa-compress fa-fw text-active"></i></a>
         </li>
         <li class="dropdown" >
           <a href="" class="dropdown-toggle" >
@@ -181,7 +182,7 @@
       </nav-item>
     </nav-wrap>
   </aside-left>
-  <div class="app-content" (click)="cancelOffScreen()">
+  <div class="app-content">
     <router-outlet></router-outlet>
   </div>
 </root-container>

@@ -22,12 +22,9 @@
         "../node_modules/dolphinng/assets/styles/main.less",
         "../node_modules/primeng/resources/themes/omega/theme.css",
         "../node_modules/primeng/resources/primeng.min.css",
-        "./assets/libs/prism/css/prism.css",
         "styles.less"
       ],
       "scripts": [
-        "./assets/libs/prism/js/prism.min.js",
-        "../node_modules/dolphinng/assets/libs/laydate/js/laydate.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

@@ -7,7 +7,7 @@ import { Toaster} from 'dolphinng';
     providers:[Toaster]
 })
 export class ToasterDemoComponent {
-
+  tabIndex:number=0;
   toastOptions:{
     type:string,
     title:string,
@@ -19,7 +19,9 @@ export class ToasterDemoComponent {
   };
   constructor(private toaster:Toaster){
   }
-
+  changTab(index:number){
+    this.tabIndex=index;
+  }
   popToaster(){
     this.toaster.pop(this.toastOptions);
   }

@@ -7,7 +7,11 @@ import { Component} from '@angular/core';
 export class ModalDemoComponent {
   isShowModal:boolean=false;
   modalSize:string='md';
+  tabIndex:number=1;
   constructor(){
+  }
+  changTab(index:number){
+    this.tabIndex=index;
   }
   closeModal(){
     this.isShowModal=false;

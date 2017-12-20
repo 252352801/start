@@ -2,15 +2,22 @@
   <h2 class="no-margin">DatePicker <small class="font-xs text-disabled padding-left-default">directive</small></h2>
 </div>
 <div class="wrapper-md">
-  <div class="bg-white pad-def">
+  <div class="bg-white">
     <form class="form-inline clearfix form-search">
       <div class="form-group">
         <label class="control-label indent-sm-2 indent-md-none" >日期：</label>
-        <input class="form-control" datePicker [(ngModel)]="date" name="date" placeholder="选择日期" />
+        <datetime-picker [(value)]="date"   format="yyyy年MM月dd日" [max]="date1">
+          <input class="form-control"  [(ngModel)]="date" name="date" placeholder="选择日期" />
+        </datetime-picker>
+        <datetime-picker [(value)]="date1"   format="yyyy年MM月dd日" [min]="date">
+          <input class="form-control"  [(ngModel)]="date1" name="date1" placeholder="选择日期"/>
+        </datetime-picker>
       </div>
       <div class="form-group ">
         <label class="control-label" >日期时间：</label>
-        <input class="form-control" datePicker [(ngModel)]="dateTime" name="dateTime" [opt-ispicktime]="true" placeholder="选择日期和时间" />
+        <input class="form-control" datePicker [(ngModel)]="dateTime" name="dateTime"
+               [opt-ispicktime]="true" placeholder="选择日期和时间"
+        opt-format="yyyy年MM月dd日 hh:mm:ss"/>
       </div>
       <div class="form-group">
         <label  class="control-label">入学时间：</label>
@@ -27,11 +34,12 @@
         </div>
         <div class="form-group ">
           <label  class="control-label indent-sm-2">籍贯：</label>
-          <input class="form-control" placeholder="请输入籍贯" />
+          <input class="form-control" [(ngModel)]="address" name="address"
+                 placeholder="请输入籍贯" [areaPicker]="areaPicker" />
         </div>
         <div class="form-group">
           &nbsp;
-          <input class="btn btn-info btn-sm form-control" type="button" value="搜索" />
+          <input class="btn btn-info btn-sm form-control" type="button" value="搜索" (click)="search()" />
         </div>
       </div>
     </form>
@@ -43,3 +51,4 @@
     </p-dataTable>
   </div>
 </div>
+

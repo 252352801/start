@@ -10,7 +10,6 @@ export class SettingService {
   constructor() {
       this.init();
       let localSettingStr=localStorage.getItem('setting');
-      console.info('setting',localSettingStr);
       let localSetting:SettingService;
       try{
         localSetting=JSON.parse(localSettingStr);

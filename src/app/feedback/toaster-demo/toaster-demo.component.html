@@ -64,22 +64,25 @@
       <button class="btn btn-success" (click)="popDemo()">点我试试</button>
     </p>
   </div>
-  <p class="h4  m-b-sm m-t-sm block">html</p>
-  <div class="m-b-md">
-      <textarea [codeTextarea]="" class="pad-def"><button class="btn btn-success" (click)="popDemo()">点我</button></textarea>
-  </div>
-  <p class="h4  m-b-sm m-t-sm block"  >js</p>
-  <div class="m-b-md">
-    <textarea [codeTextarea]="" class="pad-def">
-  popDemo(){
-    this.toaster.pop({
-      type:'success',
-      title:'标题',
-      message:'操作成功！',
-      animated:true,
-      delay:3000
-    });
-  }</textarea>
+  <div class="tab-container">
+    <ul class="nav nav-tabs ">
+      <li [ngClass]="{active: tabIndex===0}" >
+        <a  (click)="changTab(0)">html</a>
+      </li>
+      <li [ngClass]="{active: tabIndex===1}" >
+        <a  (click)="changTab(1)">typescript</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane "  [ngClass]="{active: tabIndex===0}" >
+        <code-high-light language="html" codeSrc="./assets/sources/feedback/toaster-demo/toaster-demo.component.html">
+        </code-high-light>
+      </div>
+      <div class="tab-pane" [ngClass]="{active: tabIndex===1}">
+        <code-high-light language="typescript" codeSrc="./assets/sources/feedback/toaster-demo/toaster-demo.component.ts.code" >
+        </code-high-light>
+      </div>
+    </div>
   </div>
   <p class="h4  m-b-sm m-t-sm block">方法</p>
   <ul class="no-padding">

@@ -14,64 +14,27 @@
         <button class="btn btn-default" (click)="loader()">loader</button>
       </p>
     </div>
-    <p class="h4  m-b-sm m-t-sm block">html</p>
-    <div >
-      <textarea [codeTextarea]="" class="pad-def">
-        <button class="btn btn-info" (click)="info()">pop.info</button>
-        <button class="btn btn-warning" (click)="confirm()">pop.confirm</button>
-        <button class="btn btn-danger" (click)="error()">pop.error</button>
-        <button class="btn btn-default" (click)="loader()">loader</button></textarea>
+    <div class="tab-container">
+      <ul class="nav nav-tabs ">
+        <li [ngClass]="{active: tabIndex===0}" >
+          <a  (click)="changTab(0)">html</a>
+        </li>
+        <li [ngClass]="{active: tabIndex===1}" >
+          <a  (click)="changTab(1)">typescript</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane "  [ngClass]="{active: tabIndex===0}" >
+          <code-high-light language="html" codeSrc="./assets/sources/feedback/pop-demo/pop-demo.component.html">
+          </code-high-light>
+        </div>
+        <div class="tab-pane" [ngClass]="{active: tabIndex===1}">
+          <code-high-light language="typescript" codeSrc="./assets/sources/feedback/pop-demo/pop-demo.component.ts.code" >
+          </code-high-light>
+        </div>
+      </div>
     </div>
-    <p class="h4  m-b-sm m-t-sm block">js</p>
-    <div class="margin-bot-default">
-    <textarea [codeTextarea]="" class="pad-def">
-import { Component} from '@angular/core';
-import { PopService} from '../../../services/pop/pop.service';
-@Component({
-    selector: 'pop-demo',
-    templateUrl: './pop-demo.component.html',
-    styleUrls: ['./pop-demo.component.less'],
-})
-export class PopDemoComponent {
 
-  constructor(private pop:PopService){
-  }
-  info(){
-    console.log('info');
-    this.pop.info({
-      title:'系统提示',
-      text:'这是一个消息提示！',
-      textAlign:'center'
-    });
-  }
-  confirm(){
-    this.pop.confirm({
-      title:'操作确认',
-      text:'确定要这么做吗？'
-    }).onConfirm(()=>{
-      alert('你选择了确定按钮');
-    }).onCancel(()=>{
-      alert('你选择了取消按钮');
-    }).onClose(()=>{
-      alert('你选择了关闭');
-    });
-  }
-  error(){
-    this.pop.error({
-      title:'错误提示',
-      text:'对象未定义'
-    })
-  }
-}
-  loader(){
-    this.pop.confirm({
-      title:'操作确认',
-      text:'确定要这么做吗？',
-      closeOnConfirm:false,
-      confirmLoaderText:'正在提交'
-    })
-  }</textarea>
-    </div>
     <p id="method" class="h4  m-b-sm m-t-sm block">方法</p>
     <ul class="no-padding">
       <li class="no-li-style">
@@ -364,6 +327,4 @@ export class PopDemoComponent {
     </ul>
   </div>
 </div>
-<code-high-light language="css">
 
-</code-high-light>

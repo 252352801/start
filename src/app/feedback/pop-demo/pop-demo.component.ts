@@ -8,7 +8,11 @@ import { PopService} from 'dolphinng';
 })
 export class PopDemoComponent {
 
+  tabIndex:number=0;
   constructor(private pop:PopService){
+  }
+  changTab(index:number){
+    this.tabIndex=index;
   }
   info(){
     console.log('info');

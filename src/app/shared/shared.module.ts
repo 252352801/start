@@ -1,48 +1,49 @@
 import { NgModule }            from '@angular/core';
 import { CommonModule }        from '@angular/common';
 import { FormsModule }         from '@angular/forms';
-import { CodeTextareaDirective }         from 'dolphinng';
-import {ToggleClassDirective} from 'dolphinng';
-import {CodeHighLightComponent} from 'dolphinng';
-import {DatePickerDirective} from 'dolphinng';
-import {CheckboxComponent} from 'dolphinng';
-import {RadioComponent} from 'dolphinng';
-import {ToggleComponent} from 'dolphinng';
-import {PaginatorComponent} from 'dolphinng';
-import {GalleryComponent} from 'dolphinng';
-import {DeleteWrapComponent} from 'dolphinng';
 
-import {CodeHighlighterModule} from 'primeng/primeng';
+import {DatePickerModule} from 'dolphinng';
+import {FormsModule as MyFormsModule} from 'dolphinng';
+import {PaginatorModule} from 'dolphinng';
+import {GalleryModule} from 'dolphinng';
+import {CodeHighLightModule} from 'dolphinng';
+import {AreaPickerModule} from 'dolphinng';
+
+import {DatetimePickerModule} from 'dolphinng';
+
+import {CommonModule as MyCommonModule} from 'dolphinng';
 import {UploaderModule} from 'dolphinng';
 @NgModule({
-  imports:[CommonModule,FormsModule,CodeHighlighterModule,UploaderModule],
-  declarations: [
-    CodeTextareaDirective,
-    ToggleClassDirective,
-    CodeHighLightComponent,
-    DatePickerDirective,
-    CheckboxComponent,
-    RadioComponent,
-    ToggleComponent,
-    PaginatorComponent,
-    GalleryComponent,
-    DeleteWrapComponent
+  imports:[
+    CommonModule,
+    FormsModule,
+    UploaderModule,
+    //
+    MyCommonModule,
+    DatePickerModule,
+    DatetimePickerModule,
+    MyFormsModule,
+    PaginatorModule,
+    GalleryModule,
+    CodeHighLightModule,
+    AreaPickerModule
+
   ],
-  exports:      [
+  declarations: [
+  ],
+  exports:[
     FormsModule,
     CommonModule,
-    CodeTextareaDirective,
-    ToggleClassDirective,
-    CodeHighLightComponent,
-    DatePickerDirective,
-    CheckboxComponent,
-    RadioComponent,
-    ToggleComponent,
-    PaginatorComponent,
-    GalleryComponent,
-    DeleteWrapComponent,
-    CodeHighlighterModule,
-    UploaderModule
+    UploaderModule,
+    //
+    MyCommonModule,
+    DatePickerModule,
+    DatetimePickerModule,
+    MyFormsModule,
+    PaginatorModule,
+    GalleryModule,
+    CodeHighLightModule,
+    AreaPickerModule
   ]
 })
 export class SharedModule { }

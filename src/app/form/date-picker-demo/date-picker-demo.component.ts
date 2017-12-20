@@ -1,4 +1,5 @@
 import { Component,OnInit} from '@angular/core';
+import { AreaPicker} from 'dolphinng';
 @Component({
     selector: 'date-picker-demo',
     templateUrl: './date-picker-demo.component.html',
@@ -7,10 +8,64 @@ import { Component,OnInit} from '@angular/core';
 export class DatePickerDemoComponent implements OnInit{
   startTime:string='';
   endTime:string='';
-  date:string='';
-  dateTime:string='';
+  date:string='2017年08月01日';
+  date1:string='';
+  dateTime:string='2017年8月01日';
   data:any[];
+  address:string='';
+  areaPicker:AreaPicker=new AreaPicker();
   constructor(){
+    this.areaPicker.items = [{
+      label: '省份',
+      key: 'name',
+      data: [],
+      selected: (data)=> {
+        setTimeout(()=>{
+          this.areaPicker.setData([{
+            name: '广州'
+          },{
+            name: '阳江'
+          },{
+            name: '佛山'
+          }]);
+        },500);
+      }
+    },{
+      label: '城市',
+      key: 'name',
+      data: [],
+      selected: (data)=> {
+        setTimeout(()=>{
+          this.areaPicker.setData([{
+            name: '天河区'
+          },{
+            name: '海珠区'
+          },{
+            name: '番禺区'
+          }]);
+        },500);
+      }
+    },{
+      label: '地区',
+      key: 'name',
+      data: [],
+      selected: (data)=> {
+      }
+    }];
+    this.areaPicker.init=()=>{
+      setTimeout(()=>{
+        this.areaPicker.setData([{
+          name: '广东省'
+        },{
+          name: '广西壮族自治区'
+        },{
+          name: '日本省'
+        }]);
+      },500);
+    };
+    this.areaPicker.done=(values)=>{
+      console.log(values);
+    };
   }
 
   ngOnInit() {
@@ -25,8 +80,12 @@ export class DatePickerDemoComponent implements OnInit{
       {"brand": "Jaguar", "year": 2013, "color": "Orange", "vin": "greg34"},
       {"brand": "Ford", "year": 2000, "color": "Black", "vin": "h54hw5"},
       {"brand": "Fiat", "year": 2013, "color": "Red", "vin": "245t2s"},
-      {"brand": "VW", "year": 2012, "color": "Orange", "vin": "dsad231ff1"} 
+      {"brand": "VW", "year": 2012, "color": "Orange", "vin": "dsad231ff1"}
     ];
+  }
+  search(){
+    console.log('search...');
+    console.log(this.date);
   }
 
 }
