@@ -5,6 +5,8 @@ import { Component} from '@angular/core';
     styleUrls: ['./spinner-demo.component.less'],
 })
 export class SpinnerDemoComponent {
-
-
+  tabIndex:number=1;
+  changTab(index:number){
+    this.tabIndex=index;
+  }
 }

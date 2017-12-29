@@ -2,17 +2,22 @@ import { NgModule }            from '@angular/core';
 import { CommonModule }        from '@angular/common';
 import { FormsModule }         from '@angular/forms';
 
-import {DatePickerModule} from 'dolphinng';
-import {FormsModule as MyFormsModule} from 'dolphinng';
-import {PaginatorModule} from 'dolphinng';
-import {GalleryModule} from 'dolphinng';
-import {CodeHighLightModule} from 'dolphinng';
-import {AreaPickerModule} from 'dolphinng';
-
-import {DatetimePickerModule} from 'dolphinng';
-
-import {CommonModule as MyCommonModule} from 'dolphinng';
-import {UploaderModule} from 'dolphinng';
+import {
+  DatePickerModule,
+  FormsModule as MyFormsModule,
+  PaginatorModule,
+  GalleryModule,
+  CodeHighLightModule,
+  AreaPickerModule,
+  DatetimePickerModule,
+  CommonModule as MyCommonModule,
+  UploaderModule,
+  SliderModule,
+  DropDownModule,
+  ValidateModule,
+  TextMaxLengthModule,
+  CurrencyFormatModule
+} from 'dolphinng';
 @NgModule({
   imports:[
     CommonModule,
@@ -26,8 +31,12 @@ import {UploaderModule} from 'dolphinng';
     PaginatorModule,
     GalleryModule,
     CodeHighLightModule,
-    AreaPickerModule
-
+    AreaPickerModule,
+    SliderModule,
+    DropDownModule,
+    ValidateModule,
+    TextMaxLengthModule,
+    CurrencyFormatModule
   ],
   declarations: [
   ],
@@ -43,7 +52,12 @@ import {UploaderModule} from 'dolphinng';
     PaginatorModule,
     GalleryModule,
     CodeHighLightModule,
-    AreaPickerModule
+    AreaPickerModule,
+    SliderModule,
+    DropDownModule,
+    TextMaxLengthModule,
+    CurrencyFormatModule
+    //local
   ]
 })
 export class SharedModule { }

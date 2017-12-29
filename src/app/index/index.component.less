@@ -1,1 +1,63 @@
+.navbar-brand{
+  padding:0 16px;
+  font-size: 18px;
+}
+.sys-name{
+  display: block;
+  width: 280px;
+  height: 80px;
+  background: url(../../assets/img/background/dol/bg_sys_name.png) no-repeat;
+  background-position: 50% 50%;
+}
+.btn-toggle-aside{
+  height: 100%;
+  font-size: 24px;
+  line-height:90px;
+  cursor: pointer;
+  color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: none;
+}
+.sys-name-xs{
+  display: none;
+  font-size: 18px;
+  font-weight: bold;
+  height: 100%;
+  line-height: 80px;
+  color:#fff;
+  position: relative;
+  top:-2px;
+}
+@media (max-width: 767px){
+  .btn-toggle-aside{
+    display: inline-block;
+  }
+  .sys-name-xs{
+    display: inline-block;
+  }
+}
+
+.footer{
+  height: 50px;
+  position: absolute;
+  left:200px;
+  right: 0;
+  top:100%;
+}
+.footer .copyright{
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  line-height: 50px;
+}
+.app-aside-folded .footer{
+  left: 60px;
+}
+@media (max-width: 768px){
+  .footer{
+    position: static;
+    left:0;
+  }
+}
 

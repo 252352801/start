@@ -1,0 +1,161 @@
+<div class="pad-def bg-default bor-b-def">
+  <h2 class="no-margin">时间日期选择器<small class="font-xs text-disabled mar-l-xs">component</small></h2>
+</div>
+<div class="wrapper-md">
+  <table class="table table-bordered bg-white">
+    <tr>
+      <td width="15%"><b>类名</b></td>
+      <td>
+        DatetimePickerComponent
+      </td>
+    </tr>
+    <tr>
+      <td><b>所属模块</b></td>
+      <td>DatetimePickerModule</td>
+    </tr>
+    <tr>
+      <td><b>类型</b></td>
+      <td>组件</td>
+    </tr>
+    <tr>
+      <td><b>selector</b></td>
+      <td>
+        datetime-picker
+      </td>
+    </tr>
+  </table>
+  <p class="h4 m-b-sm block text-primary">示例</p>
+  <div class="mar-b-sm clearfix">
+    <div class="pull-left">
+      <datetime-picker [(value)]="date">
+        <input class="form-control" [(ngModel)]="date" placeholder="选择日期" />
+      </datetime-picker>
+    </div>
+    <div class="pull-left pad-l-sm">
+      <datetime-picker [(value)]="date1" format="yyyy-MM-dd hh:mm:ss">
+        <input class="form-control" [(ngModel)]="date1" placeholder="选择日期时间" />
+      </datetime-picker>
+    </div>
+    <div class="pull-left pad-l-sm">
+      <datetime-picker [(value)]="date2" format="yyyy年MM月dd日hh时mm分">
+        <input class="form-control" [(ngModel)]="date2" placeholder="选择日期时间" />
+      </datetime-picker>
+    </div>
+    <div class="pull-left pad-l-sm">
+      <datetime-picker [(value)]="date3" format="yyyy-MM-dd" min="2017-12-02" max="2017-12-28">
+        <input class="form-control" [(ngModel)]="date3" placeholder="选择日期" />
+      </datetime-picker>
+    </div>
+  </div>
+  <code-high-light maxHeight="500px" language="html" codeSrc="./assets/sources/datetime-picker-demo/datetime-picker-demo.component.html" ></code-high-light>
+  <p class="h4 m-b-sm block text-primary">属性</p>
+  <table class="table table-bordered bg-white">
+    <thead class="bg-default">
+    <tr>
+      <th>属性名</th>
+      <th>类型</th>
+      <th>输入/输出类型</th>
+      <th>说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>value</td>
+      <td>Input</td>
+      <td>string</td>
+      <td>
+        输入绑定。
+      </td>
+    </tr>
+    <tr>
+      <td>valueChange</td>
+      <td>Output</td>
+      <td> EventEmitter< string ></td>
+      <td>
+        输出绑定。
+      </td>
+    </tr>
+    <tr>
+      <td>format</td>
+      <td>Input</td>
+      <td>string</td>
+      <td>
+        格式化  yyyy-MM-dd hh:mm:ss。默认yyyy-MM-dd
+      </td>
+    </tr>
+    <tr>
+      <td>min</td>
+      <td>Input</td>
+      <td>string</td>
+      <td>
+        最小日期限制，当启用最大最小限制时 min的日期格式必须与本组件format相匹配。
+      </td>
+    </tr>
+    <tr>
+      <td>max</td>
+      <td>Input</td>
+      <td>string</td>
+      <td>
+        最大日期限制，当启用最大最小限制时 max的日期格式必须与本组件format相匹配。
+      </td>
+    </tr>
+    <tr>
+      <td>start</td>
+      <td>Input</td>
+      <td>string</td>
+      <td>
+        最小可选日期（时间），默认1970/01/01。
+      </td>
+    </tr>
+    <tr>
+      <td>end</td>
+      <td>Input</td>
+      <td>string</td>
+      <td>
+        最大可选日期（时间），默认2070/12/31。
+      </td>
+    </tr>
+    <tr>
+      <td>trigger</td>
+      <td>Input</td>
+      <td>string</td>
+      <td>
+        触发事件，默认focus。
+      </td>
+    </tr>
+    <tr>
+      <td>zIndex</td>
+      <td>Input</td>
+      <td>string|number</td>
+      <td>
+        层级，默认999。
+      </td>
+    </tr>
+    <tr>
+      <td>isCalendar</td>
+      <td>Input</td>
+      <td>boolean</td>
+      <td>
+        是否显示节日，默认false。(暂不支持)
+      </td>
+    </tr>
+    <tr>
+      <td>direction</td>
+      <td>Input</td>
+      <td>string</td>
+      <td>
+        方向，无默认值，可选top、bottom。
+      </td>
+    </tr>
+    <tr>
+      <td>complete</td>
+      <td>Output</td>
+      <td>string</td>
+      <td>
+        选择完成事件，触发时传入参数为按格式输出的时间字符串。
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

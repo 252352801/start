@@ -1,0 +1,115 @@
+<div class="pad-def bg-default bor-b-def">
+  <h2 class="no-margin">滑块
+    <small class="font-xs text-disabled pad-l-xs">component</small>
+  </h2>
+</div>
+<div class="wrapper-md">
+  <table class="table table-bordered bg-white">
+    <tr>
+      <td width="15%"><b>类名</b></td>
+      <td>
+        SliderComponent
+      </td>
+    </tr>
+    <tr>
+      <td><b>所属模块</b></td>
+      <td>SliderModule</td>
+    </tr>
+    <tr>
+      <td><b>类型</b></td>
+      <td>组件</td>
+    </tr>
+    <tr>
+      <td><b>selector</b></td>
+      <td>
+        slider
+      </td>
+    </tr>
+  </table>
+  <p class="h4 mar-b-sm text-primary">示例</p>
+  <div class="mar-b-sm">
+    <p>
+      <slider [(value)]="value"></slider>
+    </p>
+    <p>
+      <slider [(value)]="value" [isValueBackground]="false"></slider>
+    </p>
+
+    <div style="width: 50%">
+      <p>
+        <slider [(value)]="value1" [min]="5" [max]="10" [decimal]="2"></slider>
+      </p>
+    </div>
+  </div>
+  <code-high-light maxHeight="500px" language="html"
+                   codeSrc="./assets/sources/slider-demo/slider-demo.component.html"></code-high-light>
+  <p class="h4 m-b-sm block text-primary">属性</p>
+  <table class="table table-bordered bg-white">
+    <thead class="bg-default">
+    <tr>
+      <th>属性名</th>
+      <th>类型</th>
+      <th>输入/输出类型</th>
+      <th>说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>value</td>
+      <td>Input</td>
+      <td>any</td>
+      <td>
+        值。
+      </td>
+    </tr>
+    <tr>
+      <td>valueChange</td>
+      <td>Output</td>
+      <td>EventEmitter< any ></td>
+      <td>
+        value改变事件。
+      </td>
+    </tr>
+    <tr>
+      <td>min</td>
+      <td>Input</td>
+      <td>number</td>
+      <td>
+        最小值。
+      </td>
+    </tr>
+    <tr>
+      <td>min</td>
+      <td>Input</td>
+      <td>number</td>
+      <td>
+        最大值。
+      </td>
+    </tr>
+    <tr>
+      <td>decimal</td>
+      <td>Input</td>
+      <td>number</td>
+      <td>
+        小数位。
+      </td>
+    </tr>
+    <tr>
+      <td>isValueBackground</td>
+      <td>Input</td>
+      <td>boolean</td>
+      <td>
+        是否显示当前值背景。
+      </td>
+    </tr>
+    <tr>
+      <td>complete</td>
+      <td>Output</td>
+      <td>EventEmitter< any ></td>
+      <td>
+        滑动完成事件，触发时传入参数为value。
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

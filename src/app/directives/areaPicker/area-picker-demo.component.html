@@ -1,0 +1,121 @@
+<div class="pad-def bg-default bor-b-def">
+  <h2 class="no-margin">地址选择<small class="font-xs text-disabled mar-l-xs">directive</small></h2>
+</div>
+<div class="wrapper-md">
+  <table class="table table-bordered bg-white">
+    <tr>
+      <td width="15%"><b>类名</b></td>
+      <td>
+        AreaPickerDirective
+      </td>
+      <td rowspan="4">
+        <p class="text-primary">如何使用</p>
+        <p>1.areaPicker指令和AreaPicker实例配合使用；</p>
+        <p>2.在input元素上使用areaPicker指令；</p>
+        <p>3.areaPicker指向一个AreaPicker实例。</p>
+      </td>
+    </tr>
+    <tr>
+      <td><b>所属模块</b></td>
+      <td>AreaPickerModule</td>
+    </tr>
+    <tr>
+      <td><b>类型</b></td>
+      <td>指令</td>
+    </tr>
+    <tr>
+      <td><b>selector</b></td>
+      <td>
+        areaPicker
+      </td>
+    </tr>
+  </table>
+  <p class="h4 m-b-sm block text-primary">示例</p>
+  <form class="form-inline clearfix mar-b-sm">
+    <input class="form-control" [(ngModel)]="address" name="address"
+           placeholder="请输入籍贯" [areaPicker]="areaPicker" />
+  </form>
+
+  <div class="tab-container ng-isolate-scope">
+    <ul class="nav nav-tabs ">
+      <li [ngClass]="{active: tabIndex===1}" class="ng-isolate-scope">
+        <a  (click)="changTab(1)">html</a>
+      </li>
+      <li [ngClass]="{active: tabIndex===2}" class="ng-isolate-scope">
+        <a  (click)="changTab(2)">typescript</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane" [ngClass]="{active: tabIndex===1}">
+        <code-high-light maxHeight="500px" language="html" codeSrc="./assets/sources/area-picker-demo/area-picker-demo.component.html" >
+        </code-high-light>
+      </div>
+      <div class="tab-pane "  [ngClass]="{active: tabIndex===2}" >
+        <code-high-light maxHeight="500px" language="typescript" codeSrc="./assets/sources/area-picker-demo/area-picker-demo.component.ts.code">
+        </code-high-light>
+      </div>
+    </div>
+  </div>
+  <p class="h4 m-b-sm block text-primary">areaPicker指令属性</p>
+  <table class="table table-bordered bg-white">
+    <thead class="bg-default">
+    <tr>
+      <th>属性名</th>
+      <th>类型</th>
+      <th>输入/输出类型</th>
+      <th>说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>areaPicker</td>
+      <td>Input</td>
+      <td>AreaPicker</td>
+      <td>
+        AreaPicker实例。
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <p class="h4 m-b-sm block text-primary">AreaPicker属性</p>
+  <table class="table table-bordered bg-white">
+    <thead class="bg-default">
+    <tr>
+      <th>属性名</th>
+      <th>类型</th>
+      <th>说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>init</td>
+      <td>Function</td>
+      <td>
+        弹出选择框时触发的事件。在该方法内调用setData方法设置items第一个元素data值。
+      </td>
+    </tr>
+    <tr>
+      <td>items</td>
+      <td>
+        &#123;&#10;&#32;&#32;&#32;&#32;&#108;&#97;&#98;&#101;&#108;&#63;&#58;&#32;&#115;&#116;&#114;&#105;&#110;&#103;&#44;&#10;&#32;&#32;&#32;&#32;&#101;&#108;&#101;&#109;&#63;&#58;&#32;&#72;&#84;&#77;&#76;&#69;&#108;&#101;&#109;&#101;&#110;&#116;&#44;&#10;&#32;&#32;&#32;&#32;&#107;&#101;&#121;&#58;&#32;&#115;&#116;&#114;&#105;&#110;&#103;&#44;&#10;&#32;&#32;&#32;&#32;&#100;&#97;&#116;&#97;&#58;&#32;&#97;&#110;&#121;&#91;&#93;&#44;&#10;&#32;&#32;&#32;&#32;&#115;&#101;&#108;&#101;&#99;&#116;&#101;&#100;&#58;&#32;&#70;&#117;&#110;&#99;&#116;&#105;&#111;&#110;&#10;&#32;&#32;&#125;&#91;&#93;
+      </td>
+      <td>
+        <p>label:选项标签</p>
+        <p>key:选项名读取的data的key</p>
+        <p>data:选项数据</p>
+        <p>selected:当前选项卡选择完毕触发的事件，在该方法内设置下一选项的数据</p>
+      </td>
+    </tr>
+    <tr>
+      <td>done</td>
+      <td>
+        Function
+      </td>
+      <td>
+        选择完毕事件，传入参数为选择的各个data的元素
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

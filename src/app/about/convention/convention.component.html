@@ -40,7 +40,7 @@
         <a  class="h4 text-primary m-b-sm m-t-sm block">命名参考</a>
         <div>
 
-          <p class="font-bold">（1)页面结构</p>
+          <p class="font-bold">(1)页面结构</p>
           <p>容器: container</p>
           <p>页头：header</p>
           <p>内容：content/container</p>
@@ -107,12 +107,12 @@
         <a class="h4 text-primary m-b-sm m-t-sm block">JS/TS命名 </a>
         <p>1.	常量名/变量名/函数名/类名/接口名应各自使用一种命名规则，如“驼峰式”、Pascal命名法（“大驼峰式”）等，请勿混用；</p>
         <p>2.类名/接口名首字母大写；</p>
-        <p>3.常量名建议全用大写，单词间以下划线连接。</p>
+        <p>3.常量名单词间以下划线连接。</p>
       </li>
       <li class="list-group-item">
         <a  class="h4 text-primary m-b-sm m-t-sm block">关于全局变量</a>
         <p>1.js中，除非你能够很好的管理该全局变量，否则请避免声明它；</p>
-        <p>2.ts使用模块加载的方式组织代码，文件里变量的作用域仅限于ts文件中，因此不存在真正的全局变量。</p>
+        <p>2.ts使用模块加载的方式组织代码，文件里变量的作用域仅限于ts文件中，因此不存在真正的全局变量。可以通过实现单例类或angular单例服务供全局使用</p>
       </li>
       <li class="list-group-item">
         <a  class="h4 text-primary m-b-sm m-t-sm block">其他</a>
@@ -125,13 +125,13 @@
 
     <ul class="list-group list-group-lg no-borders pull-in m-b-none ng-scope">
       <li class="list-group-item">
-        <a  class="h4 text-primary m-b-sm block">目录结构（建议）</a>
+        <a  class="h4 text-primary m-b-sm block">目录结构建议</a>
         <p>1.源码放在同一个文件夹（如src文件夹），打包发布的文件放在另一文件夹（如dist）；</p>
-        <p>2.以业务划分模块，以模块划分目录；</p>
+        <p>2.以业务划分模块，以模块组织目录；</p>
         <p>3.子模块放在父模块目录下；</p>
         <p>4.模块文件夹下包含相关的ts文件、css/less/sass/文件、html。</p>
         <p>5.外部资源放在同一个文件夹（如assets文件夹）；</p>
-        <p>6.通用组件、指令、服务、工具类/接口以类型划分目录，并置于上层文件夹。</p>
+        <p>6.通用组件、指令、服务、工具类/接口以类型划分目录。</p>
       </li>
       <li class="list-group-item">
         <a  class="h4 text-primary m-b-sm block">文件命名</a>
@@ -145,7 +145,7 @@
         <a  class="h4 text-primary m-b-sm block">其他</a>
         <p>1.不要在业务组件/服务中操作dom,dom的操作应放在非业务组件/服务中</p>
         <p>
-          2.更多请参阅<a href="https://angular.cn/" target="_blank">https://angular.cn/</a>
+          2.最佳实践请参阅<a class="mar-l-xs text-info txt-underline" href="https://angular.cn/guide/styleguide" target="_blank">https://angular.cn/guide/styleguide</a>
         </p>
       </li>
     </ul>

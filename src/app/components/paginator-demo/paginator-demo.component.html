@@ -1,9 +1,34 @@
 <div class="pad-def bg-default bor-b-def">
-  <h2 class="no-margin">Paginator<small class="font-xs text-disabled padding-left-default">component</small></h2>
+  <h2 class="no-margin">分页组件
+    <small class="font-xs text-disabled padding-left-default">component</small>
+  </h2>
 </div>
 <div class="wrapper-md">
-  <p class="h4 m-b-sm block">示例</p>
-  <div class="pad-def bg-white">
+  <table class="table table-bordered bg-white">
+    <tr>
+      <td width="15%"><b>类名</b></td>
+      <td>
+        PaginatorComponent
+      </td>
+    </tr>
+    <tr>
+      <td><b>所属模块</b></td>
+      <td>PaginatorModule</td>
+    </tr>
+    <tr>
+      <td><b>类型</b></td>
+      <td>组件</td>
+    </tr>
+    <tr>
+      <td><b>selector</b></td>
+      <td>
+        paginator
+      </td>
+    </tr>
+  </table>
+  <p class="h4 mar-b-sm text-primary">示例</p>
+  <div class="">
+
     <div class="mar-b-def">
       <paginator [(index)]="page.index" [count]="page.count" [(pageSize)]="page.pageSize"
                  [changePageSizeAble]="true" [showTotal]="true" [pageSizeOptions]="page.pageSizeOptions"
@@ -12,16 +37,173 @@
     </div>
 
     <div class="mar-b-def">
-    <paginator [(index)]="page1.index" [count]="page1.count" [(pageSize)]="page1.pageSize"
-               [changePageSizeAble]="true" [showTotal]="true" [pageSizeOptions]="page1.pageSizeOptions"
-               (onChangePage)="onChangePage($event)" (onChangePageError)="onChangePageError($event)"
-               size="sm"
-    ></paginator>
-      </div>
+      <paginator [(index)]="page1.index" [count]="page1.count" [(pageSize)]="page1.pageSize"
+                 [changePageSizeAble]="true" [showTotal]="true" [pageSizeOptions]="page1.pageSizeOptions"
+                 (onChangePage)="onChangePage($event)" (onChangePageError)="onChangePageError($event)"
+                 size="sm"
+      ></paginator>
+    </div>
   </div>
+  <div class="tab-container ng-isolate-scope">
+    <ul class="nav nav-tabs ">
+      <li [ngClass]="{active: tabIndex===1}" class="ng-isolate-scope">
+        <a  (click)="changTab(1)">html</a>
+      </li>
+      <li [ngClass]="{active: tabIndex===2}" class="ng-isolate-scope">
+        <a  (click)="changTab(2)">typescript</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane" [ngClass]="{active: tabIndex===1}">
+        <code-high-light maxHeight="500px" language="html" codeSrc="./assets/sources/paginator-demo/paginator-demo.component.html" >
+        </code-high-light>
+      </div>
+      <div class="tab-pane "  [ngClass]="{active: tabIndex===2}" >
+        <code-high-light maxHeight="500px" language="typescript" codeSrc="./assets/sources/paginator-demo/paginator-demo.component.ts.code">
+        </code-high-light>
+      </div>
+    </div>
+  </div>
+
+
+  <p class="h4 m-b-sm block text-primary">属性</p>
+  <table class="table table-bordered bg-white">
+    <thead class="bg-default">
+    <tr>
+      <th>属性名</th>
+      <th>类型</th>
+      <th>输入/输出类型</th>
+      <th>说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>count</td>
+      <td>Input</td>
+      <td>number</td>
+      <td>
+        总条目。
+      </td>
+    </tr>
+    <tr>
+      <td>pageSize</td>
+      <td>Input</td>
+      <td>number</td>
+      <td>
+        每页大小。
+      </td>
+    </tr>
+    <tr>
+      <td>pageSizeChange</td>
+      <td>Output</td>
+      <td>EventEmitter< any ></td>
+      <td>
+       pageSize改变事件；触发时传入参数为pageSize。
+      </td>
+    </tr>
+    <tr>
+      <td>index</td>
+      <td>Input</td>
+      <td>number</td>
+      <td>
+        当前页；初始值为0。
+      </td>
+    </tr>
+    <tr>
+      <td>indexChange</td>
+      <td>Output</td>
+      <td>EventEmitter< any ></td>
+      <td>
+        index改变事件；触发时传入参数为index。
+      </td>
+    </tr>
+    <tr>
+      <td>pageCount</td>
+      <td>Input</td>
+      <td>number</td>
+      <td>
+        总页数。
+      </td>
+    </tr>
+    <tr>
+      <td>maximum</td>
+      <td>Input</td>
+      <td>number</td>
+      <td>
+        最多显示的按钮数，默认为5。
+      </td>
+    </tr>
+    <tr>
+      <td>changePageSizeAble</td>
+      <td>Input</td>
+      <td>boolean</td>
+      <td>
+        是否可改变每页大小，默认为false。
+      </td>
+    </tr>
+    <tr>
+      <td>inputAble</td>
+      <td>Input</td>
+      <td>boolean</td>
+      <td>
+        是否可输入页码进行跳转，默认为false。
+      </td>
+    </tr>
+    <tr>
+      <td>pageSizeOptions</td>
+      <td>Input</td>
+      <td>number[]</td>
+      <td>
+        每页大小的选项。
+      </td>
+    </tr>
+    <tr>
+      <td>size</td>
+      <td>Input</td>
+      <td>string</td>
+      <td>
+        组件尺寸；除默认尺寸外可选项：sm
+      </td>
+    </tr>
+    <tr>
+      <td>showTotal</td>
+      <td>Input</td>
+      <td>boolean</td>
+      <td>
+        是否显示文字信息；默认为false。
+      </td>
+    </tr>
+    <tr>
+      <td>styleClass</td>
+      <td>Input</td>
+      <td>string</td>
+      <td>
+        添加到组件内最外层元素的css类。
+      </td>
+    </tr>
+    <tr>
+      <td>onChangePage</td>
+      <td>Output</td>
+      <td>EventEmitter< any > </td>
+      <td>
+        页面index改变后触发的事件，触发时传入参数为index。
+      </td>
+    </tr>
+    <tr>
+      <td>onChangePageError</td>
+      <td>Output</td>
+      <td>EventEmitter< any > </td>
+      <td>
+        页面跳转失败时触发的事件，触发时传入参数为输入的页码或index。
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
   <div>
   </div>
-  <div >
+  <div>
   </div>
 </div>
 

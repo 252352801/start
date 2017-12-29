@@ -16,11 +16,7 @@ export class PopDemoComponent {
   }
   info(){
     console.log('info');
-    this.pop.info({
-      title:'系统提示',
-      text:'这是一个消息提示！',
-      textAlign:'center'
-    });
+    this.pop.info('这是一个消息提示！','系统提示');
   }
   confirm(){
     this.pop.confirm({

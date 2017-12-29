@@ -1,0 +1,243 @@
+<root-container
+  [headerFixed]="setting.headerFixed"
+  [asideFixed]="setting.asideFixed"
+  [asideFolded]="setting.asideFolded"
+  [asideDock]="setting.asideDock"
+  [container]="setting.container"
+  [offScreen]="setting.offScreen">
+  <ng-container *ngTemplateOutlet="header">
+  </ng-container>
+  <ng-container *ngTemplateOutlet="asideLeft">
+  </ng-container>
+  <div class="app-content">
+    <router-outlet></router-outlet>
+  </div>
+</root-container>
+<ng-template #header >
+  <header  *ngIf="!themesSvc.skin">
+    <header-left [theme]="themesSvc.themes.headerLeft">
+      <button class="pull-right visible-xs" (click)="headerRight.toggleDropDown()" >
+        <i class="glyphicon glyphicon-cog"></i>
+      </button>
+      <button class="pull-right visible-xs"   (click)="toggleOffScreen()">
+        <i class="glyphicon glyphicon-align-justify"></i>
+      </button>
+      <a class="navbar-brand text-lt">
+        <i class="fa fa-btc logo"></i>
+        <span class="hidden-folded m-l-xs ng-binding">Angular</span>
+      </a>
+    </header-left>
+    <header-right  [theme]="themesSvc.themes.headerRight"  #headerRight>
+      <div class="nav navbar-nav hidden-xs" (click)="toggleAsideFolded()">
+        <a  class="btn no-shadow navbar-btn" >
+          <i class="fa fa-fw" [ngClass]="{'fa-dedent':!setting.asideFolded,'fa-indent':setting.asideFolded}" ></i>
+        </a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown hidden-sm"  toggleClass="open" [opt-revokable]="true">
+          <a  class="dropdown-toggle ng-binding" >
+            English <b class="caret"></b>
+          </a>
+          <!-- dropdown -->
+          <ul class="dropdown-menu animated fadeInRight w">
+            <li >
+              <a  href="" >German</a>
+            </li><li >
+            <a href="">English</a>
+          </li>
+            <li >
+              <a>Italian</a>
+            </li>
+          </ul>
+          <!-- / dropdown -->
+        </li>
+        <li class="hidden-xs">
+          <a  *ngIf="!isFullScreen" (click)=fullScreen()><i class="fa fa-expand fa-fw text" ></i><i class="fa fa-compress fa-fw text-active"></i></a>
+          <a  *ngIf="isFullScreen" (click)=cancelFullScreen()><i class="fa fa-compress fa-fw text" ></i><i class="fa fa-compress fa-fw text-active"></i></a>
+        </li>
+        <li class="dropdown" >
+          <a href="" class="dropdown-toggle" >
+            <i class="icon-bell fa-fw"></i>
+            <span class="visible-xs-inline">Notifications</span>
+            <span class="badge badge-sm up bg-danger pull-right-xs">2</span>
+          </a>
+          <!-- dropdown -->
+          <div class="dropdown-menu w-xl animated fadeInUp">
+            <div class="panel bg-white">
+              <div class="panel-heading b-light bg-light">
+                <strong>You have <span>2</span> notifications</strong>
+              </div>
+              <div class="list-group">
+                <a href="" class="media list-group-item">
+                    <span class="pull-left thumb-sm">
+                      <img src="" alt="..." class="img-circle">
+                    </span>
+                  <span class="media-body block m-b-none">
+                      Use awesome animate.css<br>
+                      <small class="text-muted">10 minutes ago</small>
+                    </span>
+                </a>
+                <a href="" class="media list-group-item">
+                    <span class="media-body block m-b-none">
+                      1.0 initial released<br>
+                      <small class="text-muted">1 hour ago</small>
+                    </span>
+                </a>
+              </div>
+              <div class="panel-footer text-sm">
+                <a href="" class="pull-right"><i class="fa fa-cog"></i></a>
+                <a href="" data-toggle="class:show animated fadeInRight">See all the notifications</a>
+              </div>
+            </div>
+          </div>
+          <!-- / dropdown -->
+        </li>
+        <li class="dropdown" toggleClass="open" [opt-revokable]="true">
+          <a  class="dropdown-toggle clear"  aria-haspopup="true" aria-expanded="false">
+              <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+                <img src="https://image.xingyunmao.cn/avatar/default/12.png?x-oss-process=image/format,jpg/interlace,1/resize,w_200,h_200/quality,q_80" alt="...">
+                <i class="on md b-white bottom"></i>
+              </span>
+            <span class="hidden-sm hidden-md">John.Smith</span> <b class="caret"></b>
+          </a>
+          <!-- dropdown -->
+          <ul class="dropdown-menu animated fadeInRight w">
+            <li class="wrapper b-b m-b-sm bg-light m-t-n-xs">
+              <div>
+                <p>300mb of 500mb used</p>
+              </div>
+              <div class="progress-xs m-b-none bg-white progress ng-isolate-scope" value="60">
+                <div class="progress-bar"   style="width: 60%;"></div>
+              </div>
+            </li>
+            <li>
+              <a >
+                <span class="badge bg-danger pull-right">30%</span>
+                <span>Settings</span>
+              </a>
+            </li>
+            <li>
+              <a >Profile</a>
+            </li>
+            <li>
+              <a >
+                <span class="label bg-info pull-right">new</span>
+                Help
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a >Logout</a>
+            </li>
+          </ul>
+          <!-- / dropdown -->
+        </li>
+      </ul>
+    </header-right>
+  </header>
+  <header theme="cerulean" *ngIf="themesSvc.skin==='dol'">
+    <a class="sys-name hidden-xs" routerLink="/home">
+    </a>
+    <a class="btn-toggle-aside" (click)="toggleOffScreen()">
+      <i class="fa fa-reorder"></i>
+    </a>
+    <a class="sys-name-xs" routerLink="/home">金融服务管理平台</a>
+    <div class="dropdown user-box" toggleClass="open" [opt-revokable]="true">
+      <a  class="dropdown-toggle clear">
+        <i class="fa fa-user pad-r-xxs"></i><span class="hidden-xs">用户名</span> <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu animated fadeInRight w pad-r-xs">
+        <li>
+          <a >
+            <span class="label bg-info pull-right"></span>
+            修改密码
+          </a>
+          <a >
+            <span class="label bg-info pull-right"></span>
+            修改审核口令
+          </a>
+        </li>
+        <li>
+          <a routerLink="/signin">退出登录</a>
+        </li>
+      </ul>
+    </div>
+
+  </header>
+</ng-template>
+<ng-template #asideLeft>
+  <aside-left [theme]="themesSvc.themes.asideLeft">
+    <nav-wrap>
+      <nav-item icon="glyphicon glyphicon-list-alt" text="简述" badge-value="2" badge-class="badge bg-info" >
+        <sub-nav-item text="说明" link="/about/explanation"></sub-nav-item>
+        <sub-nav-item text="约定" link="/about/convention"></sub-nav-item>
+        <sub-nav-item text="项目构建" link="/about/build"></sub-nav-item>
+      </nav-item>
+      <nav-item icon="glyphicon glyphicon-exclamation-sign" text="弹出框" >
+        <sub-nav-item text="pop" link="/feedback/pop"></sub-nav-item>
+        <sub-nav-item text="toaster" link="/feedback/toaster"></sub-nav-item>
+      </nav-item>
+      <nav-item icon="glyphicon glyphicon-copyright-mark" text="组件" >
+        <sub-nav-item text="模态框" link="/components/modalDemo"></sub-nav-item>
+        <sub-nav-item text="分页器" link="/components/paginatorDemo"></sub-nav-item>
+        <sub-nav-item text="布局组件" link="/components/layoutComponents"></sub-nav-item>
+        <sub-nav-item text="Spinner" link="/components/spinnerDemo"></sub-nav-item>
+        <sub-nav-item text="滑块" link="/components/sliderDemo"></sub-nav-item>
+        <sub-nav-item text="画廊" link="/components/galleryDemo"></sub-nav-item>
+        <sub-nav-item text="图片上传" link="/components/uploaderDemo"></sub-nav-item>
+        <sub-nav-item text="展开/隐藏"  link="/components/dropDownDemo"></sub-nav-item>
+        <sub-nav-item text="DeleteWrap" link="/components/deleteWrapDemo"></sub-nav-item>
+        <sub-nav-item text="图表" link="/components/chart"></sub-nav-item>
+        <!--<sub-nav-item text="搜索框" link="/components/searchbarDemo"></sub-nav-item>-->
+      </nav-item>
+      <nav-item icon="fa fa-exchange" text="管道"  link="/pipes"></nav-item>
+      <nav-item icon="glyphicon glyphicon-barcode" text="指令" badge-value="2" badge-class="badge bg-info" link="/directives">
+      </nav-item>
+      <nav-item icon="glyphicon glyphicon-briefcase icon" text="UIKits" >
+        <sub-nav-item text="字体图标" link="/UIKits/iconfonts"></sub-nav-item>
+        <sub-nav-item text="按钮" link="/UIKits/buttons"></sub-nav-item>
+        <sub-nav-item text="栅格系统" link="/UIKits/grid"></sub-nav-item>
+        <sub-nav-item text="小部件" link="/UIKits/widgets"></sub-nav-item>
+        <sub-nav-item text="时间线" link="/UIKits/timeline"></sub-nav-item>
+      </nav-item>
+      <nav-item icon="glyphicon glyphicon-edit" text="表单" >
+        <sub-nav-item text="datePicker" link="/form/datePickerDemo"></sub-nav-item>
+        <sub-nav-item text="checkbox" link="/form/checkboxDemo"></sub-nav-item>
+        <sub-nav-item text="radio" link="/form/radioDemo"></sub-nav-item>
+        <sub-nav-item text="toggle" link="/form/toggleDemo"></sub-nav-item>
+        <sub-nav-item text="select" link="/form/selectDemo"></sub-nav-item>
+        <sub-nav-item text="elements" link="/form/elements"></sub-nav-item>
+      </nav-item>
+      <nav-item icon="glyphicon glyphicon-th-list" text="Grid" >
+        <sub-nav-item text="基础" link="/dataTable/basic"></sub-nav-item>
+        <sub-nav-item text="头尾" link="/dataTable/facets"></sub-nav-item>
+        <sub-nav-item text="内嵌模板" link="/dataTable/templating"></sub-nav-item>
+        <sub-nav-item text="列分组" link="/dataTable/colGroup"></sub-nav-item>
+        <sub-nav-item text="行分组" link="/dataTable/rowGroup"></sub-nav-item>
+        <sub-nav-item text="导出" link="/dataTable/export"></sub-nav-item>
+        <sub-nav-item text="列显隐" link="/dataTable/colToggler"></sub-nav-item>
+        <sub-nav-item text="滚动" link="/dataTable/scroll"></sub-nav-item>
+        <sub-nav-item text="筛选" link="/dataTable/filter"></sub-nav-item>
+        <sub-nav-item text="分页" link="/dataTable/paginator"></sub-nav-item>
+        <sub-nav-item text="排序" link="/dataTable/sort"></sub-nav-item>
+        <sub-nav-item text="选择" link="/dataTable/selection"></sub-nav-item>
+        <sub-nav-item text="编辑" link="/dataTable/editable"></sub-nav-item>
+        <sub-nav-item text="可展开" link="/dataTable/expand"></sub-nav-item>
+        <sub-nav-item text="菜单" link="/dataTable/contextMenu"></sub-nav-item>
+      </nav-item>
+      <nav-item icon="fa fa-cog" text="主题/皮肤"  link="/themes"></nav-item>
+    </nav-wrap>
+  </aside-left>
+</ng-template>
+
+
+<themes-controller></themes-controller>
+
+
+
+
+
+
+
+
+

@@ -1,10 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
 import { FormComponent } from './form.component';
-import { DatePickerDemoComponent } from './date-picker-demo/date-picker-demo.component';
-import { CheckboxDemoComponent } from './checkbox-demo/checkbox-demo.component';
-import { RadioDemoComponent } from './radio-demo/radio-demo.component';
-import { ToggleDemoComponent } from './toggle-demo/toggle-demo.component';
-import { SelectDemoComponent } from './select-demo/select-demo.component';
+import { ListDemoComponent } from './list-demo/list-demo.component';
 import { ElementsComponent } from './elements/elements.component';
 const routes: Routes = <Routes>[
   {
@@ -12,24 +8,8 @@ const routes: Routes = <Routes>[
     component: FormComponent
   },
   {
-    path: 'datePickerDemo',
-    component: DatePickerDemoComponent
-  },
-  {
-    path: 'checkboxDemo',
-    component: CheckboxDemoComponent
-  },
-  {
-    path: 'radioDemo',
-    component: RadioDemoComponent
-  },
-  {
-    path: 'toggleDemo',
-    component: ToggleDemoComponent
-  },
-  {
-    path: 'selectDemo',
-    component: SelectDemoComponent
+    path: 'listDemo',
+    component: ListDemoComponent
   },
   {
     path: 'elements',

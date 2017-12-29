@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import  {SettingService}  from '../../services/setting/setting.service';
+import  {SettingService}  from '../core/services/setting/setting.service';
+import  {ThemesService}  from '../core/services/themes/themes.service';
 @Component({
   selector: 'index',
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.less'],
-  providers:[SettingService]
+  providers:[]
 })
 export class IndexComponent {
-  setting:SettingService;
   isFullScreen:boolean=false;
   messageCount:number=0;
   user={
@@ -16,10 +16,11 @@ export class IndexComponent {
     avatar:''
   };
   constructor(
-    private settingService:SettingService,
+    public setting:SettingService,
+    public themesSvc:ThemesService,
     private router:Router
   ){
-    this.setting=this.settingService.getSetting();
+    console.log(this.themesSvc.skin);
   }
   toggleAsideFolded(){
     this.setting.asideFolded=!this.setting.asideFolded;

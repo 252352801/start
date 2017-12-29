@@ -1,0 +1,37 @@
+<div class="pad-def bg-default bor-b-def">
+  <h2 class="no-margin">列表页 <small class="font-xs text-disabled padding-left-default">directive</small></h2>
+</div>
+<div class="wrapper-md">
+  <div class="bg-white">
+    <form class="form-inline clearfix form-search">
+      <div>
+        <div class="form-group">
+          <label class="control-label indent-sm-2 indent-md-none" >日期：</label>
+          <datetime-picker [(value)]="date"   format="yyyy年MM月dd日" [max]="date1">
+            <input class="form-control"  [(ngModel)]="date" name="date" placeholder="选择日期" />
+          </datetime-picker>
+        </div>
+        <div class="form-group ">
+          <label class="control-label indent-sm-2 indent-md-none" >姓名：</label>
+          <input class="form-control" placeholder="请输入全名"/>
+        </div>
+        <div class="form-group ">
+          <label  class="control-label indent-sm-2">籍贯：</label>
+          <input class="form-control" [(ngModel)]="address" name="address"
+                 placeholder="请输入籍贯" [areaPicker]="areaPicker" />
+        </div>
+        <div class="form-group">
+          &nbsp;
+          <input class="btn btn-info btn-sm form-control" type="button" value="搜索" (click)="search()" />
+        </div>
+      </div>
+    </form>
+    <p-dataTable [value]="data"  scrollHeight="200px">
+      <p-column field="vin" header="Vin"></p-column>
+      <p-column field="year" header="Year"></p-column>
+      <p-column field="brand" header="Brand"></p-column>
+      <p-column field="color" header="Color"></p-column>
+    </p-dataTable>
+  </div>
+</div>
+

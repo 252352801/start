@@ -1,0 +1,5 @@
+<delete-wrap *ngFor="let img of galleryImages;let i=index" size="sm" (remove)="deleteConfirm(i)">
+  <a class="img-wrap"  >
+    <img [src]="img.a.b" />
+  </a>
+</delete-wrap>
