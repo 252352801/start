@@ -6,7 +6,7 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "dist",
+      "outDir": "start/dist",
       "assets": [
         "assets",
         "favicon.ico"
@@ -23,9 +23,9 @@
         "../node_modules/primeng/resources/themes/omega/theme.css",
         "../node_modules/primeng/resources/primeng.min.css",
         "../node_modules/dolphinng/assets/styles/skins/dol.less",
-        "styles.less"
-      ],
+        "styles.less"],
       "scripts": [
+        "../node_modules/chart.js/dist/Chart.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

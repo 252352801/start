@@ -8,8 +8,9 @@ import  {ThemesService}  from '../core/services/themes/themes.service';
 })
 export class ThemesComponent implements OnDestroy {
 
-  constructor(private themesSvc: ThemesService,
-              private setting: SettingService) {
+  constructor(
+    public themesSvc: ThemesService,
+    private setting: SettingService) {
   }
 
   ngOnDestroy() {

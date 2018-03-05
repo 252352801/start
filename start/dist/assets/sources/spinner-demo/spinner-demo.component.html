@@ -1,0 +1,69 @@
+<div class="pad-def bg-default bor-b-def">
+  <h2 class="no-margin">Spinner<small class="font-xs text-disabled padding-left-default"></small></h2>
+</div>
+<div class="wrapper-md">
+  <table class="table table-bordered bg-white">
+    <tr>
+      <td width="15%"><b>类名</b></td>
+      <td>
+        SpinnerComponent
+      </td>
+    </tr>
+    <tr>
+      <td><b>所属模块</b></td>
+      <td>LoaderModule</td>
+    </tr>
+    <tr>
+      <td><b>类型</b></td>
+      <td>组件</td>
+    </tr>
+    <tr>
+      <td><b>selector</b></td>
+      <td>
+        spinner
+      </td>
+    </tr>
+  </table>
+  <p class="h4 mar-b-sm text-primary">示例</p>
+  <div class="bg-white pad-def mar-b-sm">
+    <div class="row">
+      <div class="col-md-6">
+        默认：
+        <spinner size="xs"></spinner>
+        <spinner size="sm"></spinner>
+        <spinner ></spinner>
+        <spinner size="lg"></spinner>
+
+      </div>
+      <div style="background: #000" class="col-md-6">
+        <spinner size="xs" [isDark]="true"></spinner>
+        <spinner size="sm" [isDark]="true"></spinner>
+        <spinner [isDark]="true"></spinner>
+        <spinner size="lg" [isDark]="true"></spinner>
+
+      </div>
+      <div class="col-md-6">
+        sixty：
+        <spinner size="xs" type="sixty"></spinner>
+        <spinner size="sm" type="sixty"></spinner>
+        <spinner type="sixty"></spinner>
+        <spinner size="lg" type="sixty"></spinner>
+        <spinner size="lg" type="sixty"></spinner>
+
+
+      </div>
+      <div style="background: #000" class="col-md-6">
+        <spinner size="xs" type="sixty" [isDark]="true"></spinner>
+        <spinner size="sm" type="sixty" [isDark]="true"></spinner>
+        <spinner type="sixty" [isDark]="true"></spinner>
+        <spinner size="lg" type="sixty" [isDark]="true"></spinner>
+
+      </div>
+    </div>
+  </div>
+  <div>
+    <code-high-light maxHeight="500px" language="html" codeSrc="./assets/sources/paginator-demo/paginator-demo.component.html" >
+    </code-high-light>
+  </div>
+</div>
+

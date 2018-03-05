@@ -20,7 +20,6 @@ export class IndexComponent {
     public themesSvc:ThemesService,
     private router:Router
   ){
-    console.log(this.themesSvc.skin);
   }
   toggleAsideFolded(){
     this.setting.asideFolded=!this.setting.asideFolded;

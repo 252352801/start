@@ -11,10 +11,12 @@ const routes: Routes = [
         { path: 'feedback', loadChildren: './feedback/feedback.module#FeedbackModule',data:{title:'操作反馈'} },
         { path: 'components', loadChildren: './components/components.module#ComponentsModule',data:{title:'组件'} },
         { path: 'directives', loadChildren: './directives/directives.module#DirectivesModule',data:{title:'指令'} },
+        { path: 'pipes', loadChildren: './pipes/pipes.module#PipesModule',data:{title:'管道'} },
         { path: 'UIKits', loadChildren: './UIKits/UIKits.module#UIKitsModule',data:{title:'UIKits'}},
         { path: 'form', loadChildren: './form/form.module#FormModule',data:{title:'表单'}},
         { path: 'dataTable', loadChildren: './data-table/data-table.module#DataTableModule',data:{title:'dataTable'}},
-        { path: 'themes', loadChildren: './themes/themes.module#ThemesModule',data:{title:'主题'}}
+        { path: 'themes', loadChildren: './themes/themes.module#ThemesModule',data:{title:'主题'}},
+        { path: 'charts', loadChildren: './charts/charts.module#ChartsModule',data:{title:'图表'}}
       ]
     }
 ];

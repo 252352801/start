@@ -4,6 +4,12 @@
 <div class="wrapper-md bg-white">
   <p>当前皮肤：{{themesSvc.skin||'默认'}}</p>
   <p class="text-disabled">注：您可以展开右边悬浮按钮，切换皮肤/主题进行预览</p>
+  <div *ngIf="themesSvc.skin=='dol'">
+    当前皮肤下特殊按钮：
+    <button class="btn-def">btn-def</button>
+    <button class="btn-def btn-def-sm">btn-def-sm</button>
+    <button class="btn-def btn-def-xs">btn-def-xs</button>
+  </div>
   <h3 class="text-primary">如何使用皮肤？</h3>
   <ul>
     <li>1.给body标签添加对应皮肤的类名；</li>

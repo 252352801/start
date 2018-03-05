@@ -14,7 +14,7 @@
   </div>
 </root-container>
 <ng-template #header >
-  <header  *ngIf="!themesSvc.skin">
+  <header  *ngIf="!themesSvc.skin" theme="cerulean">
     <header-left [theme]="themesSvc.themes.headerLeft">
       <button class="pull-right visible-xs" (click)="headerRight.toggleDropDown()" >
         <i class="glyphicon glyphicon-cog"></i>
@@ -194,7 +194,9 @@
         <sub-nav-item text="toggle" link="/components/toggleDemo"></sub-nav-item>
         <!--<sub-nav-item text="搜索框" link="/components/searchbarDemo"></sub-nav-item>-->
       </nav-item>
-      <nav-item icon="fa fa-exchange" text="管道"  link="/pipes"></nav-item>
+      <nav-item icon="fa fa-exchange" text="管道"  >
+        <sub-nav-item text="日期格式化" link="/pipes/date"></sub-nav-item>
+      </nav-item>
       <nav-item icon="glyphicon glyphicon-barcode" text="指令" badge-value="2" badge-class="badge bg-info">
         <sub-nav-item text="地区选择" link="/directives/areaPickerDemo"></sub-nav-item>
         <sub-nav-item text="输入金额格式化" link="/directives/currencyFormatDemo"></sub-nav-item>
@@ -229,7 +231,7 @@
         <sub-nav-item text="可展开" link="/dataTable/expand"></sub-nav-item>
         <sub-nav-item text="菜单" link="/dataTable/contextMenu"></sub-nav-item>
       </nav-item>
-      <nav-item icon="fa fa-bar-chart-o" text="图表"  link="/chart"></nav-item>
+      <nav-item icon="fa fa-bar-chart-o" text="图表"  link="/charts"></nav-item>
       <nav-item icon="fa fa-cog" text="主题/皮肤"  link="/themes"></nav-item>
     </nav-wrap>
   </aside-left>
