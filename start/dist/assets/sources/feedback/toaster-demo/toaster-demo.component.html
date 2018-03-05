@@ -1,0 +1,183 @@
+<div class="pad-def bg-default bor-b-def">
+  <h2 class="no-margin">Toaster<small class="font-xs text-disabled pad-l-def">service</small></h2>
+</div>
+
+  <div class="row pad-def bg-default bor-b-def">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control ng-pristine ng-untouched ng-valid" placeholder="输入标题" [(ngModel)]="toastOptions.title">
+      </div>
+
+      <div class="form-group">
+        <label>Message</label>
+        <textarea class="form-control ng-pristine ng-untouched ng-valid" placeholder="输入消息内容" rows="5" [(ngModel)]="toastOptions.message"></textarea>
+      </div>
+      <button class="btn btn-{{toastOptions.type==='error'?'danger':
+                             toastOptions.type==='wait'?'info':toastOptions.type}}"
+              (click)="popToaster()">点我试试</button>
+    </div>
+    <div class="col-sm-6">
+      <label>Type</label>
+
+      <div class="radio">
+        <label class="i-checks" (click)="changeToasterType('success')">
+          <input type="radio" name="toaster"  value="success" [checked]="toastOptions.type==='success'" >
+          <i></i>
+          Success
+        </label>
+      </div>
+      <div class="radio">
+        <label class="i-checks" (click)="changeToasterType('info')">
+          <input type="radio" name="toaster"  value="info" [checked]="toastOptions.type==='info'" >
+          <i></i>
+          Info
+        </label>
+      </div>
+      <div class="radio">
+        <label class="i-checks" (click)="changeToasterType('wait')">
+          <input type="radio" name="toaster"  value="wait" [checked]="toastOptions.type==='wait'"  >
+          <i></i>
+          Wait
+        </label>
+      </div>
+      <div class="radio">
+        <label class="i-checks" (click)="changeToasterType('warning')">
+          <input type="radio" name="toaster" value="warning" [checked]="toastOptions.type==='warning'" >
+          <i></i>
+          Warning
+        </label>
+      </div>
+      <div class="radio">
+        <label class="i-checks" (click)="changeToasterType('error')">
+          <input type="radio" name="toaster"  value="error" [checked]="toastOptions.type==='error'">
+          <i></i>
+          Error
+        </label>
+      </div>
+    </div>
+  </div>
+<div class="pad-def">
+  <p class="h4  m-b-sm block">示例</p>
+  <div class="m-b-md">
+    <p>
+      <button class="btn btn-success" (click)="popDemo()">点我试试</button>
+    </p>
+  </div>
+  <div class="tab-container">
+    <ul class="nav nav-tabs ">
+      <li [ngClass]="{active: tabIndex===0}" >
+        <a  (click)="changTab(0)">html</a>
+      </li>
+      <li [ngClass]="{active: tabIndex===1}" >
+        <a  (click)="changTab(1)">typescript</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane "  [ngClass]="{active: tabIndex===0}" >
+        <code-high-light language="html" codeSrc="./assets/sources/feedback/pop-demo/pop-demo.component.html">
+        </code-high-light>
+      </div>
+      <div class="tab-pane" [ngClass]="{active: tabIndex===1}">
+        <code-high-light language="typescript" codeSrc="./assets/sources/feedback/pop-demo/pop-demo.component.ts.code" >
+        </code-high-light>
+      </div>
+    </div>
+  </div>
+  <p class="h4  m-b-sm m-t-sm block">方法</p>
+  <ul class="no-padding">
+    <li class="no-li-style">
+      <p ><span class="font-bold">pop(options)</span>  弹出提示信息</p>
+      <table class="table table-responsive bg-white">
+        <thead>
+        <th>参数</th>
+        <th>类型</th>
+        <th>是否必须</th>
+        <th>说明</th>
+        </thead>
+        <tbody>
+        <tr>
+          <td>options</td>
+          <td>ToasterOptions</td>
+          <td>是</td>
+          <td>
+            <a href="feedback/toaster#options">
+              查看
+            </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </li>
+    <li  class="no-li-style">
+      <p ><span class="font-bold">info(title,message)、success(title,message)、wait(title,message)、warning(title,message)、error(title,message) 弹出与方法名对应类型的消息框</span></p>
+      <table class="table table-responsive bg-white">
+        <thead>
+        <th>参数</th>
+        <th>类型</th>
+        <th>是否必须</th>
+        <th>说明</th>
+        </thead>
+        <tbody>
+        <tr>
+          <td>title</td>
+          <td>string</td>
+          <td>是</td>
+          <td>
+             消息框标题
+          </td>
+        </tr>
+        <tr>
+          <td>message</td>
+          <td>string</td>
+          <td>是</td>
+          <td>
+            消息框正文
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </li>
+  </ul>
+  <p class="h4  m-b-sm m-t-sm block" id="options">options参数说明</p>
+  <table class="table table-responsive bg-white">
+    <thead>
+    <th>属性值</th>
+    <th>类型</th>
+    <th>是否必须</th>
+    <th>说明</th>
+    </thead>
+    <tbody>
+    <tr>
+      <td>type</td>
+      <td>string</td>
+      <td>否</td>
+      <td>弹出框的类型，默认为info,可选值：info、success、wait、warning、error</td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>string</td>
+      <td>否</td>
+      <td>消息框的标题</td>
+    </tr>
+    <tr>
+      <td>message</td>
+      <td>string</td>
+      <td>是</td>
+      <td>消息框的正文</td>
+    </tr>
+    <tr>
+      <td>animated</td>
+      <td>boolean</td>
+      <td>否</td>
+      <td>是否使用动画，默认为true</td>
+    </tr>
+    <tr>
+      <td>delay</td>
+      <td>number</td>
+      <td>否</td>
+      <td>消息框持续时间，单位为毫秒，默认值5000，即5秒</td>
+    </tr>
+    </tbody>
+  </table>
+ </div>

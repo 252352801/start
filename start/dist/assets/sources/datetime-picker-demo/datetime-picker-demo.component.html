@@ -1,0 +1,23 @@
+<p class="h4 m-b-sm block text-primary">示例</p>
+<div class="mar-b-sm clearfix">
+  <div class="pull-left">
+    <datetime-picker [(value)]="date">
+      <input class="form-control" [(ngModel)]="date" placeholder="选择日期" />
+    </datetime-picker>
+  </div>
+  <div class="pull-left pad-l-sm">
+    <datetime-picker [(value)]="date1" format="yyyy-MM-dd hh:mm:ss">
+      <input class="form-control" [(ngModel)]="date1" placeholder="选择日期时间" />
+    </datetime-picker>
+  </div>
+  <div class="pull-left pad-l-sm">
+    <datetime-picker [(value)]="date2" format="yyyy年MM月dd日hh时mm分">
+      <input class="form-control" [(ngModel)]="date2" placeholder="选择日期时间" />
+    </datetime-picker>
+  </div>
+  <div class="pull-left pad-l-sm">
+    <datetime-picker [(value)]="date3" format="yyyy-MM-dd" min="2017-12-02" max="2017-12-28">
+      <input class="form-control" [(ngModel)]="date3" placeholder="选择日期" />
+    </datetime-picker>
+  </div>
+</div>
