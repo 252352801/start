@@ -1,5 +1,5 @@
 # 基于uibootstrap的组件库
 
-demo:<https://github.com/252352801/start/>.
+demo:<https://252352801.github.com/start/>.
 
 
