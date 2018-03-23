@@ -1,7 +1,0 @@
-<form class="form-inline clearfix mar-b-sm" HTML5Validate >
-  <input class="form-control" [(ngModel)]="name" currencyFormat name="name" placeholder="请输入名字" required
-         [HTML5Validate]="[!name,'请输入名字！']"/>
-  <input class="form-control" [(ngModel)]="num" currencyFormat name="num" placeholder="输入数字" required pattern="^\d+$" #numRef="ngModel"
-         [HTML5Validate]="[[!num,'请输入数字！'],[numRef.errors&&numRef.errors.pattern,'数字输入有误！']]"/>
-  <button class="btn btn-primary" type="submit">提交</button>
-</form>

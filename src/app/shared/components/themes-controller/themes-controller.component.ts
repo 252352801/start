@@ -48,18 +48,22 @@ export class ThemesControllerComponent implements OnInit,OnChanges,OnDestroy {
 
   setSkin(val:string){
     if(val) {
-      this.themesSvc.setSkin('dol');
+      this.themesSvc.setSkin(val);
     }else{
       this.themesSvc.clearSkin();
     }
-    if(val==='dol'){
+    if(val==='black'){
+      this.themesSvc.themes.headerLeft='black';//black
+      this.themesSvc.themes.headerRight='black';//black
+      this.themesSvc.themes.asideLeft='black';//black
+    }else if(val==='dol'){
       this.themesSvc.themes.headerLeft='';
       this.themesSvc.themes.headerRight='';
       this.themesSvc.themes.asideLeft='cerulean-outline';
     }else{
-      this.themesSvc.themes.headerLeft='black';
-      this.themesSvc.themes.headerRight='black';
-      this.themesSvc.themes.asideLeft='black';
+      this.themesSvc.themes.headerLeft='';//black
+      this.themesSvc.themes.headerRight='';//black
+      this.themesSvc.themes.asideLeft='';//black
     }
   }
 }

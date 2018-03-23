@@ -14,7 +14,7 @@
   </div>
 </root-container>
 <ng-template #header >
-  <header  *ngIf="!themesSvc.skin" theme="cerulean">
+  <header  *ngIf="themesSvc.skin==='black'||!themesSvc.skin" theme="cerulean">
     <header-left [theme]="themesSvc.themes.headerLeft">
       <button class="pull-right visible-xs" (click)="headerRight.toggleDropDown()" >
         <i class="glyphicon glyphicon-cog"></i>
@@ -164,11 +164,41 @@
     </div>
 
   </header>
+  <header theme="cerulean" *ngIf="themesSvc.skin==='deep-blue'">
+    <a class="sys-name hidden-xs" routerLink="/home">
+      物流供应链金融管理平台
+    </a>
+    <a class="btn-toggle-aside" (click)="toggleOffScreen()">
+      <i class="fa fa-reorder"></i>
+    </a>
+    <a class="sys-name-xs" routerLink="/home">物流供应链金融管理平台</a>
+    <div class="dropdown user-box" toggleClass="open" [opt-revokable]="true">
+      <a  class="dropdown-toggle clear">
+        <i class="fa fa-user pad-r-xxs"></i><span class="hidden-xs">用户名</span> <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu animated fadeInRight w pad-r-xs">
+        <li>
+          <a >
+            <span class="label bg-info pull-right"></span>
+            修改密码
+          </a>
+          <a >
+            <span class="label bg-info pull-right"></span>
+            修改审核口令
+          </a>
+        </li>
+        <li>
+          <a routerLink="/signin">退出登录</a>
+        </li>
+      </ul>
+    </div>
+
+  </header>
 </ng-template>
 <ng-template #asideLeft>
   <aside-left [theme]="themesSvc.themes.asideLeft">
     <nav-wrap>
-      <nav-item icon="glyphicon glyphicon-list-alt" text="简述" badge-value="2" badge-class="badge bg-info" >
+      <nav-item icon="glyphicon glyphicon-list-alt" text="简述" badge-value="2" badge-class="badge bg-primary" >
         <sub-nav-item text="说明" link="/about/explanation"></sub-nav-item>
         <sub-nav-item text="约定" link="/about/convention"></sub-nav-item>
         <sub-nav-item text="项目构建" link="/about/build"></sub-nav-item>
@@ -182,7 +212,13 @@
         <sub-nav-item text="时间日期选择" link="/components/datetimePickerDemo"></sub-nav-item>
         <sub-nav-item text="分页器" link="/components/paginatorDemo"></sub-nav-item>
         <sub-nav-item text="布局组件" link="/components/layoutComponents"></sub-nav-item>
-        <sub-nav-item text="左侧菜单" link="/components/navComponents"></sub-nav-item>
+        <!--<sub-nav-item text="左侧菜单" link="/components/navComponents">-->
+        <sub-nav-item text="左侧菜单" >
+            <thirth-nav-item text="总览" link="/components/navComponents"></thirth-nav-item>
+          <thirth-nav-item text="一级菜单" link="/components/navItem"></thirth-nav-item>
+          <thirth-nav-item text="二级菜单" link="/components/subNavItem"></thirth-nav-item>
+          <thirth-nav-item text="三级菜单" link="/components/thirthNavItem"></thirth-nav-item>
+        </sub-nav-item>
         <sub-nav-item text="Spinner" link="/components/spinnerDemo"></sub-nav-item>
         <sub-nav-item text="滑块" link="/components/sliderDemo"></sub-nav-item>
         <sub-nav-item text="画廊" link="/components/galleryDemo"></sub-nav-item>

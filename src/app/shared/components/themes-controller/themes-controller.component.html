@@ -12,8 +12,8 @@
       <li (click)="setSkin('')" class="cur-poi pad-xs">
         <radio [(key)]="themesSvc.skin" value="" >默认</radio>
       </li>
-      <li (click)="setSkin('dol')" class="cur-poi pad-xs">
-        <radio [(key)]="themesSvc.skin" value="dol">dol</radio>
+      <li  class="cur-poi pad-xs" *ngFor="let skins of themesSvc.skins" (click)="setSkin(skins.value)">
+        <radio [(key)]="themesSvc.skin" value={{skins.value}}>{{skins.name}}</radio>
       </li>
     </ul>
   </div>

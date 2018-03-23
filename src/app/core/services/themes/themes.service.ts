@@ -2,12 +2,24 @@ import { Injectable } from '@angular/core';
 import { addClass, removeClass } from '../../core.utils';
 @Injectable()
 export class ThemesService {
-  private skins: string[] = ['dol'];
-  skin: string;
+  private skins: {
+    value:string
+    name:string
+  }[] = [{
+    value:'black',
+    name:'黑色'
+  },{
+    value:'dol',
+    name:'dol'
+  },{
+    value:'deep-blue',
+    name:'深蓝'
+  }];
+  skin: string='';
   themes = {
-    asideLeft: 'cerulean-outline',
-    headerLeft: 'cerulean',
-    headerRight: 'cerulean'
+    asideLeft: '',//black(默认),cerulean-outline
+    headerLeft: '',//black(默认),cerulean
+    headerRight: ''//black(默认),cerulean
   };
   constructor() {
     let localThemesStr = localStorage.getItem('themes');
@@ -15,9 +27,15 @@ export class ThemesService {
     try {
       themesService = JSON.parse(localThemesStr);
       {//默认
-        themesService.themes.asideLeft='black';
-        themesService.themes.headerLeft = 'cerulean';
-        themesService.themes.headerRight = 'cerulean';
+        console.log(themesService.skin);
+        if (!themesService.skin) {
+          //themesService.themes.asideLeft = 'black';
+          //themesService.themes.headerLeft = 'cerulean';
+          //themesService.themes.headerRight = 'cerulean';
+          themesService.themes.asideLeft = '';
+          themesService.themes.headerLeft = '';
+          themesService.themes.headerRight = '';
+        }
       }
       if (themesService && typeof themesService === 'object') {
         themesService.skin && (this.skin = themesService.skin);
@@ -61,7 +79,7 @@ export class ThemesService {
   clearSkin() {
     this.skin = '';
     for (let o of this.skins) {
-      removeClass(document.body, o);
+      removeClass(document.body, o.value);
     }
   }
 
