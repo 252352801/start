@@ -7,18 +7,19 @@
     <ul>
       <li>● 当前皮肤主按钮：<button type="button" class="btn btn-primary">btn btn-primary</button></li>
       <li class="mar-b-xs">● 当前皮肤主要文字颜色：<span class="text-primary">text-primary</span></li>
-      <li>● 使用方法(共4个步骤，其中第1、2步为皮肤使用，第3、4步为项目首页顶部替换)：
+      <li>● 使用方法(共4个步骤，其中第1、2、3步为皮肤使用，第4、5步为项目首页顶部替换)：
         <ul class="pad-l-lg mar-b-sm">
           <li>1.将dolphinng组件包更新到最新版本。（项目根目录下运行npm install dolphinng@latest --save）</li>
           <li>2.在项目根目录.angular-cli.json的styles字段字段引入皮肤的样式文件，路径为../node_modules/dolphinng/assests/styles/skins/deep-blue.less</li>
-          <li><p>3.将app/index/index.component.html文件代码替换为以下内容(特定内容自行替换)</p>
+          <li>3.根目录下src/index.html文件给body标签加上class="deep-blue"</li>
+          <li><p>4.将app/index/index.component.html文件代码替换为以下内容(特定内容自行替换)</p>
             <div>
                 <code-high-light maxHeight="500px" language="html" codeSrc="./assets/sources/themes/skins/deep-blue.html" >
                 </code-high-light>
             </div>
           </li>
           <li>
-              <p>3.将app/index/index.component.css文件代码替换为以下内容</p>
+              <p>5.将app/index/index.component.css文件代码替换为以下内容</p>
               <div>
                   <code-high-light maxHeight="500px" language="less" codeSrc="./assets/sources/themes/skins/deep-blue.less" >
                   </code-high-light>
