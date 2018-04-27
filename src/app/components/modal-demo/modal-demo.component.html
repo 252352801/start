@@ -1,225 +1,239 @@
 <div class="pad-def bg-default bor-b-def">
-  <h2 class="no-margin">模态框
-    <small class="font-xs text-disabled padding-left-default">component</small>
-  </h2>
+    <h2 class="no-margin">模态框
+        <small class="font-xs text-disabled padding-left-default">component</small>
+    </h2>
 </div>
 <div class="wrapper-md">
-  <table class="table table-bordered bg-white">
-    <tr>
-      <td width="15%"><b>类名</b></td>
-      <td>
-        <p>ModalComponent</p>
-        <p>ModalHeaderComponent</p>
-        <p>ModalBodyComponent</p>
-        <p>ModalFooterComponent</p>
-      </td>
-      <td rowspan="4">
-        <p class="text-primary">关系：</p>
-        <p>1.modal是父组件，modal-header、modal-body、modal-footer是子组件；</p>
-        <p>2.子组件应被包含在父组件中。</p>
-        <p class="text-primary">两种使用方式：</p>
-        <p>1.通过属性visible双向绑定控制显示/隐藏；</p>
-        <p>2.通过声明模版变量（指向组件实例），调用open/close方法控制显示/隐藏。</p>
-      </td>
-    </tr>
-    <tr>
-      <td><b>所属模块</b></td>
-      <td>ModalModule</td>
-    </tr>
-    <tr>
-      <td><b>类型</b></td>
-      <td>组件</td>
-    </tr>
-    <tr>
-      <td><b>selector（按类名对应）</b></td>
-      <td>
-        <p>modal</p>
-        <p>modal-header</p>
-        <p>modal-body</p>
-        <p>modal-footer</p>
-      </td>
-    </tr>
-  </table>
-  <p class="h4 m-b-sm block text-primary">示例</p>
-  <div>
-    <p>
-      <button class="btn btn-default" (click)="showModal()">默认模态框(md)</button>
-      <button class="btn btn-primary" (click)="showModal('lg')">大模态框(lg)</button>
-      <button class="btn btn-info" (click)="showModal('sm')">小模态框(sm)</button>
-      <button class="btn btn-info" (click)="modal.open()" >open</button>
-    </p>
-  </div>
-  <div class="tab-container ng-isolate-scope">
-    <ul class="nav nav-tabs ">
-      <li [ngClass]="{active: tabIndex===1}" class="ng-isolate-scope">
-        <a  (click)="changTab(1)">html</a>
-      </li>
-      <li [ngClass]="{active: tabIndex===2}" class="ng-isolate-scope">
-        <a  (click)="changTab(2)">typescript</a>
-      </li>
-    </ul>
-    <div class="tab-content">
-      <div class="tab-pane" [ngClass]="{active: tabIndex===1}">
-        <code-high-light maxHeight="500px" language="html" codeSrc="./assets/sources/modal-demo/modal-demo.component.html" >
-        </code-high-light>
-      </div>
-      <div class="tab-pane "  [ngClass]="{active: tabIndex===2}" >
-        <code-high-light maxHeight="500px" language="typescript" codeSrc="./assets/sources/modal-demo/modal-demo.component.ts.code">
-        </code-high-light>
-      </div>
+    <table class="table table-bordered bg-white">
+        <tr>
+            <td width="15%"><b>类名</b></td>
+            <td>
+                <p>ModalComponent</p>
+                <p>ModalHeaderComponent</p>
+                <p>ModalBodyComponent</p>
+                <p>ModalFooterComponent</p>
+            </td>
+            <td rowspan="4">
+                <p class="text-primary">关系：</p>
+                <p>1.modal是父组件，modal-header、modal-body、modal-footer是子组件；</p>
+                <p>2.子组件应被包含在父组件中。</p>
+                <p class="text-primary">两种使用方式：</p>
+                <p>1.通过属性visible双向绑定控制显示/隐藏；</p>
+                <p>2.通过声明模版变量（指向组件实例），调用open/close方法控制显示/隐藏。</p>
+            </td>
+        </tr>
+        <tr>
+            <td><b>所属模块</b></td>
+            <td>ModalModule</td>
+        </tr>
+        <tr>
+            <td><b>类型</b></td>
+            <td>组件</td>
+        </tr>
+        <tr>
+            <td><b>selector（按类名对应）</b></td>
+            <td>
+                <p>modal</p>
+                <p>modal-header</p>
+                <p>modal-body</p>
+                <p>modal-footer</p>
+            </td>
+        </tr>
+    </table>
+    <p class="h4 m-b-sm block text-primary">示例</p>
+    <div>
+        <p>
+            <button class="btn btn-default" (click)="showModal()">默认模态框(md)</button>
+            <button class="btn btn-primary" (click)="showModal('lg')">大模态框(lg)</button>
+            <button class="btn btn-info" (click)="showModal('sm')">小模态框(sm)</button>
+            <button class="btn btn-info" (click)="modal.open()">open</button>
+        </p>
     </div>
-  </div>
-  <p class="h4 m-b-sm block text-primary">modal属性</p>
-  <table class="table table-bordered bg-white">
-    <thead class="bg-default">
-    <tr>
-      <th>属性名</th>
-      <th>类型</th>
-      <th>输入/输出类型</th>
-      <th>说明</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>visible</td>
-      <td>Input</td>
-      <td>boolean</td>
-      <td>
-        控制显示和隐藏
-      </td>
-    </tr>
-    <tr>
-      <td>visibleChange</td>
-      <td>Output</td>
-      <td>EventEmitter< any ></td>
-      <td>
-        visible改变事件；触发时传入参数为visible。
-      </td>
-    </tr>
-    <tr>
-      <td>onOpen</td>
-      <td>Output</td>
-      <td>EventEmitter< any ></td>
-      <td>
-        模态框从隐藏到显示完成时的事件；触发时传入参数为visible。
-      </td>
-    </tr>
-    <tr>
-      <td>onClose</td>
-      <td>Output</td>
-      <td>EventEmitter< any ></td>
-      <td>
-        模态框关闭事件；触发时传入参数为visible。
-      </td>
-    </tr>
-    <tr>
-      <td>overflow</td>
-      <td>Input</td>
-      <td>boolean</td>
-      <td>
-        是否溢出屏幕，默认为false。
-      </td>
-    </tr>
-    <tr>
-      <td>animated</td>
-      <td>Input</td>
-      <td>boolean</td>
-      <td>
-        是否有过渡动画，默认为true。
-      </td>
-    </tr>
-    <tr>
-      <td>size</td>
-      <td>Input</td>
-      <td>string</td>
-      <td>
-        模态框尺寸，默认为md，可选lg、md、sm。
-      </td>
-    </tr>
-    <tr>
-      <td>styleClass</td>
-      <td>Input</td>
-      <td>string</td>
-      <td>
-        添加到组件内最外层元素上的css类。
-      </td>
-    </tr>
-    <tr>
-      <td>fullHeight</td>
-      <td>Input</td>
-      <td>boolean</td>
-      <td>
-       是否默认撑满屏幕高度；默认为false。
-      </td>
-    </tr>
-    <tr>
-      <td>disabled</td>
-      <td>Input</td>
-      <td>boolean</td>
-      <td>
-        是否禁用（有遮罩）；默认为false。
-      </td>
-    </tr>
-    <tr>
-      <td>outClickClose</td>
-      <td>Input</td>
-      <td>boolean</td>
-      <td>
-        是否点击空白处关闭；默认为false。
-      </td>
-    </tr>
-    <tr>
-      <td>showCloseButton</td>
-      <td>Input</td>
-      <td>boolean</td>
-      <td>
-        是否显示关闭按钮；默认为true。
-      </td>
-    </tr>
-    </tbody>
-  </table>
-  <p class="h4 m-b-sm block text-primary">modal-header、modal-body、modal-footer属性</p>
-  <table class="table table-bordered bg-white">
-    <thead class="bg-default">
-    <tr>
-      <th>属性名</th>
-      <th>类型</th>
-      <th>输入/输出类型</th>
-      <th>说明</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>styleClass</td>
-      <td>Input</td>
-      <td>string</td>
-      <td>
-        添加到组件内最外层元素上的css类。
-      </td>
-    </tr>
-    </tbody>
-  </table>
+    <div class="tab-container ng-isolate-scope">
+        <ul class="nav nav-tabs ">
+            <li [ngClass]="{active: tabIndex===1}" class="ng-isolate-scope">
+                <a (click)="changTab(1)">html</a>
+            </li>
+            <li [ngClass]="{active: tabIndex===2}" class="ng-isolate-scope">
+                <a (click)="changTab(2)">typescript</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane" [ngClass]="{active: tabIndex===1}">
+                <code-high-light maxHeight="500px" language="html" codeSrc="./assets/sources/modal-demo/modal-demo.component.html">
+                </code-high-light>
+            </div>
+            <div class="tab-pane " [ngClass]="{active: tabIndex===2}">
+                <code-high-light maxHeight="500px" language="typescript" codeSrc="./assets/sources/modal-demo/modal-demo.component.ts.code">
+                </code-high-light>
+            </div>
+        </div>
+    </div>
+    <p class="h4 m-b-sm block text-primary">modal属性</p>
+    <table class="table table-bordered bg-white">
+        <thead class="bg-default">
+            <tr>
+                <th>属性名</th>
+                <th>类型</th>
+                <th>输入/输出类型</th>
+                <th>说明</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>visible</td>
+                <td>Input</td>
+                <td>boolean</td>
+                <td>
+                    控制显示和隐藏
+                </td>
+            </tr>
+            <tr>
+                <td>visibleChange</td>
+                <td>Output</td>
+                <td>EventEmitter
+                    < any>
+                </td>
+                <td>
+                    visible改变事件；触发时传入参数为visible。
+                </td>
+            </tr>
+            <tr>
+                <td>onOpen</td>
+                <td>Output</td>
+                <td>EventEmitter
+                    < any>
+                </td>
+                <td>
+                    模态框从隐藏到显示完成时的事件；触发时传入参数为visible。
+                </td>
+            </tr>
+            <tr>
+                <td>onClose</td>
+                <td>Output</td>
+                <td>EventEmitter
+                    < any>
+                </td>
+                <td>
+                    模态框关闭事件；触发时传入参数为visible。
+                </td>
+            </tr>
+            <tr>
+                <td>overflow</td>
+                <td>Input</td>
+                <td>boolean</td>
+                <td>
+                    是否溢出屏幕，默认为false。
+                </td>
+            </tr>
+            <tr>
+                <td>animated</td>
+                <td>Input</td>
+                <td>boolean</td>
+                <td>
+                    是否有过渡动画，默认为true。
+                </td>
+            </tr>
+            <tr>
+                <td>size</td>
+                <td>Input</td>
+                <td>string</td>
+                <td>
+                    模态框尺寸，默认为md，可选lg、md、sm。
+                </td>
+            </tr>
+            <tr>
+                <td>styleClass</td>
+                <td>Input</td>
+                <td>string</td>
+                <td>
+                    添加到组件内最外层元素上的css类。
+                </td>
+            </tr>
+            <tr>
+                <td>fullHeight</td>
+                <td>Input</td>
+                <td>boolean</td>
+                <td>
+                    是否默认撑满屏幕高度；默认为false。
+                </td>
+            </tr>
+            <tr>
+                <td>disabled</td>
+                <td>Input</td>
+                <td>boolean</td>
+                <td>
+                    是否禁用（有遮罩）；默认为false。
+                </td>
+            </tr>
+            <tr>
+                <td>outClickClose</td>
+                <td>Input</td>
+                <td>boolean</td>
+                <td>
+                    是否点击空白处关闭；默认为false。
+                </td>
+            </tr>
+            <tr>
+                <td>showCloseButton</td>
+                <td>Input</td>
+                <td>boolean</td>
+                <td>
+                    是否显示关闭按钮；默认为true。
+                </td>
+            </tr>
+            <tr>
+                <td>width</td>
+                <td>Input</td>
+                <td>number</td>
+                <td>
+                    模态框宽度。
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="h4 m-b-sm block text-primary">modal-header、modal-body、modal-footer属性</p>
+    <table class="table table-bordered bg-white">
+        <thead class="bg-default">
+            <tr>
+                <th>属性名</th>
+                <th>类型</th>
+                <th>输入/输出类型</th>
+                <th>说明</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>styleClass</td>
+                <td>Input</td>
+                <td>string</td>
+                <td>
+                    添加到组件内最外层元素上的css类。
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 <modal [(visible)]="isShowModal" [size]="modalSize">
-  <modal-header>
-    <h4 class="modal-title">Modal title </h4>
-  </modal-header>
-  <modal-body>
-    <p style="height: 100px">One fine body&hellip;</p>
-  </modal-body>
-  <modal-footer>
-    <button class="btn btn-default" (click)="closeModal()">关闭</button>
-    <button class="btn btn-primary">保存</button>
-  </modal-footer>
+    <modal-header>
+        <h4 class="modal-title">Modal title </h4>
+    </modal-header>
+    <modal-body>
+        <p style="height: 100px">One fine body&hellip;</p>
+    </modal-body>
+    <modal-footer>
+        <button class="btn btn-default" (click)="closeModal()">关闭</button>
+        <button class="btn btn-primary">保存</button>
+    </modal-footer>
 </modal>
 <modal size="md" #modal>
-  <modal-header>
-    <h4 class="modal-title">Modal title </h4>
-  </modal-header>
-  <modal-body>
-    <p style="height: 100px">这是调用open方法打开的模态框</p>
-  </modal-body>
-  <modal-footer>
-    <button class="btn btn-default" (click)="modal.close()">关闭</button>
-  </modal-footer>
+    <modal-header>
+        <h4 class="modal-title">Modal title </h4>
+    </modal-header>
+    <modal-body>
+        <p style="height: 100px">这是调用open方法打开的模态框</p>
+    </modal-body>
+    <modal-footer>
+        <button class="btn btn-default" (click)="modal.close()">关闭</button>
+    </modal-footer>
 </modal>
