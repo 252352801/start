@@ -1,0 +1,83 @@
+
+.modal{
+  /*background-color: rgba(0,0,0,0.5);*/
+  display: block;
+  position:fixed ;
+}
+.modal:before{
+  content: '';
+  display: block;
+  width: 100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  left: 0;
+  top:0;
+}
+/deep/ .modal .modal:before{
+  background-color:transparent;
+}
+.modal-content{
+  border-radius: 2px;
+  &.disabled:before{
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right:0;
+    top:0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.1);
+    cursor: wait;
+  }
+}
+.modal .modal-header{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.modal-header-reduce.modal-header{
+  padding-right: 48px;
+  position: relative;
+}
+.modal-btn-close{
+  display: block;
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  margin-left: -48px;
+  text-align: center;
+  font-size: 36px;
+  opacity: 0.35;
+  z-index: 1;
+  line-height: 48px;
+}
+.modal-btn-close:hover{
+  opacity:0.5;
+}
+.modal-btn-close:active{
+  opacity:0.8;
+}
+/*================
+    滚动条begin
+================*/
+.modal *::-webkit-scrollbar{
+  width:10px;
+
+}
+.modal *::-webkit-scrollbar-track-piece{
+  background: #f0f0f0;
+}
+.modal *::-webkit-scrollbar-thumb{
+  width:12px;
+  background: rgba(125,125,125,0.25);
+}
+.modal *::-webkit-scrollbar-thumb:hover{
+  background: rgba(125,125,125,0.5);
+}
+.modal *::-webkit-scrollbar-corner{
+
+}
+/*
+滚动条end*/

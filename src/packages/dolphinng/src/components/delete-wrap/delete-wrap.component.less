@@ -1,0 +1,64 @@
+.delete-wrap{
+  display: inline-block;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.delete-wrap-btn{
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  position: absolute;
+  left: 100%;
+  top: -18px;
+  margin-left: -18px;
+  cursor: pointer;
+  z-index: 1;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 36px;
+  color: #fff;
+  background-color: #f05050;
+  /*color: #f05050;*/
+
+}
+.delete-wrap-btn:active{
+  /*color: #f02b2d;*/
+  background-color: #f02b2d;
+}
+.delete-wrap:hover .delete-wrap-btn{
+  display: block;
+}
+.delete-wrap.delete-wrap-lg .delete-wrap-btn{
+  width: 48px;
+  height: 48px;
+  top: -24px;
+  margin-left: -24px;
+  font-size: 36px;
+}
+.delete-wrap.delete-wrap-md .delete-wrap-btn{
+  width: 36px;
+  height: 36px;
+  top: -18px;
+  margin-left: -18px;
+  line-height:1.66;
+  font-size: 24px;
+}
+.delete-wrap.delete-wrap-sm .delete-wrap-btn{
+  width: 24px;
+  height: 24px;
+  top: -12px;
+  margin-left: -12px;
+  font-size: 18px;
+}
+.delete-wrap.delete-wrap-xs .delete-wrap-btn{
+  width: 18px;
+  height: 18px;
+  top: -9px;
+  margin-left: -9px;
+  font-size: 12px;
+  text-indent: -0.5px;
+}

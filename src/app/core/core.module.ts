@@ -6,7 +6,7 @@ import { ThemesControllerModule } from '../shared/modules/themesController.modul
 import {
   LayoutModule,
   NavModule,
-  CommonModule as MyCommonModule,
+  CommonModule as MyCommonModule
 } from 'dolphinng';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({

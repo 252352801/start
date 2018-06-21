@@ -1,0 +1,6 @@
+<div  #wrap class="drop-content"  [style.transition]="isTransition?'height '+animateTime+'s':null"
+ [ngClass]="{'open':cssOpen}">
+    <div *ngIf="visible" #content>
+      <ng-content ></ng-content>
+    </div>
+	</div>

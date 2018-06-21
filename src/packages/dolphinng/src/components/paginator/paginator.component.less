@@ -1,0 +1,80 @@
+ul.pagination{
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  float: left;
+  margin: 0;
+}
+.pagination-text{
+  float: left;
+  line-height: 34px;
+  padding-right:10px;
+}
+.pagination-text.pagination-text-sm{
+  font-size: 12px;
+  line-height: 29px;
+}
+.pagination-wrap{
+  /*display: inline-block;*/
+}
+.pagination-wrap:after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.pagination-input{
+  float: left;
+}
+.pagination-input a{
+  color:#428bca;
+}
+.pagination-input .input-group{
+  width: 105px;
+}
+.pagination-input .input-group.input-group-sm{
+  width: 90px;
+}
+.pagination-input .input-group .input-group-addon{
+  background-color: #fff;
+}
+.pagination-input .input-group .input-group-addon:hover{
+  background-color:#edf1f2;
+}
+.pagination-text select{
+  padding: 4px 6px;
+  border:1px solid #ddd;
+}
+.pagination-text.pagination-text-sm select{
+  padding:4px 4px;
+}
+.pagination-text span{
+  color:#ff6700;
+}
+.pagination > li:first-child > a, .pagination > li:first-child > span{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.input-group-addon{
+  border-radius:0;
+}
+.input-group-sm > .form-control{
+  height: 29px;
+  border-radius:0;
+}
+.input-group-sm .input-group-addon{
+  height: 29px;
+  padding: 4px 10px;
+}
+.pagination-input .form-control{
+  min-width: 0;
+}
+
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+  background-color: #0099CC;
+}

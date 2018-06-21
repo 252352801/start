@@ -1,0 +1,13 @@
+<div class="slider" #slider (click)="setNewValueByMousePosition($event)">
+  <div class="slider-text-bar">
+    <span class="slider-min" *ngIf="(value-min)/(max-min)>0.1">{{min}}</span>
+    <span class="slider-max" *ngIf="(max-value)/(max-min)>0.1">{{max}}</span>
+  </div>
+  <div class="slider-body" >
+    <div class="slider-value" [style.left]="left">{{value}}</div>
+    <div class="slider-bg" [style.width]="left" *ngIf="isValueBackground"></div>
+    <div class="slider-thumb"   #sliderThumb
+         [style.left]="left"
+         [ngClass]="{'active':isPressing}" (mousedown)="thumbPress()"></div>
+  </div>
+</div>

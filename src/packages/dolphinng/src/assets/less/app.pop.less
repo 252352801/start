@@ -1,0 +1,102 @@
+//pop
+@baseBorderRadius:0;
+@popFontFamily:Microsoft Yahei;
+@popTextFontSize:16px;
+.pop-wrap{
+  position: fixed;
+  left: 0;
+  top:0;
+  width: 100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.25);
+  font-family: @popFontFamily;
+  z-index:99999 ;
+  opacity: 0;
+  transition:all 0.2s ease-in-out 0s;
+}
+.pop-main{
+  width: 500px;
+  min-height: 100px;
+  background-color: #fff;
+  position: relative;
+  border-radius: 0;
+  background-clip: padding-box;
+  overflow: hidden;
+  border: 1px solid #aaa;
+  max-width: 100%;
+  margin: 100px auto;
+  transform:scale(0.9);
+  transition:all 0.2s ease-in-out 0s;
+}
+.pop-header{
+  line-height: 50px;
+  border-bottom: 1px solid #eee;
+  padding: 0 50px 0 20px;
+  background-color: #fff;
+  position: relative;
+}
+.pop-btn-close{
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 24px;
+  color:#aaa;
+  position: absolute;
+  left:100%;
+  top:0;
+  margin-left:-50px;
+  cursor: pointer;
+}
+.pop-btn-close:active{
+  color:#888;
+
+}
+.pop-body{
+  min-height: 100px;
+  border-bottom:1px solid #eee;
+  padding: 20px;
+}
+.pop-body.pop-body-txt-center{
+  /*display: flex;
+  justify-content: center;
+  align-items: center;*/
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+.pop-body .pop-text i{
+  font-size: @popTextFontSize*1.2;
+  padding-right: @popTextFontSize*0.5;
+}
+.pop-footer{
+  height: 60px;
+  line-height:60px;
+  padding: 0 15px;
+  text-align: right;
+}
+.pop-footer .btn{
+  margin-left: 10px;
+}
+.pop-title{
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 50px;
+  color:#666;
+}
+.pop-text{
+  font-size: @popTextFontSize;
+  font-family:@popFontFamily;
+  color:#333;
+  display: table-cell;
+  vertical-align: middle;
+}
+.pop-wrap.animated{
+  opacity: 1;
+}
+.pop-wrap.animated .pop-main{
+  transform: scale(1);
+}
+

@@ -1,0 +1,55 @@
+@theme-cerulean-outline:#23b7e5;
+@theme-cerulean-outline-hover:#f0f0f0;
+@theme-cerulean-menu-active:#dee5eb;
+
+.app-aside /deep/ .glyphicon{
+  top:0;
+}
+
+
+.cerulean-outline{
+  color:@theme-cerulean-outline;
+
+}
+.cerulean-outline /deep/ .aside-wrap{
+  background-color: #fff;
+}
+.cerulean-outline /deep/ .navi-wrap a{
+  color:@theme-cerulean-outline;
+  /*font-weight: bold;*/
+}
+.cerulean-outline /deep/ .text-muted{
+  color:@theme-cerulean-outline;
+}
+.cerulean-outline /deep/ .aside-wrap{
+  /*border-right: 1px solid #ddd;*/
+  box-shadow: 3px 0 5px #ddd;
+}
+.cerulean-outline /deep/ li.active>a,.cerulean-outline /deep/ .thirth-nav-item.active,
+.cerulean-outline /deep/ li.active>a:hover,.cerulean-outline /deep/ .thirth-nav-item.active:hover{
+  background-color: @theme-cerulean-menu-active;
+  color:inherit;
+}
+.cerulean-outline /deep/ li.exist-children.active>a,.cerulean-outline /deep/ li.has-child.active>a{
+  background-color: transparent;
+  color:inherit;
+}
+.cerulean-outline /deep/ li>a:hover,.cerulean-outline /deep/ .thirth-nav-item:hover{
+  background-color: @theme-cerulean-outline-hover;
+}
+.cerulean-outline /deep/ li.exist-children.active>a:hover,.cerulean-outline /deep/ li.has-child.active>a:hover{
+  background-color: @theme-cerulean-outline-hover;
+}
+/deep/ .app-aside-folded .cerulean-outline .nav-sub{
+  background-color: #fff;
+  border:1px solid #ddd;
+  border-left: none;
+}
+/deep/ .app-aside-folded .cerulean-outline li.active>a > i{
+  background-color: @theme-cerulean-outline;
+  color:#fff;
+}
+/deep/ .app-aside-folded.off-screen .cerulean-outline li.active>a > i{
+  background-color: transparent;
+  color:inherit;
+}

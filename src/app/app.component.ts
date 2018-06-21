@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router,NavigationEnd,ActivatedRoute } from '@angular/router';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

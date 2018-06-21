@@ -1,0 +1,79 @@
+//areaPicker
+@areaPicker_border:1px solid #aaa;
+/deep/  .areaPicker{
+  position: absolute;
+  min-height: 120px;
+  max-width: 360px;
+  border:@areaPicker_border;
+  background-color: #fff;
+  font-size: 14px;
+  opacity: 0;
+  .areaPicker-header{
+    height:32px;
+    width: 100%;
+    position: relative;
+    left: 0;
+    top:0;
+    border-bottom:@areaPicker_border;
+    background-color: #f5f5f5;
+    &:after{
+      content: '';
+      clear: both;
+
+      display: block;
+    }
+  }
+  .areaPicker-body{
+    padding: 12px;
+    max-height: 150px;
+    overflow-y: auto;
+    &:after{
+      content: '';
+      clear: both;
+      display: block;
+    }
+  }
+  .areaPicker-header-item{
+    line-height: 31px;
+    text-align: center;
+    padding:0 12px;
+    float: left;
+    border-right:@areaPicker_border;
+    cursor: pointer;
+    color: #666;
+    &.active{
+      border-bottom: 1px solid #fff;
+      margin-bottom: -1px;
+      background-color: #fff!important;
+      color: #333;
+    }
+    &:hover{
+      background-color: #fafafa;
+    }
+  }
+  .areaPicker-header-item:last-child{
+    border-right: none;
+    margin-right: 10px;
+    &:hover{
+      border-right: @areaPicker_border;
+    }
+  }
+  .areaPicker-header-item.active:last-child{
+    border-right: @areaPicker_border;
+  }
+  .areaPicker-item{
+    margin-right: 8px;
+    line-height: 18px;
+    margin-bottom: 6px;
+    color:#666;
+    cursor: pointer;
+    float: left;
+    &:hover{
+      color: #000;
+    }
+  }
+  .areaPicker-loader{
+    display: block;
+    color:#999;
+  }
+}

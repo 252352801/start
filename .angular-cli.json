@@ -1,64 +1,63 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "project": {
-    "name": "common-ui"
-  },
-  "apps": [
-    {
-      "root": "src",
-      "outDir": "docs",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
-      "index": "index.html",
-      "main": "main.ts",
-      "polyfills": "polyfills.ts",
-      "test": "test.ts",
-      "tsconfig": "tsconfig.app.json",
-      "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
-      "styles": [
-        "../node_modules/dolphinng/assets/styles/main.less",
-        "../node_modules/primeng/resources/themes/omega/theme.css",
-        "../node_modules/primeng/resources/primeng.min.css",
-        "../node_modules/dolphinng/assets/styles/skins/dol.less",
-        "../node_modules/dolphinng/assets/styles/skins/deep-blue.less",
-        "styles.less"
-      ],
-      "scripts": [
-        "../node_modules/chart.js/dist/Chart.js"
-      ],
-      "environmentSource": "environments/environment.ts",
-      "environments": {
-        "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
-      }
-    }
-  ],
-  "e2e": {
-    "protractor": {
-      "config": "./protractor.conf.js"
-    }
-  },
-  "lint": [
-    {
-      "project": "src/tsconfig.app.json"
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "project": {
+        "name": "common-ui"
     },
-    {
-      "project": "src/tsconfig.spec.json"
+    "apps": [{
+        "root": "src",
+        "outDir": "docs",
+        "assets": [
+            "assets",
+            "favicon.ico"
+        ],
+        "index": "index.html",
+        "main": "main.ts",
+        "polyfills": "polyfills.ts",
+        "test": "test.ts",
+        "tsconfig": "tsconfig.app.json",
+        "testTsconfig": "tsconfig.spec.json",
+        "prefix": "app",
+        "styles": [
+            "./packages/dolphinng/assets/styles/main.less",
+            "../node_modules/primeng/resources/themes/omega/theme.css",
+            "../node_modules/primeng/resources/primeng.min.css",
+            "./packages/dolphinng/assets/styles/skins/dol.less",
+            "./packages/dolphinng/assets/styles/skins/deep-blue.less",
+            "./assets/libs/prism/prism.css",
+            "styles.less"
+        ],
+        "scripts": [
+            "./assets/libs/prism/prism.js",
+            "../node_modules/chart.js/dist/Chart.js"
+        ],
+        "environmentSource": "environments/environment.ts",
+        "environments": {
+            "dev": "environments/environment.ts",
+            "prod": "environments/environment.prod.ts"
+        }
+    }],
+    "e2e": {
+        "protractor": {
+            "config": "./protractor.conf.js"
+        }
     },
-    {
-      "project": "e2e/tsconfig.e2e.json"
+    "lint": [{
+            "project": "src/tsconfig.app.json"
+        },
+        {
+            "project": "src/tsconfig.spec.json"
+        },
+        {
+            "project": "e2e/tsconfig.e2e.json"
+        }
+    ],
+    "test": {
+        "karma": {
+            "config": "./karma.conf.js"
+        }
+    },
+    "defaults": {
+        "styleExt": "less",
+        "component": {}
     }
-  ],
-  "test": {
-    "karma": {
-      "config": "./karma.conf.js"
-    }
-  },
-  "defaults": {
-    "styleExt": "less",
-    "component": {}
-  }
 }

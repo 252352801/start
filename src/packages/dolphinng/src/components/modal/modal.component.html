@@ -1,0 +1,13 @@
+<div class="modal{{styleClass?' '+styleClass:''}}" *ngIf="isRender" [ngClass]="{'in':isShow,'fade':animated}" (click)="bgClickAction($event)" #modal [style.transition]="isTransition?'opacity .2s linear':'none'">
+    <div class="modal-dialog{{this.size?' modal-'+this.size:''}}" #modalDialog [style.transition]="isTransition?'transform .3s ease-out':'none'" [style.width.px]="width">
+        <div class="modal-content" [class.disabled]="disabled">
+            <a class="modal-btn-close" *ngIf="showCloseButton" (click)="close()">
+                <span>&times;</span>
+            </a>
+            <ng-content></ng-content>
+            <ng-content select="modal-header"></ng-content>
+            <ng-content select="modal-body"></ng-content>
+            <ng-content select="modal-footer"></ng-content>
+        </div>
+    </div>
+</div>

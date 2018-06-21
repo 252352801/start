@@ -1,0 +1,10 @@
+<div class=" {{display==='block'?'radio':'radio-inline'}}">
+  <label  class="{{styleClass!=='none'?styleClass:''}}"
+    (click)="toggleCheck($event)" [ngClass]="{'i-checks':this.styleClass!=='none','i-checks-sm':size==='sm','i-checks-lg':size==='lg'}">
+    <input type="radio"  [disabled]="disabled" [checked]="key===value" (click)="changeValue($event)" [value]="value"/>
+    <i [style.border-color]="key===value&&customBackground?customBackground:null">
+      <span class="radio-inner" [style.background-color]="(key===value&&customBackground)?customBackground:null"></span>
+    </i>
+    <ng-content></ng-content>
+  </label>
+</div>

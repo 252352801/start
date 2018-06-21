@@ -1,0 +1,17 @@
+<div class="{{styleClass!=='none'?styleClass:''}} {{display==='block'?'checkbox':'checkbox-inline'}}">
+  <label class="i-checks"
+         [ngClass]="{'i-checks-sm':size==='sm','i-checks-lg':size==='lg'}">
+    <input type="checkbox"  [(ngModel)]="value" [name]="name" [disabled]="disabled" (change)="changeAction($event)" />
+    <i [ngClass]="{'inner-checked':innerStyle==='checked'}"
+       [style.border-color]="value?customBackground&&innerStyle!=='checked'?customBackground:null:null"
+       [style.background-color]="value?customBackground&&innerStyle==='checked'?customBackground:null:null"
+       >
+      <span class="i-checks-inner" [style.background-color]="value?customBackground&&innerStyle!=='checked'?customBackground:null:null">
+
+      </span>
+    </i>
+    <ng-content></ng-content>
+  </label>
+</div>
+
+

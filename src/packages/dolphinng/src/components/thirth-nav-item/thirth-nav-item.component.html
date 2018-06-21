@@ -1,0 +1,4 @@
+<div class="thirth-nav-item" [ngClass]="{'disabled':disabled!==undefined&&disabled!==false}" routerLinkActive="{{link?'active':''}}">
+    <span routerLink="{{link}}" style="display:block" *ngIf="!!link&&!(disabled!==undefined&&disabled!==false)">{{text}}</span>
+    <span style="display:block" *ngIf="!link||(disabled!==undefined&&disabled!==false)">{{text}}</span>
+</div>

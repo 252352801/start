@@ -1,0 +1,23 @@
+<li routerLinkActive="{{link?'active':''}}" [ngClass]="{'exist-children':haveChild,'disabled':disabled!==undefined&&disabled!==false}" #root>
+    <a routerLink="{{link}}" *ngIf="!!link&&!(disabled!==undefined&&disabled!==false)">
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+    </a>
+    <a *ngIf="!link||(disabled!==undefined&&disabled!==false)">
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+    </a>
+    <ul class="nav nav-sub dk" #subWrap>
+        <li class="nav-item-title">{{text}}</li>
+        <ng-content></ng-content>
+        <ng-container #childrenHost></ng-container>
+    </ul>
+</li>
+
+<ng-template #content>
+    <span class="pull-right text-muted" *ngIf="haveChild">
+    <i class="fa fa-fw fa-angle-right text"></i>
+    <i class="fa fa-fw fa-angle-down text-active"></i>
+</span>
+    <b class="pull-right {{badgeClass}}" *ngIf="badgeValue">{{badgeValue}}</b>
+    <i class="{{icon}}"></i>
+    <span>{{text}}</span>
+</ng-template>

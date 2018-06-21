@@ -1,0 +1,83 @@
+<ng-content select="input"></ng-content>
+<div #popover [ngClass]="{'datetime-picker-hide':!ready}">
+    <div class="datetime-picker" *ngIf="visible" (click)="stopPropagation($event)" [style.left.px]="left" [style.top.px]="top" [style.zIndex]="zIndex||null" [style.opacity]="ready?'1':0" [style.transition]="ready?'opacity .3s ease-out':'none'" #datetimePicker>
+        <div class="datetime-picker-header">
+            <div class="datetime-picker-ymd">
+                <span class="datetime-picker-prev" (click)="prevMonth();createDayOptions()">‹</span>
+                <select [(ngModel)]="year" (change)="setDateFullYear();setValues();createDayOptions()">
+          <option *ngFor="let y of yearOptions" [value]="y">{{y}}</option>
+        </select> 年
+                <select [(ngModel)]="month" (change)="setDateMonth();setValues();createDayOptions()">
+          <option *ngFor="let m of monthOptions" [value]="m">{{m+1}}</option>
+        </select> 月
+                <span class="datetime-picker-next" (click)="nextMonth();createDayOptions()">›</span>
+            </div>
+
+        </div>
+        <div class="datetime-picker-body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>日</th>
+                        <th>一</th>
+                        <th>二</th>
+                        <th>三</th>
+                        <th>四</th>
+                        <th>五</th>
+                        <th>六</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let group of dayOptions">
+                        <td *ngFor="let d of group" [ngClass]="{'disabled':!d.isCurrent,'invalid':d.disabled,'active':d.isCurrent&&d.text==day}" (click)="pickDay(d)">{{d.text}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!--<div class="datetime-picker-time-input" *ngIf="isPickingTime">
+        <input *ngIf="isPickHours" maxlength="2" placeholder="时" [(ngModel)]="hours" (input)="maxInputTest($event,23)"/>
+        <span *ngIf="isPickMinutes">:</span>
+        <input *ngIf="isPickMinutes" maxlength="2" placeholder="分" [(ngModel)]="minutes" (input)="maxInputTest($event,59)"/>
+        <span *ngIf="isPickSeconds">:</span>
+        <input *ngIf="isPickSeconds" maxlength="2" placeholder="秒" [(ngModel)]="seconds" (input)="maxInputTest($event,59)"/>
+        <span *ngIf="isPickHours&&!(isPickMinutes||isPickSeconds)">时</span>
+      </div>-->
+            <div class="datetime-picker-time-input" *ngIf="isPickingTime">
+                <select *ngIf="isPickHours" [(ngModel)]="hours">
+          <option *ngFor="let h of hoursOptions" [value]="h">{{h>=10?h:'0'+h}}</option>
+        </select>
+                <span *ngIf="isPickMinutes">:</span>
+                <select *ngIf="isPickMinutes" [(ngModel)]="minutes">
+          <option *ngFor="let m of minutesOrSecondsOptions" [value]="m">{{m>=10?m:'0'+m}}</option>
+        </select>
+                <span *ngIf="isPickSeconds">:</span>
+                <select *ngIf="isPickSeconds" [(ngModel)]="seconds">
+          <option *ngFor="let s of minutesOrSecondsOptions" [value]="s">{{s>=10?s:'0'+s}}</option>
+        </select>
+                <span *ngIf="isPickHours&&!(isPickMinutes||isPickSeconds)">时</span>
+            </div>
+            <div class="datetime-picker-errors" *ngIf="minError||maxError">
+                <div class="datetime-picker-error">
+                    <span *ngIf="minError">您选择的日期小于允许的最小日期！</span>
+                    <span *ngIf="maxError">您选择的日期大于允许的最大日期！</span>
+                    <span class="datetime-picker-btn" (click)="clearErrors()">确定</span>
+                </div>
+            </div>
+        </div>
+        <div class="datetime-picker-footer">
+            <div class="datetime-picker-time">
+                <div *ngIf="!isPickingTime" (click)="isPickingTime=true">
+                    <span *ngIf="isPickHours">{{hours>=10?hours:'0'+hours}}</span>
+                    <span *ngIf="isPickMinutes">:{{minutes>=10?minutes:'0'+minutes}}</span>
+                    <span *ngIf="isPickSeconds">:{{seconds>=10?seconds:'0'+seconds}}</span>
+                    <span *ngIf="isPickHours&&!(isPickMinutes||isPickSeconds)">时</span>
+                </div>
+                <div *ngIf="isPickingTime" (click)="isPickingTime=false">返回日期</div>
+            </div>
+            <div class="datetime-picker-btns">
+                <a class="datetime-picker-clear" (click)="clear()">清空</a>
+                <a class="datetime-picker-today" (click)="now()">{{isPickHours||isPickMinutes||isPickSeconds?'现在':'今天'}}</a>
+                <a class="datetime-picker-sure" *ngIf="isPickHours||isPickMinutes||isPickSeconds" (click)="output()">确定</a>
+            </div>
+        </div>
+    </div>
+</div>

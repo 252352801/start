@@ -3,11 +3,9 @@ import { CommonModule }        from '@angular/common';
 import { FormsModule }         from '@angular/forms';
 
 import {
-  DatePickerModule,
   FormsModule as MyFormsModule,
   PaginatorModule,
   GalleryModule,
-  CodeHighLightModule,
   AreaPickerModule,
   DatetimePickerModule,
   DateFormatModule,
@@ -19,6 +17,7 @@ import {
   TextMaxLengthModule,
   CurrencyFormatModule
 } from 'dolphinng';
+import { CodeHighLightModule } from './components/code-high-light/code-high-light.module';
 @NgModule({
   imports:[
     CommonModule,
@@ -26,7 +25,6 @@ import {
     UploaderModule,
     //
     MyCommonModule,
-    DatePickerModule,
     DatetimePickerModule,
     DateFormatModule,
     MyFormsModule,
@@ -48,7 +46,6 @@ import {
     UploaderModule,
     //
     MyCommonModule,
-    DatePickerModule,
     DatetimePickerModule,
     DateFormatModule,
     MyFormsModule,

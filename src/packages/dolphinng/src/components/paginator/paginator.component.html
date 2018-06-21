@@ -1,0 +1,26 @@
+<div class="pagination-wrap{{styleClass?' '+styleClass:''}}">
+    <div class="pagination-text" *ngIf="showTotal" [ngClass]="{'pagination-text-sm':size==='sm'}">
+        共<span>{{pageCount}}</span>页，<span>{{count}}</span>条记录
+    </div>
+    <div class="pagination-text" *ngIf="changePageSizeAble" [ngClass]="{'pagination-text-sm':size==='sm'}">
+        每页
+        <select (change)="changePageSize($event)" [value]="pageSize">
+      <option [value]="opt" *ngFor="let opt of pageSizeOptions">{{opt}}</option>
+    </select> 条
+    </div>
+    <ul class="pagination" [ngClass]="{'pagination-sm':size==='sm'}">
+        <li [ngClass]="{'disabled':index===0}" title="{{index===0?'已经是第一页':'首页'}}"><a (click)="first()"><i class="fa-step-backward fa"></i></a></li>
+        <li [ngClass]="{'disabled':index<=0}" title="{{index<=0?'已经是第一页':'上一页'}}"><a (click)="prev()"><i class="fa-angle-left fa"></i></a></li>
+        <li (click)="changePage(items[0]-1)" *ngIf="items[0]>0&&ellipsis"><a>...</a></li>
+        <li [ngClass]="{'active':index===item}" *ngFor="let item of items" (click)="changePage(item)"><a>{{item+1}}</a></li>
+        <li (click)="changePage(items[items.length-1]+1)" *ngIf="items[items.length-1]<pageCount-1&&ellipsis  "><a>...</a></li>
+        <li [ngClass]="{'disabled':index>=pageCount-1}" title="{{index>=pageCount-1?'已经是第最后一页':'下一页'}}"><a (click)="next()"><i class="fa-angle-right fa"></i></a></li>
+        <li [ngClass]="{'disabled':index>=pageCount-1}" title="{{index>=pageCount-1?'已经是第最后一页':'最后一页'}}"><a (click)="last()"><i class="fa-step-forward fa"></i></a></li>
+    </ul>
+    <div class="pagination-input" *ngIf="inputAble">
+        <div class="input-group" [ngClass]="{'input-group-sm':size==='sm'}">
+            <input class="form-control" placeholder="页码" [(ngModel)]="inputIndex" name="inputIndex" />
+            <a class="input-group-addon" (click)="changePage(inputIndex-1)">GO</a>
+        </div>
+    </div>
+</div>

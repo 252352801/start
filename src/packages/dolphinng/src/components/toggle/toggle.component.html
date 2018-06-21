@@ -1,0 +1,14 @@
+<label  class="i-switch{{styleClass?' '+styleClass:''}}"
+    (click)="toggleCheck($event)"
+    [ngClass]="{'bg-info':type==='info'||!type,
+    'bg-primary':type==='primary',
+    'bg-success':type==='success',
+    'bg-danger':type==='danger',
+    'bg-warning':type==='warning',
+    'i-switch-sm':size==='sm',
+    'i-switch-lg':size==='lg'}">
+    <i [ngClass]="{'checked':value}"></i>
+    <span>
+          <ng-content></ng-content>
+    </span>
+</label>

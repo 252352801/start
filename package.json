@@ -1,5 +1,5 @@
 {
-    "name": "common-ui",
+    "name": "start",
     "version": "1.0.0",
     "license": "MIT",
     "scripts": {
@@ -13,29 +13,28 @@
     },
     "private": true,
     "dependencies": {
-        "@angular/animations": "^4.4.1",
-        "@angular/common": "^4.4.1",
-        "@angular/compiler": "^4.4.1",
-        "@angular/core": "^4.4.1",
-        "@angular/forms": "^4.4.1",
-        "@angular/http": "^4.4.1",
-        "@angular/platform-browser": "^4.4.1",
-        "@angular/platform-browser-dynamic": "^4.4.1",
-        "@angular/router": "^4.4.1",
+        "@angular/animations": "^4.4.7",
+        "@angular/common": "^4.4.7",
+        "@angular/compiler": "^4.4.7",
+        "@angular/core": "^4.4.7",
+        "@angular/forms": "^4.4.7",
+        "@angular/http": "^4.4.7",
+        "@angular/platform-browser": "^4.4.7",
+        "@angular/platform-browser-dynamic": "^4.4.7",
+        "@angular/router": "^4.4.7",
         "chart.js": "^2.7.2",
         "core-js": "^2.4.1",
-        "dolphinng": "^1.5.6",
         "intl": "^1.2.5",
-        "ng-zorro-antd": "^0.5.5",
         "primeng": "^4.0.3",
-        "rxjs": "^5.1.0",
+        "rxjs": "^5.0.1",
         "tslib": "^1.7.1",
         "web-animations-js": "^2.3.1",
-        "zone.js": "^0.8.4"
+        "zone.js": "^0.8.26"
     },
     "devDependencies": {
-        "@angular/cli": "1.0.6",
-        "@angular/compiler-cli": "^4.0.0",
+        "@angular-devkit/core": "^0.3.2",
+        "@angular/cli": "^1.5.0",
+        "@angular/compiler-cli": "^4.4.7",
         "@types/jasmine": "2.5.38",
         "@types/node": "~6.0.60",
         "codelyzer": "~2.0.0",
@@ -44,12 +43,13 @@
         "karma": "~1.4.1",
         "karma-chrome-launcher": "~2.1.1",
         "karma-cli": "~1.0.1",
+        "karma-coverage-istanbul-reporter": "^0.2.0",
         "karma-jasmine": "~1.1.0",
         "karma-jasmine-html-reporter": "^0.2.2",
-        "karma-coverage-istanbul-reporter": "^0.2.0",
+        "ng-packagr": "^3.0.3",
         "protractor": "~5.1.0",
         "ts-node": "~2.0.0",
         "tslint": "~4.5.0",
-        "typescript": "~2.2.0"
+        "typescript": "^2.3.0"
     }
 }

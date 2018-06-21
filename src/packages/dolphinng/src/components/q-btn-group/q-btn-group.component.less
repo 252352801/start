@@ -1,0 +1,62 @@
+.q-btn-group{
+  position: fixed;
+  width: 50px;
+  height:101px;
+  right: 0;
+  bottom: 50%;
+  font-size: 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.q-btn{
+  width: 100%;
+  height: 50px;
+  margin-bottom: 1px;
+  text-align: center;
+  color:#fff;
+  position: relative;
+  overflow: hidden;
+}
+.q-btn:last-child{
+  border-bottom:none;
+}
+.q-btn-icon{
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  line-height: 50px;
+  font-size: 24px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: top .3s;
+  cursor: pointer;
+}
+.q-btn-text{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  padding: 5px 10px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: top .3s;
+  background-color: rgba(0,0,0,0.5);
+}
+.q-btn:last-child .q-btn-text{
+  line-height: 36px;
+}
+.q-btn-text:active{
+  background-color: rgba(0,0,0,0.6);
+}
+.q-btn:hover .q-btn-text{
+  top:0;
+}
+.q-btn:hover .q-btn-icon{
+  top:-100%;
+}

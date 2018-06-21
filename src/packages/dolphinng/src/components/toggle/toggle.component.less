@@ -1,0 +1,22 @@
+.i-switch{
+  vertical-align: middle;
+}
+.i-switch input{
+  cursor: pointer;
+}
+.i-switch i:after{
+  left: 0;
+}
+.i-switch i.checked:after{
+  margin-left: 16px;
+}
+.i-switch i.checked:before{
+  background-color: transparent;
+}
+.i-switch{
+  &.i-switch-lg{
+    i.checked:after{
+      margin-left: 22px
+    }
+  }
+}

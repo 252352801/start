@@ -1,0 +1,54 @@
+.radio,.radio-inline{
+  padding-right:15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.radio input[type="radio"], .radio-inline input[type="radio"]{
+  position: relative;
+  margin-top: 0;
+  margin-left: 0;
+  top: 2px;
+}
+.i-checks i:before{
+  content: none;
+}
+.i-checks input + i .radio-inner{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height:0;
+  background-color: transparent;
+  transition: all .3s;
+}
+.i-checks input[disabled]:checked + i{
+  border-color: #cfdadd!important;
+}
+.i-checks input[disabled]:checked + i .radio-inner{
+  background-color: #cfdadd!important; ;
+}
+.i-checks input:checked + i .radio-inner {
+  left: 4px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  background-color: #23b7e5;
+  border-radius: 50%;
+}
+.i-checks-sm input:checked + i .radio-inner {
+  left: 3px;
+  top: 3px;
+  width: 8px;
+  height: 8px;
+}
+.i-checks-lg input:checked + i .radio-inner {
+  left:8px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+}
+label.i-checks{
+  margin-bottom: 0;
+}

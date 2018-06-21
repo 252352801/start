@@ -1,0 +1,52 @@
+{
+    "$schema": "./node_modules/ng-packagr/package.schema.json",
+    "ngPackage": {
+        "lib": {
+            "entryFile": "public_api.ts"
+        }
+    },
+    "author": {
+        "name": "Qingyu Wei"
+    },
+    "dependencies": {
+
+    },
+    "peerDependencies": {
+        "@angular/common": "^4.4.7",
+        "@angular/compiler": "^5.0.0",
+        "@angular/compiler-cli": "^5.0.0",
+        "@angular/core": "^4.4.7",
+        "@angular/forms": "^4.4.7",
+        "@angular/platform-browser": "^4.4.7",
+        "@angular/router": "^4.4.7",
+        "rxjs": "^5.0.1",
+        "tsickle": "^0.29.0",
+        "typescript": "^2.4.2",
+        "zone.js": "^0.8.26"
+    },
+    "description": "UI for angular",
+    "devDependencies": {
+        "@angular/compiler-cli": "^5.0.0",
+        "ng-packagr": "^3.0.3",
+        "prismjs": "^1.15.0"
+    },
+    "directories": {},
+    "keywords": [
+        "ng"
+    ],
+    "license": "ISC",
+    "main": "./dist/index.js",
+    "maintainers": [{
+        "name": "weiqingyu",
+        "email": "252352801@qq.com"
+    }],
+    "name": "dolphinng",
+    "optionalDependencies": {},
+    "readme": "ERROR: No README data found!",
+    "scripts": {
+        "build:library": "rm -rf dist/ && nglb --rootDir src --outDir dist",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "typings": "./dist/index.d.ts",
+    "version": "1.5.61"
+}
