@@ -6,11 +6,24 @@ export declare class GalleryComponent implements OnInit, OnDestroy {
     size: any;
     change: EventEmitter<any>;
     title: string;
+    isAnimation: boolean;
+    isHeader: boolean;
+    isToolsBar: boolean;
+    isBtnDownload: boolean;
+    galleryBody: ElementRef;
     isFullScreen: boolean;
-    images: string[];
+    images: {
+        url: string;
+        scale: number;
+        rotate: number;
+        left: number;
+        top: number;
+    }[];
     render: boolean;
     visible: boolean;
     ready: boolean;
+    width: any;
+    height: any;
     left: number | string;
     top: number | string;
     tempLeft: number | string;
@@ -18,20 +31,51 @@ export declare class GalleryComponent implements OnInit, OnDestroy {
     thumbScrollWidth: number;
     private transitionTime;
     activeIndex: number;
+    transition: string;
     isThumbOverflow: boolean;
     isEventSource: boolean;
-    isShowTools: boolean;
+    isShowBtns: boolean;
     isSupportCssObjectFit: boolean;
     private resizeCheckTimer;
     private thumbSlideTimer;
     private resizeHandler;
     private windowClickHandler;
     private keydownHandler;
+    private mouseWheelHandler;
+    private isPressing;
     private tween;
+    private bodyPadR;
+    private mousePosition;
+    private mouseClickedPoint;
+    isShowScaleInfo: boolean;
+    private hideScaleInfoTimer;
     constructor(eleRef: ElementRef);
-    removeEvents(): void;
     ngOnInit(): void;
     ngOnDestroy(): void;
+    /**
+     * 鼠标在图片上按下时
+     * @param ev
+     */
+    onMouseDownImg(ev: MouseEvent): void;
+    /**
+     * 鼠标弹起
+     * @param ev
+     */
+    onMouseUpImg(ev: MouseEvent): void;
+    /**
+     * 鼠标在图片上移动
+     * @param ev
+     */
+    onMouseMoveImg(ev: MouseEvent): void;
+    /**
+     * 禁止事件冒泡
+     * @param ev
+     */
+    stopPropagation(ev: MouseEvent): void;
+    /**
+     * 清除事件
+     */
+    removeEvents(): void;
     /**
      * 检查是否溢出
      */
@@ -42,6 +86,10 @@ export declare class GalleryComponent implements OnInit, OnDestroy {
      * @param props
      */
     private initImages(data, props);
+    /**
+     * 改变显示图片后滑动（如果需要）缩略图
+     * @param direction
+     */
     slideThumbAfterChange(direction: number): void;
     /**
      * 缩略图滚动
@@ -66,6 +114,11 @@ export declare class GalleryComponent implements OnInit, OnDestroy {
      * 打开
      */
     open(...args: any[]): void;
+    private show();
+    /**
+     * 监听窗口事件
+     */
+    private addWindowListeners();
     /**
      * 根据尺寸设置位置
      */
@@ -82,6 +135,10 @@ export declare class GalleryComponent implements OnInit, OnDestroy {
      * 点击空白处
      */
     whiteSpaceClickAction(): void;
+    /**
+     * 最外层容器点击处理
+     * @param ev
+     */
     wrapClickAction(ev: Event): void;
     /**
      * 上一张
@@ -104,7 +161,36 @@ export declare class GalleryComponent implements OnInit, OnDestroy {
     private getMousePosition(e);
     /**
      * 显示/隐藏工具
-     * @param ev
      */
-    toggleShowTools(ev: Event): void;
+    toggleShowTools(): void;
+    /**
+     * 放大
+     * @param val
+     */
+    enlarge(val: number): void;
+    /**
+     * 缩小
+     * @param val
+     */
+    reduce(val: number): void;
+    /**
+     * 显示缩放比例信息
+     */
+    private showScaleInfo();
+    /**
+     * 旋转
+     */
+    rotate(): void;
+    /**
+     * 下载
+     */
+    download(): void;
+    /**
+     * 隐藏document.body的滚动条（如果有的话）
+     */
+    private hideBodyScrollBar();
+    /**
+     * 重新显示document.body的滚动条（如果有的话）
+     */
+    private reShowBodyScrollBar();
 }

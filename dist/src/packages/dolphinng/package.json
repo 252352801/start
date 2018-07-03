@@ -30,19 +30,19 @@
     "ng"
   ],
   "license": "ISC",
-  "main": "../../../bundles/start-src-packages-dolphinng.umd.js",
+  "main": "../../../bundles/dolphinng-src-packages-dolphinng.umd.js",
   "maintainers": [
     {
       "name": "weiqingyu",
       "email": "252352801@qq.com"
     }
   ],
-  "name": "start/src/packages/dolphinng",
+  "name": "dolphinng/src/packages/dolphinng",
   "optionalDependencies": {},
   "readme": "ERROR: No README data found!",
-  "typings": "start-src-packages-dolphinng.d.ts",
+  "typings": "dolphinng-src-packages-dolphinng.d.ts",
   "version": "1.5.61",
-  "module": "../../../esm5/start-src-packages-dolphinng.js",
-  "es2015": "../../../esm2015/start-src-packages-dolphinng.js",
-  "metadata": "start-src-packages-dolphinng.metadata.json"
+  "module": "../../../esm5/dolphinng-src-packages-dolphinng.js",
+  "es2015": "../../../esm2015/dolphinng-src-packages-dolphinng.js",
+  "metadata": "dolphinng-src-packages-dolphinng.metadata.json"
 }

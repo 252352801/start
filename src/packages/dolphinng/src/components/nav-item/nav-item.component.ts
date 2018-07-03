@@ -5,14 +5,9 @@ import {Component, Input, Output, ElementRef, OnInit,
 import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
 import {ContentChildren,ViewChild} from '@angular/core';
 import {SubNavItemComponent} from '../sub-nav-item/sub-nav-item.component';
-import {ThirthNavItemComponent} from '../thirth-nav-item/thirth-nav-item.component';
-
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
-
-
-//declare var $:any;  //定义jquery
 @Component({
   selector: 'nav-item',
   templateUrl: './nav-item.component.html',
@@ -35,8 +30,6 @@ export class NavItemComponent implements OnInit,AfterViewInit,AfterViewChecked {
   @ViewChild('root') root:ElementRef;
   @ViewChild('childrenHost',{read: ViewContainerRef}) childrenHost:ViewContainerRef;
   @ContentChildren(SubNavItemComponent) subNavItems: SubNavItemComponent[];
-  @ContentChildren(ThirthNavItemComponent) thirthNavItems: ThirthNavItemComponent[];
-
   constructor(private elemRef: ElementRef,
               private router: Router,
               private actRoute: ActivatedRoute,
@@ -92,6 +85,9 @@ export class NavItemComponent implements OnInit,AfterViewInit,AfterViewChecked {
       }
       let subWrap: any = this.subWrap.nativeElement;
       let wouldActive = (subWrap.clientHeight > 0 ? false : true);
+      if(!this.haveChild&&this.disabled!==undefined&&this.disabled+''!='false'){
+        wouldActive=false;
+      }
       if (!isAsideFolded) {
         if (wouldActive) {
           this.addClass(this.rootElem, 'active');
@@ -236,14 +232,14 @@ export class NavItemComponent implements OnInit,AfterViewInit,AfterViewChecked {
     if (this.link) {
       active = this.router.isActive(this.link, false);
     } else {
-      if(this.elemRef.nativeElement.querySelector('.sub-nav-item.active')){
+      /*if(this.elemRef.nativeElement.querySelector('.sub-nav-item.active')){
         active=true;
-      }
-      /*this.subNavItems.forEach((obj: SubNavItemComponent, index: number)=> {
+      }*/
+      this.subNavItems.forEach((obj: SubNavItemComponent, index: number)=> {
         if(obj.isActive()){
           active=true;
         }
-      });*/
+      });
     }
     return active;
   }
@@ -313,6 +309,10 @@ export class NavItemComponent implements OnInit,AfterViewInit,AfterViewChecked {
     sNavComponentInstance.text = options.text;
     options.icon&&(sNavComponentInstance.icon =options.icon);
     options.link&&(sNavComponentInstance.link = options.link);
+    if(!this.subNavItems){
+      this.subNavItems=[];
+    }
+    this.subNavItems.push(sNavComponentInstance);
     return sNavComponentInstance;
   }
 }

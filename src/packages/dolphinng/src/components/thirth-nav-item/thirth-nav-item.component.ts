@@ -25,9 +25,7 @@ export class ThirthNavItemComponent {
     let active=false;
     if (this.link) {
       active = this.router.isActive(this.link, false);
-    } else {
-      active = false;
-    }
+    } 
     return active;
   }
 

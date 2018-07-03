@@ -1,5 +1,4 @@
-import {Directive,Component,OnInit,ElementRef,Input,Output,OnDestroy,EventEmitter,OnChanges} from '@angular/core';
-import  '../../assets/laydate/laydate.js';
+import {Directive,OnInit,ElementRef,Input,Output,EventEmitter,OnChanges} from '@angular/core';
 declare const laydate:any;
 interface Options{
   elem: string, //需显示日期的元素
@@ -33,9 +32,8 @@ interface Options{
 
 }
 
-@Component({
-  selector: '[datePicker]',
-  template:''
+@Directive({
+  selector: '[datePicker]'
 })
 export class DatePickerDirective implements OnInit,OnChanges{
     @Input('datePicker') value:string;

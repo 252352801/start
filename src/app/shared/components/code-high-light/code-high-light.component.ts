@@ -15,7 +15,6 @@ export class CodeHighLightComponent implements OnInit, AfterContentInit {
   }
 
   ngOnInit() {
-    console.log(Prism);
     //异步请求代码
     if (this.codeSrc) {
       let codeElem = this.codeElemRef.nativeElement;

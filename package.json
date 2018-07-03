@@ -1,7 +1,14 @@
 {
-    "name": "start",
-    "version": "1.0.0",
+    "name": "dolphinng",
+    "version": "5.0.0",
     "license": "MIT",
+    "author": {
+        "name": "Qingyu Wei"
+    },
+    "maintainers": [{
+        "name": "weiqingyu",
+        "email": "252352801@qq.com"
+    }],
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
@@ -10,7 +17,7 @@
         "lint": "ng lint",
         "e2e": "ng e2e",
         "packagr": "ng-packagr -p ng-package.json",
-        "build github": "ng build --prod --aot --base-href=/myProjects/start/ --env=prod"
+        "build github": "ng build --prod --aot --base-href=/start --env=prod"
     },
     "dependencies": {
         "@angular/animations": "^5.2.0",
@@ -25,7 +32,6 @@
         "core-js": "^2.4.1",
         "rxjs": "^5.5.6",
         "zone.js": "^0.8.19",
-        "chart.js": "^2.7.2",
         "intl": "^1.2.5",
         "primeng": "^4.0.3",
         "tslib": "^1.7.1",

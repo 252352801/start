@@ -20,6 +20,7 @@ export * from './src/components/drop-down/drop-down.component';
 export * from './src/components/slider/slider.component';
 
 export * from './src/directives/toggleClass/toggleClass.directive';
+//export * from './src/directives/datePicker/datePicker.directive';
 export * from './src/directives/btnBack/btnBack.directive';
 export * from './src/directives/textMaxLength/textMaxLength.directive';
 export * from './src/directives/HTML5Validate/HTML5Validate.directive';

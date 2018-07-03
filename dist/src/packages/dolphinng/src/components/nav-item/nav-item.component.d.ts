@@ -1,7 +1,6 @@
 import { ElementRef, OnInit, AfterViewInit, AfterViewChecked, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SubNavItemComponent } from '../sub-nav-item/sub-nav-item.component';
-import { ThirthNavItemComponent } from '../thirth-nav-item/thirth-nav-item.component';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
@@ -23,7 +22,6 @@ export declare class NavItemComponent implements OnInit, AfterViewInit, AfterVie
     root: ElementRef;
     childrenHost: ViewContainerRef;
     subNavItems: SubNavItemComponent[];
-    thirthNavItems: ThirthNavItemComponent[];
     constructor(elemRef: ElementRef, router: Router, actRoute: ActivatedRoute, componentFactoryResolver: ComponentFactoryResolver);
     /**
      * 获取dom相对浏览器的位置

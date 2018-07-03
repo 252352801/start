@@ -36,9 +36,9 @@ export class AreaPicker {
     this.setPosition(wrap);
     this.wrap = wrap;
     document.body.appendChild(this.wrap);
-    setTimeout(()=>{
-      this.wrap .style.transition = 'opacity .3s ease-out';
-      this.wrap .style.opacity = '1';
+    setTimeout(() => {
+      this.wrap.style.transition = 'opacity .3s ease-out';
+      this.wrap.style.opacity = '1';
     });
   }
 
@@ -138,26 +138,26 @@ export class AreaPicker {
   setPosition(refElem: HTMLElement) {
     let el = this.wrap;
     if (el) {
-      let scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
-      let scrollLeft=document.documentElement.scrollLeft||document.body.scrollLeft;
-      let offsetHeight=document.documentElement.offsetHeight||document.body.offsetHeight;
+      let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      let scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+      let offsetHeight = document.documentElement.offsetHeight || document.body.offsetHeight;
       var pos = refElem.getBoundingClientRect();
       el.style.position = 'absolute';
       el.style.minWidth = (pos.right - pos.left) + 'px';
-      if(document.body.clientHeight-pos.bottom<this.wrap.offsetHeight){
-        if(this.wrap.className.split(/\s+/).indexOf('areaPicker-top')<0){
-          this.addClass(this.wrap,'areaPicker-top');
+      if (document.body.clientHeight - pos.bottom < this.wrap.offsetHeight) {
+        if (this.wrap.className.split(/\s+/).indexOf('areaPicker-top') < 0) {
+          this.addClass(this.wrap, 'areaPicker-top');
         }
-        el.style.left = (pos.left+scrollLeft) + 'px';
+        el.style.left = (pos.left + scrollLeft) + 'px';
         //el.style.top = (pos.top-this.wrap.offsetHeight+scrollTop)+ 'px';
-        el.style.bottom = (offsetHeight-pos.top-scrollTop)+'px';
+        el.style.bottom = (offsetHeight - pos.top - scrollTop) + 'px';
 
-      }else{
-        if(this.wrap.className.split(/\s+/).indexOf('areaPicker-top')>=0){
-          this.removeClass(this.wrap,'areaPicker-top');
+      } else {
+        if (this.wrap.className.split(/\s+/).indexOf('areaPicker-top') >= 0) {
+          this.removeClass(this.wrap, 'areaPicker-top');
         }
-        el.style.left = (pos.left+scrollLeft)+ 'px';
-        el.style.top = (pos.bottom+scrollTop)+ 'px';
+        el.style.left = (pos.left + scrollLeft) + 'px';
+        el.style.top = (pos.bottom + scrollTop) + 'px';
       }
     }
   }
@@ -237,16 +237,16 @@ export class AreaPicker {
 })*/
 @Component({
   selector: '[areaPicker]',
-  template:'',
+  template: '',
   styleUrls: ['./areaPicker.directive.less']
 })
-export class AreaPickerDirective implements OnInit,OnDestroy {
+export class AreaPickerDirective implements OnInit, OnDestroy {
   @Input() areaPicker: any;
   @Output() ngModelChange: EventEmitter<any> = new EventEmitter();
 
   private handlers: {
     event: string,
-    elem:HTMLElement|Document|Window,
+    elem: HTMLElement | Document | Window,
     fn: EventListenerOrEventListenerObject
   }[] = [];//事件处理函数，存储临时绑定时间
 
@@ -254,8 +254,8 @@ export class AreaPickerDirective implements OnInit,OnDestroy {
     event: string,
     fn?: EventListenerOrEventListenerObject
   } = {
-    event: 'focus'
-  };
+      event: 'focus'
+    };
 
   resizeTimer: any;
 
@@ -269,7 +269,7 @@ export class AreaPickerDirective implements OnInit,OnDestroy {
    * @param event
    * @param fn
    */
-  private addEvent(elem: HTMLElement|Document|Window, event: string, fn: EventListenerOrEventListenerObject) {
+  private addEvent(elem: HTMLElement | Document | Window, event: string, fn: EventListenerOrEventListenerObject) {
     elem['addEventListener'](event, fn);
     this.handlers.push({
       elem: elem,
@@ -284,7 +284,7 @@ export class AreaPickerDirective implements OnInit,OnDestroy {
    * @param event
    * @param fn
    */
-  private removeEvent(elem: HTMLElement|Document|Window, event: string, fn: EventListenerOrEventListenerObject) {
+  private removeEvent(elem: HTMLElement | Document | Window, event: string, fn: EventListenerOrEventListenerObject) {
     for (let handler of this.handlers) {
       if (elem === handler.elem && event === handler.event && fn === handler.fn) {
         elem['removeEventListener'](event, fn);
@@ -302,8 +302,8 @@ export class AreaPickerDirective implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
-    this.triggerListener.fn = (ev)=> {
-      this.addEvent(this.elemRef.nativeElement, 'click', (ev)=> {
+    this.triggerListener.fn = (ev) => {
+      this.addEvent(this.elemRef.nativeElement, 'click', (ev) => {
         ev.stopPropagation();
       });
       let picker = this.areaPicker;
@@ -317,7 +317,7 @@ export class AreaPickerDirective implements OnInit,OnDestroy {
       picker.clearBody();
       picker.activate(0);
       picker.init();
-      this.addEvent(picker.wrap, 'click', (ev)=> {//点击事件
+      this.addEvent(picker.wrap, 'click', (ev) => {//点击事件
         ev.stopPropagation();
         let target = ev.target || ev.srcElement;
         let type = target['getAttribute']('data-type');
@@ -328,7 +328,7 @@ export class AreaPickerDirective implements OnInit,OnDestroy {
           let nextIndex = picker.index + 1;//下一个激活的下标
           picker.values.splice(picker.index + 1, picker.values.length - (picker.index + 1));//值切割
           picker.values[picker.index] = selectedData;
-          let selectedCallback=picker.items[picker.index].selected;
+          let selectedCallback = picker.items[picker.index].selected;
           if (nextIndex < picker.items.length) {//未选择完毕
             picker.clearBody();//清空body里的元素
             picker.activate(nextIndex);//激活下一个
@@ -357,25 +357,26 @@ export class AreaPickerDirective implements OnInit,OnDestroy {
         }
       });
       //点击空白关闭
-      this.addEvent(document, 'click', ()=> {
+      this.addEvent(document, 'click', () => {
         this.areaPicker.close();
         this.clearEvents();
       });
 
       //窗口大小改变
-      this.addEvent(window,'resize',(ev)=> {
+      this.addEvent(window, 'resize', (ev) => {
         if (this.resizeTimer) {
           clearTimeout(this.resizeTimer);
         }
-        this.resizeTimer = setTimeout(()=> {
+        this.resizeTimer = setTimeout(() => {
           this.areaPicker.setPosition(this.elemRef.nativeElement);
-        },10);
+        }, 10);
       });
     };
     this.elemRef.nativeElement.addEventListener(this.triggerListener.event, this.triggerListener.fn);
   }
 
   ngOnDestroy() {
+    this.areaPicker.close();
     this.elemRef.nativeElement.removeEventListener(this.triggerListener.event, this.triggerListener.fn);
   }
 }

@@ -1,41 +1,53 @@
-<div class="gallery" *ngIf="render" (click)="wrapClickAction($event)"
-     [ngClass]="{'open':visible,
-     'transitionAll':isEventSource||ready,
+<div class="gallery" *ngIf="render" (click)="wrapClickAction($event)" [ngClass]="{'open':visible,
+    'gallery-has-footer':(isToolsBar+'')!='false',
+    'gallery-has-header':(isHeader+'')!='false',
+     'gallery-fade-in':(isAnimation+'')!='false'&&!isEventSource,
+     'gallery-inc-in':(isAnimation+'')!='false'&&isEventSource,
      'lg':size=='lg',
      'md':size=='md',
      'sm':size=='sm',
      'xs':size=='xs'
-     }"
-     [style.left]="isFullScreen?0:left"
-     [style.top]="isFullScreen?0:top"
-     [style.width]="isFullScreen?'100%':null"
-     [style.height]="isFullScreen?'100%':null"
->
-  <div *ngIf="size" class="gallery-header">
-    {{title}}
-    <a class="gallery-btn-full" [ngClass]="{'resize':isFullScreen}" (click)="toggleFullScreen()">
-    </a>
-    <a class="gallery-btn-close" (click)="close()" >×</a>
-  </div>
-  <div class="gallery-sliders" (click)="whiteSpaceClickAction()">
-    <img *ngFor="let img of images;let i=index" [src]="img" [hidden]="!ready&&activeIndex!=i"
-         [style.left.%]="activeIndex==i?0:(i-activeIndex)*200" (click)="toggleShowTools($event)"
-    />
-  </div>
-  <a class="gallery-close" (click)="close()" *ngIf="isShowTools&&!size">×</a>
-  <a class="gallery-prev" (click)="prev();slideThumbAfterChange(0)" *ngIf="isShowTools&&images.length>1">‹</a>
-  <a class="gallery-next" (click)="next();slideThumbAfterChange(1)" *ngIf="isShowTools&&images.length>1">›</a>
-  <div class="gallery-thumb" *ngIf="isShowTools&&images.length>1" [ngClass]="{'gallery-thumb-overflow':isThumbOverflow}">
-    <div class="gallery-thumb-back" (click)="slideThumb(galleryThumbSliders,0)" ></div>
-    <div class="gallery-thumb-sliders" #galleryThumbSliders>
-      <div class="gallery-thumb-scroll" [style.width]="isThumbOverflow?thumbScrollWidth+'px':'auto'">
-
-        <a class="gallery-thumb-slider" *ngFor="let img of images;let i=index"
-         [ngClass]="{'active':i==activeIndex}" (click)="activate(i)">
-          <img  [src]="img" [ngClass]="{'cover':isSupportCssObjectFit}"  />
+     }" [style.left]="isFullScreen?0:left" [style.top]="isFullScreen?0:top" [style.width]="isFullScreen?'100%':null" [style.height]="isFullScreen?'100%':null" [style.border]="isFullScreen?'none':null" [style.transition]="transition?transition:null">
+    <div *ngIf="(isHeader+'')!='false'" class="gallery-header">
+        {{title}}
+        <a class="gallery-btn-full" *ngIf="size" [ngClass]="{'resize':isFullScreen}" (click)="toggleFullScreen()">
         </a>
-      </div>
+        <a class="gallery-btn-close" (click)="close()">×</a>
     </div>
-    <div class="gallery-thumb-forward"  (click)="slideThumb(galleryThumbSliders,1)"></div>
-  </div>
+    <div class="gallery-body" #galleryBody>
+        <div class="gallery-sliders" (click)="whiteSpaceClickAction()">
+            <a class="gallery-img-container" *ngFor="let img of images;let i=index" [style.transform]="'rotate('+img.rotate+'deg)'" [style.left.%]="activeIndex==i?0:(i-activeIndex)*200" (mousemove)="onMouseMoveImg($event)">
+                <img [src]="img.url" [hidden]="!ready&&activeIndex!=i" (click)="stopPropagation($event)" [style.transform]="'scale('+img.scale+')'" [style.left.px]="img.left" [style.top.px]="img.top" (mousedown)="onMouseDownImg($event)" (mouseup)="onMouseUpImg($event)"
+                />
+            </a>
+        </div>
+        <a class="gallery-close" (click)="close()" *ngIf="isShowBtns&&!((isHeader+'')!='false')">×</a>
+        <a class="gallery-prev" (click)="prev();slideThumbAfterChange(0)" *ngIf="isShowBtns&&images.length>1">‹</a>
+        <a class="gallery-next" (click)="next();slideThumbAfterChange(1)" *ngIf="isShowBtns&&images.length>1">›</a>
+        <div class="gallery-thumb" *ngIf="isShowBtns&&images.length>1" [ngClass]="{'gallery-thumb-overflow':isThumbOverflow}">
+            <div class="gallery-thumb-back" (click)="slideThumb(galleryThumbSliders,0)"></div>
+            <div class="gallery-thumb-sliders" #galleryThumbSliders>
+                <div class="gallery-thumb-scroll" [style.width]="isThumbOverflow?thumbScrollWidth+'px':'auto'">
+
+                    <a class="gallery-thumb-slider" *ngFor="let img of images;let i=index" [ngClass]="{'active':i==activeIndex}" (click)="activate(i)">
+                        <img [src]="img.url" [ngClass]="{'cover':isSupportCssObjectFit}" />
+                    </a>
+                </div>
+            </div>
+            <div class="gallery-thumb-forward" (click)="slideThumb(galleryThumbSliders,1)"></div>
+        </div>
+        <div class="gallery-scale-info" *ngIf="isShowScaleInfo&&images[activeIndex].scale!=1">
+            {{images[activeIndex].scale|percent}}
+        </div>
+    </div>
+    <div class="gallery-footer" *ngIf="(isToolsBar+'')!='false'">
+        <div class="gallery-toolsbar">
+            <a class="gallery-tool-item gallery-enlarge" (click)="enlarge(0.1)" title="放大">
+            </a>
+            <a class="gallery-tool-item gallery-reduce" (click)="reduce(0.1)" title="缩小">
+            </a>
+            <a class="gallery-tool-item gallery-rotate" (click)="rotate()" title="旋转"></a>
+            <a class="gallery-tool-item gallery-download" *ngIf="(isBtnDownload+'')!='false'" (click)="download()" title="下载"></a>
+        </div>
+    </div>
 </div>

@@ -44,7 +44,6 @@
     "optionalDependencies": {},
     "readme": "ERROR: No README data found!",
     "scripts": {
-        "build:library": "rm -rf dist/ && nglb --rootDir src --outDir dist",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "typings": "./dist/index.d.ts",
