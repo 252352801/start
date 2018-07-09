@@ -17,6 +17,7 @@ import { DatetimePickerComponent} from './datetime-picker-demo/datetime-picker-d
 import { CheckboxDemoComponent} from './checkbox-demo/checkbox-demo.component';
 import { RadioDemoComponent} from './radio-demo/radio-demo.component';
 import { ToggleDemoComponent} from './toggle-demo/toggle-demo.component';
+import { SelectDemoComponent} from './select-demo/select-demo.component';
 import { ModalModule} from 'dolphinng';
 import { LoaderModule} from 'dolphinng';
 import { LayoutModule} from 'dolphinng';
@@ -46,7 +47,8 @@ import { routing } from './components.routing';
       DatetimePickerComponent,
       CheckboxDemoComponent,
       RadioDemoComponent,
-      ToggleDemoComponent
+      ToggleDemoComponent,
+      SelectDemoComponent,
     ]
 })
 export class ComponentsModule { }

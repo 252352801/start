@@ -1,0 +1,5 @@
+<nx-select [options]="options" [value]="selectValue" valueKey="value" textKey="label">
+    <select class="form-control" [(ngModel)]="selectValue" name="selectValue" *ngIf="isShowSelect">
+        <option *ngFor="let opt of options" [value]="opt.value">{{opt.label}}</option>
+    </select>
+</nx-select>

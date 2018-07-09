@@ -1,4 +1,4 @@
-import { AlertService } from '../alert/alert.service';
-export declare class PopService extends AlertService {
+import { PopupService } from '../popup/popup.service';
+export declare class PopService extends PopupService {
     constructor();
 }

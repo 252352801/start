@@ -1,0 +1,14 @@
+  selectValue='';
+  options=[{
+    label:'请选择',
+    value:'',
+  },{
+    label:'小明',
+    value:'1',
+  },{
+    label:'小强',
+    value:'2',
+  },{
+    label:'大胖',
+    value:'3',
+  }];

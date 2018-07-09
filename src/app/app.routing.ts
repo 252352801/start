@@ -8,7 +8,7 @@ const routes: Routes = [
     { path: '',  component: IndexComponent,data:{title:'首页'},
       children:[
         { path: 'about', loadChildren: './about/about.module#AboutModule',data:{title:'关于'} },
-        { path: 'feedback', loadChildren: './feedback/feedback.module#FeedbackModule',data:{title:'操作反馈'} },
+        { path: 'services', loadChildren: './services/services.module#ServicesModule',data:{title:'服务'} },
         { path: 'components', loadChildren: './components/components.module#ComponentsModule',data:{title:'组件'} },
         { path: 'directives', loadChildren: './directives/directives.module#DirectivesModule',data:{title:'指令'} },
         { path: 'pipes', loadChildren: './pipes/pipes.module#PipesModule',data:{title:'管道'} },

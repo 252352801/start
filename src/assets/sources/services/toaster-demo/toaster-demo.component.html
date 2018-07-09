@@ -1,0 +1,55 @@
+<div class="row bg-default bor-b-def mar-b-sm pad-b-def">
+    <div class="col-sm-6">
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control ng-pristine ng-untouched ng-valid" placeholder="输入标题" [(ngModel)]="toastOptions.title">
+        </div>
+
+        <div class="form-group">
+            <label>Message</label>
+            <textarea class="form-control ng-pristine ng-untouched ng-valid" placeholder="输入消息内容" rows="5" [(ngModel)]="toastOptions.message"></textarea>
+        </div>
+        <button class="btn btn-{{toastOptions.type==='error'?'danger':
+                       toastOptions.type==='wait'?'info':toastOptions.type}}" (click)="popToaster()">点我试试
+</button>
+    </div>
+    <div class="col-sm-6">
+        <label>Type</label>
+
+        <div class="radio">
+            <label class="i-checks" (click)="changeToasterType('success')">
+    <input type="radio" name="toaster" value="success" [checked]="toastOptions.type==='success'">
+    <i></i>
+    Success
+  </label>
+        </div>
+        <div class="radio">
+            <label class="i-checks" (click)="changeToasterType('info')">
+    <input type="radio" name="toaster" value="info" [checked]="toastOptions.type==='info'">
+    <i></i>
+    Info
+  </label>
+        </div>
+        <div class="radio">
+            <label class="i-checks" (click)="changeToasterType('wait')">
+    <input type="radio" name="toaster" value="wait" [checked]="toastOptions.type==='wait'">
+    <i></i>
+    Wait
+  </label>
+        </div>
+        <div class="radio">
+            <label class="i-checks" (click)="changeToasterType('warning')">
+    <input type="radio" name="toaster" value="warning" [checked]="toastOptions.type==='warning'">
+    <i></i>
+    Warning
+  </label>
+        </div>
+        <div class="radio">
+            <label class="i-checks" (click)="changeToasterType('error')">
+    <input type="radio" name="toaster" value="error" [checked]="toastOptions.type==='error'">
+    <i></i>
+    Error
+  </label>
+        </div>
+    </div>
+</div>

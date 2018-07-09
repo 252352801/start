@@ -1,10 +1,10 @@
-import { Component, Input, Output, ElementRef, EventEmitter, ViewChild, ContentChild, ViewContainerRef, ComponentFactoryResolver, ContentChildren, Directive, NgModule, Pipe } from '@angular/core';
+import { Component, NgModule, Input, Output, ElementRef, EventEmitter, ViewChild, ContentChild, ViewContainerRef, ComponentFactoryResolver, ContentChildren, Directive, Pipe } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute, NavigationEnd, RouterModule } from '@angular/router';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 /**
  * @fileoverview added by tsickle
@@ -52,6 +52,30 @@ QBtnGroupComponent.decorators = [
 ];
 /** @nocollapse */
 QBtnGroupComponent.ctorParameters = () => [];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class QBtnGroupModule {
+}
+QBtnGroupModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                    FormsModule
+                ],
+                declarations: [
+                    QBtnGroupComponent
+                ],
+                providers: [],
+                exports: [
+                    CommonModule,
+                    FormsModule,
+                    QBtnGroupComponent
+                ]
+            },] },
+];
 
 /**
  * @fileoverview added by tsickle
@@ -313,6 +337,28 @@ PaginatorComponent.propDecorators = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
+class PaginatorModule {
+}
+PaginatorModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                    FormsModule
+                ],
+                declarations: [
+                    PaginatorComponent
+                ],
+                providers: [],
+                exports: [
+                    PaginatorComponent
+                ]
+            },] },
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
 class GalleryComponent {
     /**
      * @param {?} eleRef
@@ -390,14 +436,16 @@ class GalleryComponent {
         };
         //按下键盘
         this.keydownHandler = (ev) => {
-            const /** @type {?} */ kc = ev.keyCode;
-            if (kc === 37 || kc === 38) {
-                this.prev();
-                this.slideThumbAfterChange(0);
-            }
-            else if (kc === 39 || kc === 40) {
-                this.next();
-                this.slideThumbAfterChange(1);
+            if (this.images.length > 1) {
+                const /** @type {?} */ kc = ev.keyCode;
+                if (kc === 37 || kc === 38) {
+                    this.prev();
+                    this.slideThumbAfterChange(0);
+                }
+                else if (kc === 39 || kc === 40) {
+                    this.next();
+                    this.slideThumbAfterChange(1);
+                }
             }
         };
         //鼠标滚动
@@ -584,19 +632,21 @@ class GalleryComponent {
         clearTimeout(this.thumbSlideTimer);
         this.thumbSlideTimer = setTimeout(() => {
             let /** @type {?} */ sliderWrap = this.eleRef.nativeElement.querySelector('.gallery-thumb-sliders');
-            let /** @type {?} */ perW = this.eleRef.nativeElement.querySelector('.gallery-thumb-slider').offsetWidth;
-            let /** @type {?} */ scrollL = sliderWrap.scrollLeft;
-            let /** @type {?} */ sliderW = sliderWrap.clientWidth;
-            if (direction === 0) {
-                let /** @type {?} */ refValue = (this.activeIndex) * perW;
-                if (scrollL > refValue) {
-                    this.slide(sliderWrap, refValue - scrollL);
+            if (sliderWrap) {
+                let /** @type {?} */ perW = sliderWrap.offsetWidth;
+                let /** @type {?} */ scrollL = sliderWrap.scrollLeft;
+                let /** @type {?} */ sliderW = sliderWrap.clientWidth;
+                if (direction === 0) {
+                    let /** @type {?} */ refValue = (this.activeIndex) * perW;
+                    if (scrollL > refValue) {
+                        this.slide(sliderWrap, refValue - scrollL);
+                    }
                 }
-            }
-            else if (direction === 1) {
-                let /** @type {?} */ validScrollLeft = perW * (this.activeIndex + 1) - sliderW;
-                if (validScrollLeft > scrollL) {
-                    this.slide(sliderWrap, validScrollLeft - scrollL);
+                else if (direction === 1) {
+                    let /** @type {?} */ validScrollLeft = perW * (this.activeIndex + 1) - sliderW;
+                    if (validScrollLeft > scrollL) {
+                        this.slide(sliderWrap, validScrollLeft - scrollL);
+                    }
                 }
             }
         });
@@ -1091,6 +1141,27 @@ GalleryComponent.propDecorators = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
+class GalleryModule {
+}
+GalleryModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule
+                ],
+                declarations: [
+                    GalleryComponent
+                ],
+                providers: [],
+                exports: [
+                    GalleryComponent
+                ]
+            },] },
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
 class SpinnerComponent {
     /**
      * @param {?} elemRef
@@ -1126,6 +1197,27 @@ SpinnerComponent.propDecorators = {
     "size": [{ type: Input },],
     "isDark": [{ type: Input },],
 };
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class LoaderModule {
+}
+LoaderModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule
+                ],
+                declarations: [
+                    SpinnerComponent
+                ],
+                providers: [],
+                exports: [
+                    SpinnerComponent
+                ]
+            },] },
+];
 
 /**
  * @fileoverview added by tsickle
@@ -1192,6 +1284,30 @@ CheckboxComponent.propDecorators = {
     "styleClass": [{ type: Input },],
     "name": [{ type: Input },],
 };
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class CheckboxModule {
+}
+CheckboxModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                    FormsModule
+                ],
+                declarations: [
+                    CheckboxComponent
+                ],
+                providers: [],
+                exports: [
+                    CommonModule,
+                    FormsModule,
+                    CheckboxComponent
+                ]
+            },] },
+];
 
 /**
  * @fileoverview added by tsickle
@@ -1265,6 +1381,30 @@ RadioComponent.propDecorators = {
     "styleClass": [{ type: Input },],
     "name": [{ type: Input },],
 };
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class RadioModule {
+}
+RadioModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                    FormsModule
+                ],
+                declarations: [
+                    RadioComponent
+                ],
+                providers: [],
+                exports: [
+                    CommonModule,
+                    FormsModule,
+                    RadioComponent
+                ]
+            },] },
+];
 
 /**
  * @fileoverview added by tsickle
@@ -1380,6 +1520,54 @@ ToggleComponent.decorators = [
 ];
 /** @nocollapse */
 ToggleComponent.ctorParameters = () => [];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class ToggleModule {
+}
+ToggleModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                    FormsModule
+                ],
+                declarations: [
+                    ToggleComponent
+                ],
+                providers: [],
+                exports: [
+                    CommonModule,
+                    FormsModule,
+                    ToggleComponent
+                ]
+            },] },
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class SwitchModule {
+}
+SwitchModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                    FormsModule
+                ],
+                declarations: [
+                    SwitchComponent
+                ],
+                providers: [],
+                exports: [
+                    CommonModule,
+                    FormsModule,
+                    SwitchComponent
+                ]
+            },] },
+];
 
 /**
  * @fileoverview added by tsickle
@@ -1694,6 +1882,33 @@ ModalComponent.propDecorators = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
+class ModalModule {
+}
+ModalModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule
+                ],
+                declarations: [
+                    ModalComponent,
+                    ModalHeaderComponent,
+                    ModalBodyComponent,
+                    ModalFooterComponent
+                ],
+                providers: [],
+                exports: [
+                    ModalComponent,
+                    ModalHeaderComponent,
+                    ModalBodyComponent,
+                    ModalFooterComponent
+                ]
+            },] },
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
 class RootContainerComponent {
     constructor() {
     }
@@ -1745,7 +1960,7 @@ AsideLeftComponent.decorators = [
  'cerulean-outline':theme==='cerulean-outline',
  'bg-white':theme==='white'
  }">
-    <div class="aside-wrap">
+    <div class="aside-wrap" [style.border-right]="!theme?'1px solid #ddd':null">
         <ng-content></ng-content>
     </div>
 </div>`,
@@ -1878,6 +2093,37 @@ DeleteWrapComponent.propDecorators = {
     "size": [{ type: Input },],
     "remove": [{ type: Output },],
 };
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class LayoutModule {
+}
+LayoutModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule
+                ],
+                declarations: [
+                    RootContainerComponent,
+                    AsideLeftComponent,
+                    HeaderComponent,
+                    HeaderLeftComponent,
+                    HeaderRightComponent,
+                    DeleteWrapComponent
+                ],
+                providers: [],
+                exports: [
+                    RootContainerComponent,
+                    AsideLeftComponent,
+                    HeaderComponent,
+                    HeaderLeftComponent,
+                    HeaderRightComponent,
+                    DeleteWrapComponent
+                ]
+            },] },
+];
 
 /**
  * @fileoverview added by tsickle
@@ -2584,6 +2830,34 @@ NavItemComponent.propDecorators = {
     "childrenHost": [{ type: ViewChild, args: ['childrenHost', { read: ViewContainerRef },] },],
     "subNavItems": [{ type: ContentChildren, args: [SubNavItemComponent,] },],
 };
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class NavModule {
+}
+NavModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                    RouterModule
+                ],
+                declarations: [
+                    NavWrapComponent,
+                    NavItemComponent,
+                    SubNavItemComponent,
+                    ThirthNavItemComponent
+                ],
+                providers: [],
+                exports: [
+                    NavWrapComponent,
+                    NavItemComponent,
+                    SubNavItemComponent,
+                    ThirthNavItemComponent
+                ]
+            },] },
+];
 
 /**
  * @fileoverview added by tsickle
@@ -3328,6 +3602,28 @@ DatetimePickerComponent.propDecorators = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
+class DatetimePickerModule {
+}
+DatetimePickerModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                    FormsModule,
+                ],
+                declarations: [
+                    DatetimePickerComponent
+                ],
+                providers: [],
+                exports: [
+                    DatetimePickerComponent
+                ]
+            },] },
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
 class SlideDownComponent {
     constructor() {
         this.isTransition = false;
@@ -3445,6 +3741,49 @@ DropDownComponent.decorators = [
 ];
 
 //获取的高度
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class DropDownModule {
+}
+DropDownModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                ],
+                declarations: [
+                    DropDownComponent
+                ],
+                providers: [],
+                exports: [
+                    DropDownComponent
+                ]
+            },] },
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class SlideDownModule {
+}
+SlideDownModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule
+                ],
+                declarations: [
+                    SlideDownComponent
+                ],
+                providers: [],
+                exports: [
+                    CommonModule,
+                    SlideDownComponent
+                ]
+            },] },
+];
 
 /**
  * @fileoverview added by tsickle
@@ -3603,330 +3942,175 @@ SliderComponent.propDecorators = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-class ToggleClassDirective {
-    /**
-     * @param {?} elemRef
-     */
-    constructor(elemRef) {
-        this.elemRef = elemRef;
-        this.keep = false;
-        this.triggerEvent = 'click';
-        this.tempWindowEvent = {
-            event: this.triggerEvent,
-            handler: null
-        };
-    }
-    /**
-     * @return {?}
-     */
-    ngOnInit() {
-        this.orgClassName = this.elemRef.nativeElement.className;
-        this.toggleClassList = this.getToggleClassList(this.toggleClass);
-        if (this.target) {
-            this.targetElem = document.getElementById(this.target);
-            this.targetElem && (this.orgTargetClassName = this.targetElem.className);
-            let /** @type {?} */ targetToggleClass = this.targetClass || this.toggleClass;
-            this.targetToggleClassList = this.getToggleClassList(targetToggleClass);
-        }
-        this.elemRef.nativeElement.addEventListener(this.triggerEvent, (ev) => {
-            ev.stopPropagation();
-            setTimeout(() => {
-                if (this.keep) {
-                    let /** @type {?} */ classList = this.uniqueArray((this.orgClassName + ' ' + this.toggleClass).split(/\s+/));
-                    this.elemRef.nativeElement.className = classList.join(' ');
-                    if (this.target) {
-                        let /** @type {?} */ targetClassList = this.uniqueArray((this.orgTargetClassName + ' ' + this.targetClass).split(/\s+/));
-                        this.targetElem.className = targetClassList.join(' ');
-                    }
-                }
-                else {
-                    this.changeElemClass(this.elemRef.nativeElement, this.toggleClassList);
-                    if (this.target) {
-                        this.targetElem && this.changeElemClass(this.targetElem, this.targetToggleClassList);
-                    }
-                }
-                if (!(this.revokable === undefined || this.revokable === 'false')) {
-                    let /** @type {?} */ finalClassList = this.getClassList(this.elemRef.nativeElement);
-                    let /** @type {?} */ commonClassList = this.getCommonClass(finalClassList, this.toggleClassList);
-                    if (commonClassList.length) {
-                        this.addOutClickResetListener();
-                    }
-                }
-            });
-        });
-    }
-    /**
-     * 切换元素类名
-     * @param {?} elem
-     * @param {?} toggleClass
-     * @return {?}
-     */
-    changeElemClass(elem, toggleClass) {
-        let /** @type {?} */ curClassList = this.getClassList(elem); //当前class列表
-        let /** @type {?} */ curOnlyClass = this.getOnlyClass(curClassList, toggleClass); //仅当前元素有的class列表
-        let /** @type {?} */ toggleOnlyClass = this.getOnlyClass(toggleClass, curClassList); //仅输入参数有的class列表
-        let /** @type {?} */ newClassList = curOnlyClass.concat(toggleOnlyClass);
-        elem.className = newClassList.join(' ');
-    }
-    /**
-     * @return {?}
-     */
-    ngOnDestroy() {
-        this.removeOutClickResetListener();
-        this.targetElem = null;
-    }
-    /**
-     * 添加点击外边重置class的事件
-     * @return {?}
-     */
-    addOutClickResetListener() {
-        let /** @type {?} */ handler = (ev) => {
-            this.elemRef.nativeElement.className = this.orgClassName;
-            if (this.target) {
-                this.targetElem.className = this.orgTargetClassName;
-            }
-            this.removeOutClickResetListener();
-        };
-        window.addEventListener(this.triggerEvent, handler);
-        this.tempWindowEvent.event = this.triggerEvent;
-        this.tempWindowEvent.handler = handler;
-    }
-    /**
-     * 移除window上的浏览器事件
-     * @return {?}
-     */
-    removeOutClickResetListener() {
-        if (this.tempWindowEvent !== undefined) {
-            window.removeEventListener(this.tempWindowEvent.event, this.tempWindowEvent.handler);
-        }
-    }
-    /**
-     * 获取元素类名列表
-     * @param {?} elem
-     * @return {?} Array<string>
-     */
-    getClassList(elem) {
-        return this.uniqueArray(elem.className.split(/\s+/));
-    }
-    /**
-     * 获取需要切换的类名列表
-     * @param {?} inputClass
-     * @return {?} any
-     */
-    getToggleClassList(inputClass) {
-        let /** @type {?} */ nullRegExp = /^\s+$/;
-        if (!nullRegExp.test(inputClass)) {
-            return this.uniqueArray(inputClass.split(/\s+/));
-        }
-        return [];
-    }
-    /**
-     * 找出仅在数组A中存在，B中不存在的类
-     * @param {?} arrA
-     * @param {?} arrB
-     * @return {?} Array
-     */
-    getOnlyClass(arrA, arrB) {
-        let /** @type {?} */ result = [];
-        for (let /** @type {?} */ item of arrA) {
-            if (arrB.indexOf(item) < 0) {
-                result.push(item);
-            }
-        }
-        return result;
-    }
-    /**
-     * 获取两个数组共有的类名
-     * @param {?} arrA
-     * @param {?} arrB
-     * @return {?} Array
-     */
-    getCommonClass(arrA, arrB) {
-        let /** @type {?} */ result = [];
-        for (let /** @type {?} */ item of arrB) {
-            if (arrA.indexOf(item) >= 0) {
-                result.push(item);
-            }
-        }
-        return result;
-    }
-    /**
-     * 去重
-     * @param {?} array
-     * @return {?} Array
-     */
-    uniqueArray(array) {
-        let /** @type {?} */ newArr = [];
-        for (let /** @type {?} */ item of array) {
-            if (newArr.indexOf(item) < 0) {
-                newArr.push(item);
-            }
-        }
-        return newArr;
-    }
+class SliderModule {
 }
-ToggleClassDirective.decorators = [
-    { type: Directive, args: [{
-                selector: '[toggleClass]'
+SliderModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                ],
+                declarations: [
+                    SliderComponent
+                ],
+                providers: [],
+                exports: [
+                    SliderComponent
+                ]
             },] },
-];
-/** @nocollapse */
-ToggleClassDirective.ctorParameters = () => [
-    { type: ElementRef, },
-];
-ToggleClassDirective.propDecorators = {
-    "toggleClass": [{ type: Input },],
-    "revokable": [{ type: Input, args: ['opt-revokable',] },],
-    "target": [{ type: Input, args: ['opt-target',] },],
-    "targetClass": [{ type: Input, args: ['opt-targetClass',] },],
-    "keep": [{ type: Input, args: ['opt-keep',] },],
-};
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class BtnBackDirective {
-    /**
-     * @param {?} elemRef
-     */
-    constructor(elemRef) {
-        this.elemRef = elemRef;
-    }
-    /**
-     * @return {?}
-     */
-    ngOnInit() {
-        this.elemRef.nativeElement.addEventListener('click', () => {
-            history.back();
-        });
-    }
-    /**
-     * @return {?}
-     */
-    ngOnDestroy() {
-    }
-}
-BtnBackDirective.decorators = [
-    { type: Directive, args: [{
-                selector: '[btnBack]'
-            },] },
-];
-/** @nocollapse */
-BtnBackDirective.ctorParameters = () => [
-    { type: ElementRef, },
 ];
 
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-class TextMaxLengthDirective {
-    /**
-     * @param {?} elemRef
-     */
-    constructor(elemRef) {
-        this.elemRef = elemRef;
-        this.textMaxLength = '';
-    }
-    /**
-     * @return {?}
-     */
-    ngOnInit() {
-        this.elemRef.nativeElement.style.maxWidth = this.textMaxLength;
-        this.elemRef.nativeElement.style.whiteSpace = 'nowrap';
-        this.elemRef.nativeElement.style.overflow = 'hidden';
-        this.elemRef.nativeElement.style.textOverflow = 'ellipsis';
-    }
-}
-TextMaxLengthDirective.decorators = [
-    { type: Directive, args: [{
-                selector: '[textMaxLength]'
-            },] },
-];
-/** @nocollapse */
-TextMaxLengthDirective.ctorParameters = () => [
-    { type: ElementRef, },
-];
-TextMaxLengthDirective.propDecorators = {
-    "textMaxLength": [{ type: Input },],
-};
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class HTML5ValidateDirective {
+class SelectComponent {
     /**
      * @param {?} elemRef
      */
     constructor(elemRef) {
         this.elemRef = elemRef;
         this.visible = false;
+        this.initializedStyle = false;
+        this.text = '';
+    }
+    /**
+     * @param {?} changes
+     * @return {?}
+     */
+    ngOnChanges(changes) {
+        let /** @type {?} */ valChg = changes['value'];
+        if (valChg) {
+            this.text = this.matchText(valChg.currentValue, this.options);
+        }
     }
     /**
      * @return {?}
      */
-    ngOnInit() {
-        if (this.elemRef.nativeElement.nodeName === 'FORM') {
-            this.elemRef.nativeElement.removeAttribute('novalidate');
-        }
-        else {
-            this.initValidateRules();
-        }
+    ngAfterContentInit() {
+        this.visible = true;
+        this.setDefaultStyle();
     }
     /**
      * @return {?}
      */
-    createCustomValidity() {
-        let /** @type {?} */ msg = '';
-        if (this.HTML5Validate instanceof Array) {
-            if (typeof this.HTML5Validate[1] === 'string') {
-                if (!!this.HTML5Validate[0]) {
-                    msg = this.HTML5Validate[1];
+    ngAfterContentChecked() {
+        this.setDefaultStyle();
+    }
+    /**
+     * @return {?}
+     */
+    setDefaultStyle() {
+        if (!this.initializedStyle && this.body) {
+            const /** @type {?} */ select = this.elemRef.nativeElement.querySelector('select');
+            if (select) {
+                //lineHeight
+                const /** @type {?} */ elem = this.body.nativeElement;
+                const /** @type {?} */ rect = elem.getBoundingClientRect();
+                this.body.nativeElement.style.lineHeight = rect.bottom - rect.top - 2 + "px";
+                //paddingRight
+                const /** @type {?} */ padLeft = this.getCss(select, 'paddingLeft');
+                if (padLeft) {
+                    elem.style.paddingLeft = padLeft;
                 }
+                this.initializedStyle = true;
             }
-            else {
-                for (let /** @type {?} */ o of this.HTML5Validate) {
-                    if (typeof o[1] === 'string') {
-                        if (!!o[0]) {
-                            msg = o[1];
-                            break;
+        }
+    }
+    /**
+     * 获取元素生效的css属性值
+     * @param {?} elem
+     * @param {?} attr
+     * @return {?}
+     */
+    getCss(elem, attr) {
+        if (elem && typeof elem === 'object' && attr && typeof attr === 'string') {
+            if (typeof document.defaultView.getComputedStyle == 'function') {
+                if (attr === 'float') {
+                    //float的特殊处理
+                    attr = 'cssFloat';
+                }
+                return document.defaultView.getComputedStyle(elem, null)[attr];
+            }
+            else if (elem.currentStyle && typeof elem.currentStyle === 'object') {
+                if (attr === 'float') {
+                    //float的特殊处理
+                    attr = 'styleFloat';
+                }
+                return elem.currentStyle[attr];
+            }
+        }
+    }
+    /**
+     * 匹配文字
+     * @param {?} val
+     * @param {?} options
+     * @return {?}
+     */
+    matchText(val, options) {
+        let /** @type {?} */ text = '';
+        if (options instanceof Array) {
+            if (this.valueKey && typeof this.valueKey == 'string') {
+                if (this.textKey && typeof this.textKey == 'string') {
+                    for (let /** @type {?} */ o of options) {
+                        if (o && typeof o == 'object' && val === o[this.valueKey]) {
+                            text = o[this.textKey];
                         }
                     }
                 }
             }
         }
-        return msg;
-    }
-    /**
-     * @return {?}
-     */
-    initValidateRules() {
-        this.elemRef.nativeElement.addEventListener('invalid', () => {
-            this.elemRef.nativeElement.setCustomValidity(this.createCustomValidity());
-        });
-        this.elemRef.nativeElement.addEventListener('change', () => {
-            this.elemRef.nativeElement.setCustomValidity(this.createCustomValidity());
-        });
-        this.elemRef.nativeElement.addEventListener('keydown', () => {
-            this.elemRef.nativeElement.setCustomValidity('');
-        });
+        return text;
     }
 }
-HTML5ValidateDirective.decorators = [
-    { type: Directive, args: [{
-                selector: '[HTML5Validate]'
+SelectComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'nx-select',
+                template: `<div class="nx-select{{styleClass?' '+styleClass:''}}">
+    <ng-content select="select">
+
+    </ng-content>
+    <div class="nx-select-body" #body *ngIf="visible">
+        <span class="nx-select-text">{{text}}</span>
+        <div class="nx-select-arrow"></div>
+    </div>
+</div>`,
+                styles: [`.nx-select,.nx-select *{-webkit-box-sizing:border-box;box-sizing:border-box}.nx-select{display:inline-block;position:relative;overflow:hidden;vertical-align:middle}.nx-select-body{position:absolute;left:0;right:0;top:0;bottom:0;border:1px solid transparent;padding-right:20px;background-color:#fff;white-space:nowrap}.nx-select /deep/ select{position:relative;z-index:1;opacity:0}.nx-select /deep/ select+.nx-select-body{border-color:#ddd}.nx-select /deep/ select:focus+.nx-select-body{border-color:#24b6e4}.nx-select /deep/ select:focus+.nx-select-body .nx-select-arrow{border-top-color:#24b6e4}.nx-select-arrow{width:0;height:0;border-top:5px solid #666;border-left:4px solid transparent;border-right:4px solid transparent;border-bottom:none;position:absolute;right:6px;top:50%;margin-top:-3px}`]
             },] },
 ];
 /** @nocollapse */
-HTML5ValidateDirective.ctorParameters = () => [
+SelectComponent.ctorParameters = () => [
     { type: ElementRef, },
 ];
-HTML5ValidateDirective.propDecorators = {
-    "HTML5Validate": [{ type: Input },],
-    "visible": [{ type: Input },],
+SelectComponent.propDecorators = {
+    "value": [{ type: Input },],
+    "options": [{ type: Input },],
+    "valueKey": [{ type: Input },],
+    "textKey": [{ type: Input },],
+    "styleClass": [{ type: Input },],
+    "body": [{ type: ViewChild, args: ['body',] },],
 };
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class SelectModule {
+}
+SelectModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule
+                ],
+                declarations: [
+                    SelectComponent
+                ],
+                providers: [],
+                exports: [
+                    CommonModule,
+                    SelectComponent
+                ]
+            },] },
+];
 
 /**
  * @fileoverview added by tsickle
@@ -4142,6 +4326,11 @@ class AreaPicker {
         }
     }
 }
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
 class AreaPickerDirective {
     /**
      * @param {?} elemRef
@@ -4303,6 +4492,430 @@ AreaPickerDirective.propDecorators = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
+class AreaPickerModule {
+}
+AreaPickerModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [],
+                declarations: [
+                    AreaPickerDirective
+                ],
+                providers: [],
+                exports: [
+                    AreaPickerDirective
+                ]
+            },] },
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class ToggleClassDirective {
+    /**
+     * @param {?} elemRef
+     */
+    constructor(elemRef) {
+        this.elemRef = elemRef;
+        this.keep = false;
+        this.triggerEvent = 'click';
+        this.tempWindowEvent = {
+            event: this.triggerEvent,
+            handler: null
+        };
+    }
+    /**
+     * @return {?}
+     */
+    ngOnInit() {
+        this.orgClassName = this.elemRef.nativeElement.className;
+        this.toggleClassList = this.getToggleClassList(this.toggleClass);
+        if (this.target) {
+            this.targetElem = document.getElementById(this.target);
+            this.targetElem && (this.orgTargetClassName = this.targetElem.className);
+            let /** @type {?} */ targetToggleClass = this.targetClass || this.toggleClass;
+            this.targetToggleClassList = this.getToggleClassList(targetToggleClass);
+        }
+        this.elemRef.nativeElement.addEventListener(this.triggerEvent, (ev) => {
+            ev.stopPropagation();
+            setTimeout(() => {
+                if (this.keep) {
+                    let /** @type {?} */ classList = this.uniqueArray((this.orgClassName + ' ' + this.toggleClass).split(/\s+/));
+                    this.elemRef.nativeElement.className = classList.join(' ');
+                    if (this.target) {
+                        let /** @type {?} */ targetClassList = this.uniqueArray((this.orgTargetClassName + ' ' + this.targetClass).split(/\s+/));
+                        this.targetElem.className = targetClassList.join(' ');
+                    }
+                }
+                else {
+                    this.changeElemClass(this.elemRef.nativeElement, this.toggleClassList);
+                    if (this.target) {
+                        this.targetElem && this.changeElemClass(this.targetElem, this.targetToggleClassList);
+                    }
+                }
+                if (!(this.revokable === undefined || this.revokable === 'false')) {
+                    let /** @type {?} */ finalClassList = this.getClassList(this.elemRef.nativeElement);
+                    let /** @type {?} */ commonClassList = this.getCommonClass(finalClassList, this.toggleClassList);
+                    if (commonClassList.length) {
+                        this.addOutClickResetListener();
+                    }
+                }
+            });
+        });
+    }
+    /**
+     * 切换元素类名
+     * @param {?} elem
+     * @param {?} toggleClass
+     * @return {?}
+     */
+    changeElemClass(elem, toggleClass) {
+        let /** @type {?} */ curClassList = this.getClassList(elem); //当前class列表
+        let /** @type {?} */ curOnlyClass = this.getOnlyClass(curClassList, toggleClass); //仅当前元素有的class列表
+        let /** @type {?} */ toggleOnlyClass = this.getOnlyClass(toggleClass, curClassList); //仅输入参数有的class列表
+        let /** @type {?} */ newClassList = curOnlyClass.concat(toggleOnlyClass);
+        elem.className = newClassList.join(' ');
+    }
+    /**
+     * @return {?}
+     */
+    ngOnDestroy() {
+        this.removeOutClickResetListener();
+        this.targetElem = null;
+    }
+    /**
+     * 添加点击外边重置class的事件
+     * @return {?}
+     */
+    addOutClickResetListener() {
+        let /** @type {?} */ handler = (ev) => {
+            this.elemRef.nativeElement.className = this.orgClassName;
+            if (this.target) {
+                this.targetElem.className = this.orgTargetClassName;
+            }
+            this.removeOutClickResetListener();
+        };
+        window.addEventListener(this.triggerEvent, handler);
+        this.tempWindowEvent.event = this.triggerEvent;
+        this.tempWindowEvent.handler = handler;
+    }
+    /**
+     * 移除window上的浏览器事件
+     * @return {?}
+     */
+    removeOutClickResetListener() {
+        if (this.tempWindowEvent !== undefined) {
+            window.removeEventListener(this.tempWindowEvent.event, this.tempWindowEvent.handler);
+        }
+    }
+    /**
+     * 获取元素类名列表
+     * @param {?} elem
+     * @return {?} Array<string>
+     */
+    getClassList(elem) {
+        return this.uniqueArray(elem.className.split(/\s+/));
+    }
+    /**
+     * 获取需要切换的类名列表
+     * @param {?} inputClass
+     * @return {?} any
+     */
+    getToggleClassList(inputClass) {
+        let /** @type {?} */ nullRegExp = /^\s+$/;
+        if (!nullRegExp.test(inputClass)) {
+            return this.uniqueArray(inputClass.split(/\s+/));
+        }
+        return [];
+    }
+    /**
+     * 找出仅在数组A中存在，B中不存在的类
+     * @param {?} arrA
+     * @param {?} arrB
+     * @return {?} Array
+     */
+    getOnlyClass(arrA, arrB) {
+        let /** @type {?} */ result = [];
+        for (let /** @type {?} */ item of arrA) {
+            if (arrB.indexOf(item) < 0) {
+                result.push(item);
+            }
+        }
+        return result;
+    }
+    /**
+     * 获取两个数组共有的类名
+     * @param {?} arrA
+     * @param {?} arrB
+     * @return {?} Array
+     */
+    getCommonClass(arrA, arrB) {
+        let /** @type {?} */ result = [];
+        for (let /** @type {?} */ item of arrB) {
+            if (arrA.indexOf(item) >= 0) {
+                result.push(item);
+            }
+        }
+        return result;
+    }
+    /**
+     * 去重
+     * @param {?} array
+     * @return {?} Array
+     */
+    uniqueArray(array) {
+        let /** @type {?} */ newArr = [];
+        for (let /** @type {?} */ item of array) {
+            if (newArr.indexOf(item) < 0) {
+                newArr.push(item);
+            }
+        }
+        return newArr;
+    }
+}
+ToggleClassDirective.decorators = [
+    { type: Directive, args: [{
+                selector: '[toggleClass]'
+            },] },
+];
+/** @nocollapse */
+ToggleClassDirective.ctorParameters = () => [
+    { type: ElementRef, },
+];
+ToggleClassDirective.propDecorators = {
+    "toggleClass": [{ type: Input },],
+    "revokable": [{ type: Input, args: ['opt-revokable',] },],
+    "target": [{ type: Input, args: ['opt-target',] },],
+    "targetClass": [{ type: Input, args: ['opt-targetClass',] },],
+    "keep": [{ type: Input, args: ['opt-keep',] },],
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class ToggleClassModule {
+}
+ToggleClassModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [],
+                declarations: [
+                    ToggleClassDirective
+                ],
+                providers: [],
+                exports: [
+                    ToggleClassDirective
+                ]
+            },] },
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class BtnBackDirective {
+    /**
+     * @param {?} elemRef
+     */
+    constructor(elemRef) {
+        this.elemRef = elemRef;
+    }
+    /**
+     * @return {?}
+     */
+    ngOnInit() {
+        this.elemRef.nativeElement.addEventListener('click', () => {
+            history.back();
+        });
+    }
+    /**
+     * @return {?}
+     */
+    ngOnDestroy() {
+    }
+}
+BtnBackDirective.decorators = [
+    { type: Directive, args: [{
+                selector: '[btnBack]'
+            },] },
+];
+/** @nocollapse */
+BtnBackDirective.ctorParameters = () => [
+    { type: ElementRef, },
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class BtnBackModule {
+}
+BtnBackModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [],
+                declarations: [
+                    BtnBackDirective
+                ],
+                providers: [],
+                exports: [
+                    BtnBackDirective
+                ]
+            },] },
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class TextMaxLengthDirective {
+    /**
+     * @param {?} elemRef
+     */
+    constructor(elemRef) {
+        this.elemRef = elemRef;
+        this.textMaxLength = '';
+    }
+    /**
+     * @return {?}
+     */
+    ngOnInit() {
+        this.elemRef.nativeElement.style.maxWidth = this.textMaxLength;
+        this.elemRef.nativeElement.style.whiteSpace = 'nowrap';
+        this.elemRef.nativeElement.style.overflow = 'hidden';
+        this.elemRef.nativeElement.style.textOverflow = 'ellipsis';
+    }
+}
+TextMaxLengthDirective.decorators = [
+    { type: Directive, args: [{
+                selector: '[textMaxLength]'
+            },] },
+];
+/** @nocollapse */
+TextMaxLengthDirective.ctorParameters = () => [
+    { type: ElementRef, },
+];
+TextMaxLengthDirective.propDecorators = {
+    "textMaxLength": [{ type: Input },],
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class TextMaxLengthModule {
+}
+TextMaxLengthModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [],
+                declarations: [
+                    TextMaxLengthDirective
+                ],
+                providers: [],
+                exports: [
+                    TextMaxLengthDirective
+                ]
+            },] },
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class HTML5ValidateDirective {
+    /**
+     * @param {?} elemRef
+     */
+    constructor(elemRef) {
+        this.elemRef = elemRef;
+        this.visible = false;
+    }
+    /**
+     * @return {?}
+     */
+    ngOnInit() {
+        if (this.elemRef.nativeElement.nodeName === 'FORM') {
+            this.elemRef.nativeElement.removeAttribute('novalidate');
+        }
+        else {
+            this.initValidateRules();
+        }
+    }
+    /**
+     * @return {?}
+     */
+    createCustomValidity() {
+        let /** @type {?} */ msg = '';
+        if (this.HTML5Validate instanceof Array) {
+            if (typeof this.HTML5Validate[1] === 'string') {
+                if (!!this.HTML5Validate[0]) {
+                    msg = this.HTML5Validate[1];
+                }
+            }
+            else {
+                for (let /** @type {?} */ o of this.HTML5Validate) {
+                    if (typeof o[1] === 'string') {
+                        if (!!o[0]) {
+                            msg = o[1];
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        return msg;
+    }
+    /**
+     * @return {?}
+     */
+    initValidateRules() {
+        this.elemRef.nativeElement.addEventListener('invalid', () => {
+            this.elemRef.nativeElement.setCustomValidity(this.createCustomValidity());
+        });
+        this.elemRef.nativeElement.addEventListener('change', () => {
+            this.elemRef.nativeElement.setCustomValidity(this.createCustomValidity());
+        });
+        this.elemRef.nativeElement.addEventListener('keydown', () => {
+            this.elemRef.nativeElement.setCustomValidity('');
+        });
+    }
+}
+HTML5ValidateDirective.decorators = [
+    { type: Directive, args: [{
+                selector: '[HTML5Validate]'
+            },] },
+];
+/** @nocollapse */
+HTML5ValidateDirective.ctorParameters = () => [
+    { type: ElementRef, },
+];
+HTML5ValidateDirective.propDecorators = {
+    "HTML5Validate": [{ type: Input },],
+    "visible": [{ type: Input },],
+};
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class ValidateModule {
+}
+ValidateModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [],
+                declarations: [
+                    HTML5ValidateDirective
+                ],
+                providers: [],
+                exports: [
+                    HTML5ValidateDirective
+                ]
+            },] },
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
 class CurrencyFormatDirective {
     /**
      * @param {?} elemRef
@@ -4407,6 +5020,293 @@ CurrencyFormatDirective.propDecorators = {
     "currencyFormat": [{ type: Input },],
     "ngModelChange": [{ type: Output },],
 };
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class CurrencyFormatPipe {
+    constructor() {
+        this.separateLength = 3;
+        this.accuracy = 2;
+        this.format = '';
+        this.separator = ',';
+    }
+    /**
+     * @param {?} value
+     * @param {?=} param
+     * @return {?}
+     */
+    transform(value, param) {
+        if (value === undefined || value === null) {
+            return value;
+        }
+        else if (!value && value !== 0) {
+            //NaN  0   ''
+            return '';
+        }
+        let /** @type {?} */ sep = this.separator;
+        let /** @type {?} */ flag = '';
+        let /** @type {?} */ inputStr = value + '';
+        flag = (inputStr.indexOf('-') >= 0 ? '-' : inputStr.indexOf('+') >= 0 ? '+' : '');
+        inputStr = inputStr.replace(/[^\d\.]/g, /*new RegExp(sep, 'g')*/ '');
+        let /** @type {?} */ numRegExp = /^[\-\+]?[0-9]+(\.[0-9]+)?$/, /** @type {?} */
+        str = inputStr.replace(/\s/g, ''), /** @type {?} */
+        accuracy = this.accuracy, /** @type {?} */
+        format = this.format, /** @type {?} */
+        sepLen = this.separateLength;
+        //参数匹配
+        let /** @type {?} */ nums = [];
+        let /** @type {?} */ strs = [];
+        if (typeof param === 'string') {
+            strs.push(param);
+        }
+        else if (typeof param === 'number') {
+            nums.push(param);
+        }
+        else if (param instanceof Array) {
+            for (let /** @type {?} */ o of param) {
+                if (typeof o === 'string') {
+                    strs.push(o);
+                }
+                else if (typeof o === 'number') {
+                    nums.push(o);
+                }
+            }
+        }
+        //数字参数识别
+        if (nums.length > 0) {
+            accuracy = nums[0];
+        }
+        if (nums.length > 1) {
+            sepLen = nums[1];
+        }
+        //字符串参数识别
+        if (strs.length > 0) {
+            format = strs[0];
+        }
+        if (strs.length > 1) {
+            sep = strs[1];
+        }
+        let /** @type {?} */ result = '';
+        if (numRegExp.test(str)) {
+            if (sepLen) {
+                //分隔长度大于0
+                str = parseFloat(str).toFixed(accuracy) + ''; //四舍五入
+                let /** @type {?} */ splits = str.split('.');
+                let /** @type {?} */ intStr = splits[0];
+                let /** @type {?} */ ext = splits.length > 1 ? splits[1] : '';
+                if (ext.length < accuracy) {
+                    let /** @type {?} */ fillLen = accuracy - ext.length;
+                    for (let /** @type {?} */ i = 0; i < fillLen; i++) {
+                        ext += '0';
+                    }
+                }
+                let /** @type {?} */ intLen = intStr.length, /** @type {?} */
+                newIntStr = '';
+                if (intLen > sepLen) {
+                    for (let /** @type {?} */ i = intLen - sepLen; i > 0 - sepLen; i = i - sepLen) {
+                        if (i > 0) {
+                            newIntStr = sep + intStr.substr(i, sepLen) + newIntStr;
+                        }
+                        else {
+                            newIntStr = intStr.substr(0, sepLen + i) + newIntStr;
+                        }
+                    }
+                }
+                else {
+                    newIntStr = intStr;
+                }
+                result = newIntStr + (ext ? '.' + ext : '');
+            }
+            else {
+                //分隔长度等于0
+                result = inputStr;
+            }
+            //格式化
+            if (format) {
+                let /** @type {?} */ index = format.indexOf('xx');
+                if (index >= 0) {
+                    result = format.replace(/xx/, result);
+                }
+                else {
+                    result = result + format;
+                }
+            }
+        }
+        else {
+            result = inputStr;
+        }
+        if (flag) {
+            result = flag + result;
+        }
+        return result;
+    }
+}
+CurrencyFormatPipe.decorators = [
+    { type: Pipe, args: [{ name: 'currencyFormat' },] },
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class CurrencyFormatModule {
+}
+CurrencyFormatModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [],
+                declarations: [
+                    CurrencyFormatDirective,
+                    CurrencyFormatPipe
+                ],
+                providers: [],
+                exports: [
+                    CurrencyFormatDirective,
+                    CurrencyFormatPipe
+                ]
+            },] },
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class DatePipe {
+    constructor() {
+        this.format = 'yyyy-MM-dd';
+    }
+    /**
+     * @param {?} dateStr
+     * @return {?}
+     */
+    createDate(dateStr) {
+        let /** @type {?} */ date = new Date(dateStr);
+        if (date + '' === 'Invalid Date') {
+            date = new Date(dateStr.replace(/-/g, '/').replace(/\.\d+$/, ''));
+            if (date + '' === 'Invalid Date') {
+                return null;
+            }
+        }
+        return date;
+    }
+    /**
+     * @param {?} value
+     * @param {?} fmt
+     * @return {?}
+     */
+    transform(value, fmt) {
+        if (value) {
+            let /** @type {?} */ date;
+            if (value instanceof Date) {
+                date = value;
+            }
+            else if (typeof value === 'string') {
+                date = this.createDate(value);
+            }
+            if (!date) {
+                return value;
+            }
+            let /** @type {?} */ o = {
+                "M+": date.getMonth() + 1,
+                //月份
+                "d+": date.getDate(),
+                //日
+                "h+": date.getHours(),
+                //小时
+                "m+": date.getMinutes(),
+                //分
+                "s+": date.getSeconds(),
+                //秒
+                "q+": Math.floor((date.getMonth() + 3) / 3),
+                //季度
+                "S": date.getMilliseconds() //毫秒
+            };
+            if (!fmt) {
+                fmt = this.format;
+            }
+            if (/(y+)/.test(fmt)) {
+                fmt = fmt.replace(RegExp.$1, (date.getFullYear() + "").substr(4 - RegExp.$1.length));
+            }
+            for (var /** @type {?} */ k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) {
+                    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                }
+            return fmt;
+        }
+        else {
+            return value;
+        }
+    }
+}
+DatePipe.decorators = [
+    { type: Pipe, args: [{ name: 'date' },] },
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class DateFormatModule {
+}
+DateFormatModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [],
+                declarations: [
+                    DatePipe
+                ],
+                providers: [],
+                exports: [
+                    DatePipe
+                ]
+            },] },
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class NullReplacePipe {
+    constructor() {
+        this.fmt = '--';
+    }
+    /**
+     * @param {?} value
+     * @param {?} fmt
+     * @return {?}
+     */
+    transform(value, fmt) {
+        if (value === undefined || value === null || value === '') {
+            let /** @type {?} */ result = fmt || this.fmt;
+            return result;
+        }
+        else {
+            return value;
+        }
+    }
+}
+NullReplacePipe.decorators = [
+    { type: Pipe, args: [{ name: 'nullReplace' },] },
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+class NullReplaceModule {
+}
+NullReplaceModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [],
+                declarations: [
+                    NullReplacePipe
+                ],
+                providers: [],
+                exports: [
+                    NullReplacePipe
+                ]
+            },] },
+];
 
 /**
  * @fileoverview added by tsickle
@@ -4952,183 +5852,6 @@ UploaderModule.decorators = [
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-class LayoutModule {
-}
-LayoutModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule
-                ],
-                declarations: [
-                    RootContainerComponent,
-                    AsideLeftComponent,
-                    HeaderComponent,
-                    HeaderLeftComponent,
-                    HeaderRightComponent,
-                    DeleteWrapComponent
-                ],
-                providers: [],
-                exports: [
-                    RootContainerComponent,
-                    AsideLeftComponent,
-                    HeaderComponent,
-                    HeaderLeftComponent,
-                    HeaderRightComponent,
-                    DeleteWrapComponent
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class NavModule {
-}
-NavModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                    RouterModule
-                ],
-                declarations: [
-                    NavWrapComponent,
-                    NavItemComponent,
-                    SubNavItemComponent,
-                    ThirthNavItemComponent
-                ],
-                providers: [],
-                exports: [
-                    NavWrapComponent,
-                    NavItemComponent,
-                    SubNavItemComponent,
-                    ThirthNavItemComponent
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class ModalModule {
-}
-ModalModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule
-                ],
-                declarations: [
-                    ModalComponent,
-                    ModalHeaderComponent,
-                    ModalBodyComponent,
-                    ModalFooterComponent
-                ],
-                providers: [],
-                exports: [
-                    ModalComponent,
-                    ModalHeaderComponent,
-                    ModalBodyComponent,
-                    ModalFooterComponent
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class CheckboxModule {
-}
-CheckboxModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                    FormsModule
-                ],
-                declarations: [
-                    CheckboxComponent
-                ],
-                providers: [],
-                exports: [
-                    CommonModule,
-                    FormsModule,
-                    CheckboxComponent
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class RadioModule {
-}
-RadioModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                    FormsModule
-                ],
-                declarations: [
-                    RadioComponent
-                ],
-                providers: [],
-                exports: [
-                    CommonModule,
-                    FormsModule,
-                    RadioComponent
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class ToggleModule {
-}
-ToggleModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                    FormsModule
-                ],
-                declarations: [
-                    ToggleComponent
-                ],
-                providers: [],
-                exports: [
-                    CommonModule,
-                    FormsModule,
-                    ToggleComponent
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class ValidateModule {
-}
-ValidateModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [],
-                declarations: [
-                    HTML5ValidateDirective
-                ],
-                providers: [],
-                exports: [
-                    HTML5ValidateDirective
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
 class FormsModule$1 {
 }
 FormsModule$1.decorators = [
@@ -5146,151 +5869,6 @@ FormsModule$1.decorators = [
                     RadioModule,
                     ToggleModule,
                     ValidateModule
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class LoaderModule {
-}
-LoaderModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule
-                ],
-                declarations: [
-                    SpinnerComponent
-                ],
-                providers: [],
-                exports: [
-                    SpinnerComponent
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class GalleryModule {
-}
-GalleryModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule
-                ],
-                declarations: [
-                    GalleryComponent
-                ],
-                providers: [],
-                exports: [
-                    GalleryComponent
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class PaginatorModule {
-}
-PaginatorModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                    FormsModule
-                ],
-                declarations: [
-                    PaginatorComponent
-                ],
-                providers: [],
-                exports: [
-                    PaginatorComponent
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class QBtnGroupModule {
-}
-QBtnGroupModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                    FormsModule
-                ],
-                declarations: [
-                    QBtnGroupComponent
-                ],
-                providers: [],
-                exports: [
-                    CommonModule,
-                    FormsModule,
-                    QBtnGroupComponent
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class BtnBackModule {
-}
-BtnBackModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [],
-                declarations: [
-                    BtnBackDirective
-                ],
-                providers: [],
-                exports: [
-                    BtnBackDirective
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class TextMaxLengthModule {
-}
-TextMaxLengthModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [],
-                declarations: [
-                    TextMaxLengthDirective
-                ],
-                providers: [],
-                exports: [
-                    TextMaxLengthDirective
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class ToggleClassModule {
-}
-ToggleClassModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [],
-                declarations: [
-                    ToggleClassDirective
-                ],
-                providers: [],
-                exports: [
-                    ToggleClassDirective
                 ]
             },] },
 ];
@@ -5324,381 +5902,11 @@ CommonModule$1.decorators = [
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-class DatetimePickerModule {
-}
-DatetimePickerModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                    FormsModule,
-                ],
-                declarations: [
-                    DatetimePickerComponent
-                ],
-                providers: [],
-                exports: [
-                    DatetimePickerComponent
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class CurrencyFormatPipe {
-    constructor() {
-        this.separateLength = 3;
-        this.accuracy = 2;
-        this.format = '';
-        this.separator = ',';
-    }
-    /**
-     * @param {?} value
-     * @param {?=} param
-     * @return {?}
-     */
-    transform(value, param) {
-        if (value === undefined || value === null) {
-            return value;
-        }
-        else if (!value && value !== 0) {
-            //NaN  0   ''
-            return '';
-        }
-        let /** @type {?} */ sep = this.separator;
-        let /** @type {?} */ flag = '';
-        let /** @type {?} */ inputStr = value + '';
-        flag = (inputStr.indexOf('-') >= 0 ? '-' : inputStr.indexOf('+') >= 0 ? '+' : '');
-        inputStr = inputStr.replace(/[^\d\.]/g, /*new RegExp(sep, 'g')*/ '');
-        let /** @type {?} */ numRegExp = /^[\-\+]?[0-9]+(\.[0-9]+)?$/, /** @type {?} */
-        str = inputStr.replace(/\s/g, ''), /** @type {?} */
-        accuracy = this.accuracy, /** @type {?} */
-        format = this.format, /** @type {?} */
-        sepLen = this.separateLength;
-        //参数匹配
-        let /** @type {?} */ nums = [];
-        let /** @type {?} */ strs = [];
-        if (typeof param === 'string') {
-            strs.push(param);
-        }
-        else if (typeof param === 'number') {
-            nums.push(param);
-        }
-        else if (param instanceof Array) {
-            for (let /** @type {?} */ o of param) {
-                if (typeof o === 'string') {
-                    strs.push(o);
-                }
-                else if (typeof o === 'number') {
-                    nums.push(o);
-                }
-            }
-        }
-        //数字参数识别
-        if (nums.length > 0) {
-            accuracy = nums[0];
-        }
-        if (nums.length > 1) {
-            sepLen = nums[1];
-        }
-        //字符串参数识别
-        if (strs.length > 0) {
-            format = strs[0];
-        }
-        if (strs.length > 1) {
-            sep = strs[1];
-        }
-        let /** @type {?} */ result = '';
-        if (numRegExp.test(str)) {
-            if (sepLen) {
-                //分隔长度大于0
-                str = parseFloat(str).toFixed(accuracy) + ''; //四舍五入
-                let /** @type {?} */ splits = str.split('.');
-                let /** @type {?} */ intStr = splits[0];
-                let /** @type {?} */ ext = splits.length > 1 ? splits[1] : '';
-                if (ext.length < accuracy) {
-                    let /** @type {?} */ fillLen = accuracy - ext.length;
-                    for (let /** @type {?} */ i = 0; i < fillLen; i++) {
-                        ext += '0';
-                    }
-                }
-                let /** @type {?} */ intLen = intStr.length, /** @type {?} */
-                newIntStr = '';
-                if (intLen > sepLen) {
-                    for (let /** @type {?} */ i = intLen - sepLen; i > 0 - sepLen; i = i - sepLen) {
-                        if (i > 0) {
-                            newIntStr = sep + intStr.substr(i, sepLen) + newIntStr;
-                        }
-                        else {
-                            newIntStr = intStr.substr(0, sepLen + i) + newIntStr;
-                        }
-                    }
-                }
-                else {
-                    newIntStr = intStr;
-                }
-                result = newIntStr + (ext ? '.' + ext : '');
-            }
-            else {
-                //分隔长度等于0
-                result = inputStr;
-            }
-            //格式化
-            if (format) {
-                let /** @type {?} */ index = format.indexOf('xx');
-                if (index >= 0) {
-                    result = format.replace(/xx/, result);
-                }
-                else {
-                    result = result + format;
-                }
-            }
-        }
-        else {
-            result = inputStr;
-        }
-        if (flag) {
-            result = flag + result;
-        }
-        return result;
-    }
-}
-CurrencyFormatPipe.decorators = [
-    { type: Pipe, args: [{ name: 'currencyFormat' },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class CurrencyFormatModule {
-}
-CurrencyFormatModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [],
-                declarations: [
-                    CurrencyFormatDirective,
-                    CurrencyFormatPipe
-                ],
-                providers: [],
-                exports: [
-                    CurrencyFormatDirective,
-                    CurrencyFormatPipe
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class DatePipe {
-    constructor() {
-        this.format = 'yyyy-MM-dd';
-    }
-    /**
-     * @param {?} dateStr
-     * @return {?}
-     */
-    createDate(dateStr) {
-        let /** @type {?} */ date = new Date(dateStr);
-        if (date + '' === 'Invalid Date') {
-            date = new Date(dateStr.replace(/-/g, '/').replace(/\.\d+$/, ''));
-            if (date + '' === 'Invalid Date') {
-                return null;
-            }
-        }
-        return date;
-    }
-    /**
-     * @param {?} value
-     * @param {?} fmt
-     * @return {?}
-     */
-    transform(value, fmt) {
-        if (value) {
-            let /** @type {?} */ date;
-            if (value instanceof Date) {
-                date = value;
-            }
-            else if (typeof value === 'string') {
-                date = this.createDate(value);
-            }
-            if (!date) {
-                return value;
-            }
-            let /** @type {?} */ o = {
-                "M+": date.getMonth() + 1,
-                //月份
-                "d+": date.getDate(),
-                //日
-                "h+": date.getHours(),
-                //小时
-                "m+": date.getMinutes(),
-                //分
-                "s+": date.getSeconds(),
-                //秒
-                "q+": Math.floor((date.getMonth() + 3) / 3),
-                //季度
-                "S": date.getMilliseconds() //毫秒
-            };
-            if (!fmt) {
-                fmt = this.format;
-            }
-            if (/(y+)/.test(fmt)) {
-                fmt = fmt.replace(RegExp.$1, (date.getFullYear() + "").substr(4 - RegExp.$1.length));
-            }
-            for (var /** @type {?} */ k in o)
-                if (new RegExp("(" + k + ")").test(fmt)) {
-                    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
-                }
-            return fmt;
-        }
-        else {
-            return value;
-        }
-    }
-}
-DatePipe.decorators = [
-    { type: Pipe, args: [{ name: 'date' },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class DateFormatModule {
-}
-DateFormatModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [],
-                declarations: [
-                    DatePipe
-                ],
-                providers: [],
-                exports: [
-                    DatePipe
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class NullReplacePipe {
-    constructor() {
-        this.fmt = '--';
-    }
-    /**
-     * @param {?} value
-     * @param {?} fmt
-     * @return {?}
-     */
-    transform(value, fmt) {
-        if (value === undefined || value === null || value === '') {
-            let /** @type {?} */ result = fmt || this.fmt;
-            return result;
-        }
-        else {
-            return value;
-        }
-    }
-}
-NullReplacePipe.decorators = [
-    { type: Pipe, args: [{ name: 'nullReplace' },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class NullReplaceModule {
-}
-NullReplaceModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [],
-                declarations: [
-                    NullReplacePipe
-                ],
-                providers: [],
-                exports: [
-                    NullReplacePipe
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class AreaPickerModule {
-}
-AreaPickerModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [],
-                declarations: [
-                    AreaPickerDirective
-                ],
-                providers: [],
-                exports: [
-                    AreaPickerDirective
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class DropDownModule {
-}
-DropDownModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                ],
-                declarations: [
-                    DropDownComponent
-                ],
-                providers: [],
-                exports: [
-                    DropDownComponent
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-class SliderModule {
-}
-SliderModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                ],
-                declarations: [
-                    SliderComponent
-                ],
-                providers: [],
-                exports: [
-                    SliderComponent
-                ]
-            },] },
-];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
 /**
  * @record
  */
 
-class AlertService {
+class PopupService {
     constructor() {
         this.animated = true;
         this.eventList = [];
@@ -5913,7 +6121,7 @@ class AlertService {
      * @param {?=} text
      * @param {?=} title
      * @param {?=} opt
-     * @return {?} AlertService
+     * @return {?} PopupService
      */
     confirm(text, title, opt) {
         this.init();
@@ -5930,7 +6138,7 @@ class AlertService {
      * @param {?=} text
      * @param {?=} title
      * @param {?=} opt
-     * @return {?} AlertService
+     * @return {?} PopupService
      */
     info(text, title, opt) {
         this.init();
@@ -5947,7 +6155,7 @@ class AlertService {
      * @param {?=} text
      * @param {?=} title
      * @param {?=} opt
-     * @return {?} AlertService
+     * @return {?} PopupService
      */
     error(text, title, opt) {
         this.init();
@@ -6020,7 +6228,7 @@ class AlertService {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-class PopService extends AlertService {
+class PopService extends PopupService {
     constructor() {
         super();
     }
@@ -6190,6 +6398,7 @@ class Toaster {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
+//q-btn-group
 
 /**
  * @fileoverview added by tsickle
@@ -6204,5 +6413,5 @@ class Toaster {
  * Generated bundle index. Do not edit.
  */
 
-export { QBtnGroupComponent, PaginatorComponent, GalleryComponent, SpinnerComponent, CheckboxComponent, RadioComponent, ToggleComponent, ModalBodyComponent, ModalHeaderComponent, ModalFooterComponent, ModalComponent, RootContainerComponent, AsideLeftComponent, HeaderComponent, HeaderLeftComponent, HeaderRightComponent, DeleteWrapComponent, NavWrapComponent, NavItemComponent, SubNavItemComponent, ThirthNavItemComponent, DatetimePickerComponent, DropDownComponent, SliderComponent, ToggleClassDirective, BtnBackDirective, TextMaxLengthDirective, HTML5ValidateDirective, AreaPicker, AreaPickerDirective, CurrencyFormatDirective, UploaderModule, Uploader, UploadFile, LayoutModule, NavModule, ModalModule, FormsModule$1 as FormsModule, LoaderModule, GalleryModule, PaginatorModule, CommonModule$1 as CommonModule, DatetimePickerModule, CurrencyFormatModule, DateFormatModule, NullReplaceModule, AreaPickerModule, DropDownModule, SliderModule, CheckboxModule, RadioModule, ToggleModule, ValidateModule, ToggleClassModule, BtnBackModule, QBtnGroupModule, TextMaxLengthModule, CurrencyFormatPipe, DatePipe, NullReplacePipe, PopService, Toaster, SlideDownComponent as ɵb, SwitchComponent as ɵa, UploaderDirective as ɵc, AlertService as ɵd };
+export { QBtnGroupComponent, QBtnGroupModule, PaginatorComponent, PaginatorModule, GalleryComponent, GalleryModule, SpinnerComponent, LoaderModule, CheckboxComponent, CheckboxModule, RadioComponent, RadioModule, ToggleComponent, ToggleModule, SwitchComponent, SwitchModule, ModalBodyComponent, ModalHeaderComponent, ModalFooterComponent, ModalComponent, ModalModule, RootContainerComponent, AsideLeftComponent, HeaderComponent, HeaderLeftComponent, HeaderRightComponent, DeleteWrapComponent, LayoutModule, NavWrapComponent, NavItemComponent, SubNavItemComponent, ThirthNavItemComponent, NavModule, DatetimePickerComponent, DatetimePickerModule, DropDownComponent, DropDownModule, SlideDownComponent, SlideDownModule, SliderComponent, SliderModule, SelectComponent, SelectModule, AreaPickerDirective, AreaPickerModule, AreaPicker, ToggleClassDirective, ToggleClassModule, BtnBackDirective, BtnBackModule, TextMaxLengthDirective, TextMaxLengthModule, HTML5ValidateDirective, ValidateModule, CurrencyFormatDirective, CurrencyFormatPipe, CurrencyFormatModule, DatePipe, DateFormatModule, NullReplacePipe, NullReplaceModule, UploaderModule, Uploader, UploadFile, UploaderDirective, FormsModule$1 as FormsModule, CommonModule$1 as CommonModule, PopupService, PopService, Toaster };
 //# sourceMappingURL=dolphinng.js.map

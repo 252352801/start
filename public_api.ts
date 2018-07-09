@@ -1,1 +1,1 @@
-export * from './src/packages/dolphinng/public_api';
+export * from './src/packages/dolphinng/index';

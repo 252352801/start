@@ -362,7 +362,19 @@ select.form-control {
 .nav-sub {
   background-color: #fafafa;
 }
-
+.thirth-nav-item.active{
+  color:#23b7e5;
+}
+li.active{
+  >a{
+    color:#23b7e5;
+  }
+  &.has-child,&.exist-children{
+    > a{
+      color:#363f44;
+    }
+  }
+}
 @media (min-width: 768px) {
   .app-aside-fixed.app-aside-folded .app-aside .aside-wrap {
     overflow-x:visible;

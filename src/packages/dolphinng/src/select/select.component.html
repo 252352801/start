@@ -1,0 +1,9 @@
+<div class="nx-select{{styleClass?' '+styleClass:''}}">
+    <ng-content select="select">
+
+    </ng-content>
+    <div class="nx-select-body" #body *ngIf="visible">
+        <span class="nx-select-text">{{text}}</span>
+        <div class="nx-select-arrow"></div>
+    </div>
+</div>

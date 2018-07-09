@@ -15,6 +15,7 @@ import { DatetimePickerComponent} from './datetime-picker-demo/datetime-picker-d
 import { CheckboxDemoComponent} from './checkbox-demo/checkbox-demo.component';
 import { RadioDemoComponent} from './radio-demo/radio-demo.component';
 import { ToggleDemoComponent} from './toggle-demo/toggle-demo.component';
+import { SelectDemoComponent} from './select-demo/select-demo.component';
 const routes: Routes = <Routes>[
     {
         path: '',
@@ -34,7 +35,8 @@ const routes: Routes = <Routes>[
   { path: 'datetimePickerDemo', component:DatetimePickerComponent,data:{title:'时间日期选择器'} },
   { path: 'checkboxDemo', component:CheckboxDemoComponent,data:{title:'checkbox'} },
   { path: 'radioDemo', component:RadioDemoComponent,data:{title:'radio'} },
-  { path: 'toggleDemo', component:ToggleDemoComponent,data:{title:'toggle'} }
+  { path: 'toggleDemo', component:ToggleDemoComponent,data:{title:'toggle'} },
+  { path: 'selectDemo', component:SelectDemoComponent,data:{title:'select'} },
 
 
 ];

@@ -15,7 +15,8 @@ import {
   DropDownModule,
   ValidateModule,
   TextMaxLengthModule,
-  CurrencyFormatModule
+  CurrencyFormatModule,
+  SelectModule,
 } from 'dolphinng';
 import { CodeHighLightModule } from './components/code-high-light/code-high-light.module';
 @NgModule({
@@ -36,7 +37,8 @@ import { CodeHighLightModule } from './components/code-high-light/code-high-ligh
     DropDownModule,
     ValidateModule,
     TextMaxLengthModule,
-    CurrencyFormatModule
+    CurrencyFormatModule,
+    SelectModule,
   ],
   declarations: [
   ],
@@ -56,7 +58,8 @@ import { CodeHighLightModule } from './components/code-high-light/code-high-ligh
     SliderModule,
     DropDownModule,
     TextMaxLengthModule,
-    CurrencyFormatModule
+    CurrencyFormatModule,
+    SelectModule,
     //local
   ]
 })

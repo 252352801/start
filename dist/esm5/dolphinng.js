@@ -1,11 +1,11 @@
 import { __values, __extends } from 'tslib';
-import { Component, Input, Output, ElementRef, EventEmitter, ViewChild, ContentChild, ViewContainerRef, ComponentFactoryResolver, ContentChildren, Directive, NgModule, Pipe } from '@angular/core';
+import { Component, NgModule, Input, Output, ElementRef, EventEmitter, ViewChild, ContentChild, ViewContainerRef, ComponentFactoryResolver, ContentChildren, Directive, Pipe } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute, NavigationEnd, RouterModule } from '@angular/router';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 var QBtnGroupComponent = /** @class */ (function () {
     function QBtnGroupComponent() {
@@ -33,6 +33,28 @@ QBtnGroupComponent.decorators = [
             },] },
 ];
 QBtnGroupComponent.ctorParameters = function () { return []; };
+var QBtnGroupModule = /** @class */ (function () {
+    function QBtnGroupModule() {
+    }
+    return QBtnGroupModule;
+}());
+QBtnGroupModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                    FormsModule
+                ],
+                declarations: [
+                    QBtnGroupComponent
+                ],
+                providers: [],
+                exports: [
+                    CommonModule,
+                    FormsModule,
+                    QBtnGroupComponent
+                ]
+            },] },
+];
 var PaginatorComponent = /** @class */ (function () {
     function PaginatorComponent(elemRef) {
         this.elemRef = elemRef;
@@ -204,6 +226,26 @@ PaginatorComponent.propDecorators = {
     "onChangePage": [{ type: Output },],
     "onChangePageError": [{ type: Output },],
 };
+var PaginatorModule = /** @class */ (function () {
+    function PaginatorModule() {
+    }
+    return PaginatorModule;
+}());
+PaginatorModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                    FormsModule
+                ],
+                declarations: [
+                    PaginatorComponent
+                ],
+                providers: [],
+                exports: [
+                    PaginatorComponent
+                ]
+            },] },
+];
 var GalleryComponent = /** @class */ (function () {
     function GalleryComponent(eleRef) {
         var _this = this;
@@ -273,14 +315,16 @@ var GalleryComponent = /** @class */ (function () {
             }
         };
         this.keydownHandler = function (ev) {
-            var kc = ev.keyCode;
-            if (kc === 37 || kc === 38) {
-                _this.prev();
-                _this.slideThumbAfterChange(0);
-            }
-            else if (kc === 39 || kc === 40) {
-                _this.next();
-                _this.slideThumbAfterChange(1);
+            if (_this.images.length > 1) {
+                var kc = ev.keyCode;
+                if (kc === 37 || kc === 38) {
+                    _this.prev();
+                    _this.slideThumbAfterChange(0);
+                }
+                else if (kc === 39 || kc === 40) {
+                    _this.next();
+                    _this.slideThumbAfterChange(1);
+                }
             }
         };
         this.mouseWheelHandler = function (ev) {
@@ -429,19 +473,21 @@ var GalleryComponent = /** @class */ (function () {
         clearTimeout(this.thumbSlideTimer);
         this.thumbSlideTimer = setTimeout(function () {
             var sliderWrap = _this.eleRef.nativeElement.querySelector('.gallery-thumb-sliders');
-            var perW = _this.eleRef.nativeElement.querySelector('.gallery-thumb-slider').offsetWidth;
-            var scrollL = sliderWrap.scrollLeft;
-            var sliderW = sliderWrap.clientWidth;
-            if (direction === 0) {
-                var refValue = (_this.activeIndex) * perW;
-                if (scrollL > refValue) {
-                    _this.slide(sliderWrap, refValue - scrollL);
+            if (sliderWrap) {
+                var perW = sliderWrap.offsetWidth;
+                var scrollL = sliderWrap.scrollLeft;
+                var sliderW = sliderWrap.clientWidth;
+                if (direction === 0) {
+                    var refValue = (_this.activeIndex) * perW;
+                    if (scrollL > refValue) {
+                        _this.slide(sliderWrap, refValue - scrollL);
+                    }
                 }
-            }
-            else if (direction === 1) {
-                var validScrollLeft = perW * (_this.activeIndex + 1) - sliderW;
-                if (validScrollLeft > scrollL) {
-                    _this.slide(sliderWrap, validScrollLeft - scrollL);
+                else if (direction === 1) {
+                    var validScrollLeft = perW * (_this.activeIndex + 1) - sliderW;
+                    if (validScrollLeft > scrollL) {
+                        _this.slide(sliderWrap, validScrollLeft - scrollL);
+                    }
                 }
             }
         });
@@ -778,6 +824,25 @@ GalleryComponent.propDecorators = {
     "isBtnDownload": [{ type: Input },],
     "galleryBody": [{ type: ViewChild, args: ['galleryBody',] },],
 };
+var GalleryModule = /** @class */ (function () {
+    function GalleryModule() {
+    }
+    return GalleryModule;
+}());
+GalleryModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule
+                ],
+                declarations: [
+                    GalleryComponent
+                ],
+                providers: [],
+                exports: [
+                    GalleryComponent
+                ]
+            },] },
+];
 var SpinnerComponent = /** @class */ (function () {
     function SpinnerComponent(elemRef) {
         this.elemRef = elemRef;
@@ -802,6 +867,25 @@ SpinnerComponent.propDecorators = {
     "size": [{ type: Input },],
     "isDark": [{ type: Input },],
 };
+var LoaderModule = /** @class */ (function () {
+    function LoaderModule() {
+    }
+    return LoaderModule;
+}());
+LoaderModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule
+                ],
+                declarations: [
+                    SpinnerComponent
+                ],
+                providers: [],
+                exports: [
+                    SpinnerComponent
+                ]
+            },] },
+];
 var CheckboxComponent = /** @class */ (function () {
     function CheckboxComponent(elemRef) {
         this.elemRef = elemRef;
@@ -836,6 +920,28 @@ CheckboxComponent.propDecorators = {
     "styleClass": [{ type: Input },],
     "name": [{ type: Input },],
 };
+var CheckboxModule = /** @class */ (function () {
+    function CheckboxModule() {
+    }
+    return CheckboxModule;
+}());
+CheckboxModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                    FormsModule
+                ],
+                declarations: [
+                    CheckboxComponent
+                ],
+                providers: [],
+                exports: [
+                    CommonModule,
+                    FormsModule,
+                    CheckboxComponent
+                ]
+            },] },
+];
 var RadioComponent = /** @class */ (function () {
     function RadioComponent(elemRef) {
         this.elemRef = elemRef;
@@ -880,6 +986,28 @@ RadioComponent.propDecorators = {
     "styleClass": [{ type: Input },],
     "name": [{ type: Input },],
 };
+var RadioModule = /** @class */ (function () {
+    function RadioModule() {
+    }
+    return RadioModule;
+}());
+RadioModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                    FormsModule
+                ],
+                declarations: [
+                    RadioComponent
+                ],
+                providers: [],
+                exports: [
+                    CommonModule,
+                    FormsModule,
+                    RadioComponent
+                ]
+            },] },
+];
 var SwitchComponent = /** @class */ (function () {
     function SwitchComponent() {
         this.valueChange = new EventEmitter();
@@ -947,6 +1075,50 @@ ToggleComponent.decorators = [
             },] },
 ];
 ToggleComponent.ctorParameters = function () { return []; };
+var ToggleModule = /** @class */ (function () {
+    function ToggleModule() {
+    }
+    return ToggleModule;
+}());
+ToggleModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                    FormsModule
+                ],
+                declarations: [
+                    ToggleComponent
+                ],
+                providers: [],
+                exports: [
+                    CommonModule,
+                    FormsModule,
+                    ToggleComponent
+                ]
+            },] },
+];
+var SwitchModule = /** @class */ (function () {
+    function SwitchModule() {
+    }
+    return SwitchModule;
+}());
+SwitchModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                    FormsModule
+                ],
+                declarations: [
+                    SwitchComponent
+                ],
+                providers: [],
+                exports: [
+                    CommonModule,
+                    FormsModule,
+                    SwitchComponent
+                ]
+            },] },
+];
 var ModalBodyComponent = /** @class */ (function () {
     function ModalBodyComponent() {
         this.delayShow = false;
@@ -1165,6 +1337,31 @@ ModalComponent.propDecorators = {
     "modalHeader": [{ type: ContentChild, args: [ModalHeaderComponent,] },],
     "modalBody": [{ type: ContentChild, args: [ModalBodyComponent,] },],
 };
+var ModalModule = /** @class */ (function () {
+    function ModalModule() {
+    }
+    return ModalModule;
+}());
+ModalModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule
+                ],
+                declarations: [
+                    ModalComponent,
+                    ModalHeaderComponent,
+                    ModalBodyComponent,
+                    ModalFooterComponent
+                ],
+                providers: [],
+                exports: [
+                    ModalComponent,
+                    ModalHeaderComponent,
+                    ModalBodyComponent,
+                    ModalFooterComponent
+                ]
+            },] },
+];
 var RootContainerComponent = /** @class */ (function () {
     function RootContainerComponent() {
     }
@@ -1195,7 +1392,7 @@ var AsideLeftComponent = /** @class */ (function () {
 AsideLeftComponent.decorators = [
     { type: Component, args: [{
                 selector: 'aside-left',
-                template: "<div class=\"app-aside hidden-xs\" [ngClass]=\"{'bg-black':theme==='black',\n 'cerulean-outline':theme==='cerulean-outline',\n 'bg-white':theme==='white'\n }\">\n    <div class=\"aside-wrap\">\n        <ng-content></ng-content>\n    </div>\n</div>",
+                template: "<div class=\"app-aside hidden-xs\" [ngClass]=\"{'bg-black':theme==='black',\n 'cerulean-outline':theme==='cerulean-outline',\n 'bg-white':theme==='white'\n }\">\n    <div class=\"aside-wrap\" [style.border-right]=\"!theme?'1px solid #ddd':null\">\n        <ng-content></ng-content>\n    </div>\n</div>",
                 styles: [".app-aside /deep/ .glyphicon{top:0}.cerulean-outline{color:#23b7e5}.cerulean-outline /deep/ .aside-wrap{background-color:#fff;-webkit-box-shadow:3px 0 5px #ddd;box-shadow:3px 0 5px #ddd}.cerulean-outline /deep/ .navi-wrap a{color:#23b7e5}.cerulean-outline /deep/ .text-muted{color:#23b7e5}.cerulean-outline /deep/ .thirth-nav-item.active,.cerulean-outline /deep/ .thirth-nav-item.active:hover,.cerulean-outline /deep/ li.active>a,.cerulean-outline /deep/ li.active>a:hover{background-color:#dee5eb;color:inherit}.cerulean-outline /deep/ li.exist-children.active>a,.cerulean-outline /deep/ li.has-child.active>a{background-color:transparent;color:inherit}.cerulean-outline /deep/ .thirth-nav-item:hover,.cerulean-outline /deep/ li>a:hover{background-color:#f0f0f0}.cerulean-outline /deep/ li.exist-children.active>a:hover,.cerulean-outline /deep/ li.has-child.active>a:hover{background-color:#f0f0f0}/deep/ .app-aside-folded .cerulean-outline .nav-sub{background-color:#fff;border:1px solid #ddd;border-left:none}/deep/ .app-aside-folded .cerulean-outline li.active>a>i{background-color:#23b7e5;color:#fff}/deep/ .app-aside-folded.off-screen .cerulean-outline li.active>a>i{background-color:transparent;color:inherit}"]
             },] },
 ];
@@ -1279,6 +1476,35 @@ DeleteWrapComponent.propDecorators = {
     "size": [{ type: Input },],
     "remove": [{ type: Output },],
 };
+var LayoutModule = /** @class */ (function () {
+    function LayoutModule() {
+    }
+    return LayoutModule;
+}());
+LayoutModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule
+                ],
+                declarations: [
+                    RootContainerComponent,
+                    AsideLeftComponent,
+                    HeaderComponent,
+                    HeaderLeftComponent,
+                    HeaderRightComponent,
+                    DeleteWrapComponent
+                ],
+                providers: [],
+                exports: [
+                    RootContainerComponent,
+                    AsideLeftComponent,
+                    HeaderComponent,
+                    HeaderLeftComponent,
+                    HeaderRightComponent,
+                    DeleteWrapComponent
+                ]
+            },] },
+];
 var NavWrapComponent = /** @class */ (function () {
     function NavWrapComponent(elemRef) {
         this.elemRef = elemRef;
@@ -1785,6 +2011,32 @@ NavItemComponent.propDecorators = {
     "childrenHost": [{ type: ViewChild, args: ['childrenHost', { read: ViewContainerRef },] },],
     "subNavItems": [{ type: ContentChildren, args: [SubNavItemComponent,] },],
 };
+var NavModule = /** @class */ (function () {
+    function NavModule() {
+    }
+    return NavModule;
+}());
+NavModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                    RouterModule
+                ],
+                declarations: [
+                    NavWrapComponent,
+                    NavItemComponent,
+                    SubNavItemComponent,
+                    ThirthNavItemComponent
+                ],
+                providers: [],
+                exports: [
+                    NavWrapComponent,
+                    NavItemComponent,
+                    SubNavItemComponent,
+                    ThirthNavItemComponent
+                ]
+            },] },
+];
 var DatetimePickerComponent = /** @class */ (function () {
     function DatetimePickerComponent(elemRef) {
         this.elemRef = elemRef;
@@ -2293,6 +2545,26 @@ DatetimePickerComponent.propDecorators = {
     "popover": [{ type: ViewChild, args: ['popover',] },],
     "datetimePicker": [{ type: ViewChild, args: ['datetimePicker',] },],
 };
+var DatetimePickerModule = /** @class */ (function () {
+    function DatetimePickerModule() {
+    }
+    return DatetimePickerModule;
+}());
+DatetimePickerModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                    FormsModule,
+                ],
+                declarations: [
+                    DatetimePickerComponent
+                ],
+                providers: [],
+                exports: [
+                    DatetimePickerComponent
+                ]
+            },] },
+];
 var SlideDownComponent = /** @class */ (function () {
     function SlideDownComponent() {
         this.isTransition = false;
@@ -2378,6 +2650,45 @@ DropDownComponent.decorators = [
                 selector: 'drop-down',
                 template: "<div  #wrap class=\"drop-content\"  [style.transition]=\"isTransition?'height '+animateTime+'s':null\"\n [ngClass]=\"{'open':cssOpen}\">\n    <div *ngIf=\"visible\" #content>\n      <ng-content ></ng-content>\n    </div>\n\t</div>\n",
                 styles: [".drop-content{width:100%}.drop-content.open{position:absolute;opacity:0;height:0;z-index:-1;overflow:hidden}"]
+            },] },
+];
+var DropDownModule = /** @class */ (function () {
+    function DropDownModule() {
+    }
+    return DropDownModule;
+}());
+DropDownModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                ],
+                declarations: [
+                    DropDownComponent
+                ],
+                providers: [],
+                exports: [
+                    DropDownComponent
+                ]
+            },] },
+];
+var SlideDownModule = /** @class */ (function () {
+    function SlideDownModule() {
+    }
+    return SlideDownModule;
+}());
+SlideDownModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule
+                ],
+                declarations: [
+                    SlideDownComponent
+                ],
+                providers: [],
+                exports: [
+                    CommonModule,
+                    SlideDownComponent
+                ]
             },] },
 ];
 var SliderComponent = /** @class */ (function () {
@@ -2489,285 +2800,142 @@ SliderComponent.propDecorators = {
     "slider": [{ type: ViewChild, args: ['slider',] },],
     "sliderThumb": [{ type: ViewChild, args: ['sliderThumb',] },],
 };
-var ToggleClassDirective = /** @class */ (function () {
-    function ToggleClassDirective(elemRef) {
-        this.elemRef = elemRef;
-        this.keep = false;
-        this.triggerEvent = 'click';
-        this.tempWindowEvent = {
-            event: this.triggerEvent,
-            handler: null
-        };
+var SliderModule = /** @class */ (function () {
+    function SliderModule() {
     }
-    ToggleClassDirective.prototype.ngOnInit = function () {
-        var _this = this;
-        this.orgClassName = this.elemRef.nativeElement.className;
-        this.toggleClassList = this.getToggleClassList(this.toggleClass);
-        if (this.target) {
-            this.targetElem = document.getElementById(this.target);
-            this.targetElem && (this.orgTargetClassName = this.targetElem.className);
-            var targetToggleClass = this.targetClass || this.toggleClass;
-            this.targetToggleClassList = this.getToggleClassList(targetToggleClass);
-        }
-        this.elemRef.nativeElement.addEventListener(this.triggerEvent, function (ev) {
-            ev.stopPropagation();
-            setTimeout(function () {
-                if (_this.keep) {
-                    var classList = _this.uniqueArray((_this.orgClassName + ' ' + _this.toggleClass).split(/\s+/));
-                    _this.elemRef.nativeElement.className = classList.join(' ');
-                    if (_this.target) {
-                        var targetClassList = _this.uniqueArray((_this.orgTargetClassName + ' ' + _this.targetClass).split(/\s+/));
-                        _this.targetElem.className = targetClassList.join(' ');
-                    }
-                }
-                else {
-                    _this.changeElemClass(_this.elemRef.nativeElement, _this.toggleClassList);
-                    if (_this.target) {
-                        _this.targetElem && _this.changeElemClass(_this.targetElem, _this.targetToggleClassList);
-                    }
-                }
-                if (!(_this.revokable === undefined || _this.revokable === 'false')) {
-                    var finalClassList = _this.getClassList(_this.elemRef.nativeElement);
-                    var commonClassList = _this.getCommonClass(finalClassList, _this.toggleClassList);
-                    if (commonClassList.length) {
-                        _this.addOutClickResetListener();
-                    }
-                }
-            });
-        });
-    };
-    ToggleClassDirective.prototype.changeElemClass = function (elem, toggleClass) {
-        var curClassList = this.getClassList(elem);
-        var curOnlyClass = this.getOnlyClass(curClassList, toggleClass);
-        var toggleOnlyClass = this.getOnlyClass(toggleClass, curClassList);
-        var newClassList = curOnlyClass.concat(toggleOnlyClass);
-        elem.className = newClassList.join(' ');
-    };
-    ToggleClassDirective.prototype.ngOnDestroy = function () {
-        this.removeOutClickResetListener();
-        this.targetElem = null;
-    };
-    ToggleClassDirective.prototype.addOutClickResetListener = function () {
-        var _this = this;
-        var handler = function (ev) {
-            _this.elemRef.nativeElement.className = _this.orgClassName;
-            if (_this.target) {
-                _this.targetElem.className = _this.orgTargetClassName;
-            }
-            _this.removeOutClickResetListener();
-        };
-        window.addEventListener(this.triggerEvent, handler);
-        this.tempWindowEvent.event = this.triggerEvent;
-        this.tempWindowEvent.handler = handler;
-    };
-    ToggleClassDirective.prototype.removeOutClickResetListener = function () {
-        if (this.tempWindowEvent !== undefined) {
-            window.removeEventListener(this.tempWindowEvent.event, this.tempWindowEvent.handler);
-        }
-    };
-    ToggleClassDirective.prototype.getClassList = function (elem) {
-        return this.uniqueArray(elem.className.split(/\s+/));
-    };
-    ToggleClassDirective.prototype.getToggleClassList = function (inputClass) {
-        var nullRegExp = /^\s+$/;
-        if (!nullRegExp.test(inputClass)) {
-            return this.uniqueArray(inputClass.split(/\s+/));
-        }
-        return [];
-    };
-    ToggleClassDirective.prototype.getOnlyClass = function (arrA, arrB) {
-        var result = [];
-        try {
-            for (var arrA_1 = __values(arrA), arrA_1_1 = arrA_1.next(); !arrA_1_1.done; arrA_1_1 = arrA_1.next()) {
-                var item = arrA_1_1.value;
-                if (arrB.indexOf(item) < 0) {
-                    result.push(item);
-                }
-            }
-        }
-        catch (e_6_1) { e_6 = { error: e_6_1 }; }
-        finally {
-            try {
-                if (arrA_1_1 && !arrA_1_1.done && (_a = arrA_1.return)) _a.call(arrA_1);
-            }
-            finally { if (e_6) throw e_6.error; }
-        }
-        return result;
-        var e_6, _a;
-    };
-    ToggleClassDirective.prototype.getCommonClass = function (arrA, arrB) {
-        var result = [];
-        try {
-            for (var arrB_1 = __values(arrB), arrB_1_1 = arrB_1.next(); !arrB_1_1.done; arrB_1_1 = arrB_1.next()) {
-                var item = arrB_1_1.value;
-                if (arrA.indexOf(item) >= 0) {
-                    result.push(item);
-                }
-            }
-        }
-        catch (e_7_1) { e_7 = { error: e_7_1 }; }
-        finally {
-            try {
-                if (arrB_1_1 && !arrB_1_1.done && (_a = arrB_1.return)) _a.call(arrB_1);
-            }
-            finally { if (e_7) throw e_7.error; }
-        }
-        return result;
-        var e_7, _a;
-    };
-    ToggleClassDirective.prototype.uniqueArray = function (array) {
-        var newArr = [];
-        try {
-            for (var array_1 = __values(array), array_1_1 = array_1.next(); !array_1_1.done; array_1_1 = array_1.next()) {
-                var item = array_1_1.value;
-                if (newArr.indexOf(item) < 0) {
-                    newArr.push(item);
-                }
-            }
-        }
-        catch (e_8_1) { e_8 = { error: e_8_1 }; }
-        finally {
-            try {
-                if (array_1_1 && !array_1_1.done && (_a = array_1.return)) _a.call(array_1);
-            }
-            finally { if (e_8) throw e_8.error; }
-        }
-        return newArr;
-        var e_8, _a;
-    };
-    return ToggleClassDirective;
+    return SliderModule;
 }());
-ToggleClassDirective.decorators = [
-    { type: Directive, args: [{
-                selector: '[toggleClass]'
+SliderModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule,
+                ],
+                declarations: [
+                    SliderComponent
+                ],
+                providers: [],
+                exports: [
+                    SliderComponent
+                ]
             },] },
 ];
-ToggleClassDirective.ctorParameters = function () { return [
-    { type: ElementRef, },
-]; };
-ToggleClassDirective.propDecorators = {
-    "toggleClass": [{ type: Input },],
-    "revokable": [{ type: Input, args: ['opt-revokable',] },],
-    "target": [{ type: Input, args: ['opt-target',] },],
-    "targetClass": [{ type: Input, args: ['opt-targetClass',] },],
-    "keep": [{ type: Input, args: ['opt-keep',] },],
-};
-var BtnBackDirective = /** @class */ (function () {
-    function BtnBackDirective(elemRef) {
-        this.elemRef = elemRef;
-    }
-    BtnBackDirective.prototype.ngOnInit = function () {
-        this.elemRef.nativeElement.addEventListener('click', function () {
-            history.back();
-        });
-    };
-    BtnBackDirective.prototype.ngOnDestroy = function () {
-    };
-    return BtnBackDirective;
-}());
-BtnBackDirective.decorators = [
-    { type: Directive, args: [{
-                selector: '[btnBack]'
-            },] },
-];
-BtnBackDirective.ctorParameters = function () { return [
-    { type: ElementRef, },
-]; };
-var TextMaxLengthDirective = /** @class */ (function () {
-    function TextMaxLengthDirective(elemRef) {
-        this.elemRef = elemRef;
-        this.textMaxLength = '';
-    }
-    TextMaxLengthDirective.prototype.ngOnInit = function () {
-        this.elemRef.nativeElement.style.maxWidth = this.textMaxLength;
-        this.elemRef.nativeElement.style.whiteSpace = 'nowrap';
-        this.elemRef.nativeElement.style.overflow = 'hidden';
-        this.elemRef.nativeElement.style.textOverflow = 'ellipsis';
-    };
-    return TextMaxLengthDirective;
-}());
-TextMaxLengthDirective.decorators = [
-    { type: Directive, args: [{
-                selector: '[textMaxLength]'
-            },] },
-];
-TextMaxLengthDirective.ctorParameters = function () { return [
-    { type: ElementRef, },
-]; };
-TextMaxLengthDirective.propDecorators = {
-    "textMaxLength": [{ type: Input },],
-};
-var HTML5ValidateDirective = /** @class */ (function () {
-    function HTML5ValidateDirective(elemRef) {
+var SelectComponent = /** @class */ (function () {
+    function SelectComponent(elemRef) {
         this.elemRef = elemRef;
         this.visible = false;
+        this.initializedStyle = false;
+        this.text = '';
     }
-    HTML5ValidateDirective.prototype.ngOnInit = function () {
-        if (this.elemRef.nativeElement.nodeName === 'FORM') {
-            this.elemRef.nativeElement.removeAttribute('novalidate');
-        }
-        else {
-            this.initValidateRules();
+    SelectComponent.prototype.ngOnChanges = function (changes) {
+        var valChg = changes['value'];
+        if (valChg) {
+            this.text = this.matchText(valChg.currentValue, this.options);
         }
     };
-    HTML5ValidateDirective.prototype.createCustomValidity = function () {
-        var msg = '';
-        if (this.HTML5Validate instanceof Array) {
-            if (typeof this.HTML5Validate[1] === 'string') {
-                if (!!this.HTML5Validate[0]) {
-                    msg = this.HTML5Validate[1];
+    SelectComponent.prototype.ngAfterContentInit = function () {
+        this.visible = true;
+        this.setDefaultStyle();
+    };
+    SelectComponent.prototype.ngAfterContentChecked = function () {
+        this.setDefaultStyle();
+    };
+    SelectComponent.prototype.setDefaultStyle = function () {
+        if (!this.initializedStyle && this.body) {
+            var select = this.elemRef.nativeElement.querySelector('select');
+            if (select) {
+                var elem = this.body.nativeElement;
+                var rect = elem.getBoundingClientRect();
+                this.body.nativeElement.style.lineHeight = rect.bottom - rect.top - 2 + "px";
+                var padLeft = this.getCss(select, 'paddingLeft');
+                if (padLeft) {
+                    elem.style.paddingLeft = padLeft;
                 }
+                this.initializedStyle = true;
             }
-            else {
-                try {
-                    for (var _a = __values(this.HTML5Validate), _b = _a.next(); !_b.done; _b = _a.next()) {
-                        var o = _b.value;
-                        if (typeof o[1] === 'string') {
-                            if (!!o[0]) {
-                                msg = o[1];
-                                break;
+        }
+    };
+    SelectComponent.prototype.getCss = function (elem, attr) {
+        if (elem && typeof elem === 'object' && attr && typeof attr === 'string') {
+            if (typeof document.defaultView.getComputedStyle == 'function') {
+                if (attr === 'float') {
+                    attr = 'cssFloat';
+                }
+                return document.defaultView.getComputedStyle(elem, null)[attr];
+            }
+            else if (elem.currentStyle && typeof elem.currentStyle === 'object') {
+                if (attr === 'float') {
+                    attr = 'styleFloat';
+                }
+                return elem.currentStyle[attr];
+            }
+        }
+    };
+    SelectComponent.prototype.matchText = function (val, options) {
+        var text = '';
+        if (options instanceof Array) {
+            if (this.valueKey && typeof this.valueKey == 'string') {
+                if (this.textKey && typeof this.textKey == 'string') {
+                    try {
+                        for (var options_1 = __values(options), options_1_1 = options_1.next(); !options_1_1.done; options_1_1 = options_1.next()) {
+                            var o = options_1_1.value;
+                            if (o && typeof o == 'object' && val === o[this.valueKey]) {
+                                text = o[this.textKey];
                             }
                         }
                     }
-                }
-                catch (e_9_1) { e_9 = { error: e_9_1 }; }
-                finally {
-                    try {
-                        if (_b && !_b.done && (_c = _a.return)) _c.call(_a);
+                    catch (e_6_1) { e_6 = { error: e_6_1 }; }
+                    finally {
+                        try {
+                            if (options_1_1 && !options_1_1.done && (_a = options_1.return)) _a.call(options_1);
+                        }
+                        finally { if (e_6) throw e_6.error; }
                     }
-                    finally { if (e_9) throw e_9.error; }
                 }
             }
         }
-        return msg;
-        var e_9, _c;
+        return text;
+        var e_6, _a;
     };
-    HTML5ValidateDirective.prototype.initValidateRules = function () {
-        var _this = this;
-        this.elemRef.nativeElement.addEventListener('invalid', function () {
-            _this.elemRef.nativeElement.setCustomValidity(_this.createCustomValidity());
-        });
-        this.elemRef.nativeElement.addEventListener('change', function () {
-            _this.elemRef.nativeElement.setCustomValidity(_this.createCustomValidity());
-        });
-        this.elemRef.nativeElement.addEventListener('keydown', function () {
-            _this.elemRef.nativeElement.setCustomValidity('');
-        });
-    };
-    return HTML5ValidateDirective;
+    return SelectComponent;
 }());
-HTML5ValidateDirective.decorators = [
-    { type: Directive, args: [{
-                selector: '[HTML5Validate]'
+SelectComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'nx-select',
+                template: "<div class=\"nx-select{{styleClass?' '+styleClass:''}}\">\n    <ng-content select=\"select\">\n\n    </ng-content>\n    <div class=\"nx-select-body\" #body *ngIf=\"visible\">\n        <span class=\"nx-select-text\">{{text}}</span>\n        <div class=\"nx-select-arrow\"></div>\n    </div>\n</div>",
+                styles: [".nx-select,.nx-select *{-webkit-box-sizing:border-box;box-sizing:border-box}.nx-select{display:inline-block;position:relative;overflow:hidden;vertical-align:middle}.nx-select-body{position:absolute;left:0;right:0;top:0;bottom:0;border:1px solid transparent;padding-right:20px;background-color:#fff;white-space:nowrap}.nx-select /deep/ select{position:relative;z-index:1;opacity:0}.nx-select /deep/ select+.nx-select-body{border-color:#ddd}.nx-select /deep/ select:focus+.nx-select-body{border-color:#24b6e4}.nx-select /deep/ select:focus+.nx-select-body .nx-select-arrow{border-top-color:#24b6e4}.nx-select-arrow{width:0;height:0;border-top:5px solid #666;border-left:4px solid transparent;border-right:4px solid transparent;border-bottom:none;position:absolute;right:6px;top:50%;margin-top:-3px}"]
             },] },
 ];
-HTML5ValidateDirective.ctorParameters = function () { return [
+SelectComponent.ctorParameters = function () { return [
     { type: ElementRef, },
 ]; };
-HTML5ValidateDirective.propDecorators = {
-    "HTML5Validate": [{ type: Input },],
-    "visible": [{ type: Input },],
+SelectComponent.propDecorators = {
+    "value": [{ type: Input },],
+    "options": [{ type: Input },],
+    "valueKey": [{ type: Input },],
+    "textKey": [{ type: Input },],
+    "styleClass": [{ type: Input },],
+    "body": [{ type: ViewChild, args: ['body',] },],
 };
+var SelectModule = /** @class */ (function () {
+    function SelectModule() {
+    }
+    return SelectModule;
+}());
+SelectModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    CommonModule
+                ],
+                declarations: [
+                    SelectComponent
+                ],
+                providers: [],
+                exports: [
+                    CommonModule,
+                    SelectComponent
+                ]
+            },] },
+];
 var AreaPicker = /** @class */ (function () {
     function AreaPicker() {
         this.values = [];
@@ -2936,14 +3104,14 @@ var AreaPickerDirective = /** @class */ (function () {
                 }
             }
         }
-        catch (e_10_1) { e_10 = { error: e_10_1 }; }
+        catch (e_7_1) { e_7 = { error: e_7_1 }; }
         finally {
             try {
                 if (_b && !_b.done && (_c = _a.return)) _c.call(_a);
             }
-            finally { if (e_10) throw e_10.error; }
+            finally { if (e_7) throw e_7.error; }
         }
-        var e_10, _c;
+        var e_7, _c;
     };
     AreaPickerDirective.prototype.clearEvents = function () {
         try {
@@ -2952,14 +3120,14 @@ var AreaPickerDirective = /** @class */ (function () {
                 handler.elem.removeEventListener(handler.event, handler.fn);
             }
         }
-        catch (e_11_1) { e_11 = { error: e_11_1 }; }
+        catch (e_8_1) { e_8 = { error: e_8_1 }; }
         finally {
             try {
                 if (_b && !_b.done && (_c = _a.return)) _c.call(_a);
             }
-            finally { if (e_11) throw e_11.error; }
+            finally { if (e_8) throw e_8.error; }
         }
-        var e_11, _c;
+        var e_8, _c;
     };
     AreaPickerDirective.prototype.ngOnInit = function () {
         var _this = this;
@@ -3055,6 +3223,370 @@ AreaPickerDirective.propDecorators = {
     "areaPicker": [{ type: Input },],
     "ngModelChange": [{ type: Output },],
 };
+var AreaPickerModule = /** @class */ (function () {
+    function AreaPickerModule() {
+    }
+    return AreaPickerModule;
+}());
+AreaPickerModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [],
+                declarations: [
+                    AreaPickerDirective
+                ],
+                providers: [],
+                exports: [
+                    AreaPickerDirective
+                ]
+            },] },
+];
+var ToggleClassDirective = /** @class */ (function () {
+    function ToggleClassDirective(elemRef) {
+        this.elemRef = elemRef;
+        this.keep = false;
+        this.triggerEvent = 'click';
+        this.tempWindowEvent = {
+            event: this.triggerEvent,
+            handler: null
+        };
+    }
+    ToggleClassDirective.prototype.ngOnInit = function () {
+        var _this = this;
+        this.orgClassName = this.elemRef.nativeElement.className;
+        this.toggleClassList = this.getToggleClassList(this.toggleClass);
+        if (this.target) {
+            this.targetElem = document.getElementById(this.target);
+            this.targetElem && (this.orgTargetClassName = this.targetElem.className);
+            var targetToggleClass = this.targetClass || this.toggleClass;
+            this.targetToggleClassList = this.getToggleClassList(targetToggleClass);
+        }
+        this.elemRef.nativeElement.addEventListener(this.triggerEvent, function (ev) {
+            ev.stopPropagation();
+            setTimeout(function () {
+                if (_this.keep) {
+                    var classList = _this.uniqueArray((_this.orgClassName + ' ' + _this.toggleClass).split(/\s+/));
+                    _this.elemRef.nativeElement.className = classList.join(' ');
+                    if (_this.target) {
+                        var targetClassList = _this.uniqueArray((_this.orgTargetClassName + ' ' + _this.targetClass).split(/\s+/));
+                        _this.targetElem.className = targetClassList.join(' ');
+                    }
+                }
+                else {
+                    _this.changeElemClass(_this.elemRef.nativeElement, _this.toggleClassList);
+                    if (_this.target) {
+                        _this.targetElem && _this.changeElemClass(_this.targetElem, _this.targetToggleClassList);
+                    }
+                }
+                if (!(_this.revokable === undefined || _this.revokable === 'false')) {
+                    var finalClassList = _this.getClassList(_this.elemRef.nativeElement);
+                    var commonClassList = _this.getCommonClass(finalClassList, _this.toggleClassList);
+                    if (commonClassList.length) {
+                        _this.addOutClickResetListener();
+                    }
+                }
+            });
+        });
+    };
+    ToggleClassDirective.prototype.changeElemClass = function (elem, toggleClass) {
+        var curClassList = this.getClassList(elem);
+        var curOnlyClass = this.getOnlyClass(curClassList, toggleClass);
+        var toggleOnlyClass = this.getOnlyClass(toggleClass, curClassList);
+        var newClassList = curOnlyClass.concat(toggleOnlyClass);
+        elem.className = newClassList.join(' ');
+    };
+    ToggleClassDirective.prototype.ngOnDestroy = function () {
+        this.removeOutClickResetListener();
+        this.targetElem = null;
+    };
+    ToggleClassDirective.prototype.addOutClickResetListener = function () {
+        var _this = this;
+        var handler = function (ev) {
+            _this.elemRef.nativeElement.className = _this.orgClassName;
+            if (_this.target) {
+                _this.targetElem.className = _this.orgTargetClassName;
+            }
+            _this.removeOutClickResetListener();
+        };
+        window.addEventListener(this.triggerEvent, handler);
+        this.tempWindowEvent.event = this.triggerEvent;
+        this.tempWindowEvent.handler = handler;
+    };
+    ToggleClassDirective.prototype.removeOutClickResetListener = function () {
+        if (this.tempWindowEvent !== undefined) {
+            window.removeEventListener(this.tempWindowEvent.event, this.tempWindowEvent.handler);
+        }
+    };
+    ToggleClassDirective.prototype.getClassList = function (elem) {
+        return this.uniqueArray(elem.className.split(/\s+/));
+    };
+    ToggleClassDirective.prototype.getToggleClassList = function (inputClass) {
+        var nullRegExp = /^\s+$/;
+        if (!nullRegExp.test(inputClass)) {
+            return this.uniqueArray(inputClass.split(/\s+/));
+        }
+        return [];
+    };
+    ToggleClassDirective.prototype.getOnlyClass = function (arrA, arrB) {
+        var result = [];
+        try {
+            for (var arrA_1 = __values(arrA), arrA_1_1 = arrA_1.next(); !arrA_1_1.done; arrA_1_1 = arrA_1.next()) {
+                var item = arrA_1_1.value;
+                if (arrB.indexOf(item) < 0) {
+                    result.push(item);
+                }
+            }
+        }
+        catch (e_9_1) { e_9 = { error: e_9_1 }; }
+        finally {
+            try {
+                if (arrA_1_1 && !arrA_1_1.done && (_a = arrA_1.return)) _a.call(arrA_1);
+            }
+            finally { if (e_9) throw e_9.error; }
+        }
+        return result;
+        var e_9, _a;
+    };
+    ToggleClassDirective.prototype.getCommonClass = function (arrA, arrB) {
+        var result = [];
+        try {
+            for (var arrB_1 = __values(arrB), arrB_1_1 = arrB_1.next(); !arrB_1_1.done; arrB_1_1 = arrB_1.next()) {
+                var item = arrB_1_1.value;
+                if (arrA.indexOf(item) >= 0) {
+                    result.push(item);
+                }
+            }
+        }
+        catch (e_10_1) { e_10 = { error: e_10_1 }; }
+        finally {
+            try {
+                if (arrB_1_1 && !arrB_1_1.done && (_a = arrB_1.return)) _a.call(arrB_1);
+            }
+            finally { if (e_10) throw e_10.error; }
+        }
+        return result;
+        var e_10, _a;
+    };
+    ToggleClassDirective.prototype.uniqueArray = function (array) {
+        var newArr = [];
+        try {
+            for (var array_1 = __values(array), array_1_1 = array_1.next(); !array_1_1.done; array_1_1 = array_1.next()) {
+                var item = array_1_1.value;
+                if (newArr.indexOf(item) < 0) {
+                    newArr.push(item);
+                }
+            }
+        }
+        catch (e_11_1) { e_11 = { error: e_11_1 }; }
+        finally {
+            try {
+                if (array_1_1 && !array_1_1.done && (_a = array_1.return)) _a.call(array_1);
+            }
+            finally { if (e_11) throw e_11.error; }
+        }
+        return newArr;
+        var e_11, _a;
+    };
+    return ToggleClassDirective;
+}());
+ToggleClassDirective.decorators = [
+    { type: Directive, args: [{
+                selector: '[toggleClass]'
+            },] },
+];
+ToggleClassDirective.ctorParameters = function () { return [
+    { type: ElementRef, },
+]; };
+ToggleClassDirective.propDecorators = {
+    "toggleClass": [{ type: Input },],
+    "revokable": [{ type: Input, args: ['opt-revokable',] },],
+    "target": [{ type: Input, args: ['opt-target',] },],
+    "targetClass": [{ type: Input, args: ['opt-targetClass',] },],
+    "keep": [{ type: Input, args: ['opt-keep',] },],
+};
+var ToggleClassModule = /** @class */ (function () {
+    function ToggleClassModule() {
+    }
+    return ToggleClassModule;
+}());
+ToggleClassModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [],
+                declarations: [
+                    ToggleClassDirective
+                ],
+                providers: [],
+                exports: [
+                    ToggleClassDirective
+                ]
+            },] },
+];
+var BtnBackDirective = /** @class */ (function () {
+    function BtnBackDirective(elemRef) {
+        this.elemRef = elemRef;
+    }
+    BtnBackDirective.prototype.ngOnInit = function () {
+        this.elemRef.nativeElement.addEventListener('click', function () {
+            history.back();
+        });
+    };
+    BtnBackDirective.prototype.ngOnDestroy = function () {
+    };
+    return BtnBackDirective;
+}());
+BtnBackDirective.decorators = [
+    { type: Directive, args: [{
+                selector: '[btnBack]'
+            },] },
+];
+BtnBackDirective.ctorParameters = function () { return [
+    { type: ElementRef, },
+]; };
+var BtnBackModule = /** @class */ (function () {
+    function BtnBackModule() {
+    }
+    return BtnBackModule;
+}());
+BtnBackModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [],
+                declarations: [
+                    BtnBackDirective
+                ],
+                providers: [],
+                exports: [
+                    BtnBackDirective
+                ]
+            },] },
+];
+var TextMaxLengthDirective = /** @class */ (function () {
+    function TextMaxLengthDirective(elemRef) {
+        this.elemRef = elemRef;
+        this.textMaxLength = '';
+    }
+    TextMaxLengthDirective.prototype.ngOnInit = function () {
+        this.elemRef.nativeElement.style.maxWidth = this.textMaxLength;
+        this.elemRef.nativeElement.style.whiteSpace = 'nowrap';
+        this.elemRef.nativeElement.style.overflow = 'hidden';
+        this.elemRef.nativeElement.style.textOverflow = 'ellipsis';
+    };
+    return TextMaxLengthDirective;
+}());
+TextMaxLengthDirective.decorators = [
+    { type: Directive, args: [{
+                selector: '[textMaxLength]'
+            },] },
+];
+TextMaxLengthDirective.ctorParameters = function () { return [
+    { type: ElementRef, },
+]; };
+TextMaxLengthDirective.propDecorators = {
+    "textMaxLength": [{ type: Input },],
+};
+var TextMaxLengthModule = /** @class */ (function () {
+    function TextMaxLengthModule() {
+    }
+    return TextMaxLengthModule;
+}());
+TextMaxLengthModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [],
+                declarations: [
+                    TextMaxLengthDirective
+                ],
+                providers: [],
+                exports: [
+                    TextMaxLengthDirective
+                ]
+            },] },
+];
+var HTML5ValidateDirective = /** @class */ (function () {
+    function HTML5ValidateDirective(elemRef) {
+        this.elemRef = elemRef;
+        this.visible = false;
+    }
+    HTML5ValidateDirective.prototype.ngOnInit = function () {
+        if (this.elemRef.nativeElement.nodeName === 'FORM') {
+            this.elemRef.nativeElement.removeAttribute('novalidate');
+        }
+        else {
+            this.initValidateRules();
+        }
+    };
+    HTML5ValidateDirective.prototype.createCustomValidity = function () {
+        var msg = '';
+        if (this.HTML5Validate instanceof Array) {
+            if (typeof this.HTML5Validate[1] === 'string') {
+                if (!!this.HTML5Validate[0]) {
+                    msg = this.HTML5Validate[1];
+                }
+            }
+            else {
+                try {
+                    for (var _a = __values(this.HTML5Validate), _b = _a.next(); !_b.done; _b = _a.next()) {
+                        var o = _b.value;
+                        if (typeof o[1] === 'string') {
+                            if (!!o[0]) {
+                                msg = o[1];
+                                break;
+                            }
+                        }
+                    }
+                }
+                catch (e_12_1) { e_12 = { error: e_12_1 }; }
+                finally {
+                    try {
+                        if (_b && !_b.done && (_c = _a.return)) _c.call(_a);
+                    }
+                    finally { if (e_12) throw e_12.error; }
+                }
+            }
+        }
+        return msg;
+        var e_12, _c;
+    };
+    HTML5ValidateDirective.prototype.initValidateRules = function () {
+        var _this = this;
+        this.elemRef.nativeElement.addEventListener('invalid', function () {
+            _this.elemRef.nativeElement.setCustomValidity(_this.createCustomValidity());
+        });
+        this.elemRef.nativeElement.addEventListener('change', function () {
+            _this.elemRef.nativeElement.setCustomValidity(_this.createCustomValidity());
+        });
+        this.elemRef.nativeElement.addEventListener('keydown', function () {
+            _this.elemRef.nativeElement.setCustomValidity('');
+        });
+    };
+    return HTML5ValidateDirective;
+}());
+HTML5ValidateDirective.decorators = [
+    { type: Directive, args: [{
+                selector: '[HTML5Validate]'
+            },] },
+];
+HTML5ValidateDirective.ctorParameters = function () { return [
+    { type: ElementRef, },
+]; };
+HTML5ValidateDirective.propDecorators = {
+    "HTML5Validate": [{ type: Input },],
+    "visible": [{ type: Input },],
+};
+var ValidateModule = /** @class */ (function () {
+    function ValidateModule() {
+    }
+    return ValidateModule;
+}());
+ValidateModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [],
+                declarations: [
+                    HTML5ValidateDirective
+                ],
+                providers: [],
+                exports: [
+                    HTML5ValidateDirective
+                ]
+            },] },
+];
 var CurrencyFormatDirective = /** @class */ (function () {
     function CurrencyFormatDirective(elemRef) {
         this.elemRef = elemRef;
@@ -3139,6 +3671,249 @@ CurrencyFormatDirective.propDecorators = {
     "currencyFormat": [{ type: Input },],
     "ngModelChange": [{ type: Output },],
 };
+var CurrencyFormatPipe = /** @class */ (function () {
+    function CurrencyFormatPipe() {
+        this.separateLength = 3;
+        this.accuracy = 2;
+        this.format = '';
+        this.separator = ',';
+    }
+    CurrencyFormatPipe.prototype.transform = function (value, param) {
+        if (value === undefined || value === null) {
+            return value;
+        }
+        else if (!value && value !== 0) {
+            return '';
+        }
+        var sep = this.separator;
+        var flag = '';
+        var inputStr = value + '';
+        flag = (inputStr.indexOf('-') >= 0 ? '-' : inputStr.indexOf('+') >= 0 ? '+' : '');
+        inputStr = inputStr.replace(/[^\d\.]/g, '');
+        var numRegExp = /^[\-\+]?[0-9]+(\.[0-9]+)?$/, str = inputStr.replace(/\s/g, ''), accuracy = this.accuracy, format = this.format, sepLen = this.separateLength;
+        var nums = [];
+        var strs = [];
+        if (typeof param === 'string') {
+            strs.push(param);
+        }
+        else if (typeof param === 'number') {
+            nums.push(param);
+        }
+        else if (param instanceof Array) {
+            try {
+                for (var param_1 = __values(param), param_1_1 = param_1.next(); !param_1_1.done; param_1_1 = param_1.next()) {
+                    var o = param_1_1.value;
+                    if (typeof o === 'string') {
+                        strs.push(o);
+                    }
+                    else if (typeof o === 'number') {
+                        nums.push(o);
+                    }
+                }
+            }
+            catch (e_13_1) { e_13 = { error: e_13_1 }; }
+            finally {
+                try {
+                    if (param_1_1 && !param_1_1.done && (_a = param_1.return)) _a.call(param_1);
+                }
+                finally { if (e_13) throw e_13.error; }
+            }
+        }
+        if (nums.length > 0) {
+            accuracy = nums[0];
+        }
+        if (nums.length > 1) {
+            sepLen = nums[1];
+        }
+        if (strs.length > 0) {
+            format = strs[0];
+        }
+        if (strs.length > 1) {
+            sep = strs[1];
+        }
+        var result = '';
+        if (numRegExp.test(str)) {
+            if (sepLen) {
+                str = parseFloat(str).toFixed(accuracy) + '';
+                var splits = str.split('.');
+                var intStr = splits[0];
+                var ext = splits.length > 1 ? splits[1] : '';
+                if (ext.length < accuracy) {
+                    var fillLen = accuracy - ext.length;
+                    for (var i = 0; i < fillLen; i++) {
+                        ext += '0';
+                    }
+                }
+                var intLen = intStr.length, newIntStr = '';
+                if (intLen > sepLen) {
+                    for (var i = intLen - sepLen; i > 0 - sepLen; i = i - sepLen) {
+                        if (i > 0) {
+                            newIntStr = sep + intStr.substr(i, sepLen) + newIntStr;
+                        }
+                        else {
+                            newIntStr = intStr.substr(0, sepLen + i) + newIntStr;
+                        }
+                    }
+                }
+                else {
+                    newIntStr = intStr;
+                }
+                result = newIntStr + (ext ? '.' + ext : '');
+            }
+            else {
+                result = inputStr;
+            }
+            if (format) {
+                var index = format.indexOf('xx');
+                if (index >= 0) {
+                    result = format.replace(/xx/, result);
+                }
+                else {
+                    result = result + format;
+                }
+            }
+        }
+        else {
+            result = inputStr;
+        }
+        if (flag) {
+            result = flag + result;
+        }
+        return result;
+        var e_13, _a;
+    };
+    return CurrencyFormatPipe;
+}());
+CurrencyFormatPipe.decorators = [
+    { type: Pipe, args: [{ name: 'currencyFormat' },] },
+];
+var CurrencyFormatModule = /** @class */ (function () {
+    function CurrencyFormatModule() {
+    }
+    return CurrencyFormatModule;
+}());
+CurrencyFormatModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [],
+                declarations: [
+                    CurrencyFormatDirective,
+                    CurrencyFormatPipe
+                ],
+                providers: [],
+                exports: [
+                    CurrencyFormatDirective,
+                    CurrencyFormatPipe
+                ]
+            },] },
+];
+var DatePipe = /** @class */ (function () {
+    function DatePipe() {
+        this.format = 'yyyy-MM-dd';
+    }
+    DatePipe.prototype.createDate = function (dateStr) {
+        var date = new Date(dateStr);
+        if (date + '' === 'Invalid Date') {
+            date = new Date(dateStr.replace(/-/g, '/').replace(/\.\d+$/, ''));
+            if (date + '' === 'Invalid Date') {
+                return null;
+            }
+        }
+        return date;
+    };
+    DatePipe.prototype.transform = function (value, fmt) {
+        if (value) {
+            var date = void 0;
+            if (value instanceof Date) {
+                date = value;
+            }
+            else if (typeof value === 'string') {
+                date = this.createDate(value);
+            }
+            if (!date) {
+                return value;
+            }
+            var o = {
+                "M+": date.getMonth() + 1,
+                "d+": date.getDate(),
+                "h+": date.getHours(),
+                "m+": date.getMinutes(),
+                "s+": date.getSeconds(),
+                "q+": Math.floor((date.getMonth() + 3) / 3),
+                "S": date.getMilliseconds()
+            };
+            if (!fmt) {
+                fmt = this.format;
+            }
+            if (/(y+)/.test(fmt)) {
+                fmt = fmt.replace(RegExp.$1, (date.getFullYear() + "").substr(4 - RegExp.$1.length));
+            }
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt)) {
+                    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                }
+            return fmt;
+        }
+        else {
+            return value;
+        }
+    };
+    return DatePipe;
+}());
+DatePipe.decorators = [
+    { type: Pipe, args: [{ name: 'date' },] },
+];
+var DateFormatModule = /** @class */ (function () {
+    function DateFormatModule() {
+    }
+    return DateFormatModule;
+}());
+DateFormatModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [],
+                declarations: [
+                    DatePipe
+                ],
+                providers: [],
+                exports: [
+                    DatePipe
+                ]
+            },] },
+];
+var NullReplacePipe = /** @class */ (function () {
+    function NullReplacePipe() {
+        this.fmt = '--';
+    }
+    NullReplacePipe.prototype.transform = function (value, fmt) {
+        if (value === undefined || value === null || value === '') {
+            var result = fmt || this.fmt;
+            return result;
+        }
+        else {
+            return value;
+        }
+    };
+    return NullReplacePipe;
+}());
+NullReplacePipe.decorators = [
+    { type: Pipe, args: [{ name: 'nullReplace' },] },
+];
+var NullReplaceModule = /** @class */ (function () {
+    function NullReplaceModule() {
+    }
+    return NullReplaceModule;
+}());
+NullReplaceModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [],
+                declarations: [
+                    NullReplacePipe
+                ],
+                providers: [],
+                exports: [
+                    NullReplacePipe
+                ]
+            },] },
+];
 var Uploader = /** @class */ (function () {
     function Uploader() {
         this.isUploading = false;
@@ -3178,15 +3953,15 @@ var Uploader = /** @class */ (function () {
                     }
                 }
             }
-            catch (e_12_1) { e_12 = { error: e_12_1 }; }
+            catch (e_14_1) { e_14 = { error: e_14_1 }; }
             finally {
                 try {
                     if (handlers_1_1 && !handlers_1_1.done && (_a = handlers_1.return)) _a.call(handlers_1);
                 }
-                finally { if (e_12) throw e_12.error; }
+                finally { if (e_14) throw e_14.error; }
             }
         }
-        var e_12, _a;
+        var e_14, _a;
     };
     Uploader.prototype.upload = function () {
         var _this = this;
@@ -3201,12 +3976,12 @@ var Uploader = /** @class */ (function () {
                             fd.append(o.name, o.value);
                         }
                     }
-                    catch (e_13_1) { e_13 = { error: e_13_1 }; }
+                    catch (e_15_1) { e_15 = { error: e_15_1 }; }
                     finally {
                         try {
                             if (_b && !_b.done && (_c = _a.return)) _c.call(_a);
                         }
-                        finally { if (e_13) throw e_13.error; }
+                        finally { if (e_15) throw e_15.error; }
                     }
                 }
                 else {
@@ -3216,7 +3991,7 @@ var Uploader = /** @class */ (function () {
             }
             else if (_this.uploadType === 1) {
             }
-            var e_13, _c;
+            var e_15, _c;
         };
         var submit = function (index, data) {
             var next = function () {
@@ -3544,169 +4319,6 @@ UploaderModule.decorators = [
                 ]
             },] },
 ];
-var LayoutModule = /** @class */ (function () {
-    function LayoutModule() {
-    }
-    return LayoutModule;
-}());
-LayoutModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule
-                ],
-                declarations: [
-                    RootContainerComponent,
-                    AsideLeftComponent,
-                    HeaderComponent,
-                    HeaderLeftComponent,
-                    HeaderRightComponent,
-                    DeleteWrapComponent
-                ],
-                providers: [],
-                exports: [
-                    RootContainerComponent,
-                    AsideLeftComponent,
-                    HeaderComponent,
-                    HeaderLeftComponent,
-                    HeaderRightComponent,
-                    DeleteWrapComponent
-                ]
-            },] },
-];
-var NavModule = /** @class */ (function () {
-    function NavModule() {
-    }
-    return NavModule;
-}());
-NavModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                    RouterModule
-                ],
-                declarations: [
-                    NavWrapComponent,
-                    NavItemComponent,
-                    SubNavItemComponent,
-                    ThirthNavItemComponent
-                ],
-                providers: [],
-                exports: [
-                    NavWrapComponent,
-                    NavItemComponent,
-                    SubNavItemComponent,
-                    ThirthNavItemComponent
-                ]
-            },] },
-];
-var ModalModule = /** @class */ (function () {
-    function ModalModule() {
-    }
-    return ModalModule;
-}());
-ModalModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule
-                ],
-                declarations: [
-                    ModalComponent,
-                    ModalHeaderComponent,
-                    ModalBodyComponent,
-                    ModalFooterComponent
-                ],
-                providers: [],
-                exports: [
-                    ModalComponent,
-                    ModalHeaderComponent,
-                    ModalBodyComponent,
-                    ModalFooterComponent
-                ]
-            },] },
-];
-var CheckboxModule = /** @class */ (function () {
-    function CheckboxModule() {
-    }
-    return CheckboxModule;
-}());
-CheckboxModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                    FormsModule
-                ],
-                declarations: [
-                    CheckboxComponent
-                ],
-                providers: [],
-                exports: [
-                    CommonModule,
-                    FormsModule,
-                    CheckboxComponent
-                ]
-            },] },
-];
-var RadioModule = /** @class */ (function () {
-    function RadioModule() {
-    }
-    return RadioModule;
-}());
-RadioModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                    FormsModule
-                ],
-                declarations: [
-                    RadioComponent
-                ],
-                providers: [],
-                exports: [
-                    CommonModule,
-                    FormsModule,
-                    RadioComponent
-                ]
-            },] },
-];
-var ToggleModule = /** @class */ (function () {
-    function ToggleModule() {
-    }
-    return ToggleModule;
-}());
-ToggleModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                    FormsModule
-                ],
-                declarations: [
-                    ToggleComponent
-                ],
-                providers: [],
-                exports: [
-                    CommonModule,
-                    FormsModule,
-                    ToggleComponent
-                ]
-            },] },
-];
-var ValidateModule = /** @class */ (function () {
-    function ValidateModule() {
-    }
-    return ValidateModule;
-}());
-ValidateModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [],
-                declarations: [
-                    HTML5ValidateDirective
-                ],
-                providers: [],
-                exports: [
-                    HTML5ValidateDirective
-                ]
-            },] },
-];
 var FormsModule$1 = /** @class */ (function () {
     function FormsModule$1() {
     }
@@ -3727,137 +4339,6 @@ FormsModule$1.decorators = [
                     RadioModule,
                     ToggleModule,
                     ValidateModule
-                ]
-            },] },
-];
-var LoaderModule = /** @class */ (function () {
-    function LoaderModule() {
-    }
-    return LoaderModule;
-}());
-LoaderModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule
-                ],
-                declarations: [
-                    SpinnerComponent
-                ],
-                providers: [],
-                exports: [
-                    SpinnerComponent
-                ]
-            },] },
-];
-var GalleryModule = /** @class */ (function () {
-    function GalleryModule() {
-    }
-    return GalleryModule;
-}());
-GalleryModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule
-                ],
-                declarations: [
-                    GalleryComponent
-                ],
-                providers: [],
-                exports: [
-                    GalleryComponent
-                ]
-            },] },
-];
-var PaginatorModule = /** @class */ (function () {
-    function PaginatorModule() {
-    }
-    return PaginatorModule;
-}());
-PaginatorModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                    FormsModule
-                ],
-                declarations: [
-                    PaginatorComponent
-                ],
-                providers: [],
-                exports: [
-                    PaginatorComponent
-                ]
-            },] },
-];
-var QBtnGroupModule = /** @class */ (function () {
-    function QBtnGroupModule() {
-    }
-    return QBtnGroupModule;
-}());
-QBtnGroupModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                    FormsModule
-                ],
-                declarations: [
-                    QBtnGroupComponent
-                ],
-                providers: [],
-                exports: [
-                    CommonModule,
-                    FormsModule,
-                    QBtnGroupComponent
-                ]
-            },] },
-];
-var BtnBackModule = /** @class */ (function () {
-    function BtnBackModule() {
-    }
-    return BtnBackModule;
-}());
-BtnBackModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [],
-                declarations: [
-                    BtnBackDirective
-                ],
-                providers: [],
-                exports: [
-                    BtnBackDirective
-                ]
-            },] },
-];
-var TextMaxLengthModule = /** @class */ (function () {
-    function TextMaxLengthModule() {
-    }
-    return TextMaxLengthModule;
-}());
-TextMaxLengthModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [],
-                declarations: [
-                    TextMaxLengthDirective
-                ],
-                providers: [],
-                exports: [
-                    TextMaxLengthDirective
-                ]
-            },] },
-];
-var ToggleClassModule = /** @class */ (function () {
-    function ToggleClassModule() {
-    }
-    return ToggleClassModule;
-}());
-ToggleClassModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [],
-                declarations: [
-                    ToggleClassDirective
-                ],
-                providers: [],
-                exports: [
-                    ToggleClassDirective
                 ]
             },] },
 ];
@@ -3884,330 +4365,12 @@ CommonModule$1.decorators = [
                 ]
             },] },
 ];
-var DatetimePickerModule = /** @class */ (function () {
-    function DatetimePickerModule() {
-    }
-    return DatetimePickerModule;
-}());
-DatetimePickerModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                    FormsModule,
-                ],
-                declarations: [
-                    DatetimePickerComponent
-                ],
-                providers: [],
-                exports: [
-                    DatetimePickerComponent
-                ]
-            },] },
-];
-var CurrencyFormatPipe = /** @class */ (function () {
-    function CurrencyFormatPipe() {
-        this.separateLength = 3;
-        this.accuracy = 2;
-        this.format = '';
-        this.separator = ',';
-    }
-    CurrencyFormatPipe.prototype.transform = function (value, param) {
-        if (value === undefined || value === null) {
-            return value;
-        }
-        else if (!value && value !== 0) {
-            return '';
-        }
-        var sep = this.separator;
-        var flag = '';
-        var inputStr = value + '';
-        flag = (inputStr.indexOf('-') >= 0 ? '-' : inputStr.indexOf('+') >= 0 ? '+' : '');
-        inputStr = inputStr.replace(/[^\d\.]/g, '');
-        var numRegExp = /^[\-\+]?[0-9]+(\.[0-9]+)?$/, str = inputStr.replace(/\s/g, ''), accuracy = this.accuracy, format = this.format, sepLen = this.separateLength;
-        var nums = [];
-        var strs = [];
-        if (typeof param === 'string') {
-            strs.push(param);
-        }
-        else if (typeof param === 'number') {
-            nums.push(param);
-        }
-        else if (param instanceof Array) {
-            try {
-                for (var param_1 = __values(param), param_1_1 = param_1.next(); !param_1_1.done; param_1_1 = param_1.next()) {
-                    var o = param_1_1.value;
-                    if (typeof o === 'string') {
-                        strs.push(o);
-                    }
-                    else if (typeof o === 'number') {
-                        nums.push(o);
-                    }
-                }
-            }
-            catch (e_14_1) { e_14 = { error: e_14_1 }; }
-            finally {
-                try {
-                    if (param_1_1 && !param_1_1.done && (_a = param_1.return)) _a.call(param_1);
-                }
-                finally { if (e_14) throw e_14.error; }
-            }
-        }
-        if (nums.length > 0) {
-            accuracy = nums[0];
-        }
-        if (nums.length > 1) {
-            sepLen = nums[1];
-        }
-        if (strs.length > 0) {
-            format = strs[0];
-        }
-        if (strs.length > 1) {
-            sep = strs[1];
-        }
-        var result = '';
-        if (numRegExp.test(str)) {
-            if (sepLen) {
-                str = parseFloat(str).toFixed(accuracy) + '';
-                var splits = str.split('.');
-                var intStr = splits[0];
-                var ext = splits.length > 1 ? splits[1] : '';
-                if (ext.length < accuracy) {
-                    var fillLen = accuracy - ext.length;
-                    for (var i = 0; i < fillLen; i++) {
-                        ext += '0';
-                    }
-                }
-                var intLen = intStr.length, newIntStr = '';
-                if (intLen > sepLen) {
-                    for (var i = intLen - sepLen; i > 0 - sepLen; i = i - sepLen) {
-                        if (i > 0) {
-                            newIntStr = sep + intStr.substr(i, sepLen) + newIntStr;
-                        }
-                        else {
-                            newIntStr = intStr.substr(0, sepLen + i) + newIntStr;
-                        }
-                    }
-                }
-                else {
-                    newIntStr = intStr;
-                }
-                result = newIntStr + (ext ? '.' + ext : '');
-            }
-            else {
-                result = inputStr;
-            }
-            if (format) {
-                var index = format.indexOf('xx');
-                if (index >= 0) {
-                    result = format.replace(/xx/, result);
-                }
-                else {
-                    result = result + format;
-                }
-            }
-        }
-        else {
-            result = inputStr;
-        }
-        if (flag) {
-            result = flag + result;
-        }
-        return result;
-        var e_14, _a;
-    };
-    return CurrencyFormatPipe;
-}());
-CurrencyFormatPipe.decorators = [
-    { type: Pipe, args: [{ name: 'currencyFormat' },] },
-];
-var CurrencyFormatModule = /** @class */ (function () {
-    function CurrencyFormatModule() {
-    }
-    return CurrencyFormatModule;
-}());
-CurrencyFormatModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [],
-                declarations: [
-                    CurrencyFormatDirective,
-                    CurrencyFormatPipe
-                ],
-                providers: [],
-                exports: [
-                    CurrencyFormatDirective,
-                    CurrencyFormatPipe
-                ]
-            },] },
-];
-var DatePipe = /** @class */ (function () {
-    function DatePipe() {
-        this.format = 'yyyy-MM-dd';
-    }
-    DatePipe.prototype.createDate = function (dateStr) {
-        var date = new Date(dateStr);
-        if (date + '' === 'Invalid Date') {
-            date = new Date(dateStr.replace(/-/g, '/').replace(/\.\d+$/, ''));
-            if (date + '' === 'Invalid Date') {
-                return null;
-            }
-        }
-        return date;
-    };
-    DatePipe.prototype.transform = function (value, fmt) {
-        if (value) {
-            var date = void 0;
-            if (value instanceof Date) {
-                date = value;
-            }
-            else if (typeof value === 'string') {
-                date = this.createDate(value);
-            }
-            if (!date) {
-                return value;
-            }
-            var o = {
-                "M+": date.getMonth() + 1,
-                "d+": date.getDate(),
-                "h+": date.getHours(),
-                "m+": date.getMinutes(),
-                "s+": date.getSeconds(),
-                "q+": Math.floor((date.getMonth() + 3) / 3),
-                "S": date.getMilliseconds()
-            };
-            if (!fmt) {
-                fmt = this.format;
-            }
-            if (/(y+)/.test(fmt)) {
-                fmt = fmt.replace(RegExp.$1, (date.getFullYear() + "").substr(4 - RegExp.$1.length));
-            }
-            for (var k in o)
-                if (new RegExp("(" + k + ")").test(fmt)) {
-                    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
-                }
-            return fmt;
-        }
-        else {
-            return value;
-        }
-    };
-    return DatePipe;
-}());
-DatePipe.decorators = [
-    { type: Pipe, args: [{ name: 'date' },] },
-];
-var DateFormatModule = /** @class */ (function () {
-    function DateFormatModule() {
-    }
-    return DateFormatModule;
-}());
-DateFormatModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [],
-                declarations: [
-                    DatePipe
-                ],
-                providers: [],
-                exports: [
-                    DatePipe
-                ]
-            },] },
-];
-var NullReplacePipe = /** @class */ (function () {
-    function NullReplacePipe() {
-        this.fmt = '--';
-    }
-    NullReplacePipe.prototype.transform = function (value, fmt) {
-        if (value === undefined || value === null || value === '') {
-            var result = fmt || this.fmt;
-            return result;
-        }
-        else {
-            return value;
-        }
-    };
-    return NullReplacePipe;
-}());
-NullReplacePipe.decorators = [
-    { type: Pipe, args: [{ name: 'nullReplace' },] },
-];
-var NullReplaceModule = /** @class */ (function () {
-    function NullReplaceModule() {
-    }
-    return NullReplaceModule;
-}());
-NullReplaceModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [],
-                declarations: [
-                    NullReplacePipe
-                ],
-                providers: [],
-                exports: [
-                    NullReplacePipe
-                ]
-            },] },
-];
-var AreaPickerModule = /** @class */ (function () {
-    function AreaPickerModule() {
-    }
-    return AreaPickerModule;
-}());
-AreaPickerModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [],
-                declarations: [
-                    AreaPickerDirective
-                ],
-                providers: [],
-                exports: [
-                    AreaPickerDirective
-                ]
-            },] },
-];
-var DropDownModule = /** @class */ (function () {
-    function DropDownModule() {
-    }
-    return DropDownModule;
-}());
-DropDownModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                ],
-                declarations: [
-                    DropDownComponent
-                ],
-                providers: [],
-                exports: [
-                    DropDownComponent
-                ]
-            },] },
-];
-var SliderModule = /** @class */ (function () {
-    function SliderModule() {
-    }
-    return SliderModule;
-}());
-SliderModule.decorators = [
-    { type: NgModule, args: [{
-                imports: [
-                    CommonModule,
-                ],
-                declarations: [
-                    SliderComponent
-                ],
-                providers: [],
-                exports: [
-                    SliderComponent
-                ]
-            },] },
-];
-var AlertService = /** @class */ (function () {
-    function AlertService() {
+var PopupService = /** @class */ (function () {
+    function PopupService() {
         this.animated = true;
         this.eventList = [];
     }
-    AlertService.prototype.init = function () {
+    PopupService.prototype.init = function () {
         this.removePop();
         this.clearEvents();
         this.type = 'info';
@@ -4236,7 +4399,7 @@ var AlertService = /** @class */ (function () {
         this.closeButton = null;
         this.popWrap = null;
     };
-    AlertService.prototype.show = function () {
+    PopupService.prototype.show = function () {
         var _this = this;
         this.popWrap = document.createElement('DIV');
         this.popWrap.className = 'pop-wrap' + ' ' + this.type;
@@ -4257,14 +4420,14 @@ var AlertService = /** @class */ (function () {
                     handler.apply(_this);
                 }
             }
-            catch (e_15_1) { e_15 = { error: e_15_1 }; }
+            catch (e_16_1) { e_16 = { error: e_16_1 }; }
             finally {
                 try {
                     if (_b && !_b.done && (_c = _a.return)) _c.call(_a);
                 }
-                finally { if (e_15) throw e_15.error; }
+                finally { if (e_16) throw e_16.error; }
             }
-            var e_15, _c;
+            var e_16, _c;
         });
         popHeader.appendChild(this.closeButton);
         pop.appendChild(popHeader);
@@ -4310,15 +4473,15 @@ var AlertService = /** @class */ (function () {
                         handler.apply(_this);
                     }
                 }
-                catch (e_16_1) { e_16 = { error: e_16_1 }; }
+                catch (e_17_1) { e_17 = { error: e_17_1 }; }
                 finally {
                     try {
                         if (_b && !_b.done && (_c = _a.return)) _c.call(_a);
                     }
-                    finally { if (e_16) throw e_16.error; }
+                    finally { if (e_17) throw e_17.error; }
                 }
                 _this.confirmed = true;
-                var e_16, _c;
+                var e_17, _c;
             });
         }
         if (this.showCancelButton) {
@@ -4346,15 +4509,15 @@ var AlertService = /** @class */ (function () {
                         handler.apply(_this);
                     }
                 }
-                catch (e_17_1) { e_17 = { error: e_17_1 }; }
+                catch (e_18_1) { e_18 = { error: e_18_1 }; }
                 finally {
                     try {
                         if (_b && !_b.done && (_c = _a.return)) _c.call(_a);
                     }
-                    finally { if (e_17) throw e_17.error; }
+                    finally { if (e_18) throw e_18.error; }
                 }
                 _this.canceled = true;
-                var e_17, _c;
+                var e_18, _c;
             });
             this.cancelButton = btnCancel_1;
         }
@@ -4369,10 +4532,10 @@ var AlertService = /** @class */ (function () {
             this.popWrap.className = this.popWrap.className + ' animated';
         }
     };
-    AlertService.prototype.close = function () {
+    PopupService.prototype.close = function () {
         this.removePop();
     };
-    AlertService.prototype.removePop = function () {
+    PopupService.prototype.removePop = function () {
         if (this.popWrap !== null && this.popWrap !== undefined) {
             try {
                 document.body.removeChild(this.popWrap);
@@ -4381,12 +4544,12 @@ var AlertService = /** @class */ (function () {
             }
         }
     };
-    AlertService.prototype.setOptions = function (opt) {
+    PopupService.prototype.setOptions = function (opt) {
         for (var prop in opt) {
             this[prop] = opt[prop];
         }
     };
-    AlertService.prototype.getArgs = function (arg) {
+    PopupService.prototype.getArgs = function (arg) {
         var strs = [], opts = { text: '' };
         if (arguments.length) {
             for (var i = 0, len = arguments.length; i < len; i++) {
@@ -4409,7 +4572,7 @@ var AlertService = /** @class */ (function () {
         }
         return opts;
     };
-    AlertService.prototype.confirm = function (text, title, opt) {
+    PopupService.prototype.confirm = function (text, title, opt) {
         this.init();
         this.type = 'confirm';
         this.showConfirmButton = true;
@@ -4419,7 +4582,7 @@ var AlertService = /** @class */ (function () {
         this.show();
         return this;
     };
-    AlertService.prototype.info = function (text, title, opt) {
+    PopupService.prototype.info = function (text, title, opt) {
         this.init();
         this.type = 'info';
         this.showConfirmButton = true;
@@ -4429,7 +4592,7 @@ var AlertService = /** @class */ (function () {
         this.show();
         return this;
     };
-    AlertService.prototype.error = function (text, title, opt) {
+    PopupService.prototype.error = function (text, title, opt) {
         this.init();
         this.type = 'error';
         this.showConfirmButton = true;
@@ -4441,19 +4604,19 @@ var AlertService = /** @class */ (function () {
         this.show();
         return this;
     };
-    AlertService.prototype.onConfirm = function (handler) {
+    PopupService.prototype.onConfirm = function (handler) {
         this.confirmHandlers.push(handler);
         return this;
     };
-    AlertService.prototype.onCancel = function (handler) {
+    PopupService.prototype.onCancel = function (handler) {
         this.cancelHandlers.push(handler);
         return this;
     };
-    AlertService.prototype.onClose = function (handler) {
+    PopupService.prototype.onClose = function (handler) {
         this.closeHandlers.push(handler);
         return this;
     };
-    AlertService.prototype.clearEvents = function () {
+    PopupService.prototype.clearEvents = function () {
         try {
             for (var i = 0, len = this.eventList.length; i < len; i++) {
                 this.eventList[i].target.removeEventListener(this.eventList[i].event, this.eventList[i].handler);
@@ -4464,11 +4627,11 @@ var AlertService = /** @class */ (function () {
             console.log(err);
         }
     };
-    AlertService.prototype.addEvent = function (target, event, handler) {
+    PopupService.prototype.addEvent = function (target, event, handler) {
         target.addEventListener(event, handler);
         this.eventList.push({ target: target, handler: handler, event: event });
     };
-    return AlertService;
+    return PopupService;
 }());
 var PopService = /** @class */ (function (_super) {
     __extends(PopService, _super);
@@ -4476,7 +4639,7 @@ var PopService = /** @class */ (function (_super) {
         return _super.call(this) || this;
     }
     return PopService;
-}(AlertService));
+}(PopupService));
 var Toaster = /** @class */ (function () {
     function Toaster() {
         this.toasters = [];
@@ -4616,5 +4779,5 @@ var Toaster = /** @class */ (function () {
     return Toaster;
 }());
 
-export { QBtnGroupComponent, PaginatorComponent, GalleryComponent, SpinnerComponent, CheckboxComponent, RadioComponent, ToggleComponent, ModalBodyComponent, ModalHeaderComponent, ModalFooterComponent, ModalComponent, RootContainerComponent, AsideLeftComponent, HeaderComponent, HeaderLeftComponent, HeaderRightComponent, DeleteWrapComponent, NavWrapComponent, NavItemComponent, SubNavItemComponent, ThirthNavItemComponent, DatetimePickerComponent, DropDownComponent, SliderComponent, ToggleClassDirective, BtnBackDirective, TextMaxLengthDirective, HTML5ValidateDirective, AreaPicker, AreaPickerDirective, CurrencyFormatDirective, UploaderModule, Uploader, UploadFile, LayoutModule, NavModule, ModalModule, FormsModule$1 as FormsModule, LoaderModule, GalleryModule, PaginatorModule, CommonModule$1 as CommonModule, DatetimePickerModule, CurrencyFormatModule, DateFormatModule, NullReplaceModule, AreaPickerModule, DropDownModule, SliderModule, CheckboxModule, RadioModule, ToggleModule, ValidateModule, ToggleClassModule, BtnBackModule, QBtnGroupModule, TextMaxLengthModule, CurrencyFormatPipe, DatePipe, NullReplacePipe, PopService, Toaster, SlideDownComponent as ɵb, SwitchComponent as ɵa, UploaderDirective as ɵc, AlertService as ɵd };
+export { QBtnGroupComponent, QBtnGroupModule, PaginatorComponent, PaginatorModule, GalleryComponent, GalleryModule, SpinnerComponent, LoaderModule, CheckboxComponent, CheckboxModule, RadioComponent, RadioModule, ToggleComponent, ToggleModule, SwitchComponent, SwitchModule, ModalBodyComponent, ModalHeaderComponent, ModalFooterComponent, ModalComponent, ModalModule, RootContainerComponent, AsideLeftComponent, HeaderComponent, HeaderLeftComponent, HeaderRightComponent, DeleteWrapComponent, LayoutModule, NavWrapComponent, NavItemComponent, SubNavItemComponent, ThirthNavItemComponent, NavModule, DatetimePickerComponent, DatetimePickerModule, DropDownComponent, DropDownModule, SlideDownComponent, SlideDownModule, SliderComponent, SliderModule, SelectComponent, SelectModule, AreaPickerDirective, AreaPickerModule, AreaPicker, ToggleClassDirective, ToggleClassModule, BtnBackDirective, BtnBackModule, TextMaxLengthDirective, TextMaxLengthModule, HTML5ValidateDirective, ValidateModule, CurrencyFormatDirective, CurrencyFormatPipe, CurrencyFormatModule, DatePipe, DateFormatModule, NullReplacePipe, NullReplaceModule, UploaderModule, Uploader, UploadFile, UploaderDirective, FormsModule$1 as FormsModule, CommonModule$1 as CommonModule, PopupService, PopService, Toaster };
 //# sourceMappingURL=dolphinng.js.map
