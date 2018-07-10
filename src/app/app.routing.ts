@@ -1,5 +1,5 @@
 import { RouterModule, Routes,Data} from '@angular/router';
-import {AppComponent} from './app.component';
+import { AppComponent } from './app.component';
 import { SigninComponent } from './signin/signin.component';
 import { IndexComponent } from './index/index.component';
 const routes: Routes = [

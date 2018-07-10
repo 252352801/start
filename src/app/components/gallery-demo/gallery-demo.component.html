@@ -4,28 +4,6 @@
     </h2>
 </div>
 <div class="wrapper-md">
-    <table class="table table-bordered bg-white">
-        <tr>
-            <td width="15%"><b>类名</b></td>
-            <td>
-                GalleryComponent
-            </td>
-        </tr>
-        <tr>
-            <td><b>所属模块</b></td>
-            <td>GalleryModule</td>
-        </tr>
-        <tr>
-            <td><b>类型</b></td>
-            <td>组件</td>
-        </tr>
-        <tr>
-            <td><b>selector</b></td>
-            <td>
-                gallery
-            </td>
-        </tr>
-    </table>
     <p class="h4 m-b-sm block text-primary">示例</p>
     <div class="mar-b-sm">
         <button class="btn btn-info" (click)="gallery.open('./assets/img/c3.jpg')">打开一张图片</button>
@@ -59,7 +37,7 @@
             </div>
         </div>
     </div>
-    <p class="h4 m-b-sm block text-primary">Input属性</p>
+    <p class="h4 m-b-sm block text-primary">@Input</p>
     <table class="table table-bordered bg-white">
         <thead class="bg-default">
             <tr>
@@ -127,21 +105,48 @@
             </tr>
         </tbody>
     </table>
-    <p class="h4 m-b-sm block text-primary">方法</p>
+    <p class="h4 m-b-sm block text-primary">@Input</p>
     <table class="table table-bordered bg-white">
         <thead class="bg-default">
             <tr>
-                <th>方法名</th>
-                <th>参数</th>
-                <th>参数类型</th>
+                <th>属性名</th>
+                <th>类型</th>
                 <th>说明</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><i>open</i></td>
+                <td>onChange</td>
+                <td>EventEmitter
+                    < number>
+                </td>
+                <td>
+                    图片切换时（number为图片index）。
+                </td>
+            </tr>
+            <tr>
+                <td>onClose</td>
+                <td>EventEmitter
+                    < any>
+                </td>
+                <td>
+                    关闭时
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="h4 m-b-sm block text-primary">方法</p>
+    <p><i class="pad-r-xs">open</i> 打开gallery</p>
+    <table class="table table-bordered bg-white">
+        <thead class="bg-default">
+            <tr>
+                <th>参数</th>
+                <th>说明</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
                 <td>...args</td>
-                <td>不定参数</td>
                 <td>
                     <p>打开。参数长度和顺序不定。传入的：</p>
                     <p>第一个Event参数（模版中$event）作为触发事件；</p>
@@ -150,15 +155,9 @@
                     <p>第一个数组作为data，第二个数组作为dataProps。</p>
                 </td>
             </tr>
-            <tr>
-                <td><i>close</i></td>
-                <td>无</td>
-                <td>-</td>
-                <td>
-                    关闭。
-                </td>
-            </tr>
         </tbody>
     </table>
+    <p><i class="pad-r-xs">close</i> 关闭gallery</p>
+    <p class="h6 m-b-sm block text-primary">From:<span class="text-disabled">GalleryModule/GalleryComponent</span></p>
 </div>
 <gallery #gallery [data]="galleryImages" [dataProps]="['a','b']"></gallery>

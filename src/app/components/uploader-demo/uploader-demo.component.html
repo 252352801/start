@@ -58,466 +58,208 @@
             </div>
         </div>
     </div>
-    <table class="table-bordered table bg-white">
-        <tbody>
-            <tr>
-                <td class="text-center v-middle" width="120px"><b>UploaderDirective</b></td>
-                <td>
-                    <table class="table table-bordered bg-white no-margin">
-                        <tr>
-                            <td width="10%" class="bg-default"><b>类名</b></td>
-                            <td>
-                                UploaderDirective
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bg-default"><b>所属模块</b></td>
-                            <td>UploaderModule</td>
-                        </tr>
-                        <tr>
-                            <td class="bg-default"><b>类型</b></td>
-                            <td>指令</td>
-                        </tr>
-                        <tr>
-                            <td class="bg-default"><b>selector</b></td>
-                            <td>
-                                uploader
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bg-default"><b>属性</b></td>
-                            <td>
-                                <p>@Input() <b>uploader</b>: Uploader;<span class="text-disabled">//Uploader实例</span></p>
-                                <p>@Input() <b>compressScale</b>: number;<span class="text-disabled">//压缩尺寸</span></p>
-                                <p>@Input() <b>compressQuality</b>: number;<span class="text-disabled">//压缩质量</span></p>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td class="text-center v-middle"><b>Uploader</b></td>
-                <td>
-                    <table class="table table-bordered bg-white no-margin">
-                        <tr>
-                            <td width="10%" class="bg-default"><b>类名</b></td>
-                            <td>
-                                Uploader
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bg-default"><b>所属模块</b></td>
-                            <td>UploaderModule</td>
-                        </tr>
-                        <tr>
-                            <td class="bg-default"><b>类型</b></td>
-                            <td>服务</td>
-                        </tr>
-                        <tr>
-                            <td class="bg-default"><b>属性</b></td>
-                            <td>
-                                <p> <b>url</b>: string;<span class="text-disabled">//上传地址（必须）</span></p>
-                                <p><b>headers</b>: any[];<span class="text-disabled">//上传头部</span></p>
-                                <p><b>method</b>: string;<span class="text-disabled">//请求方法,默认post</span></p>
-                                <p><b>uploadType</b>: number;<span class="text-disabled">//上传方式 0:流式上传（默认） 1:base64上传</span></p>
-                                <p><b>queue</b>: UploadFile[];<span class="text-disabled">//上传队列</span></p>
-                                <p><b>isPreview</b>: boolean;<span class="text-disabled">//是否预览,默认true</span></p>
-                                <p><b>isCompress</b>: boolean;<span class="text-disabled">//是否压缩,默认false</span></p>
-                                <p><b>maxSize</b>: number;<span class="text-disabled">//最大文件大小（单个文件）</span></p>
-                                <p><b>maxLength</b>: number;<span class="text-disabled">//最大数量</span></p>
-                                <p><b>customData</b>: any;<span class="text-disabled">//用于存储自定义数据</span></p>
-                                <p><b>name</b>: string;<span class="text-disabled">//上传时默认的name</span></p>
-                                <p><b>isUploading</b>: boolean;<span class="text-disabled">//是否在上传</span></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bg-default"><b>方法</b></td>
-                            <td>
-                                <table class="table table-bordered no-margin">
-                                    <thead class="bg-default">
-                                        <tr>
-                                            <th>方法名</th>
-                                            <th>参数</th>
-                                            <th>说明</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>upload</td>
-                                            <td>无</td>
-                                            <td>上传队列（queue）里的文件</td>
-                                        </tr>
-                                        <tr>
-                                            <td>onSelect</td>
-                                            <td>
-                                                <table class="table table-bordered no-margin">
-                                                    <thead class="bg-default">
-                                                        <tr>
-                                                            <th>参数名</th>
-                                                            <th>类型</th>
-                                                            <th>描述</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>fn</td>
-                                                            <td>Function</td>
-                                                            <td>
-                                                                fn方法的参数为选择的文件files
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                            <td> 【事件】选择文件后</td>
-                                        </tr>
-                                        <tr>
-                                            <td>onQueue</td>
-                                            <td>
-                                                <table class="table table-bordered no-margin">
-                                                    <thead class="bg-default">
-                                                        <tr>
-                                                            <th>参数名</th>
-                                                            <th>类型</th>
-                                                            <th>描述</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>fn</td>
-                                                            <td>Function</td>
-                                                            <td>
-                                                                fn方法的参数为一个uploadFile实例
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                            <td> 【事件】单个文件入列</td>
-                                        </tr>
-                                        <tr>
-                                            <td>onQueueAll</td>
-                                            <td>
-                                                <table class="table table-bordered no-margin">
-                                                    <thead class="bg-default">
-                                                        <tr>
-                                                            <th>参数名</th>
-                                                            <th>类型</th>
-                                                            <th>描述</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>fn</td>
-                                                            <td>Function</td>
-                                                            <td>
-                                                                fn方法的参数为一个队列里的UploadFile实例（UploadFile[]）
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                            <td> 【事件】全部文件入列</td>
-                                        </tr>
-                                        <tr>
-                                            <td>onUpload</td>
-                                            <td>
-                                                <table class="table table-bordered no-margin">
-                                                    <thead class="bg-default">
-                                                        <tr>
-                                                            <th>参数名</th>
-                                                            <th>类型</th>
-                                                            <th>描述</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>fn</td>
-                                                            <td>Function</td>
-                                                            <td>
-                                                                fn方法的参数为当前Uploader实例
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                            <td> 【事件】上传</td>
-                                        </tr>
-                                        <tr>
-                                            <td>onProgress</td>
-                                            <td>
-                                                <table class="table table-bordered no-margin">
-                                                    <thead class="bg-default">
-                                                        <tr>
-                                                            <th width="100px">参数名</th>
-                                                            <th>类型</th>
-                                                            <th>描述</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>fn</td>
-                                                            <td>Function</td>
-                                                            <td>
-                                                                fn方法的参数percent（百分比）,uploadFile（当前UploadFile）,uploader（当前Uploader）,index（当前文件在queue里的index）
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                            <td> 【事件】上传进度</td>
-                                        </tr>
-                                        <tr>
-                                            <td>onSuccess</td>
-                                            <td>
-                                                <table class="table table-bordered no-margin">
-                                                    <thead class="bg-default">
-                                                        <tr>
-                                                            <th width="100px">参数名</th>
-                                                            <th>类型</th>
-                                                            <th>描述</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>fn</td>
-                                                            <td>Function</td>
-                                                            <td>
-                                                                fn方法的参数uploadFile（当前UploadFile）,uploader（当前Uploader）,index（当前文件在queue里的index）
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                            <td> 【事件】单个文件上传成功</td>
-                                        </tr>
-                                        <tr>
-                                            <td>onComplete</td>
-                                            <td>
-                                                <table class="table table-bordered no-margin">
-                                                    <thead class="bg-default">
-                                                        <tr>
-                                                            <th width="100px">参数名</th>
-                                                            <th>类型</th>
-                                                            <th>描述</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>fn</td>
-                                                            <td>Function</td>
-                                                            <td>
-                                                                fn方法的参数uploader（当前Uploader）
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                            <td> 【事件】上传成功完成</td>
-                                        </tr>
-                                        <tr>
-                                            <td>onError</td>
-                                            <td>
-                                                <table class="table table-bordered no-margin">
-                                                    <thead class="bg-default">
-                                                        <tr>
-                                                            <th width="100px">参数名</th>
-                                                            <th>类型</th>
-                                                            <th>描述</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>fn</td>
-                                                            <td>Function</td>
-                                                            <td>
-                                                                fn方法的参数uploadFile（当前UploadFile）,uploader（当前Uploader）,index（当前文件在queue里的index）
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                            <td> 【事件】单个文件上传失败</td>
-                                        </tr>
-                                        <tr>
-                                            <td>onOverSize</td>
-                                            <td>
-                                                <table class="table table-bordered no-margin">
-                                                    <thead class="bg-default">
-                                                        <tr>
-                                                            <th width="100px">参数名</th>
-                                                            <th>类型</th>
-                                                            <th>描述</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>fn</td>
-                                                            <td>Function</td>
-                                                            <td>
-                                                                fn方法的参数fileSize（当前文件大小），maxSize（允许的最大文件大小），uploadFile（当前UploadFile实例）
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                            <td> 【事件】单个文件超过大小</td>
-                                        </tr>
-                                        <tr>
-                                            <td>onOverLength</td>
-                                            <td>
-                                                <table class="table table-bordered no-margin">
-                                                    <thead class="bg-default">
-                                                        <tr>
-                                                            <th width="100px">参数名</th>
-                                                            <th>类型</th>
-                                                            <th>描述</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>fn</td>
-                                                            <td>Function</td>
-                                                            <td>
-                                                                fn方法的参数length（选择的文件数量），maxLength（允许的最大数量）
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                            <td> 【事件】超过允许的数量</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td class="text-center v-middle"><b>UploadFile</b></td>
-                <td>
-                    <table class="table table-bordered bg-white no-margin">
-                        <tr>
-                            <td width="10%" class="bg-default"><b>类名</b></td>
-                            <td>
-                                UploaderDirective
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bg-default"><b>所属模块</b></td>
-                            <td>UploaderModule</td>
-                        </tr>
-                        <tr>
-                            <td class="bg-default"><b>属性</b></td>
-                            <td>
-                                <p> <b>file</b>: File;<span class="text-disabled">//原始文件对象</span></p>
-                                <p><b>name</b>: string;<span class="text-disabled">//上传时name</span></p>
-                                <p><b>fileName</b>: string;<span class="text-disabled">//文件名</span></p>
-                                <p><b>fileExtension</b>: string;<span class="text-disabled">//文件后缀名</span></p>
-                                <p><b>fileType</b>: string;<span class="text-disabled">//文件类型</span></p>
-                                <p><b>fileSize</b>: number;<span class="text-disabled">//文件大小，单位byte</span></p>
-                                <p><b>dataUrl</b>: string;<span class="text-disabled">//文件的base64数据</span></p>
-                                <p><b>compressedDataUrl</b>: boolean;<span class="text-disabled">//压缩后的文件数据</span></p>
-                                <p><b>compressed</b>: string;<span class="text-disabled">//是否被压缩过</span></p>
-                                <p><b>progress</b>: number;<span class="text-disabled">//上传进度（0-100）</span></p>
-                                <p><b>uploaded</b>: boolean;<span class="text-disabled">//是否已上传</span></p>
-                                <p><b>success</b>: boolean;<span class="text-disabled">//是否上传成功</span></p>
-                                <p><b>error</b>: boolean;<span class="text-disabled">//是否上传错误</span></p>
-                                <p><b>response</b>: any;<span class="text-disabled">//上传返回结果</span></p>
-                                <p><b>customData</b>: any;<span class="text-disabled">//用于存储自定义数据</span></p>
-                                <p><b>xhr</b>: XMLHttpRequest;<span class="text-disabled">//上传文件的XMLHttpRequest对象</span></p>
-                                <p><b>submitData</b>:&#32;&#123;&#110;&#97;&#109;&#101;&#58;&#32;&#115;&#116;&#114;&#105;&#110;&#103;&#44;&#118;&#97;&#108;&#117;&#101;&#58;&#32;&#97;&#110;&#121;&#125;&#91;&#93;;<span class="text-disabled">//上传时候的数据</span></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bg-default"><b>方法</b></td>
-                            <td>
-                                <table class="table table-bordered no-margin">
-                                    <thead class="bg-default">
-                                        <tr>
-                                            <th>方法名</th>
-                                            <th>参数</th>
-                                            <th>说明</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>setSuccess</td>
-                                            <td>无</td>
-                                            <td>设置上传成功</td>
-                                        </tr>
-                                        <tr>
-                                            <td>setError</td>
-                                            <td>
-                                                无
-                                            </td>
-                                            <td> 设置上传失败</td>
-                                        </tr>
-                                        <tr>
-                                            <td>getFile</td>
-                                            <td>
-                                                <table class="table table-bordered no-margin">
-                                                    <thead class="bg-default">
-                                                        <tr>
-                                                            <th>参数名</th>
-                                                            <th>类型</th>
-                                                            <th>描述</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>type（选填）</td>
-                                                            <td>number</td>
-                                                            <td>
-                                                                0:Filed/Blob对象 1:Base64数据
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                            <td>获取(要提交)的文件</td>
-                                        </tr>
-                                        <tr>
-                                            <td>addSubmitData</td>
-                                            <td>
-                                                <table class="table table-bordered no-margin">
-                                                    <thead class="bg-default">
-                                                        <tr>
-                                                            <th>参数名</th>
-                                                            <th>类型</th>
-                                                            <th>描述</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>name</td>
-                                                            <td>string</td>
-                                                            <td>
-                                                                字段名
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>value</td>
-                                                            <td>any</td>
-                                                            <td>
-                                                                字段名对应的值
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                            <td> 【事件】全部文件入列</td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="tab-container ng-isolate-scope">
+        <ul class="nav nav-tabs ">
+            <li [ngClass]="{active: docIndex===0}" class="ng-isolate-scope">
+                <a (click)="changeDoc(0)">UploaderDirective</a>
+            </li>
+            <li [ngClass]="{active: docIndex===1}" class="ng-isolate-scope">
+                <a (click)="changeDoc(1)">UploadFile</a>
+            </li>
+            <li [ngClass]="{active: docIndex===2}" class="ng-isolate-scope">
+                <a (click)="changeDoc(2)">Uploader</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" *ngIf="docIndex===0">
+                <table class="table table-bordered bg-white no-margin">
+                    <tr>
+                        <td width="10%" class="bg-default"><b>类名</b></td>
+                        <td>
+                            UploaderDirective
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-default"><b>类型</b></td>
+                        <td>指令</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-default"><b>selector</b></td>
+                        <td>
+                            uploader
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-default"><b>属性</b></td>
+                        <td>
+                            <p>@Input() <b>uploader</b>: Uploader;<span class="text-disabled">//Uploader实例</span></p>
+                            <p>@Input() <b>compressScale</b>: number;<span class="text-disabled">//压缩尺寸</span></p>
+                            <p>@Input() <b>compressQuality</b>: number;<span class="text-disabled">//压缩质量</span></p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tab-pane active" *ngIf="docIndex===1">
+                <table class="table table-bordered bg-white no-margin">
+                    <tr>
+                        <td width="10%" class="bg-default"><b>类名</b></td>
+                        <td>
+                            UploadFile
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-default"><b>属性</b></td>
+                        <td>
+                            <p> <b>file</b>: File;<span class="text-disabled">//原始文件对象</span></p>
+                            <p><b>name</b>: string;<span class="text-disabled">//上传时name</span></p>
+                            <p><b>fileName</b>: string;<span class="text-disabled">//文件名</span></p>
+                            <p><b>fileExtension</b>: string;<span class="text-disabled">//文件后缀名</span></p>
+                            <p><b>fileType</b>: string;<span class="text-disabled">//文件类型</span></p>
+                            <p><b>fileSize</b>: number;<span class="text-disabled">//文件大小，单位byte</span></p>
+                            <p><b>dataUrl</b>: string;<span class="text-disabled">//文件的base64数据</span></p>
+                            <p><b>compressedDataUrl</b>: boolean;<span class="text-disabled">//压缩后的文件数据</span></p>
+                            <p><b>compressed</b>: string;<span class="text-disabled">//是否被压缩过</span></p>
+                            <p><b>progress</b>: number;<span class="text-disabled">//上传进度（0-100）</span></p>
+                            <p><b>uploaded</b>: boolean;<span class="text-disabled">//是否已上传</span></p>
+                            <p><b>success</b>: boolean;<span class="text-disabled">//是否上传成功</span></p>
+                            <p><b>error</b>: boolean;<span class="text-disabled">//是否上传错误</span></p>
+                            <p><b>response</b>: any;<span class="text-disabled">//上传返回结果</span></p>
+                            <p><b>customData</b>: any;<span class="text-disabled">//用于存储自定义数据</span></p>
+                            <p><b>xhr</b>: XMLHttpRequest;<span class="text-disabled">//上传文件的XMLHttpRequest对象</span></p>
+                            <p><b>submitData</b>:&#32;&#123;&#110;&#97;&#109;&#101;&#58;&#32;&#115;&#116;&#114;&#105;&#110;&#103;&#44;&#118;&#97;&#108;&#117;&#101;&#58;&#32;&#97;&#110;&#121;&#125;&#91;&#93;;<span class="text-disabled">//上传时候的数据</span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-default"><b>方法</b></td>
+                        <td>
+                            <div>
+                                <p><i class="bold pad-r-xs">setSuccess</i>设置上传成功</p>
+                                <pre class="pad-l-def">
+                                    <p>该方法会将</p>
+                                </pre>
+                            </div>
+                            <div>
+                                <p><i class="bold pad-r-xs">setError</i>设置上传失败</p>
+                                <pre class="pad-l-def">
+                                    <p>该方法会将</p>
+                                </pre>
+                            </div>
+                            <div>
+                                <p><i class="bold pad-r-xs">getFile</i><span class="text-disabled pad-r-xs">(type?:number)</span>获取(要提交)的文件</p>
+                                <pre class="pad-l-def">
+                                        <p>type  0:Filed/Blob对象 1:Base64数据</p>
+                                    </pre>
+                            </div>
+                            <div>
+                                <p><i class="bold pad-r-xs">addSubmitData</i><span class="text-disabled pad-r-xs" [innerHtml]="'(data:{name:string;value:any})'"></span>添加每个文件上传时附带的数据</p>
+                                <pre class="pad-l-def">
+                                    <p>上传文件时，会将data一起提交到上传接口</p>
+                                </pre>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tab-pane active" *ngIf="docIndex===2">
+                <table class="table table-bordered bg-white no-margin">
+                    <tr>
+                        <td width="10%" class="bg-default"><b>类名</b></td>
+                        <td>
+                            Uploader
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-default"><b>类型</b></td>
+                        <td>服务</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-default"><b>属性</b></td>
+                        <td>
+                            <p> <b>url</b>: string;<span class="text-disabled">//上传地址（必须）</span></p>
+                            <p><b>headers</b>: any[];<span class="text-disabled">//上传头部</span></p>
+                            <p><b>method</b>: string;<span class="text-disabled">//请求方法,默认post</span></p>
+                            <p><b>uploadType</b>: number;<span class="text-disabled">//上传方式 0:流式上传（默认） 1:base64上传</span></p>
+                            <p><b>queue</b>: UploadFile[];<span class="text-disabled">//上传队列</span></p>
+                            <p><b>isPreview</b>: boolean;<span class="text-disabled">//是否预览,默认true</span></p>
+                            <p><b>isCompress</b>: boolean;<span class="text-disabled">//是否压缩,默认false</span></p>
+                            <p><b>maxSize</b>: number;<span class="text-disabled">//最大文件大小（单个文件）</span></p>
+                            <p><b>maxLength</b>: number;<span class="text-disabled">//最大数量</span></p>
+                            <p><b>customData</b>: any;<span class="text-disabled">//用于存储自定义数据</span></p>
+                            <p><b>name</b>: string;<span class="text-disabled">//上传时默认的name</span></p>
+                            <p><b>isUploading</b>: boolean;<span class="text-disabled">//是否在上传</span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="bg-default"><b>方法</b></td>
+                        <td>
+                            <div>
+                                <p><i class="bold pad-r-xs">upload</i>传队列（queue）里的文件</p>
+                            </div>
+                            <div>
+                                <p><i class="bold">onSelect</i><span class="text-disabled pad-r-xs">(fn)</span>添加“选择文件后”的处理函数</p>
+                                <pre class="pad-l-def">
+                                    <p>fn方法的参数为选择的文件files</p>
+                                </pre>
+                            </div>
+                            <div>
+                                <p><i class="bold">onQueue</i><span class="text-disabled pad-r-xs">(fn)</span>添加“单个文件入列”的处理函数</p>
+                                <pre class="pad-l-def">
+                                        <p>fn方法的参数为一个uploadFile实例</p>
+                                </pre>
+                            </div>
+                            <div>
+                                <p><i class="bold">onQueueAll</i><span class="text-disabled pad-r-xs">(fn)</span>添加“全部文件入列”的处理函数</p>
+                                <pre class="pad-l-def">
+                                    <p>fn方法的参数为一个队列里的UploadFile实例(UploadFile[])</p>
+                                </pre>
+                            </div>
+                            <div>
+                                <p><i class="bold">onUpload</i><span class="text-disabled pad-r-xs">(fn)</span>添加“上传”的处理函数</p>
+                                <pre class="pad-l-def">
+                                    <p>fn方法的参数为当前Uploader实例</p>
+                                </pre>
+                            </div>
+                            <div>
+                                <p><i class="bold">onProgress</i><span class="text-disabled pad-r-xs">(fn)</span>添加“上传进度改变时”的处理函数</p>
+                                <pre class="pad-l-def">
+                                    <p>fn方法的参数percent（百分比）,uploadFile（当前UploadFile）,uploader（当前Uploader）,index（当前文件在queue里的index）</p>
+                                </pre>
+                            </div>
+                            <div>
+                                <p><i class="bold">onSuccess</i><span class="text-disabled pad-r-xs">(fn)</span>添加“单个文件上传成功”的处理函数</p>
+                                <pre class="pad-l-def">
+                                    <p>fn方法的参数uploadFile（当前UploadFile）,uploader（当前Uploader）,index（当前文件在queue里的index）</p>
+                                </pre>
+                            </div>
+                            <div>
+                                <p><i class="bold">onError</i><span class="text-disabled pad-r-xs">(fn)</span>添加“单个文件上传失败”的处理函数</p>
+                                <pre class="pad-l-def">
+                                    <p>fn方法的参数uploadFile（当前UploadFile）,uploader（当前Uploader）,index（当前文件在queue里的index）</p>
+                                </pre>
+                            </div>
+                            <div>
+                                <p><i class="bold">onComplete</i><span class="text-disabled pad-r-xs">(fn)</span>添加“上传完成”的处理函数</p>
+                                <pre class="pad-l-def">
+                                    <p>fn方法的参数uploader（当前Uploader）</p>
+                                </pre>
+                            </div>
+                            <div>
+                                <p><i class="bold">onOverSize</i><span class="text-disabled pad-r-xs">(fn)</span>添加“单个文件超过大小”的处理函数</p>
+                                <pre class="pad-l-def">
+                                    <p>fn方法的参数fileSize（当前文件大小），maxSize（允许的最大文件大小），uploadFile（当前UploadFile实例）</p>
+                                </pre>
+                            </div>
+                            <div>
+                                <p><i class="bold">onOverLength</i><span class="text-disabled pad-r-xs">(fn)</span>添加“超过允许的数量”的处理函数</p>
+                                <pre class="pad-l-def">
+                                    <p>fn方法的参数length（选择的文件数量），maxLength（允许的最大数量）</p>
+                                </pre>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
 <gallery #gallery [data]="uploader.queue" [dataProps]="['dataUrl']"></gallery>

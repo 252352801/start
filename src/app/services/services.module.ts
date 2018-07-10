@@ -3,6 +3,7 @@ import { ServicesComponent }   from './services.component';
 import { PopDemoComponent }   from './pop-demo/pop-demo.component';
 import { PopupDemoComponent }   from './popup-demo/popup-demo.component';
 import { ToasterDemoComponent }   from './toaster-demo/toaster-demo.component';
+import { TracertDemoComponent }   from './tracert-demo/tracert-demo.component';
 import { SharedModule }   from '../shared/shared.module';
 import { routing } from './services.routing';
 
@@ -12,7 +13,8 @@ import { routing } from './services.routing';
       ServicesComponent,
       PopDemoComponent,
       PopupDemoComponent,
-      ToasterDemoComponent
+      ToasterDemoComponent,
+      TracertDemoComponent,
     ]
 })
 export class ServicesModule { }

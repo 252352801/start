@@ -1,0 +1,21 @@
+<div class="pad-def bg-default bor-b-def">
+    <h2 class="no-margin">自定义HTML5校验<small class="font-xs text-disabled mar-l-xs">directive</small></h2>
+</div>
+<div class="wrapper-md">
+    <div class="pad-def bor-def bg-white mar-b-sm">
+        <p class="text-primary">如何使用</p>
+        <p>1.areaPicker指令和AreaPicker实例配合使用；</p>
+        <p>1.在form元素上使用HTML5Validate指令；</p>
+        <p>2.在input元素上使用HTML5Validate指令；</p>
+        <p>3.input元素上的HTML5Validate属性值为一个1维度/2维数组；以数组为最小单位，数组第一个元素是一个boolean值，当表单验证不通过且这个布尔值为真时，提示语为数组第二个元素的字符串</p>
+    </div>
+    <p class="h4 m-b-sm block text-primary">示例</p>
+    <form class="form-inline clearfix mar-b-sm" HTML5Validate>
+        <input class="form-control" [(ngModel)]="name" currencyFormat name="name" placeholder="请输入名字" required [HTML5Validate]="[!name,'请输入名字！']" />
+        <input class="form-control" [(ngModel)]="num" currencyFormat name="num" placeholder="输入数字" required pattern="^\d+$" #numRef="ngModel" [HTML5Validate]="[[!num,'请输入数字！'],[numRef.errors&&numRef.errors.pattern,'数字输入有误！']]" />
+        <button class="btn btn-primary" type="submit">提交</button>
+    </form>
+    <code-high-light maxHeight="500px" language="html" codeSrc="./assets/sources/HTML5Validate-demo/HTML5Validate-demo.component.html">
+    </code-high-light>
+    <p class="h6 m-b-sm block text-primary">From: <span class="text-disabled">ValidateModule / HTML5ValidateDirective</span></p>
+</div>

@@ -8,6 +8,7 @@ import { SpinnerDemoComponent} from './spinner-demo/spinner-demo.component';
 import { SearchbarDemoComponent} from './searchbar-demo/searchbar-demo.component';
 import { GalleryDemoComponent} from './gallery-demo/gallery-demo.component';
 import { DropDownDemoComponent} from './drop-down-demo/dropdown-demo.component';
+import { SlideDownDemoComponent} from './slide-down-demo/slide-down-demo.component';
 import { UploaderDemoComponent} from './uploader-demo/uploader-demo.component';
 import { DeleteWrapDemoComponent} from './delete-wrap-demo/delete-wrap-demo.component';
 import { SliderDemoComponent} from './slider/slider-demo.component';
@@ -15,6 +16,7 @@ import { DatetimePickerComponent} from './datetime-picker-demo/datetime-picker-d
 import { CheckboxDemoComponent} from './checkbox-demo/checkbox-demo.component';
 import { RadioDemoComponent} from './radio-demo/radio-demo.component';
 import { ToggleDemoComponent} from './toggle-demo/toggle-demo.component';
+import { SwitchDemoComponent } from './switch-demo/switch-demo.component';
 import { SelectDemoComponent} from './select-demo/select-demo.component';
 const routes: Routes = <Routes>[
     {
@@ -29,6 +31,7 @@ const routes: Routes = <Routes>[
   { path: 'searchbarDemo', component:SearchbarDemoComponent,data:{title:'Searchbar'} },
   { path: 'galleryDemo', component:GalleryDemoComponent,data:{title:'画廊'} },
   { path: 'dropDownDemo', component:DropDownDemoComponent,data:{title:'drop-down'} },
+  { path: 'slideDownDemo', component:SlideDownDemoComponent,data:{title:'slide-down'} },
   { path: 'uploaderDemo', component:UploaderDemoComponent,data:{title:'文件上传'} },
   { path: 'deleteWrapDemo', component:DeleteWrapDemoComponent,data:{title:'右上角删除控件'} },
   { path: 'sliderDemo', component:SliderDemoComponent,data:{title:'滑块'} },
@@ -36,6 +39,7 @@ const routes: Routes = <Routes>[
   { path: 'checkboxDemo', component:CheckboxDemoComponent,data:{title:'checkbox'} },
   { path: 'radioDemo', component:RadioDemoComponent,data:{title:'radio'} },
   { path: 'toggleDemo', component:ToggleDemoComponent,data:{title:'toggle'} },
+  { path: 'switchDemo', component:SwitchDemoComponent,data:{title:'switch'} },
   { path: 'selectDemo', component:SelectDemoComponent,data:{title:'select'} },
 
 

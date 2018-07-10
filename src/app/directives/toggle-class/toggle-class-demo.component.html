@@ -1,0 +1,48 @@
+<div class="pad-def bg-default bor-b-def">
+    <h2 class="no-margin">toggleClass<small class="font-xs text-disabled mar-l-xs">directive</small></h2>
+</div>
+<div class="wrapper-md">
+    <p class="h4 m-b-sm block text-primary">示例</p>
+    <div class="mar-b-sm pad-def bor-def bg-white">
+        <button type="button" class="btn btn-default" toggleClass="btn-primary">点我</button>
+        <button type="button" class="btn btn-default" toggleClass="btn-danger" [opt-revokable]="true">点这里</button>
+    </div>
+    <code-high-light maxHeight="500px" language="html" codeSrc="./assets/sources/text-max-length-demo/text-max-length-demo.component.html">
+    </code-high-light>
+    <div class="bg-white pad-def bor-def mar-b-sm">
+        <div>
+            <p>切换元素绑定的css类，当前支持点击切换，可关联另一个元素同步切换css类名。灵活使用该指令可实现多种效果。</p>
+            <table class="table table-bordered">
+                <thead>
+                    <th>参数</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>toggleClass</td>
+                        <td>string</td>
+                        <td>要切换的CSS类，多个类名以空格连接</td>
+                    </tr>
+                    <tr>
+                        <td>opt-target</td>
+                        <td>string</td>
+                        <td>关联元素的ID</td>
+                    </tr>
+                    <tr>
+                        <td>opt-targetClass</td>
+                        <td>string</td>
+                        <td>关联元素的随指令元素切换的CSS类，多个类名以空格连接</td>
+                    </tr>
+                    <tr>
+                        <td>opt-revokable</td>
+                        <td>boolean</td>
+                        <td>是否在点击其他地方时将css类重置</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <p class="h6 m-b-sm block text-primary">From: <span class="text-disabled">ToggleClassModule / ToggleClassDirective</span></p>
+
+</div>

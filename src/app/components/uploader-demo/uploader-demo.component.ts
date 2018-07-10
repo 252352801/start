@@ -9,6 +9,7 @@ export class UploaderDemoComponent {
 
   uploader:Uploader=new Uploader();
   tabIndex:number=1;
+  docIndex:number=0;
   constructor(){
 
     this.uploader.url='http://121.46.18.25:9080/oss/file/upload';
@@ -50,6 +51,10 @@ export class UploaderDemoComponent {
 
   changTab(index:number){
     this.tabIndex=index;
+  }
+
+  changeDoc(index:number){
+    this.docIndex=index;
   }
 
   isImg(uploadFile:UploadFile):boolean{

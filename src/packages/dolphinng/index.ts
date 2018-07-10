@@ -96,3 +96,4 @@ export * from './src/common/common.module';
 export * from './src/services/popup/popup.service';
 export * from './src/services/pop/pop.service';
 export * from './src/services/toaster/toaster.service';
+export * from './src/services/tracert/tracert.service';

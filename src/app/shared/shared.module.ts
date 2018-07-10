@@ -17,6 +17,8 @@ import {
   TextMaxLengthModule,
   CurrencyFormatModule,
   SelectModule,
+  SlideDownModule,
+  SwitchModule,
 } from 'dolphinng';
 import { CodeHighLightModule } from './components/code-high-light/code-high-light.module';
 @NgModule({
@@ -39,6 +41,8 @@ import { CodeHighLightModule } from './components/code-high-light/code-high-ligh
     TextMaxLengthModule,
     CurrencyFormatModule,
     SelectModule,
+    SlideDownModule,
+    SwitchModule,
   ],
   declarations: [
   ],
@@ -60,6 +64,8 @@ import { CodeHighLightModule } from './components/code-high-light/code-high-ligh
     TextMaxLengthModule,
     CurrencyFormatModule,
     SelectModule,
+    SlideDownModule,
+    SwitchModule,
     //local
   ]
 })

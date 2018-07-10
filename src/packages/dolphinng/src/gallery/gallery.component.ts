@@ -9,12 +9,15 @@ export class GalleryComponent implements OnInit, OnDestroy {
   @Input() data: any[] = [];//图片数据源
   @Input() dataProps: string[] = [];//表示图片地址的访问属性  如[a,b,c]表示.a.b.c
   @Input() size: any = '';//尺寸  xs md lg  默认全屏
-  @Output() change: EventEmitter<any> = new EventEmitter();
   @Input() title: string = '';//标题
   @Input() isAnimation: boolean = true;//是否有动画
   @Input() isHeader: boolean = false;//是否显示头部
   @Input() isToolsBar: boolean = false;//是否显示（底部）工具栏
   @Input() isBtnDownload: boolean = false;//是否显示下载按钮
+
+  @Output() change: EventEmitter<any> = new EventEmitter();//index change(将废弃)
+  @Output() onChange: EventEmitter<any> = new EventEmitter();//index change
+  @Output() onClose: EventEmitter<any> = new EventEmitter();//关闭
   @ViewChild('galleryBody') galleryBody: ElementRef;//组件内容区
   isFullScreen: boolean = false;//是否全屏
   images: {//格式化后的图片数据
@@ -521,6 +524,7 @@ export class GalleryComponent implements OnInit, OnDestroy {
       this.transition = '';
     }, this.transitionTime);
     this.removeEvents();
+    this.onClose.emit();
   }
 
   /**
@@ -575,6 +579,7 @@ export class GalleryComponent implements OnInit, OnDestroy {
   activate(index: number) {
     this.activeIndex = index;
     this.change.emit(this.activeIndex);
+    this.onChange.emit(this.activeIndex);
   }
 
   /**
