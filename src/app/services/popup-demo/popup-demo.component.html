@@ -35,75 +35,29 @@
         </div>
 
         <p id="method" class="h4  m-b-sm m-t-sm block text-primary">方法</p>
-
-        <table class="table table-bordered bg-white">
-            <thead class="bg-default">
-                <tr>
-                    <th>方法名</th>
-                    <th>参数</th>
-                    <th>参数类型</th>
-                    <th>说明</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><i>info</i></td>
-                    <td>...args</td>
-                    <td>不定参数</td>
-                    <td>
-                        消息提示。第一个字符串参数作为消息文字text，第二个字符串参数作为消息标题title，第一个json对象参数作为<a class="text-info">options</a>参数。
-                    </td>
-                </tr>
-                <tr>
-                    <td><i>error</i></td>
-                    <td>...args</td>
-                    <td>不定参数</td>
-                    <td>
-                        错误提示。第一个字符串参数作为消息文字text，第二个字符串参数作为消息标题title，第一个json对象参数作为<a class="text-info">options</a>参数。
-                    </td>
-                </tr>
-                <tr>
-                    <td><i>confirm</i></td>
-                    <td>...args</td>
-                    <td>不定参数</td>
-                    <td>
-                        确认提示。第一个字符串参数作为消息文字text，第二个字符串参数作为消息标题title，第一个json对象参数作为<a class="text-info">options</a>参数。
-                    </td>
-                </tr>
-                <tr>
-                    <td><i>onConfirm</i></td>
-                    <td>fn（必须）</td>
-                    <td>Function</td>
-                    <td>
-                        为弹出框添加“确认”回调，当传入的参数为非箭头函数时，该函数上下文（this）指向该PopService实例。
-                    </td>
-                </tr>
-                <tr>
-                    <td><i>onCancel</i></td>
-                    <td>fn（必须）</td>
-                    <td>Function</td>
-                    <td>
-                        为弹出框添加“取消”回调，当传入的参数为非箭头函数时，该函数上下文（this）指向该PopService实例。
-                    </td>
-                </tr>
-                <tr>
-                    <td><i>onClose</i></td>
-                    <td>fn（必须）</td>
-                    <td>Function</td>
-                    <td>
-                        为弹出框添加“关闭”(右上方关闭按钮点击后）回调，当传入的参数为非箭头函数时，该函数上下文（this）指向该PopService实例。
-                    </td>
-                </tr>
-                <tr>
-                    <td><i>close</i></td>
-                    <td>无</td>
-                    <td>-</td>
-                    <td>
-                        关闭提示框。
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <ul class="pad-def bg-white bor-def mar-b-sm">
+            <li>
+                <p><i class="bold">info</i><span class="text-disabled">(...args)</span> 消息提示。第一个字符串参数作为消息文字text，第二个字符串参数作为消息标题title，第一个json对象参数作为<a class="text-info">options</a>参数。</p>
+            </li>
+            <li>
+                <p><i class="bold">error</i><span class="text-disabled">(...args)</span> 错误提示。第一个字符串参数作为消息文字text，第二个字符串参数作为消息标题title，第一个json对象参数作为<a class="text-info">options</a>参数。</p>
+            </li>
+            <li>
+                <p><i class="bold">confirm</i><span class="text-disabled">(...args)</span> 确认提示。第一个字符串参数作为消息文字text，第二个字符串参数作为消息标题title，第一个json对象参数作为<a class="text-info">options</a>参数。</p>
+            </li>
+            <li>
+                <p><i class="bold">onConfirm</i><span class="text-disabled">(fn:Function)</span> 为弹出框添加“确认”回调，当传入的参数为非箭头函数时，该函数上下文（this）指向该PopupService实例。</p>
+            </li>
+            <li>
+                <p><i class="bold">onCancel</i><span class="text-disabled">(fn:Function)</span> 为弹出框添加“确认”回调，当传入的参数为非箭头函数时，该函数上下文（this）指向该PopService实例。</p>
+            </li>
+            <li>
+                <p><i class="bold">onClose</i><span class="text-disabled">(fn:Function)</span> 为弹出框添加“关闭”回调，当传入的参数为非箭头函数时，该函数上下文（this）指向该PopService实例。</p>
+            </li>
+            <li>
+                <p><i class="bold">close</i> 关闭提示框。</p>
+            </li>
+        </ul>
         <ul class="no-padding">
             <li class="no-li-style">
                 <p id="options" class="h4 text-primary m-b-sm m-t-sm block">options说明</p>

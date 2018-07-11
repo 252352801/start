@@ -33,7 +33,6 @@
         "rxjs": "^5.5.6",
         "zone.js": "^0.8.19",
         "intl": "^1.2.5",
-        "primeng": "^4.0.3",
         "tslib": "^1.7.1",
         "web-animations-js": "^2.3.1"
     },

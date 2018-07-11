@@ -3,5 +3,5 @@
     "lib": {
         "entryFile": "public_api.ts"
     },
-    "whitelistedNonPeerDependencies": ["angular", "core-js", "rxjs", "zone.js", "chart.js", "intl", "primeng", "tslib", "web-animations-js"]
+    "whitelistedNonPeerDependencies": ["angular", "core-js", "rxjs", "zone.js", "chart.js", "intl", "tslib", "web-animations-js"]
 }

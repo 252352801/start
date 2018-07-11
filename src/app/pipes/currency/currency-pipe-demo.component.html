@@ -1,0 +1,41 @@
+<div class="pad-def bg-default bor-b-def">
+    <h2 class="no-margin">currencyFormat<small class="font-xs text-disabled mar-l-xs">pipe</small></h2>
+</div>
+<div class="wrapper-md">
+    <p class="h4 m-b-sm block text-primary">示例</p>
+    <ul class="mar-b-sm bg-white pad-def bor-def">
+        <li class="mar-b-xs">
+            <b>例1：</b><span class="text-gold">{{123456789|currencyFormat}}</span>
+        </li>
+        <li class="mar-b-xs">
+            <b>例2：</b><span class="text-gold">{{123456789|currencyFormat:'xx 元'}}</span>
+        </li>
+        <li class="mar-b-xs">
+            <b>例3：</b><span class="text-gold">{{123456789|currencyFormat:'￥xx'}}</span>
+        </li>
+        <li class="mar-b-xs">
+            <b>例4：</b><span class="text-gold">{{123456789|currencyFormat:['xx 元',4]}}</span>
+        </li>
+        <li class="mar-b-xs">
+            <b>例5：</b><span class="text-gold">{{123456789|currencyFormat:['xx 元','-',0]}}</span>
+        </li>
+        <li class="mar-b-xs">
+            <b>例6：</b><span class="text-gold">{{123456789.1234567|currencyFormat:6}}</span>
+        </li>
+        <li class="mar-b-xs">
+            <b>例7：</b><span class="text-gold">{{123456789.1234567|currencyFormat:['￥xx',2,4]}}</span>
+        </li>
+    </ul>
+
+    <code-high-light maxHeight="500px" language="html" codeSrc="./assets/sources/currency-format-demo/currency-format-pipe-demo.component.html"></code-high-light>
+    <p class="h4 m-b-sm block text-primary">参数说明</p>
+    <div class="pad-def bg-white bor-def mar-b-sm">
+        <p>假设参数为<b>p</b>，格式化表达式为<b>f</b><span class="text-disabled">(字符串中“xx”表示格式化后的值，其余字符保留)</span>，精度为<b>d</b>，分隔符为<b>s</b>，每隔<b>l</b>作分隔。</p>
+        <div class="">
+            <p>若<b>p</b>为string类型，则<b>f</b>=<b>p</b>；</p>
+            <p>若<b>p</b>为number类型，则<b>d</b>=<b>p</b>；</p>
+            <p>若<b>p</b>为数组，则<b>p</b>中的第一个string类型的元素表示<b>f</b>，第二个string类型的元素表示<b>s</b>，第一个number类型的元素表示<b>d</b>，第二个number类型的元素表示<b>l</b>；</p>
+        </div>
+    </div>
+    <p class="h6 m-b-sm block text-primary">From:<span class="text-disabled">CurrencyFormatModule/CurrencyFormatPipe</span></p>
+</div>

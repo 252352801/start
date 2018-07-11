@@ -1,57 +1,64 @@
 <div class="pad-def bg-default bor-b-def">
-  <h2 class="no-margin">主题/皮肤</h2>
+    <h2 class="no-margin">主题/皮肤</h2>
 </div>
-<div class="wrapper-md bg-white">
-  <p class="h3 mar-b-sm">当前皮肤：{{themesSvc.skin||'默认'}}</p>
-  <div *ngIf="themesSvc.skin==='deep-blue'">
-    <ul>
-      <li>● 当前皮肤主按钮：<button type="button" class="btn btn-primary">btn btn-primary</button></li>
-      <li class="mar-b-xs">● 当前皮肤主要文字颜色：<span class="text-primary">text-primary</span></li>
-      <li>● 使用方法(共4个步骤，其中第1、2、3步为皮肤使用，第4、5步为项目首页顶部替换)：
-        <ul class="pad-l-lg mar-b-sm">
-          <li>1.将dolphinng组件包更新到最新版本。（项目根目录下运行npm install dolphinng@latest --save）</li>
-          <li>2.在项目根目录.angular-cli.json的styles字段字段引入皮肤的样式文件，路径为../node_modules/dolphinng/assests/styles/skins/deep-blue.less</li>
-          <li>3.根目录下src/index.html文件给body标签加上class="deep-blue"</li>
-          <li><p>4.将app/index/index.component.html文件代码替换为以下内容(特定内容自行替换)</p>
+<div class="wrapper-md bg-white" style="min-height:720px;">
+    <p class="h4 mar-b-sm">当前皮肤：{{themesSvc.skin||'默认'}}<span class="pad-l-sm h5 text-disabled">（你可以展开右边悬浮按钮，切换皮肤/主题进行预览）</span></p>
+    <ng-container *ngIf="themesSvc.skin">
+        <div *ngIf="themesSvc.skin==='deep-blue'">
+            <ul>
+                <li>● 当前皮肤主按钮：<button type="button" class="btn btn-primary">btn btn-primary</button></li>
+                <li class="mar-b-xs">● 当前皮肤主要文字颜色：<span class="text-primary">text-primary</span></li>
+                <li>● 使用方法(共4个步骤，其中第1、2、3步为皮肤使用，第4、5步为项目首页顶部替换)：
+                    <ul class="pad-l-lg mar-b-sm">
+                        <li>1.将dolphinng组件包更新到最新版本。（项目根目录下运行npm install dolphinng@latest --save）</li>
+                        <li>2.在项目根目录.angular-cli.json的styles字段字段引入皮肤的样式文件，路径为../node_modules/dolphinng/assests/styles/skins/deep-blue.less</li>
+                        <li>3.根目录下src/index.html文件给body标签加上class="deep-blue"</li>
+                        <li>
+                            <p>4.将app/index/index.component.html文件代码替换为以下内容(特定内容自行替换)</p>
+                            <div>
+                                <code-high-light maxHeight="500px" language="html" codeSrc="./assets/sources/themes/skins/deep-blue.html">
+                                </code-high-light>
+                            </div>
+                        </li>
+                        <li>
+                            <p>5.将app/index/index.component.css文件代码替换为以下内容</p>
+                            <div>
+                                <code-high-light maxHeight="500px" language="less" codeSrc="./assets/sources/themes/skins/deep-blue.less">
+                                </code-high-light>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div *ngIf="themesSvc.skin=='dol'">
+            当前皮肤下特殊按钮：
+            <button class="btn-def">btn-def</button>
+            <button class="btn-def btn-def-sm">btn-def-sm</button>
+            <button class="btn-def btn-def-xs">btn-def-xs</button>
+        </div>
+        <h4 class="text-primary">如何使用该皮肤？</h4>
+        <div *ngIf="themesSvc.skin=='black'">
+            将headler,header-left,header-right,aside-left的theme属性值设为"black"即可。
+        </div>
+        <div *ngIf="themesSvc.skin=='dol'">
+            <ul>
+                <li>1.给body标签添加对应皮肤的类名；</li>
+                <li>2.在项目根目录的.angular--cli.json文件中apps/styles里引用对应皮肤的css/less文件(其他css/less文件之后，全局样式文件style.less之前)。</li>
+            </ul>
             <div>
-                <code-high-light maxHeight="500px" language="html" codeSrc="./assets/sources/themes/skins/deep-blue.html" >
-                </code-high-light>
+                <h4 class="text-primary">下面是一个完整示例：</h4>
+                <ul>
+                    <li>
+                        <p>1.index.html</p>
+                        <img src="./assets/img/demo/theme_dol_index_body.png" />
+                    </li>
+                    <li>
+                        <p> 2.angular-cli.json</p>
+                        <img src="./assets/img/demo/theme_dol_angularcli_apps_styles.png" />
+                    </li>
+                </ul>
             </div>
-          </li>
-          <li>
-              <p>5.将app/index/index.component.css文件代码替换为以下内容</p>
-              <div>
-                  <code-high-light maxHeight="500px" language="less" codeSrc="./assets/sources/themes/skins/deep-blue.less" >
-                  </code-high-light>
-              </div>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  <p class="text-disabled">注：您可以展开右边悬浮按钮，切换皮肤/主题进行预览</p>
-  <div *ngIf="themesSvc.skin=='dol'">
-    当前皮肤下特殊按钮：
-    <button class="btn-def">btn-def</button>
-    <button class="btn-def btn-def-sm">btn-def-sm</button>
-    <button class="btn-def btn-def-xs">btn-def-xs</button>
-  </div>
-  <h3 class="text-primary">如何使用皮肤？</h3>
-  <ul>
-    <li>1.给body标签添加对应皮肤的类名；</li>
-    <li>2.在项目根目录的.angular--cli.json文件中apps/styles里引用对应皮肤的css/less文件(其他css/less文件之后，全局样式文件style.less之前)。</li>
-  </ul>
-  <div>
-    <h4 class="text-primary">下面是一个完整示例：</h4>
-    <ul>
-      <li>
-        <p>1.index.html</p>
-        <img src="./assets/img/demo/theme_dol_index_body.png" />
-      </li>
-      <li>
-        <p> 2.angular-cli.json</p>
-        <img src="./assets/img/demo/theme_dol_angularcli_apps_styles.png" />
-      </li>
-    </ul>
-  </div>
+        </div>
+    </ng-container>
 </div>

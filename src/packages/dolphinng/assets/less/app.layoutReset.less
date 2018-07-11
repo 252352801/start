@@ -349,8 +349,13 @@ select.form-control {
   display: none!important;
 }
 
-.app-aside-folded .nav-item-title {
-  display: block!important;
+.app-aside-folded  {
+  .nav-item-title{
+    display: block!important;
+  }
+  .nav-sub {
+    background-color: #fafafa;
+  }
 }
 
 @media (max-width: 768px) {
@@ -359,9 +364,6 @@ select.form-control {
   }
 }
 
-.nav-sub {
-  background-color: #fafafa;
-}
 .thirth-nav-item.active{
   color:#23b7e5;
 }
@@ -387,4 +389,8 @@ li.active{
       }
     }
   }
+}
+
+.app-aside .nav li a:hover,.thirth-nav-item:hover{
+  background-color: #f0f0f0;
 }

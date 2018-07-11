@@ -12,7 +12,18 @@
   font-family: @popFontFamily;
   z-index:99999 ;
   opacity: 0;
+}
+.pop-wrap.animate{
   transition:all 0.2s ease-in-out 0s;
+  .pop-main{
+    transition:all 0.2s ease-in-out 0s;
+  }
+}
+.pop-wrap.animate.ready{
+  opacity: 1;
+  .pop-main{
+    transform:scale(1);
+  }
 }
 .pop-main{
   width: 500px;
@@ -26,7 +37,6 @@
   max-width: 100%;
   margin: 100px auto;
   transform:scale(0.9);
-  transition:all 0.2s ease-in-out 0s;
 }
 .pop-header{
   line-height: 50px;
@@ -92,11 +102,5 @@
   color:#333;
   display: table-cell;
   vertical-align: middle;
-}
-.pop-wrap.animated{
-  opacity: 1;
-}
-.pop-wrap.animated .pop-main{
-  transform: scale(1);
 }
 

@@ -187,10 +187,13 @@ export interface PopupOptions {
       this.popWrap.appendChild(pop);
       if (this.animated) {
         setTimeout(() => {
-          this.popWrap.className = this.popWrap.className + ' animated';
-        }, 10);
-      } else {
-        this.popWrap.className = this.popWrap.className + ' animated';
+          this.popWrap.className = this.popWrap.className + ' animate';
+          setTimeout(() => {
+            this.popWrap.className = this.popWrap.className + ' ready';
+          },10);
+        },10);
+      }else{
+        this.popWrap.className = this.popWrap.className + ' ready';
       }
     }
   

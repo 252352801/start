@@ -18,6 +18,7 @@ export class ThemesService {
   skin: string='';
   themes = {
     asideLeft: '',//black(默认),cerulean-outline
+    header:'',//black(默认)
     headerLeft: '',//black(默认),cerulean
     headerRight: ''//black(默认),cerulean
   };
@@ -26,17 +27,6 @@ export class ThemesService {
     let themesService: ThemesService;
     try {
       themesService = JSON.parse(localThemesStr);
-      {//默认
-        console.log(themesService.skin);
-        if (!themesService.skin) {
-          //themesService.themes.asideLeft = 'black';
-          //themesService.themes.headerLeft = 'cerulean';
-          //themesService.themes.headerRight = 'cerulean';
-          themesService.themes.asideLeft = '';
-          themesService.themes.headerLeft = '';
-          themesService.themes.headerRight = '';
-        }
-      }
       if (themesService && typeof themesService === 'object') {
         themesService.skin && (this.skin = themesService.skin);
         if (themesService.themes) {
@@ -47,6 +37,7 @@ export class ThemesService {
           }
         }
       }
+      this.setSkin(themesService.skin||'');
     } catch (err) {
       console.log(err);
     }
@@ -74,6 +65,28 @@ export class ThemesService {
     if (this.skin) {
       addClass(document.body, this.skin);//添加类
     }
+    const val=this.skin;
+    if(val==='black'){
+      this.themes.header='black';//black
+      this.themes.headerLeft='black';//black
+      this.themes.headerRight='black';//black
+      this.themes.asideLeft='black';//black
+    }else if(val==='dol'){
+      this.themes.header='cerulean';
+      this.themes.headerLeft='';
+      this.themes.headerRight='';
+      this.themes.asideLeft='cerulean-outline';
+    }else if(val===''){
+      this.themes.header='black';
+      this.themes.headerLeft='';
+      this.themes.headerRight='';
+      this.themes.asideLeft='';
+    }else{
+      this.themes.header='';//black
+      this.themes.headerLeft='';//black
+      this.themes.headerRight='';//black
+      this.themes.asideLeft='';//black
+    }
   }
 
   clearSkin() {
@@ -82,6 +95,5 @@ export class ThemesService {
       removeClass(document.body, o.value);
     }
   }
-
 
 }

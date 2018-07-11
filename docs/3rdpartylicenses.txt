@@ -6,6 +6,14 @@ MIT
 MIT
 MIT
 
+@angular/forms@5.2.11
+MIT
+MIT
+
+@angular/router@5.2.11
+MIT
+MIT
+
 primeng@4.3.0
 MIT
 The MIT License (MIT)
@@ -77,18 +85,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-@angular/forms@5.2.11
-MIT
-MIT
-
-@angular/router@5.2.11
-MIT
-MIT
-
-@angular/http@5.2.11
-MIT
-MIT
-
 core-js@2.5.7
 MIT
 Copyright (c) 2014-2018 Denis Pushkarev
@@ -159,6 +155,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 @angular/platform-browser@5.2.11
+MIT
+MIT
+
+@angular/http@5.2.11
 MIT
 MIT
 

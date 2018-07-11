@@ -19,15 +19,6 @@ export class ThemesControllerComponent implements OnInit,OnChanges,OnDestroy {
   }
 
   ngOnInit() {
-    this.init();
-  }
-  ngOnChanges(changes: SimpleChanges) {
-
-  }
-  ngOnDestroy(){
-    window.removeEventListener('click',this.outClickHandler);
-  }
-  init() {
     this.outClickHandler=(ev)=>{
       this.visible=false;
     };
@@ -38,6 +29,12 @@ export class ThemesControllerComponent implements OnInit,OnChanges,OnDestroy {
       });
     }
   }
+  ngOnChanges(changes: SimpleChanges) {
+
+  }
+  ngOnDestroy(){
+    window.removeEventListener('click',this.outClickHandler);
+  }
   changeTab(index:number){
     this.tabIndex=index;
   }
@@ -47,23 +44,6 @@ export class ThemesControllerComponent implements OnInit,OnChanges,OnDestroy {
   }
 
   setSkin(val:string){
-    if(val) {
-      this.themesSvc.setSkin(val);
-    }else{
-      this.themesSvc.clearSkin();
-    }
-    if(val==='black'){
-      this.themesSvc.themes.headerLeft='black';//black
-      this.themesSvc.themes.headerRight='black';//black
-      this.themesSvc.themes.asideLeft='black';//black
-    }else if(val==='dol'){
-      this.themesSvc.themes.headerLeft='';
-      this.themesSvc.themes.headerRight='';
-      this.themesSvc.themes.asideLeft='cerulean-outline';
-    }else{
-      this.themesSvc.themes.headerLeft='';//black
-      this.themesSvc.themes.headerRight='';//black
-      this.themesSvc.themes.asideLeft='';//black
-    }
+    this.themesSvc.setSkin(val);
   }
 }
