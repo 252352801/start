@@ -80,77 +80,81 @@
         </div>
     </div>
     <p class="h4  m-b-sm m-t-sm block text-primary">方法</p>
-    <table class="table table-bordered bg-white">
-        <thead class="bg-default">
-            <tr>
-                <th>方法名</th>
-                <th>参数</th>
-                <th width="100px">参数类型</th>
-                <th>说明</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><i>pop</i></td>
-                <td>options</td>
-                <td>json对象</td>
-                <td>
-                    默认弹出消息，详细说明见下方。
-                </td>
-            </tr>
-            <tr>
-                <td><i>info、success、wait、warning、error</i></td>
-                <td>...args</td>
-                <td>不定参数</td>
-                <td>
-                    显示5种状态（默认消息，成功提示，等待，警告，错误）的提示消息。第一个字符串参数作为消息文字text，第二个字符串参数作为消息标题title。
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="over-auto">
+        <table class="table table-bordered bg-white">
+            <thead class="bg-default">
+                <tr>
+                    <th>方法名</th>
+                    <th>参数</th>
+                    <th width="100px">参数类型</th>
+                    <th width="200px">说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><i>pop</i></td>
+                    <td>options</td>
+                    <td>json对象</td>
+                    <td>
+                        默认弹出消息，详细说明见下方。
+                    </td>
+                </tr>
+                <tr>
+                    <td><i>info、success、wait、warning、error</i></td>
+                    <td>...args</td>
+                    <td>不定参数</td>
+                    <td width="200px">
+                        显示5种状态（默认消息，成功提示，等待，警告，错误）的提示消息。第一个字符串参数作为消息文字text，第二个字符串参数作为消息标题title。
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <p class="h5  m-b-sm m-t-sm block text-primary" id="options">options参数说明</p>
-    <table class="table table-bordered table-responsive bg-white">
-        <thead class="bg-default">
-            <tr>
-                <th>属性值</th>
-                <th>类型</th>
-                <th class="text-center">是否必须</th>
-                <th>说明</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>type</td>
-                <td>string</td>
-                <td class="text-center">否</td>
-                <td>弹出框的类型，默认为info,可选值：info、success、wait、warning、error</td>
-            </tr>
-            <tr>
-                <td>title</td>
-                <td>string</td>
-                <td class="text-center">否</td>
-                <td>消息框的标题</td>
-            </tr>
-            <tr>
-                <td>message</td>
-                <td>string</td>
-                <td class="text-center">是</td>
-                <td>消息框的正文</td>
-            </tr>
-            <tr>
-                <td>animated</td>
-                <td>boolean</td>
-                <td class="text-center">否</td>
-                <td>是否使用动画，默认为true</td>
-            </tr>
-            <tr>
-                <td>delay</td>
-                <td>number</td>
-                <td class="text-center">否</td>
-                <td>消息框持续时间，单位为毫秒，默认值5000，即5秒</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="over-auto">
+        <table class="table table-bordered table-responsive bg-white">
+            <thead class="bg-default">
+                <tr>
+                    <th>属性值</th>
+                    <th>类型</th>
+                    <th class="text-center">是否必须</th>
+                    <th>说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>type</td>
+                    <td>string</td>
+                    <td class="text-center">否</td>
+                    <td>弹出框的类型，默认为info,可选值：info、success、wait、warning、error</td>
+                </tr>
+                <tr>
+                    <td>title</td>
+                    <td>string</td>
+                    <td class="text-center">否</td>
+                    <td>消息框的标题</td>
+                </tr>
+                <tr>
+                    <td>message</td>
+                    <td>string</td>
+                    <td class="text-center">是</td>
+                    <td>消息框的正文</td>
+                </tr>
+                <tr>
+                    <td>animated</td>
+                    <td>boolean</td>
+                    <td class="text-center">否</td>
+                    <td>是否使用动画，默认为true</td>
+                </tr>
+                <tr>
+                    <td>delay</td>
+                    <td>number</td>
+                    <td class="text-center">否</td>
+                    <td>消息框持续时间，单位为毫秒，默认值5000，即5秒</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 <div class="pad-def">
 </div>

@@ -15,6 +15,9 @@ export class AppComponent {
   ){
     this.subscribeRouterChange();
   }
+  /**
+   * 订阅路由变化
+   */
   private subscribeRouterChange() {
     this.router.events
       .filter(event => event instanceof NavigationEnd)

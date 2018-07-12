@@ -14,95 +14,99 @@
     </form>
     <code-high-light maxHeight="500px" language="html" codeSrc="./assets/sources/switch-demo/switch-demo.component.html"></code-high-light>
     <p class="h4 m-b-sm block text-primary">@Input</p>
-    <table class="table table-bordered bg-white">
-        <thead class="bg-default">
-            <tr>
-                <th>属性名</th>
-                <th>类型</th>
-                <th>说明</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>value</td>
-                <td>boolean</td>
-                <td>
-                    输入值。默认false。
-                </td>
-            </tr>
-            <tr>
-                <td>size</td>
-                <td>string</td>
-                <td>
-                    组件尺寸。默认md,可选：lg、md、sm。
-                </td>
-            </tr>
-            <tr>
-                <td>disabled</td>
-                <td>any </td>
-                <td>
-                    绑定在组件内input元素上disabled属性的值。
-                </td>
-            </tr>
-            <tr>
-                <td>type</td>
-                <td>string</td>
-                <td>
-                    （背景）类型，默认为info ，可选 primary、success、danger、warning、info。
-                </td>
-            </tr>
-            <tr>
-                <td>styleClass</td>
-                <td>string</td>
-                <td>
-                    绑定在组件内最外层元素上的css类。
-                </td>
-            </tr>
-            <tr>
-                <td>auto</td>
-                <td>boolean</td>
-                <td>
-                    是否点击后切换，默认为true。
-                </td>
-            </tr>
-            <tr>
-                <td>name</td>
-                <td>string</td>
-                <td>
-                    绑定在组件内input元素上name属性的值。
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="over-auto">
+        <table class="table table-bordered bg-white">
+            <thead class="bg-default">
+                <tr>
+                    <th>属性名</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>value</td>
+                    <td>boolean</td>
+                    <td>
+                        输入值。默认false。
+                    </td>
+                </tr>
+                <tr>
+                    <td>size</td>
+                    <td>string</td>
+                    <td>
+                        组件尺寸。默认md,可选：lg、md、sm。
+                    </td>
+                </tr>
+                <tr>
+                    <td>disabled</td>
+                    <td>any </td>
+                    <td>
+                        绑定在组件内input元素上disabled属性的值。
+                    </td>
+                </tr>
+                <tr>
+                    <td>type</td>
+                    <td>string</td>
+                    <td>
+                        （背景）类型，默认为info ，可选 primary、success、danger、warning、info。
+                    </td>
+                </tr>
+                <tr>
+                    <td>styleClass</td>
+                    <td>string</td>
+                    <td>
+                        绑定在组件内最外层元素上的css类。
+                    </td>
+                </tr>
+                <tr>
+                    <td>auto</td>
+                    <td>boolean</td>
+                    <td>
+                        是否点击后切换，默认为true。
+                    </td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>string</td>
+                    <td>
+                        绑定在组件内input元素上name属性的值。
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <p class="h4 m-b-sm block text-primary">@Output</p>
-    <table class="table table-bordered bg-white">
-        <thead class="bg-default">
-            <tr>
-                <th>属性名</th>
-                <th>类型</th>
-                <th>说明</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>valueChange</td>
-                <td>EventEmitter
-                    < any>
-                </td>
-                <td>
-                    输入值改变事件，触发时传入参数为value的值。
-                </td>
-            </tr>
-            <tr>
-                <td>action</td>
-                <td>EventEmitter
-                    < any>
-                </td>
-                <td>
-                    auto不为真时点击触发的动作，传入参数为value。
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="over-auto">
+        <table class="table table-bordered bg-white">
+            <thead class="bg-default">
+                <tr>
+                    <th>属性名</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>valueChange</td>
+                    <td>EventEmitter
+                        < any>
+                    </td>
+                    <td>
+                        输入值改变事件，触发时传入参数为value的值。
+                    </td>
+                </tr>
+                <tr>
+                    <td>action</td>
+                    <td>EventEmitter
+                        < any>
+                    </td>
+                    <td>
+                        auto不为真时点击触发的动作，传入参数为value。
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <p class="h6 m-b-sm block text-primary">From:<span class="text-disabled">SwitchModule/SwitchComponent</span></p>
 </div>

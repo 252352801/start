@@ -5,14 +5,14 @@
 </div>
 <div class="wrapper-md">
     <p class="h4 m-b-sm block text-primary">示例</p>
-    <div class="mar-b-sm">
-        <button class="btn btn-info" (click)="gallery.open('./assets/img/c3.jpg')">打开一张图片</button>
-        <button class="btn btn-info" (click)="gallery.open(2,$event)">从点击处打开第三张图片</button>
-        <button class="btn btn-info" (click)="gallery.open(3)">打开第4张图片</button>
-        <button class="btn btn-info" (click)="gallery.open($event)">从点击处打开一组图片</button>
-        <button class="btn btn-info" (click)="gallery.open()">打开一组图片</button>
+    <div>
+        <button class="btn btn-info mar-b-sm" (click)="gallery.open('./assets/img/c3.jpg')">打开一张图片</button>
+        <button class="btn btn-info mar-b-sm" (click)="gallery.open(2,$event)">从点击处打开第三张图片</button>
+        <button class="btn btn-info mar-b-sm" (click)="gallery.open(3)">打开第4张图片</button>
+        <button class="btn btn-info mar-b-sm" (click)="gallery.open($event)">从点击处打开一组图片</button>
+        <button class="btn btn-info mar-b-sm" (click)="gallery.open()">打开一组图片</button>
     </div>
-    <div class="mar-t-def">
+    <div>
         <a class="img-wrap" *ngFor="let img of galleryImages;let i=index" (click)="gallery.open($event,i)">
             <img [src]="img.a.b" />
         </a>
@@ -38,126 +38,132 @@
         </div>
     </div>
     <p class="h4 m-b-sm block text-primary">@Input</p>
-    <table class="table table-bordered bg-white">
-        <thead class="bg-default">
-            <tr>
-                <th>属性名</th>
-                <th>类型</th>
-                <th>说明</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>data</td>
-                <td>any[]</td>
-                <td>
-                    包含图片地址的数据。
-                </td>
-            </tr>
-            <tr>
-                <td>dataProps</td>
-                <td>string[] </td>
-                <td>
-                    &#100;&#97;&#116;&#97;&#20803;&#32032;&#35775;&#38382;&#22270;&#29255;&#22320;&#22336;&#30340;&#107;&#101;&#121;&#12290;&#22914;&#100;&#97;&#116;&#97;&#61;&#91;&#123;&#97;&#58;&#123;&#98;&#58;&#123;&#99;&#58;&#22270;&#29255;&#22320;&#22336;&#125;&#125;&#125;&#93;&#65292;&#100;&#97;&#116;&#97;&#80;&#114;&#111;&#112;&#115;&#24212;&#20026;&#91;&#39;&#97;&#39;&#44;&#39;&#98;&#39;&#44;&#39;&#99;&#39;&#93;
-                </td>
-            </tr>
-            <tr>
-                <td>size</td>
-                <td>string</td>
-                <td>
-                    组件尺寸。默认全屏，可选lg、md、sm、xs
-                </td>
-            </tr>
-            <tr>
-                <td>title</td>
-                <td>string</td>
-                <td>
-                    标题
-                </td>
-            </tr>
-            <tr>
-                <td>isAnimation</td>
-                <td>string|boolean</td>
-                <td>
-                    是否有过渡动画。默认为true
-                </td>
-            </tr>
-            <tr>
-                <td>isHeader</td>
-                <td>string|boolean</td>
-                <td>
-                    是否显示头部。默认为false
-                </td>
-            </tr>
-            <tr>
-                <td>isToolsBar</td>
-                <td>string|boolean</td>
-                <td>
-                    是否显示工具栏。默认为false
-                </td>
-            </tr>
-            <tr>
-                <td>isBtnDownload</td>
-                <td>string|boolean</td>
-                <td>
-                    是否显示工具栏的下载按钮(不显示工具栏时该值无效)。默认为false
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="over-auto">
+        <table class="table table-bordered bg-white">
+            <thead class="bg-default">
+                <tr>
+                    <th>属性名</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>data</td>
+                    <td>any[]</td>
+                    <td>
+                        包含图片地址的数据。
+                    </td>
+                </tr>
+                <tr>
+                    <td>dataProps</td>
+                    <td>string[] </td>
+                    <td>
+                        &#100;&#97;&#116;&#97;&#20803;&#32032;&#35775;&#38382;&#22270;&#29255;&#22320;&#22336;&#30340;&#107;&#101;&#121;&#12290;&#22914;&#100;&#97;&#116;&#97;&#61;&#91;&#123;&#97;&#58;&#123;&#98;&#58;&#123;&#99;&#58;&#22270;&#29255;&#22320;&#22336;&#125;&#125;&#125;&#93;&#65292;&#100;&#97;&#116;&#97;&#80;&#114;&#111;&#112;&#115;&#24212;&#20026;&#91;&#39;&#97;&#39;&#44;&#39;&#98;&#39;&#44;&#39;&#99;&#39;&#93;
+                    </td>
+                </tr>
+                <tr>
+                    <td>size</td>
+                    <td>string</td>
+                    <td>
+                        组件尺寸。默认全屏，可选lg、md、sm、xs
+                    </td>
+                </tr>
+                <tr>
+                    <td>title</td>
+                    <td>string</td>
+                    <td>
+                        标题
+                    </td>
+                </tr>
+                <tr>
+                    <td>isAnimation</td>
+                    <td>string|boolean</td>
+                    <td>
+                        是否有过渡动画。默认为true
+                    </td>
+                </tr>
+                <tr>
+                    <td>isHeader</td>
+                    <td>string|boolean</td>
+                    <td>
+                        是否显示头部。默认为false
+                    </td>
+                </tr>
+                <tr>
+                    <td>isToolsBar</td>
+                    <td>string|boolean</td>
+                    <td>
+                        是否显示工具栏。默认为false
+                    </td>
+                </tr>
+                <tr>
+                    <td>isBtnDownload</td>
+                    <td>string|boolean</td>
+                    <td>
+                        是否显示工具栏的下载按钮(不显示工具栏时该值无效)。默认为false
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <p class="h4 m-b-sm block text-primary">@Input</p>
-    <table class="table table-bordered bg-white">
-        <thead class="bg-default">
-            <tr>
-                <th>属性名</th>
-                <th>类型</th>
-                <th>说明</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>onChange</td>
-                <td>EventEmitter
-                    < number>
-                </td>
-                <td>
-                    图片切换时（number为图片index）。
-                </td>
-            </tr>
-            <tr>
-                <td>onClose</td>
-                <td>EventEmitter
-                    < any>
-                </td>
-                <td>
-                    关闭时
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="over-auto">
+        <table class="table table-bordered bg-white">
+            <thead class="bg-default">
+                <tr>
+                    <th>属性名</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>onChange</td>
+                    <td>EventEmitter
+                        < number>
+                    </td>
+                    <td>
+                        图片切换时（number为图片index）。
+                    </td>
+                </tr>
+                <tr>
+                    <td>onClose</td>
+                    <td>EventEmitter
+                        < any>
+                    </td>
+                    <td>
+                        关闭时
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <p class="h4 m-b-sm block text-primary">方法</p>
-    <p><i class="pad-r-xs">open</i> 打开gallery</p>
-    <table class="table table-bordered bg-white">
-        <thead class="bg-default">
-            <tr>
-                <th>参数</th>
-                <th>说明</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>...args</td>
-                <td>
-                    <p>打开。参数长度和顺序不定。传入的：</p>
-                    <p>第一个Event参数（模版中$event）作为触发事件；</p>
-                    <p>第一个字符串作为单张图片地址，第二个以及第二个之后的字符串作为标题title；</p>
-                    <p>第一个数字类型的参数作为浏览多张图片时当前查看图片的index；</p>
-                    <p>第一个数组作为data，第二个数组作为dataProps。</p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <p><i class="pad-r-xs">close</i> 关闭gallery</p>
+    <p><i class="pad-r-xs bold">open</i> 打开gallery</p>
+    <div class="over-auto">
+        <table class="table table-bordered bg-white">
+            <thead class="bg-default">
+                <tr>
+                    <th>参数</th>
+                    <th>说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>...args</td>
+                    <td>
+                        <p>打开。参数长度和顺序不定。传入的：</p>
+                        <p>第一个Event参数（模版中$event）作为触发事件；</p>
+                        <p>第一个字符串作为单张图片地址，第二个以及第二个之后的字符串作为标题title；</p>
+                        <p>第一个数字类型的参数作为浏览多张图片时当前查看图片的index；</p>
+                        <p>第一个数组作为data，第二个数组作为dataProps。</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><i class="pad-r-xs bold">close</i> 关闭gallery</p>
     <p class="h6 m-b-sm block text-primary">From:<span class="text-disabled">GalleryModule/GalleryComponent</span></p>
 </div>
 <gallery #gallery [data]="galleryImages" [dataProps]="['a','b']"></gallery>

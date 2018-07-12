@@ -12,7 +12,7 @@ const routes: Routes = [
         { path: 'components', loadChildren: './components/components.module#ComponentsModule',data:{title:'组件'} },
         { path: 'directives', loadChildren: './directives/directives.module#DirectivesModule',data:{title:'指令'} },
         { path: 'pipes', loadChildren: './pipes/pipes.module#PipesModule',data:{title:'管道'} },
-        { path: 'UIKits', loadChildren: './UIKits/UIKits.module#UIKitsModule',data:{title:'UIKits'}},
+        { path: 'UIKits', loadChildren: './uikits/uikits.module#UIKitsModule',data:{title:'UIKits'}},
         { path: 'form', loadChildren: './form/form.module#FormModule',data:{title:'表单'}},
         { path: 'themes', loadChildren: './themes/themes.module#ThemesModule',data:{title:'主题'}},
         { path: 'charts', loadChildren: './charts/charts.module#ChartsModule',data:{title:'图表'}}

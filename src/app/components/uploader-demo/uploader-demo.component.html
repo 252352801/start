@@ -134,27 +134,27 @@
                         <td>
                             <div>
                                 <p><i class="bold pad-r-xs">setSuccess</i>设置上传成功</p>
-                                <pre class="pad-l-def">
-                                    <p>该方法会将</p>
-                                </pre>
+                                <div class="alert">
+                                    <p>该方法会将success设置为true,error设置为false</p>
+                                </div>
                             </div>
                             <div>
                                 <p><i class="bold pad-r-xs">setError</i>设置上传失败</p>
-                                <pre class="pad-l-def">
-                                    <p>该方法会将</p>
-                                </pre>
+                                <div class="alert">
+                                    <p>该方法会将success设置为false,error设置为true</p>
+                                </div>
                             </div>
                             <div>
                                 <p><i class="bold pad-r-xs">getFile</i><span class="text-disabled pad-r-xs">(type?:number)</span>获取(要提交)的文件</p>
-                                <pre class="pad-l-def">
-                                        <p>type  0:Filed/Blob对象 1:Base64数据</p>
-                                    </pre>
+                                <div class="alert">
+                                    <p>type 0:Filed/Blob对象 1:Base64数据</p>
+                                </div>
                             </div>
                             <div>
                                 <p><i class="bold pad-r-xs">addSubmitData</i><span class="text-disabled pad-r-xs" [innerHtml]="'(data:{name:string;value:any})'"></span>添加每个文件上传时附带的数据</p>
-                                <pre class="pad-l-def">
+                                <div class="alert">
                                     <p>上传文件时，会将data一起提交到上传接口</p>
-                                </pre>
+                                </div>
                             </div>
                         </td>
                     </tr>
@@ -197,63 +197,63 @@
                             </div>
                             <div>
                                 <p><i class="bold">onSelect</i><span class="text-disabled pad-r-xs">(fn)</span>添加“选择文件后”的处理函数</p>
-                                <pre class="pad-l-def">
+                                <div class="alert">
                                     <p>fn方法的参数为选择的文件files</p>
-                                </pre>
+                                </div>
                             </div>
                             <div>
                                 <p><i class="bold">onQueue</i><span class="text-disabled pad-r-xs">(fn)</span>添加“单个文件入列”的处理函数</p>
-                                <pre class="pad-l-def">
-                                        <p>fn方法的参数为一个uploadFile实例</p>
-                                </pre>
+                                <div class="alert">
+                                    <p>fn方法的参数为一个uploadFile实例</p>
+                                </div>
                             </div>
                             <div>
                                 <p><i class="bold">onQueueAll</i><span class="text-disabled pad-r-xs">(fn)</span>添加“全部文件入列”的处理函数</p>
-                                <pre class="pad-l-def">
+                                <div class="alert">
                                     <p>fn方法的参数为一个队列里的UploadFile实例(UploadFile[])</p>
-                                </pre>
+                                </div>
                             </div>
                             <div>
                                 <p><i class="bold">onUpload</i><span class="text-disabled pad-r-xs">(fn)</span>添加“上传”的处理函数</p>
-                                <pre class="pad-l-def">
+                                <div class="alert">
                                     <p>fn方法的参数为当前Uploader实例</p>
-                                </pre>
+                                </div>
                             </div>
                             <div>
                                 <p><i class="bold">onProgress</i><span class="text-disabled pad-r-xs">(fn)</span>添加“上传进度改变时”的处理函数</p>
-                                <pre class="pad-l-def">
+                                <div class="alert">
                                     <p>fn方法的参数percent（百分比）,uploadFile（当前UploadFile）,uploader（当前Uploader）,index（当前文件在queue里的index）</p>
-                                </pre>
+                                </div>
                             </div>
                             <div>
                                 <p><i class="bold">onSuccess</i><span class="text-disabled pad-r-xs">(fn)</span>添加“单个文件上传成功”的处理函数</p>
-                                <pre class="pad-l-def">
+                                <div class="alert">
                                     <p>fn方法的参数uploadFile（当前UploadFile）,uploader（当前Uploader）,index（当前文件在queue里的index）</p>
-                                </pre>
+                                </div>
                             </div>
                             <div>
                                 <p><i class="bold">onError</i><span class="text-disabled pad-r-xs">(fn)</span>添加“单个文件上传失败”的处理函数</p>
-                                <pre class="pad-l-def">
+                                <div class="alert">
                                     <p>fn方法的参数uploadFile（当前UploadFile）,uploader（当前Uploader）,index（当前文件在queue里的index）</p>
-                                </pre>
+                                </div>
                             </div>
                             <div>
                                 <p><i class="bold">onComplete</i><span class="text-disabled pad-r-xs">(fn)</span>添加“上传完成”的处理函数</p>
-                                <pre class="pad-l-def">
+                                <div class="alert">
                                     <p>fn方法的参数uploader（当前Uploader）</p>
-                                </pre>
+                                </div>
                             </div>
                             <div>
                                 <p><i class="bold">onOverSize</i><span class="text-disabled pad-r-xs">(fn)</span>添加“单个文件超过大小”的处理函数</p>
-                                <pre class="pad-l-def">
+                                <div class="alert">
                                     <p>fn方法的参数fileSize（当前文件大小），maxSize（允许的最大文件大小），uploadFile（当前UploadFile实例）</p>
-                                </pre>
+                                </div>
                             </div>
                             <div>
                                 <p><i class="bold">onOverLength</i><span class="text-disabled pad-r-xs">(fn)</span>添加“超过允许的数量”的处理函数</p>
-                                <pre class="pad-l-def">
+                                <div class="alert">
                                     <p>fn方法的参数length（选择的文件数量），maxLength（允许的最大数量）</p>
-                                </pre>
+                                </div>
                             </div>
                         </td>
                     </tr>

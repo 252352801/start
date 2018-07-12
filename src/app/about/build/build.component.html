@@ -1,42 +1,42 @@
 <div class="pad-def bg-default bor-b-def">
-  <h2 class="no-margin">项目构建说明</h2>
+    <h2 class="no-margin">项目构建说明</h2>
 </div>
 <div class="wrapper-md">
-  <p class="h4 mar-b-sm block text-primary">开发环境</p>
-  <ul>
-    <li class="mar-b-xs">
-      <b>1.本项目通过angular/cli  构建；</b>
-    </li>
-    <li class="mar-b-xs">
-      <b>2.angular/cli依赖node.js环境；</b>
-    </li>
-    <li class="mar-b-xs">
-      <b>3.完整项目的开发需要在全局安装node.js、npm、angular/cli；</b>
-    </li>
-    <li class="mar-b-xs">
-      <b> 4.vscode、webstorm、sublime Text等，根据个人习惯选择。</b>
-    </li>
-  </ul>
-  <p class="mar-b-def">
-    <b>angular、angular/cli的使用参阅</b>
-    <a class="text-info" href="https://angular.cn" target="_blank">https://angular.cn/</a>
-  </p>
-  <p class="h4 mar-b-sm block text-primary">打包部署可能会遇到的问题</p>
-  <ul >
-    <li>
-      <p><b>1.刷新导致页面404错误</b></p>
-      <div>
-        <p>原因：地址栏url是前端路由的地址，而后台服务（前端server）没有配置相应的路由。</p>
-        <p>解决方法：后台服务配置一条路由：在接收到路由请求时返回index.html文件，这样就可以将路由交给前端js处理。</p>
-      </div>
-    </li>
-    <li>
-      <p><b>2.ajax请求跨域</b></p>
-      <div>
-        <p>原因：浏览器同源策略，接口项目和网站项目部署在不同域名/端口时，它们属于不同的“域”。</p>
-        <p>解决方法1：使用浏览器的CORS(跨域资源共享，ie10+及主流浏览器支持)，api服务设置相应的CORS响应头；</p>
-        <p>解决方法2：使用代理。即绕过浏览器的同源策略的限制，将请求发送到同域的服务，再由该服务将请求转发到真正的接口服务，并将结果返回。（可使用nginx反向代理快速实现）。</p>
-      </div>
-    </li>
-  </ul>
+    <p class="h4 mar-b-sm block text-primary">开发环境</p>
+    <ul class="pad-l-def">
+        <li class="mar-b-xs">
+            <b>1.本项目通过angular/cli  构建；</b>
+        </li>
+        <li class="mar-b-xs">
+            <b>2.angular/cli依赖node.js环境；</b>
+        </li>
+        <li class="mar-b-xs">
+            <b>3.完整项目的开发需要在全局安装node.js、angular/cli；</b>
+        </li>
+        <li class="mar-b-xs">
+            <b> 4.vscode、webstorm、sublime Text等，根据个人习惯选择。</b>
+        </li>
+    </ul>
+    <p class="mar-b-def pad-l-def">
+        <b>angular、angular/cli的使用参阅</b>
+        <a class="text-info" href="https://angular.cn" target="_blank">https://angular.cn/</a>
+    </p>
+    <p class="h4 mar-b-sm block text-primary">打包部署可能会遇到的问题</p>
+    <ul class="pad-l-def">
+        <li>
+            <p><b>1.刷新导致页面404错误</b></p>
+            <div>
+                <p>原因：地址栏url是前端路由的地址，而后台服务（前端server）没有配置相应的路由。</p>
+                <p>解决方法：后台服务配置一条路由：在接收到路由请求时返回index.html文件，这样就可以将路由交给前端js处理。</p>
+            </div>
+        </li>
+        <li>
+            <p><b>2.ajax请求跨域</b></p>
+            <div>
+                <p>原因：浏览器同源策略，接口项目和网站项目部署在不同域名/端口时，它们属于不同的“域”。</p>
+                <p>解决方法1：使用浏览器的CORS(跨域资源共享，ie10+及主流浏览器支持)，api服务设置相应的CORS响应头；</p>
+                <p>解决方法2：使用代理。即绕过浏览器的同源策略的限制，将请求发送到同域的服务，再由该服务将请求转发到真正的接口服务，并将结果返回。（可使用nginx反向代理快速实现）。</p>
+            </div>
+        </li>
+    </ul>
 </div>

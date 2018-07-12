@@ -1,5 +1,5 @@
 import { Routes, RouterModule } from '@angular/router';
-import { UIKitsComponent } from './UIKits.component';
+import { UIKitsComponent } from './uikits.component';
 import { IconFontsComponent } from './iconfonts/iconfonts.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { GridComponent }   from './grid/grid.component';

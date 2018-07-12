@@ -14,93 +14,97 @@
     </form>
     <code-high-light maxHeight="500px" language="html" codeSrc="./assets/sources/checkbox-demo/checkbox-demo.component.html"></code-high-light>
     <p class="h4 m-b-sm block text-primary">@Input</p>
-    <table class="table table-bordered bg-white">
-        <thead class="bg-default">
-            <tr>
-                <th>属性名</th>
-                <th>类型</th>
-                <th>说明</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>value</td>
-                <td>boolean</td>
-                <td>
-                    输入值。默认false。
-                </td>
-            </tr>
-            <tr>
-                <td>size</td>
-                <td>string</td>
-                <td>
-                    组件尺寸。默认md,可选：lg、md、sm。
-                </td>
-            </tr>
-            <tr>
-                <td>display</td>
-                <td>string </td>
-                <td>
-                    显示方式。默认为行内，可选block（块级）
-                </td>
-            </tr>
-            <tr>
-                <td>disabled</td>
-                <td>any </td>
-                <td>
-                    绑定在组件内input元素上disabled属性的值。
-                </td>
-            </tr>
-            <tr>
-                <td>innerStyle</td>
-                <td>string</td>
-                <td>
-                    框内的样式，默认为正方形 ，可选 checked。
-                </td>
-            </tr>
-            <tr>
-                <td>customBackground</td>
-                <td>string</td>
-                <td>
-                    勾选时的背景，值为颜色值，如rgba(0,0,0,1)、#000000。
-                </td>
-            </tr>
-            <tr>
-                <td>styleClass</td>
-                <td>string</td>
-                <td>
-                    绑定在组件内最外层元素上的css类。
-                </td>
-            </tr>
-            <tr>
-                <td>name</td>
-                <td>string</td>
-                <td>
-                    绑定在组件内input元素上name属性的值。
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="over-auto">
+        <table class="table table-bordered bg-white">
+            <thead class="bg-default">
+                <tr>
+                    <th>属性名</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>value</td>
+                    <td>boolean</td>
+                    <td>
+                        输入值。默认false。
+                    </td>
+                </tr>
+                <tr>
+                    <td>size</td>
+                    <td>string</td>
+                    <td>
+                        组件尺寸。默认md,可选：lg、md、sm。
+                    </td>
+                </tr>
+                <tr>
+                    <td>display</td>
+                    <td>string </td>
+                    <td>
+                        显示方式。默认为行内，可选block（块级）
+                    </td>
+                </tr>
+                <tr>
+                    <td>disabled</td>
+                    <td>any </td>
+                    <td>
+                        绑定在组件内input元素上disabled属性的值。
+                    </td>
+                </tr>
+                <tr>
+                    <td>innerStyle</td>
+                    <td>string</td>
+                    <td>
+                        框内的样式，默认为正方形 ，可选 checked。
+                    </td>
+                </tr>
+                <tr>
+                    <td>customBackground</td>
+                    <td>string</td>
+                    <td>
+                        勾选时的背景，值为颜色值，如rgba(0,0,0,1)、#000000。
+                    </td>
+                </tr>
+                <tr>
+                    <td>styleClass</td>
+                    <td>string</td>
+                    <td>
+                        绑定在组件内最外层元素上的css类。
+                    </td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>string</td>
+                    <td>
+                        绑定在组件内input元素上name属性的值。
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <p class="h4 m-b-sm block text-primary">@Output</p>
-    <table class="table table-bordered bg-white">
-        <thead class="bg-default">
-            <tr>
-                <th>属性名</th>
-                <th>类型</th>
-                <th>说明</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>valueChange</td>
-                <td>
-                    <span [innerHtml]="'EventEmitter< any >'"></span>
-                </td>
-                <td>
-                    输入值改变事件，触发时传入参数为value的值。
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="over-auto">
+        <table class="table table-bordered bg-white">
+            <thead class="bg-default">
+                <tr>
+                    <th>属性名</th>
+                    <th>类型</th>
+                    <th>说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>valueChange</td>
+                    <td>
+                        <span [innerHtml]="'EventEmitter< any >'"></span>
+                    </td>
+                    <td>
+                        输入值改变事件，触发时传入参数为value的值。
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <p class="h6 m-b-sm block text-primary">From:<span class="text-disabled">CheckboxModule/CheckboxComponent</span></p>
 </div>
