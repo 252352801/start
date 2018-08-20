@@ -1,4 +1,4 @@
-import { Component, NgModule, Input, Output, ElementRef, EventEmitter, ViewChild, ContentChild, ViewContainerRef, ComponentFactoryResolver, ContentChildren, Directive, Pipe } from '@angular/core';
+import { Component, NgModule, Input, Output, ElementRef, EventEmitter, ViewChild, ContentChild, ViewContainerRef, ComponentFactoryResolver, ContentChildren, Directive, Pipe, Injectable } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, ActivatedRoute, NavigationEnd, RouterModule } from '@angular/router';
@@ -368,12 +368,14 @@ class GalleryComponent {
         this.data = [];
         this.dataProps = [];
         this.size = '';
-        this.change = new EventEmitter();
         this.title = '';
         this.isAnimation = true;
         this.isHeader = false;
         this.isToolsBar = false;
         this.isBtnDownload = false;
+        this.change = new EventEmitter();
+        this.onChange = new EventEmitter();
+        this.onClose = new EventEmitter();
         this.isFullScreen = false;
         this.images = [];
         this.render = false;
@@ -897,6 +899,7 @@ class GalleryComponent {
             this.transition = '';
         }, this.transitionTime);
         this.removeEvents();
+        this.onClose.emit();
     }
     /**
      * 全屏切换
@@ -950,6 +953,7 @@ class GalleryComponent {
     activate(index) {
         this.activeIndex = index;
         this.change.emit(this.activeIndex);
+        this.onChange.emit(this.activeIndex);
     }
     /**
      * 获取鼠标位置
@@ -1128,12 +1132,14 @@ GalleryComponent.propDecorators = {
     "data": [{ type: Input },],
     "dataProps": [{ type: Input },],
     "size": [{ type: Input },],
-    "change": [{ type: Output },],
     "title": [{ type: Input },],
     "isAnimation": [{ type: Input },],
     "isHeader": [{ type: Input },],
     "isToolsBar": [{ type: Input },],
     "isBtnDownload": [{ type: Input },],
+    "change": [{ type: Output },],
+    "onChange": [{ type: Output },],
+    "onClose": [{ type: Output },],
     "galleryBody": [{ type: ViewChild, args: ['galleryBody',] },],
 };
 
@@ -4476,7 +4482,7 @@ AreaPickerDirective.decorators = [
     { type: Component, args: [{
                 selector: '[areaPicker]',
                 template: '',
-                styles: [`/deep/ .areaPicker{position:absolute;min-height:120px;max-width:360px;border:1px solid #aaa;background-color:#fff;font-size:14px;opacity:0}/deep/ .areaPicker .areaPicker-header{height:32px;width:100%;position:relative;left:0;top:0;border-bottom:1px solid #aaa;background-color:#f5f5f5}/deep/ .areaPicker .areaPicker-header:after{content:'';clear:both;display:block}/deep/ .areaPicker .areaPicker-body{padding:12px;max-height:150px;overflow-y:auto}/deep/ .areaPicker .areaPicker-body:after{content:'';clear:both;display:block}/deep/ .areaPicker .areaPicker-header-item{line-height:31px;text-align:center;padding:0 12px;float:left;border-right:1px solid #aaa;cursor:pointer;color:#666}/deep/ .areaPicker .areaPicker-header-item.active{border-bottom:1px solid #fff;margin-bottom:-1px;background-color:#fff!important;color:#333}/deep/ .areaPicker .areaPicker-header-item:hover{background-color:#fafafa}/deep/ .areaPicker .areaPicker-header-item:last-child{border-right:none;margin-right:10px}/deep/ .areaPicker .areaPicker-header-item:last-child:hover{border-right:1px solid #aaa}/deep/ .areaPicker .areaPicker-header-item.active:last-child{border-right:1px solid #aaa}/deep/ .areaPicker .areaPicker-item{margin-right:8px;line-height:18px;margin-bottom:6px;color:#666;cursor:pointer;float:left}/deep/ .areaPicker .areaPicker-item:hover{color:#000}/deep/ .areaPicker .areaPicker-loader{display:block;color:#999}`]
+                styles: [`/deep/ .areaPicker{position:absolute;min-height:120px;max-width:360px;border:1px solid #ddd;background-color:#fff;font-size:14px;opacity:0}/deep/ .areaPicker .areaPicker-header{height:32px;width:100%;position:relative;left:0;top:0;border-bottom:1px solid #ddd;background-color:#f5f5f5;z-index:1}/deep/ .areaPicker .areaPicker-header:after{content:'';clear:both;display:block}/deep/ .areaPicker .areaPicker-body{padding:12px;max-height:150px;overflow-y:auto}/deep/ .areaPicker .areaPicker-body:after{content:'';clear:both;display:block}/deep/ .areaPicker .areaPicker-header-item{line-height:31px;text-align:center;padding:0 12px;float:left;border-right:1px solid #ddd;cursor:pointer;color:#666}/deep/ .areaPicker .areaPicker-header-item.active{border-bottom:1px solid #fff;margin-bottom:-1px;background-color:#fff!important;color:#333}/deep/ .areaPicker .areaPicker-header-item:hover{background-color:#fafafa}/deep/ .areaPicker .areaPicker-header-item:last-child{border-right:none;margin-right:10px}/deep/ .areaPicker .areaPicker-header-item:last-child:hover{border-right:1px solid #ddd}/deep/ .areaPicker .areaPicker-header-item.active:last-child{border-right:1px solid #ddd}/deep/ .areaPicker .areaPicker-item{margin-right:8px;line-height:18px;margin-bottom:6px;color:#666;cursor:pointer;float:left}/deep/ .areaPicker .areaPicker-item:hover{color:#000}/deep/ .areaPicker .areaPicker-loader{display:block;color:#999}`]
             },] },
 ];
 /** @nocollapse */
@@ -5183,7 +5189,7 @@ class DatePipe {
     createDate(dateStr) {
         let /** @type {?} */ date = new Date(dateStr);
         if (date + '' === 'Invalid Date') {
-            date = new Date(dateStr.replace(/-/g, '/').replace(/\.\d+$/, ''));
+            date = new Date(dateStr + ''.replace(/-/g, '/').replace(/\.\d+$/, ''));
             if (date + '' === 'Invalid Date') {
                 return null;
             }
@@ -5203,6 +5209,9 @@ class DatePipe {
             }
             else if (typeof value === 'string') {
                 date = this.createDate(value);
+            }
+            else if (typeof value === 'number') {
+                date = new Date(value);
             }
             if (!date) {
                 return value;
@@ -6051,11 +6060,14 @@ class PopupService {
         this.popWrap.appendChild(pop);
         if (this.animated) {
             setTimeout(() => {
-                this.popWrap.className = this.popWrap.className + ' animated';
+                this.popWrap.className = this.popWrap.className + ' animate';
+                setTimeout(() => {
+                    this.popWrap.className = this.popWrap.className + ' ready';
+                }, 10);
             }, 10);
         }
         else {
-            this.popWrap.className = this.popWrap.className + ' animated';
+            this.popWrap.className = this.popWrap.className + ' ready';
         }
     }
     /**
@@ -6398,6 +6410,73 @@ class Toaster {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
+/**
+ * 可跟踪的路由
+ */
+class TracertService {
+    /**
+     * @param {?} router
+     * @param {?} actRoute
+     */
+    constructor(router, actRoute) {
+        this.router = router;
+        this.actRoute = actRoute;
+    }
+    /**
+     * 监听路由变化
+     * @param {?} searchParams 搜索参数（只有初始化的参数能被监听到）
+     * @param {?=} action 监听的回调
+     * @return {?}
+     */
+    subscribe(searchParams, action) {
+        this.searchParams = searchParams;
+        this.actRoute.params.subscribe((params) => {
+            let /** @type {?} */ url_params = params;
+            for (let /** @type {?} */ key in this.searchParams) {
+                if (typeof this.searchParams[key] === 'string' && url_params[key]) {
+                    this.searchParams[key] = url_params[key] + '';
+                }
+                else if (typeof this.searchParams[key] === 'number' && url_params[key] !== undefined) {
+                    this.searchParams[key] = parseFloat(url_params[key]);
+                }
+            }
+            if (typeof action === 'function') {
+                action();
+            }
+        });
+    }
+    /**
+     * 导航
+     * 将搜索参数写进url参数并跳转，使浏览器生成历史访问记录
+     * @return {?}
+     */
+    navigate() {
+        let /** @type {?} */ path = this.router.url.split(';')[0];
+        let /** @type {?} */ searchParams = {};
+        for (let /** @type {?} */ key in this.searchParams) {
+            if (typeof this.searchParams[key] === 'string' && this.searchParams[key]) {
+                searchParams[key] = this.searchParams[key];
+            }
+            else if (typeof this.searchParams[key] === 'number' && (this.searchParams[key] || this.searchParams[key] === 0)) {
+                searchParams[key] = this.searchParams[key];
+            }
+        }
+        this.router.navigate([path, searchParams]);
+    }
+}
+TracertService.decorators = [
+    { type: Injectable },
+];
+/** @nocollapse */
+TracertService.ctorParameters = () => [
+    { type: Router, },
+    { type: ActivatedRoute, },
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
 //q-btn-group
 
 /**
@@ -6413,5 +6492,5 @@ class Toaster {
  * Generated bundle index. Do not edit.
  */
 
-export { QBtnGroupComponent, QBtnGroupModule, PaginatorComponent, PaginatorModule, GalleryComponent, GalleryModule, SpinnerComponent, LoaderModule, CheckboxComponent, CheckboxModule, RadioComponent, RadioModule, ToggleComponent, ToggleModule, SwitchComponent, SwitchModule, ModalBodyComponent, ModalHeaderComponent, ModalFooterComponent, ModalComponent, ModalModule, RootContainerComponent, AsideLeftComponent, HeaderComponent, HeaderLeftComponent, HeaderRightComponent, DeleteWrapComponent, LayoutModule, NavWrapComponent, NavItemComponent, SubNavItemComponent, ThirthNavItemComponent, NavModule, DatetimePickerComponent, DatetimePickerModule, DropDownComponent, DropDownModule, SlideDownComponent, SlideDownModule, SliderComponent, SliderModule, SelectComponent, SelectModule, AreaPickerDirective, AreaPickerModule, AreaPicker, ToggleClassDirective, ToggleClassModule, BtnBackDirective, BtnBackModule, TextMaxLengthDirective, TextMaxLengthModule, HTML5ValidateDirective, ValidateModule, CurrencyFormatDirective, CurrencyFormatPipe, CurrencyFormatModule, DatePipe, DateFormatModule, NullReplacePipe, NullReplaceModule, UploaderModule, Uploader, UploadFile, UploaderDirective, FormsModule$1 as FormsModule, CommonModule$1 as CommonModule, PopupService, PopService, Toaster };
+export { QBtnGroupComponent, QBtnGroupModule, PaginatorComponent, PaginatorModule, GalleryComponent, GalleryModule, SpinnerComponent, LoaderModule, CheckboxComponent, CheckboxModule, RadioComponent, RadioModule, ToggleComponent, ToggleModule, SwitchComponent, SwitchModule, ModalBodyComponent, ModalHeaderComponent, ModalFooterComponent, ModalComponent, ModalModule, RootContainerComponent, AsideLeftComponent, HeaderComponent, HeaderLeftComponent, HeaderRightComponent, DeleteWrapComponent, LayoutModule, NavWrapComponent, NavItemComponent, SubNavItemComponent, ThirthNavItemComponent, NavModule, DatetimePickerComponent, DatetimePickerModule, DropDownComponent, DropDownModule, SlideDownComponent, SlideDownModule, SliderComponent, SliderModule, SelectComponent, SelectModule, AreaPickerDirective, AreaPickerModule, AreaPicker, ToggleClassDirective, ToggleClassModule, BtnBackDirective, BtnBackModule, TextMaxLengthDirective, TextMaxLengthModule, HTML5ValidateDirective, ValidateModule, CurrencyFormatDirective, CurrencyFormatPipe, CurrencyFormatModule, DatePipe, DateFormatModule, NullReplacePipe, NullReplaceModule, UploaderModule, Uploader, UploadFile, UploaderDirective, FormsModule$1 as FormsModule, CommonModule$1 as CommonModule, PopupService, PopService, Toaster, TracertService };
 //# sourceMappingURL=dolphinng.js.map

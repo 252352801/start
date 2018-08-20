@@ -4,12 +4,14 @@ export declare class GalleryComponent implements OnInit, OnDestroy {
     data: any[];
     dataProps: string[];
     size: any;
-    change: EventEmitter<any>;
     title: string;
     isAnimation: boolean;
     isHeader: boolean;
     isToolsBar: boolean;
     isBtnDownload: boolean;
+    change: EventEmitter<any>;
+    onChange: EventEmitter<any>;
+    onClose: EventEmitter<any>;
     galleryBody: ElementRef;
     isFullScreen: boolean;
     images: {

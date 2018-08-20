@@ -19,16 +19,13 @@
         "prefix": "app",
         "styles": [
             "./packages/dolphinng/assets/styles/main.less",
-            "../node_modules/primeng/resources/themes/omega/theme.css",
-            "../node_modules/primeng/resources/primeng.min.css",
             "./packages/dolphinng/assets/styles/skins/dol.less",
             "./packages/dolphinng/assets/styles/skins/deep-blue.less",
             "./assets/libs/prism/prism.css",
             "styles.less"
         ],
         "scripts": [
-            "./assets/libs/prism/prism.js",
-            "../node_modules/chart.js/dist/Chart.js"
+            "./assets/libs/prism/prism.js"
         ],
         "environmentSource": "environments/environment.ts",
         "environments": {
