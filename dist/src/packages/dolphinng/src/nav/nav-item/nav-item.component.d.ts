@@ -22,6 +22,8 @@ export declare class NavItemComponent implements OnInit, AfterViewInit, AfterVie
     root: ElementRef;
     childrenHost: ViewContainerRef;
     subNavItems: SubNavItemComponent[];
+    /**动态组件 */
+    private dynamicSubNavItems;
     constructor(elemRef: ElementRef, router: Router, actRoute: ActivatedRoute, componentFactoryResolver: ComponentFactoryResolver);
     /**
      * 获取dom相对浏览器的位置

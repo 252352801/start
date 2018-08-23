@@ -1,10 +1,11 @@
-import {Component, Input, Output, ElementRef, OnInit,
-   AfterViewInit, AfterViewChecked,ViewContainerRef,
-   ComponentFactoryResolver
-  } from '@angular/core';
-import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
-import {ContentChildren,ViewChild} from '@angular/core';
-import {SubNavItemComponent} from '../sub-nav-item/sub-nav-item.component';
+import {
+  Component, Input, Output, ElementRef, OnInit,
+  AfterViewInit, AfterViewChecked, ViewContainerRef,
+  ComponentFactoryResolver
+} from '@angular/core';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { ContentChildren, ViewChild } from '@angular/core';
+import { SubNavItemComponent } from '../sub-nav-item/sub-nav-item.component';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
@@ -13,7 +14,7 @@ import 'rxjs/add/operator/mergeMap';
   templateUrl: './nav-item.component.html',
   styleUrls: ['./nav-item.component.less']
 })
-export class NavItemComponent implements OnInit,AfterViewInit,AfterViewChecked {
+export class NavItemComponent implements OnInit, AfterViewInit, AfterViewChecked {
   private rootElem: HTMLElement;
   public haveChild: boolean = false;
   private childrenActive: boolean = false;
@@ -21,20 +22,22 @@ export class NavItemComponent implements OnInit,AfterViewInit,AfterViewChecked {
   @Input() text: string;
   @Input() link: any;
 
-  @Input() disabled:any;//是否禁用
+  @Input() disabled: any;//是否禁用
 
   @Input('badge-class') badgeClass: string;
   @Input('badge-value') badgeValue: any;
 
-  @ViewChild('subWrap') subWrap:ElementRef;
-  @ViewChild('root') root:ElementRef;
-  @ViewChild('childrenHost',{read: ViewContainerRef}) childrenHost:ViewContainerRef;
+  @ViewChild('subWrap') subWrap: ElementRef;
+  @ViewChild('root') root: ElementRef;
+  @ViewChild('childrenHost', { read: ViewContainerRef }) childrenHost: ViewContainerRef;
   @ContentChildren(SubNavItemComponent) subNavItems: SubNavItemComponent[];
+  /**动态组件 */
+  private dynamicSubNavItems: SubNavItemComponent[];
   constructor(private elemRef: ElementRef,
-              private router: Router,
-              private actRoute: ActivatedRoute,
-              private componentFactoryResolver:ComponentFactoryResolver
-            ) {
+    private router: Router,
+    private actRoute: ActivatedRoute,
+    private componentFactoryResolver: ComponentFactoryResolver
+  ) {
 
   }
 
@@ -50,7 +53,7 @@ export class NavItemComponent implements OnInit,AfterViewInit,AfterViewChecked {
       topValue += obj.offsetTop;
       obj = obj.offsetParent;
     }
-    return {left: leftValue, top: topValue};
+    return { left: leftValue, top: topValue };
   }
 
   activeNavItem() {
@@ -62,22 +65,22 @@ export class NavItemComponent implements OnInit,AfterViewInit,AfterViewChecked {
     this.router.events
       .subscribe((event) => {
         if (event instanceof NavigationEnd) { // 当导航成功结束时执行
-          setTimeout(()=>{//慢一个节拍
+          setTimeout(() => {//慢一个节拍
             let url = event.url.split(';')[0];
             //子导航收起
-            let subNavWrap= this.subWrap.nativeElement;
-            let wouldActive=this.isActive();
-            if(wouldActive){
+            let subNavWrap = this.subWrap.nativeElement;
+            let wouldActive = this.isActive();
+            if (wouldActive) {
               this.openSubNav(subNavWrap);
-              (!this.link)&&this.addClass(this.rootElem, 'active');
-            }else{
+              (!this.link) && this.addClass(this.rootElem, 'active');
+            } else {
               this.closeSubNav(subNavWrap);
-              (!this.link)&&this.removeClass(this.rootElem, 'active');
+              (!this.link) && this.removeClass(this.rootElem, 'active');
             }
           })
         }
       });
-    this.rootElem.addEventListener('click', (ev)=> {
+    this.rootElem.addEventListener('click', (ev) => {
       let isAsideFolded = this.isAsideFolded();
       let linkElem = this.rootElem.querySelector('a');
       if (linkElem.getAttribute('href') !== null) {
@@ -85,8 +88,8 @@ export class NavItemComponent implements OnInit,AfterViewInit,AfterViewChecked {
       }
       let subWrap: any = this.subWrap.nativeElement;
       let wouldActive = (subWrap.clientHeight > 0 ? false : true);
-      if(!this.haveChild&&this.disabled!==undefined&&this.disabled+''!='false'){
-        wouldActive=false;
+      if (!this.haveChild && this.disabled !== undefined && this.disabled + '' != 'false') {
+        wouldActive = false;
       }
       if (!isAsideFolded) {
         if (wouldActive) {
@@ -98,7 +101,7 @@ export class NavItemComponent implements OnInit,AfterViewInit,AfterViewChecked {
         }
       }
     });
-    this.rootElem.addEventListener('mouseenter', (ev)=> {
+    this.rootElem.addEventListener('mouseenter', (ev) => {
       let target = this.rootElem;
       if (!this.isAsideFolded()) {
         return;
@@ -133,7 +136,7 @@ export class NavItemComponent implements OnInit,AfterViewInit,AfterViewChecked {
       }
       target = null;
     });
-    this.rootElem.addEventListener('mouseleave', (ev)=> {
+    this.rootElem.addEventListener('mouseleave', (ev) => {
       if (!this.isAsideFolded()) {
         return;
       }
@@ -149,7 +152,7 @@ export class NavItemComponent implements OnInit,AfterViewInit,AfterViewChecked {
   }
 
   ngAfterViewInit() {
-    setTimeout(()=> {
+    setTimeout(() => {
       this.checkChild();
       if (this.hasActiveChildren()) {
         this.childrenActive = true;
@@ -168,10 +171,10 @@ export class NavItemComponent implements OnInit,AfterViewInit,AfterViewChecked {
       if (this.isAsideFolded()) {
         subNavElem.style.height = 'auto';
       } else if (subNavElem.clientHeight <= 0) {
-        setTimeout(()=> {
+        setTimeout(() => {
           let height = this.getSubNavHeight(subNavElem);
           subNavElem.style.height = height + 'px';
-          setTimeout(()=> {
+          setTimeout(() => {
             if (this.hasClass(this.rootElem, 'active')) {
               subNavElem.style.height = 'auto';
             } else {
@@ -187,7 +190,7 @@ export class NavItemComponent implements OnInit,AfterViewInit,AfterViewChecked {
     if (subNavElem.clientHeight > 0) {
       let height = this.getSubNavHeight(subNavElem);
       subNavElem.style.height = height + 'px';
-      setTimeout(()=> {
+      setTimeout(() => {
         subNavElem.style.height = '0';
       });
     }
@@ -228,18 +231,27 @@ export class NavItemComponent implements OnInit,AfterViewInit,AfterViewChecked {
   }
 
   isActive() {
-    let active=false;
+    let active = false;
     if (this.link) {
       active = this.router.isActive(this.link, false);
     } else {
       /*if(this.elemRef.nativeElement.querySelector('.sub-nav-item.active')){
         active=true;
       }*/
-      this.subNavItems.forEach((obj: SubNavItemComponent, index: number)=> {
-        if(obj.isActive()){
-          active=true;
-        }
-      });
+      if (this.subNavItems && typeof this.subNavItems === 'object' && typeof this.subNavItems.forEach === 'function') {
+        this.subNavItems.forEach((obj: SubNavItemComponent, index: number) => {
+          if (obj.isActive()) {
+            active = true;
+          }
+        });
+      }
+      if (!active && this.dynamicSubNavItems instanceof Array) {
+        this.dynamicSubNavItems.forEach((obj: SubNavItemComponent, index: number) => {
+          if (obj.isActive()) {
+            active = true;
+          }
+        });
+      }
     }
     return active;
   }
@@ -297,22 +309,22 @@ export class NavItemComponent implements OnInit,AfterViewInit,AfterViewChecked {
    * 插入二级菜单
    * @param options 
    */
-  inserSubNavItem(options:{
-    text:string
-    icon?:string
-    link?:string
-  }):SubNavItemComponent{
-    let viewContainerRef=this.childrenHost;
-    let sNavComponentFactory=this.componentFactoryResolver.resolveComponentFactory(SubNavItemComponent);
-    let sNavComponentRef=viewContainerRef.createComponent(sNavComponentFactory);
-    let sNavComponentInstance=(<SubNavItemComponent>sNavComponentRef.instance);
+  inserSubNavItem(options: {
+    text: string
+    icon?: string
+    link?: string
+  }): SubNavItemComponent {
+    let viewContainerRef = this.childrenHost;
+    let sNavComponentFactory = this.componentFactoryResolver.resolveComponentFactory(SubNavItemComponent);
+    let sNavComponentRef = viewContainerRef.createComponent(sNavComponentFactory);
+    let sNavComponentInstance = (<SubNavItemComponent>sNavComponentRef.instance);
     sNavComponentInstance.text = options.text;
-    options.icon&&(sNavComponentInstance.icon =options.icon);
-    options.link&&(sNavComponentInstance.link = options.link);
-    if(!this.subNavItems){
-      this.subNavItems=[];
+    options.icon && (sNavComponentInstance.icon = options.icon);
+    options.link && (sNavComponentInstance.link = options.link);
+    if (!this.dynamicSubNavItems) {
+      this.dynamicSubNavItems = [];
     }
-    this.subNavItems.push(sNavComponentInstance);
+    this.dynamicSubNavItems.push(sNavComponentInstance);
     return sNavComponentInstance;
   }
 }

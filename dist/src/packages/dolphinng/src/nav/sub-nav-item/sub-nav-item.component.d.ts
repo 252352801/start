@@ -14,6 +14,8 @@ export declare class SubNavItemComponent implements OnInit, AfterViewInit {
     routeLink: string;
     childrenHost: ViewContainerRef;
     thirthNavItems: ThirthNavItemComponent[];
+    /**动态组件 */
+    private dynamicThirthNavItems;
     constructor(elemRef: ElementRef, router: Router, actRoute: ActivatedRoute, componentFactoryResolver: ComponentFactoryResolver);
     ngOnInit(): void;
     isActive(): boolean;

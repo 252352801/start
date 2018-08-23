@@ -21,6 +21,8 @@ export class SubNavItemComponent implements OnInit, AfterViewInit {
   routeLink: string;
   @ViewChild('childrenHost', { read: ViewContainerRef }) childrenHost: ViewContainerRef;
   @ContentChildren(ThirthNavItemComponent) thirthNavItems: ThirthNavItemComponent[];
+  /**动态组件 */
+  private dynamicThirthNavItems: ThirthNavItemComponent[];
   constructor(
     private elemRef: ElementRef,
     private router: Router,
@@ -47,8 +49,8 @@ export class SubNavItemComponent implements OnInit, AfterViewInit {
             thirthNavWrap && this.openWrap(thirthNavWrap);
           } else {
             //if (this.isAsideFolded()) {
-              thirthNavWrap && this.closeWrap(thirthNavWrap);
-              this.removeClass(li, 'active');
+            thirthNavWrap && this.closeWrap(thirthNavWrap);
+            this.removeClass(li, 'active');
             //}
           }
           //}
@@ -82,15 +84,28 @@ export class SubNavItemComponent implements OnInit, AfterViewInit {
     let active = false;
     if (this.link) {
       active = this.router.isActive(this.link, false);
+      if (this.link === '/about/convention') {
+        console.log(this.link);
+        console.log(active);
+      }
     } else {
       /*if(this.elemRef.nativeElement.querySelector('.thirth-nav-item.active')){
         active=true;
       }*/
-      this.thirthNavItems.forEach((obj: ThirthNavItemComponent, index: number) => {
-        if (obj.isActive()) {
-          active = true;
-        }
-      });
+      if (this.thirthNavItems && typeof this.thirthNavItems === 'object' && typeof this.thirthNavItems.forEach === 'function') {
+        this.thirthNavItems.forEach((obj: ThirthNavItemComponent, index: number) => {
+          if (obj.isActive()) {
+            active = true;
+          }
+        });
+      }
+      if (!active && this.dynamicThirthNavItems instanceof Array) {
+        this.dynamicThirthNavItems.forEach((obj: ThirthNavItemComponent, index: number) => {
+          if (obj.isActive()) {
+            active = true;
+          }
+        });
+      }
     }
     return active;
   }
@@ -191,10 +206,10 @@ export class SubNavItemComponent implements OnInit, AfterViewInit {
     sNavComponentInstance.text = options.text;
     options.icon && (sNavComponentInstance.icon = options.icon);
     options.link && (sNavComponentInstance.link = options.link);
-    if (!this.thirthNavItems) {
-      this.thirthNavItems = [];
+    if (!this.dynamicThirthNavItems) {
+      this.dynamicThirthNavItems = [];
     }
-    this.thirthNavItems.push(sNavComponentInstance);
+    this.dynamicThirthNavItems.push(sNavComponentInstance);
     return sNavComponentInstance;
   }
 }

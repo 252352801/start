@@ -14,6 +14,8 @@ export declare class AreaPicker {
     header: HTMLElement;
     body: HTMLElement;
     isShowLoader: boolean;
+    /**层级 */
+    zIndex: number;
     constructor();
     /**
      * 创建最外层元素
