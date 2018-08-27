@@ -28,6 +28,10 @@ export declare class GalleryComponent implements OnInit, OnDestroy {
     height: any;
     left: number | string;
     top: number | string;
+    /**宽度 */
+    styleWidth: any;
+    /**高度 */
+    styleHeight: any;
     tempLeft: number | string;
     tempTop: number | string;
     thumbScrollWidth: number;

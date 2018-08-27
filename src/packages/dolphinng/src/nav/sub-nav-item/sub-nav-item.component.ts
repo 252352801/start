@@ -84,10 +84,6 @@ export class SubNavItemComponent implements OnInit, AfterViewInit {
     let active = false;
     if (this.link) {
       active = this.router.isActive(this.link, false);
-      if (this.link === '/about/convention') {
-        console.log(this.link);
-        console.log(active);
-      }
     } else {
       /*if(this.elemRef.nativeElement.querySelector('.thirth-nav-item.active')){
         active=true;

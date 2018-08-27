@@ -1,6 +1,6 @@
 {
     "name": "dolphinng",
-    "version": "5.0.4",
+    "version": "5.0.5",
     "license": "MIT",
     "author": {
         "name": "Qingyu Wei"
@@ -9,7 +9,7 @@
         "name": "weiqingyu",
         "email": "252352801@qq.com"
     }],
-    "peerDependencies": {
+    "perrDependencies": {
         "@angular/core": "^5.2.0"
     },
     "main": "bundles/dolphinng.umd.js",

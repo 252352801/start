@@ -31,10 +31,14 @@ export class GalleryComponent implements OnInit, OnDestroy {
   visible: boolean = false;//是否显示
   ready: boolean = false;//是否已就绪
 
-  width: any = null;
-  height: any = null;
+  @Input() width: any = null;
+  @Input() height: any = null;
   left: number | string = 0;//当前left
   top: number | string = 0;//当前top
+  /**宽度 */
+  styleWidth: any;
+  /**高度 */
+  styleHeight: any;
   tempLeft: number | string = 0;//临时left 用于全屏/非全屏切换
   tempTop: number | string = 0;//临时top
   thumbScrollWidth: number = 0;//临时滚动宽度
@@ -79,7 +83,7 @@ export class GalleryComponent implements OnInit, OnDestroy {
     y: 0
   };
   isShowScaleInfo = false;//是否显示缩放比例信息
-  private hideScaleInfoTimer:any = 0;//隐藏缩放比例信息的timer
+  private hideScaleInfoTimer: any = 0;//隐藏缩放比例信息的timer
   constructor(private eleRef: ElementRef) {
     //窗口大小改变
     this.resizeHandler = () => {
@@ -89,14 +93,14 @@ export class GalleryComponent implements OnInit, OnDestroy {
       }, 300);
     };
     //窗口点击
-    this.windowClickHandler = (ev:MouseEvent) => {
+    this.windowClickHandler = (ev: MouseEvent) => {
       if (!this.size && !this.isShowBtns) {
         this.close();
       }
     };
     //按下键盘
     this.keydownHandler = (ev: KeyboardEvent) => {
-      if(this.images.length>1){
+      if (this.images.length > 1) {
         const kc = ev.keyCode;
         if (kc === 37 || kc === 38) {
           this.prev();
@@ -281,7 +285,7 @@ export class GalleryComponent implements OnInit, OnDestroy {
     clearTimeout(this.thumbSlideTimer);
     this.thumbSlideTimer = setTimeout(() => {
       let sliderWrap = this.eleRef.nativeElement.querySelector('.gallery-thumb-sliders');
-      if(sliderWrap){
+      if (sliderWrap) {
         let perW = sliderWrap.offsetWidth;
         let scrollL = sliderWrap.scrollLeft;
         let sliderW = sliderWrap.clientWidth;
@@ -506,6 +510,25 @@ export class GalleryComponent implements OnInit, OnDestroy {
       this.left = '0';
       this.top = '0';
     }
+    let bodyW = document.body.clientWidth;
+    let bodyH = document.body.clientHeight;
+    let w = parseFloat(this.width),
+      h = parseFloat(this.height);
+    if (w > bodyW) {
+      w = bodyW;
+    }
+    if (h > bodyH) {
+      h = bodyH;
+    }
+    this.styleWidth = w + 'px';
+    this.styleHeight = h + 'px';
+    if (w) {
+      this.left = 'calc(50% - ' + w / 2 + 'px)';
+    }
+    if (h) {
+      this.top = 'calc(50% - ' + h / 2 + 'px)';
+    }
+
   }
 
   /**
@@ -517,6 +540,8 @@ export class GalleryComponent implements OnInit, OnDestroy {
     if (this.isEventSource) {
       this.left = this.tempLeft;
       this.top = this.tempTop;
+      this.styleWidth = 0;
+      this.styleHeight = 0;
     }
     this.ready = false;
     setTimeout(() => {

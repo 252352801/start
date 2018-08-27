@@ -881,6 +881,24 @@ class GalleryComponent {
             this.left = '0';
             this.top = '0';
         }
+        let /** @type {?} */ bodyW = document.body.clientWidth;
+        let /** @type {?} */ bodyH = document.body.clientHeight;
+        let /** @type {?} */ w = parseFloat(this.width), /** @type {?} */
+        h = parseFloat(this.height);
+        if (w > bodyW) {
+            w = bodyW;
+        }
+        if (h > bodyH) {
+            h = bodyH;
+        }
+        this.styleWidth = w + 'px';
+        this.styleHeight = h + 'px';
+        if (w) {
+            this.left = 'calc(50% - ' + w / 2 + 'px)';
+        }
+        if (h) {
+            this.top = 'calc(50% - ' + h / 2 + 'px)';
+        }
     }
     /**
      * 关闭
@@ -892,6 +910,8 @@ class GalleryComponent {
         if (this.isEventSource) {
             this.left = this.tempLeft;
             this.top = this.tempTop;
+            this.styleWidth = 0;
+            this.styleHeight = 0;
         }
         this.ready = false;
         setTimeout(() => {
@@ -1077,7 +1097,8 @@ GalleryComponent.decorators = [
      'md':size=='md',
      'sm':size=='sm',
      'xs':size=='xs'
-     }" [style.left]="isFullScreen?0:left" [style.top]="isFullScreen?0:top" [style.width]="isFullScreen?'100%':null" [style.height]="isFullScreen?'100%':null" [style.border]="isFullScreen?'none':null" [style.transition]="transition?transition:null">
+     }" [style.left]="isFullScreen?0:left" [style.top]="isFullScreen?0:top" [style.width]="isFullScreen?'100%':(styleWidth?styleWidth:null)" [style.height]="isFullScreen?'100%':(styleHeight?styleHeight:null)" [style.border]="isFullScreen?'none':null"
+    [style.transition]="transition?transition:null">
     <div *ngIf="(isHeader+'')!='false'" class="gallery-header">
         {{title}}
         <a class="gallery-btn-full" *ngIf="size" [ngClass]="{'resize':isFullScreen}" (click)="toggleFullScreen()">
@@ -1141,6 +1162,8 @@ GalleryComponent.propDecorators = {
     "onChange": [{ type: Output },],
     "onClose": [{ type: Output },],
     "galleryBody": [{ type: ViewChild, args: ['galleryBody',] },],
+    "width": [{ type: Input },],
+    "height": [{ type: Input },],
 };
 
 /**
@@ -2297,10 +2320,6 @@ class SubNavItemComponent {
         let /** @type {?} */ active = false;
         if (this.link) {
             active = this.router.isActive(this.link, false);
-            if (this.link === '/about/convention') {
-                console.log(this.link);
-                console.log(active);
-            }
         }
         else {
             /*if(this.elemRef.nativeElement.querySelector('.thirth-nav-item.active')){

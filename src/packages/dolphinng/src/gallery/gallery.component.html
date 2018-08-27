@@ -7,7 +7,8 @@
      'md':size=='md',
      'sm':size=='sm',
      'xs':size=='xs'
-     }" [style.left]="isFullScreen?0:left" [style.top]="isFullScreen?0:top" [style.width]="isFullScreen?'100%':null" [style.height]="isFullScreen?'100%':null" [style.border]="isFullScreen?'none':null" [style.transition]="transition?transition:null">
+     }" [style.left]="isFullScreen?0:left" [style.top]="isFullScreen?0:top" [style.width]="isFullScreen?'100%':(styleWidth?styleWidth:null)" [style.height]="isFullScreen?'100%':(styleHeight?styleHeight:null)" [style.border]="isFullScreen?'none':null"
+    [style.transition]="transition?transition:null">
     <div *ngIf="(isHeader+'')!='false'" class="gallery-header">
         {{title}}
         <a class="gallery-btn-full" *ngIf="size" [ngClass]="{'resize':isFullScreen}" (click)="toggleFullScreen()">
