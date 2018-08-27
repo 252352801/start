@@ -8,6 +8,9 @@
     "maintainers": [{
         "name": "weiqingyu",
         "email": "252352801@qq.com"
+    },{
+      "name": "husha",
+      "email": "hsp@haitun56.com.cn"
     }],
     "scripts": {
         "ng": "ng",
